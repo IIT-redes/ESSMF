@@ -1,0 +1,55 @@
+editorial_status: approved
+slug: tariff-fairness-protection
+file: tariff-fairness-protection.html
+mechanism: tariff
+feedback_key: tariff-fairness
+hero_image: ../assets/tariff-t5.webp
+eyebrow: Tariff design mechanism · review dimension
+title: Fairness and protection
+subtitle: How should costs, benefits, risks, and opportunities be distributed?
+definition_title: What this dimension means
+definition_paragraphs:
+- Fairness and protection address whether the tariff allocates costs according to network causation while protecting customers
+  who cannot respond, cannot invest in automation, or face essential service needs.
+- Average efficiency can hide severe distributional effects. A tariff may reduce total network cost while increasing bills
+  for vulnerable, rural, low-income, tenant, or inflexible customers.
+choices:
+- title: Fairness principle
+  text: Cost causation, beneficiary pays, ability to respond, social protection, or a balanced combination.
+- title: Protection instrument
+  text: Bill cap, opt-out, social tariff, transition period, exemption, or targeted support.
+- title: Legacy treatment
+  text: How existing customers and assets transition to a new charging methodology.
+- title: Transparency
+  text: How bill impacts, assumptions, and cross-subsidies are communicated.
+example_title: How the dimension appears in practice
+example_text: A capacity-based tariff rewards households that can flatten demand with a battery but may increase the bill
+  of a low-income household with electric heating and no capital for automation. The regulator must decide whether the cost
+  signal is justified and which protection is appropriate.
+review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
+  a verifiable network, regulatory, commercial, or customer outcome.
+stakeholders:
+- name: DSO
+  text: Explain cost causation and avoid hidden cross-subsidies between network levels.
+- name: Regulator
+  text: Assess affordability, inclusion, and proportionality alongside efficiency.
+- name: Aggregator or retailer
+  text: Design offers that do not conceal risk or capture most of the benefit.
+- name: Customer or FSP
+  text: Receive understandable information, practical choices, and effective remedies.
+questions:
+- Who gains and who loses under the design?
+- Can affected customers alter the relevant behaviour?
+- Which essential uses need protection?
+- How long should transitional arrangements last?
+- How should intermediaries disclose savings and fees?
+evidence:
+- Bill-impact distributions
+- Income and vulnerability analysis
+- Technology-ownership and tenancy data
+- Customer comprehension studies
+- Assessment of protection alternatives
+feedback_eyebrow: Feedback on fairness and protection
+feedback_title: What should be clarified, added, removed, or redesigned?
+feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
+  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.

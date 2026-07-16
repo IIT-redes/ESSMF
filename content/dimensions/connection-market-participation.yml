@@ -1,0 +1,55 @@
+editorial_status: approved
+slug: connection-market-participation
+file: connection-market-participation.html
+mechanism: connection
+feedback_key: connection-market
+hero_image: ../assets/connection-f4.webp
+eyebrow: Flexibility connection agreement · review dimension
+title: Market participation and mechanism interaction
+subtitle: Can the connected resource participate in markets without double obligation or conflicting control?
+definition_title: What this dimension means
+definition_paragraphs:
+- Market participation defines whether capacity subject to a flexible connection may be aggregated or offered in local flexibility,
+  balancing, wholesale, or other markets, and how DSO access limits interact with those commitments.
+- A resource can create value in several markets, but part of its flexibility may already be committed through the connection
+  agreement. Clear boundaries are needed to protect network security while avoiding unnecessary exclusion.
+choices:
+- title: Eligibility
+  text: Full participation, participation within the operating envelope, or restricted services.
+- title: Availability rule
+  text: How connection obligations affect declared market availability.
+- title: Control priority
+  text: DSO access limit, market activation, aggregator dispatch, and emergency control.
+- title: Double commitment
+  text: How the same capacity is prevented from satisfying two incompatible obligations.
+example_title: How the dimension appears in practice
+example_text: A battery with a flexible import connection offers upward balancing and local congestion relief. Its market
+  bids must remain feasible within the DSO operating envelope, and the baseline must not reward compliance that is already
+  mandatory.
+review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
+  a verifiable network, regulatory, commercial, or customer outcome.
+stakeholders:
+- name: DSO
+  text: Maintain security while enabling efficient value stacking.
+- name: Regulator
+  text: Prevent discrimination and unnecessary barriers to market participation.
+- name: Developer or aggregator
+  text: Know which capacity is commercially available and which is reserved.
+- name: Customer or FSP
+  text: Receive clear value sharing and avoid conflicting obligations.
+questions:
+- Which services remain feasible under the access envelope?
+- How is capacity reserved for mandatory compliance identified?
+- What priority applies during conflicting activation?
+- How are baselines and double payment handled?
+- What data must be exchanged with market platforms?
+evidence:
+- Feasibility and co-optimization studies
+- Control-priority scenarios
+- Baseline and double-counting analysis
+- Market-liquidity impact
+- Data and interoperability assessment
+feedback_eyebrow: Feedback on market participation and mechanism interaction
+feedback_title: What should be clarified, added, removed, or redesigned?
+feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
+  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.

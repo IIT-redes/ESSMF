@@ -1,0 +1,359 @@
+media:
+  - name: images
+    label: Website images
+    input: site_src/assets
+    output: /assets
+    extensions: [png, jpg, jpeg, webp, svg]
+    rename: safe
+  - name: documents
+    label: Library documents
+    input: site_src/docs/materials
+    output: /docs/materials
+    categories: [document]
+    rename: safe
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "content: create {path}"
+      update: "content: update {path}"
+      delete: "content: delete {path}"
+      rename: "content: rename {oldPath} to {newPath}"
+
+actions:
+  - name: validate-site
+    label: Validate website content
+    workflow: validate-content.yml
+    ref: current
+
+components:
+  editorial_status:
+    type: select
+    label: Editorial status
+    options:
+      values:
+        - name: draft
+          label: Draft
+        - name: review
+          label: Ready for review
+        - name: approved
+          label: Approved
+  intro_section:
+    type: object
+    fields:
+      - { name: eyebrow, label: Small heading, type: string }
+      - { name: title, label: Main heading, type: string }
+      - { name: text, label: Explanation, type: text }
+
+content:
+  - name: homepage
+    label: Homepage
+    type: file
+    path: content/home.yml
+    format: yaml
+    fields:
+      - { name: editorial_status, component: editorial_status }
+      - name: hero
+        label: Hero area
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: philosophy, type: text }
+          - { name: lead, type: text }
+          - { name: invitation, type: text }
+          - { name: primary_button, type: string }
+          - { name: secondary_button, type: string }
+      - { name: road_intro, label: Decision road introduction, component: intro_section }
+      - name: road_turns
+        label: Decision road turning points
+        type: object
+        list: true
+        fields:
+          - { name: number, type: string }
+          - { name: kicker, type: string }
+          - { name: title, type: string }
+          - { name: text, type: text }
+          - { name: href, type: string }
+          - { name: selected, type: boolean }
+      - { name: focus_intro, label: Why these three mechanisms, component: intro_section }
+      - name: focus_cards
+        label: Three selected mechanisms
+        type: object
+        list: true
+        fields:
+          - { name: badge, type: string }
+          - { name: title, type: string }
+          - { name: text, type: text }
+      - name: interaction_callout
+        type: object
+        fields:
+          - { name: title, type: string }
+          - { name: text, type: text }
+      - { name: mechanisms_intro, label: Review environments introduction, component: intro_section }
+      - name: mechanism_cards
+        label: Mechanism cards
+        type: object
+        list: true
+        fields:
+          - { name: href, type: string }
+          - { name: image, type: image, options: { media: images } }
+          - { name: badge, type: string }
+          - { name: title, type: string }
+          - { name: summary, type: text }
+          - { name: dimensions, type: string, list: true }
+          - { name: link_label, type: string }
+      - name: expert_invitation
+        label: Expert invitation
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: text, type: text }
+          - { name: steps, type: string, list: true }
+          - { name: button, type: string }
+  - name: team
+    label: Who we are
+    type: file
+    path: content/team.yml
+    format: yaml
+    fields:
+      - { name: editorial_status, component: editorial_status }
+      - { name: eyebrow, type: string }
+      - { name: title, type: string }
+      - { name: intro, type: text }
+      - { name: team_image, type: image, options: { media: images } }
+      - name: members
+        type: object
+        list: true
+        fields:
+          - { name: initials, type: string }
+          - { name: name, type: string }
+          - { name: role, type: string }
+          - { name: program, type: string }
+          - { name: bio, type: text }
+          - { name: email, type: string }
+  - name: work
+    label: Our work
+    type: file
+    path: content/work.yml
+    format: yaml
+    fields:
+      - { name: editorial_status, component: editorial_status }
+      - { name: eyebrow, type: string }
+      - { name: title, type: string }
+      - { name: intro, type: text }
+  - name: library
+    label: Library
+    type: file
+    path: content/library.yml
+    format: yaml
+    fields:
+      - { name: editorial_status, component: editorial_status }
+      - { name: intro, component: intro_section }
+      - name: items
+        label: Documents
+        type: object
+        list: true
+        fields:
+          - { name: title, type: string }
+          - { name: description, type: text }
+          - { name: file, type: file, options: { media: documents } }
+          - { name: link_label, type: string }
+  - name: mechanisms
+    label: Mechanism overview pages
+    type: group
+    items:
+      - name: tariff
+        label: Tariff design
+        type: file
+        path: content/mechanisms/tariff.yml
+        format: yaml
+        fields: &mechanism_fields
+          - { name: editorial_status, component: editorial_status }
+          - name: hero
+            type: object
+            fields:
+              - { name: eyebrow, type: string }
+              - { name: title, type: string }
+              - { name: philosophy, type: text }
+              - { name: lead, type: text }
+              - { name: primary_button, type: string }
+              - { name: secondary_button, type: string }
+          - name: sections
+            type: object
+            fields:
+              - { name: overview, component: intro_section }
+              - { name: idea, component: intro_section }
+              - { name: why, component: intro_section }
+              - name: who
+                type: object
+                fields:
+                  - { name: eyebrow, type: string }
+                  - { name: title, type: string }
+                  - { name: text, type: text }
+                  - { name: where_title, type: string }
+                  - { name: where_text, type: text }
+              - { name: framework, component: intro_section }
+          - name: dimensions
+            type: object
+            list: true
+            fields:
+              - { name: id, type: string, readonly: true }
+              - { name: href, type: string, readonly: true }
+              - { name: number, type: string }
+              - { name: title, type: string }
+              - { name: summary, type: text }
+              - { name: link_label, type: string }
+          - { name: feedback, component: intro_section }
+          - { name: challenge_intro, component: intro_section }
+          - name: challenges
+            type: object
+            list: true
+            fields:
+              - { name: id, type: string, readonly: true }
+              - { name: title, type: string }
+              - { name: question, type: text }
+              - { name: prompts, type: string, list: true }
+          - { name: final_feedback, component: intro_section }
+      - name: connection
+        label: Flexibility connection agreement
+        type: file
+        path: content/mechanisms/connection.yml
+        format: yaml
+        fields: *mechanism_fields
+      - name: tmf
+        label: Theoretical market framework
+        type: file
+        path: content/mechanisms/tmf.yml
+        format: yaml
+        fields:
+          - { name: editorial_status, component: editorial_status }
+          - name: hero
+            type: object
+            fields:
+              - { name: title, type: string }
+              - { name: statement, type: text }
+              - { name: lead, type: text }
+              - { name: primary_button, type: string }
+              - { name: secondary_button, type: string }
+          - name: sections
+            type: object
+            fields:
+              - { name: journey, component: intro_section }
+              - { name: idea, component: intro_section }
+              - { name: why, component: intro_section }
+              - { name: affected, component: intro_section }
+              - { name: where, component: intro_section }
+              - { name: framework-view, component: intro_section }
+              - { name: review, component: intro_section }
+              - { name: final-feedback, component: intro_section }
+          - name: pillars
+            type: object
+            list: true
+            fields:
+              - { name: id, type: string, readonly: true }
+              - { name: eyebrow, type: string }
+              - { name: title, type: string }
+              - { name: summary, type: text }
+  - name: dimensions
+    label: Tariff and connection review dimensions
+    type: collection
+    path: content/dimensions
+    format: yaml
+    operations: { create: false, delete: false, rename: false }
+    view: { primary: title, fields: [mechanism, editorial_status] }
+    fields:
+      - { name: editorial_status, component: editorial_status }
+      - { name: slug, type: string, readonly: true }
+      - { name: mechanism, type: select, options: { values: [tariff, connection] }, readonly: true }
+      - { name: title, type: string }
+      - { name: eyebrow, type: string }
+      - { name: subtitle, type: text }
+      - { name: hero_image, type: image, options: { media: images } }
+      - { name: definition_title, type: string }
+      - { name: definition_paragraphs, type: text, list: true }
+      - name: choices
+        type: object
+        list: true
+        fields:
+          - { name: title, type: string }
+          - { name: text, type: text }
+      - { name: example_title, type: string }
+      - { name: example_text, type: text }
+      - { name: review_principle, type: text }
+      - name: stakeholders
+        type: object
+        list: true
+        fields:
+          - { name: name, type: string }
+          - { name: text, type: text }
+      - { name: questions, type: text, list: true }
+      - { name: evidence, type: text, list: true }
+      - { name: feedback_eyebrow, type: string }
+      - { name: feedback_title, type: string }
+      - { name: feedback_text, type: text }
+  - name: pillars
+    label: TMF pillar detail pages
+    type: collection
+    path: content/pillars
+    format: yaml
+    operations: { create: false, delete: false, rename: false }
+    view: { primary: title, fields: [editorial_status] }
+    fields:
+      - { name: editorial_status, component: editorial_status }
+      - { name: slug, type: string, readonly: true }
+      - { name: eyebrow, type: string }
+      - { name: title, type: string }
+      - { name: subtitle, type: text }
+      - name: cards
+        type: object
+        list: true
+        fields:
+          - { name: title, type: string }
+          - { name: text, type: text }
+          - { name: items, type: text, list: true }
+  - name: feedback
+    label: Forms and giscus settings
+    type: file
+    path: content/feedback.yml
+    format: yaml
+    fields:
+      - name: general
+        type: object
+        fields:
+          - { name: github_hub_url, type: string }
+          - { name: poll_url, type: string }
+          - { name: upload_url, type: string }
+          - { name: general_feedback_url, type: string }
+      - name: giscus
+        type: object
+        fields:
+          - { name: enabled, type: boolean }
+          - { name: repo, type: string }
+          - { name: repo_id, type: string }
+          - { name: category, type: string }
+          - { name: category_id, type: string }
+          - { name: theme, type: string }
+          - { name: lang, type: string }
+      - name: mechanisms
+        type: object
+        list: true
+        fields: &feedback_fields
+          - { name: key, type: string, readonly: true }
+          - { name: label, type: string }
+          - { name: form_url, type: string }
+          - { name: giscus_term, type: string }
+          - { name: giscus_category, type: string }
+          - { name: giscus_category_id, type: string }
+      - name: tmf_sections
+        type: object
+        list: true
+        fields: *feedback_fields
+      - name: dimension_pages
+        type: object
+        list: true
+        fields: *feedback_fields

@@ -1,0 +1,126 @@
+general:
+  github_hub_url: '#'
+  poll_url: '#'
+  upload_url: '#'
+  general_feedback_url: '#'
+giscus:
+  enabled: false
+  repo: OWNER/REPOSITORY
+  repo_id: PASTE_REPO_ID_HERE
+  category: PASTE_DISCUSSION_CATEGORY_HERE
+  category_id: PASTE_CATEGORY_ID_HERE
+  theme: light
+  lang: en
+mechanisms:
+- key: tariff-design
+  label: Tariff design mechanism
+  form_url: '#'
+  giscus_term: flex-tariff-design
+  giscus_category: ''
+  giscus_category_id: ''
+- key: flexibility-connection-agreement
+  label: Flexibility connection agreement
+  form_url: '#'
+  giscus_term: flex-connection-agreement
+  giscus_category: ''
+  giscus_category_id: ''
+- key: theoretical-market-framework
+  label: Theoretical market framework
+  form_url: '#'
+  giscus_term: theoretical-market-framework
+  giscus_category: ''
+  giscus_category_id: ''
+tmf_sections:
+- key: marketArchitecture
+  label: Market architecture
+  form_url: '#'
+  giscus_term: tmf-market-architecture
+- key: subMarketCoordination
+  label: Sub-market coordination
+  form_url: '#'
+  giscus_term: tmf-sub-market-coordination
+- key: marketOptimization
+  label: Market optimization
+  form_url: '#'
+  giscus_term: tmf-market-optimization
+- key: marketOperation
+  label: Market operation
+  form_url: '#'
+  giscus_term: tmf-market-operation
+- key: networkRepresentation
+  label: Network representation
+  form_url: '#'
+  giscus_term: tmf-network-representation
+dimension_pages:
+- key: connection-access-rights
+  label: Access-right design
+  form_url: '#'
+  giscus_term: connection-access-rights
+  giscus_category: ''
+  giscus_category_id: ''
+- key: connection-evolution
+  label: Contract evolution and reinforcement pathway
+  form_url: '#'
+  giscus_term: connection-evolution
+  giscus_category: ''
+  giscus_category_id: ''
+- key: connection-curtailment
+  label: Curtailment and compensation
+  form_url: '#'
+  giscus_term: connection-curtailment
+  giscus_category: ''
+  giscus_category_id: ''
+- key: connection-market
+  label: Market participation and mechanism interaction
+  form_url: '#'
+  giscus_term: connection-market
+  giscus_category: ''
+  giscus_category_id: ''
+- key: connection-operational
+  label: Operational interface
+  form_url: '#'
+  giscus_term: connection-operational
+  giscus_category: ''
+  giscus_category_id: ''
+- key: connection-protection
+  label: User protection and regulatory safeguards
+  form_url: '#'
+  giscus_term: connection-protection
+  giscus_category: ''
+  giscus_category_id: ''
+- key: tariff-coordination
+  label: Coordination with other signals
+  form_url: '#'
+  giscus_term: tariff-coordination
+  giscus_category: ''
+  giscus_category_id: ''
+- key: tariff-performance
+  label: Evidence and performance
+  form_url: '#'
+  giscus_term: tariff-performance
+  giscus_category: ''
+  giscus_category_id: ''
+- key: tariff-fairness
+  label: Fairness and protection
+  form_url: '#'
+  giscus_term: tariff-fairness
+  giscus_category: ''
+  giscus_category_id: ''
+- key: tariff-cost-driver
+  label: Network cost driver
+  form_url: '#'
+  giscus_term: tariff-cost-driver
+  giscus_category: ''
+  giscus_category_id: ''
+- key: tariff-response
+  label: Response capability
+  form_url: '#'
+  giscus_term: tariff-response
+  giscus_category: ''
+  giscus_category_id: ''
+- key: tariff-resolution
+  label: Temporal and locational resolution
+  form_url: '#'
+  giscus_term: tariff-resolution
+  giscus_category: ''
+  giscus_category_id: ''

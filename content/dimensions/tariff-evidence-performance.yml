@@ -1,0 +1,54 @@
+editorial_status: approved
+slug: tariff-evidence-performance
+file: tariff-evidence-performance.html
+mechanism: tariff
+feedback_key: tariff-performance
+hero_image: ../assets/tariff-t5.webp
+eyebrow: Tariff design mechanism · review dimension
+title: Evidence and performance
+subtitle: How will the tariff be tested, monitored, and revised after implementation?
+definition_title: What this dimension means
+definition_paragraphs:
+- Evidence and performance define the metrics, counterfactuals, monitoring period, and governance used to determine whether
+  the tariff achieves a network benefit and whether unintended effects require redesign.
+- A tariff can appear effective because consumption changes, even when the change is unrelated to the signal or creates costs
+  elsewhere. Credible evaluation requires a clear counterfactual and network-level performance measures.
+choices:
+- title: Success metric
+  text: Peak reduction, congestion hours, voltage improvement, avoided reinforcement, losses, or total system cost.
+- title: Counterfactual
+  text: What would have happened under the previous tariff or a credible alternative.
+- title: Monitoring period
+  text: Pilot, seasonal review, annual assessment, or multi-year evaluation.
+- title: Revision trigger
+  text: Thresholds for parameter adjustment, protection, suspension, or replacement.
+example_title: How the dimension appears in practice
+example_text: After introducing a time-of-use charge, evening demand falls by 8%. However, mild weather explains half the
+  reduction and a new morning peak appears. A proper evaluation separates these effects before claiming network value.
+review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
+  a verifiable network, regulatory, commercial, or customer outcome.
+stakeholders:
+- name: DSO
+  text: Publish network outcomes and explain causal attribution.
+- name: Regulator
+  text: Require independent evaluation and transparent redesign criteria.
+- name: Aggregator or retailer
+  text: Understand whether business models remain stable under future updates.
+- name: Customer or FSP
+  text: See whether promised benefits and protections were delivered.
+questions:
+- Which metrics demonstrate a real network benefit?
+- What counterfactual is credible?
+- How are weather, prices, and technology adoption controlled for?
+- What unintended effects must be monitored?
+- Who has authority to change or terminate the tariff?
+evidence:
+- Before-and-after network measurements
+- Matched control groups or modelled counterfactuals
+- Weather and price normalization
+- Rebound and distributional monitoring
+- Independent audit and public reporting
+feedback_eyebrow: Feedback on evidence and performance
+feedback_title: What should be clarified, added, removed, or redesigned?
+feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
+  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.

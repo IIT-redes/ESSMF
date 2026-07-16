@@ -1,0 +1,23 @@
+editorial_status: approved
+slug: market-architecture
+file: market-architecture.html
+eyebrow: The structure of exchange
+title: Market architecture
+subtitle: 'Market architecture defines the structure of exchange: sub-markets, services, products, location, and the roles
+  of actors who buy, sell, operate, or validate flexibility.'
+cards:
+- title: Conceptual role
+  text: This pillar clarifies whether a market is a single common mechanism, a multi-level structure, or a fragmented set
+    of sub-markets. It is where product definition, actor responsibility, and procurement area become explicit.
+  items: []
+- title: Questions for reviewers
+  text: Which actors are missing? Are the products and services precise enough? Does the spatial and temporal scope match
+    real operational needs?
+  items:
+  - Are the current features sufficient to describe real European market arrangements?
+  - Are there missing options from demonstrators, regulation, or operational practice?
+  - Does the terminology work across research, regulation, and implementation?
+- title: Connection to the platform
+  text: This pillar can be connected to dashboards, data exchange, market-clearing tools, and feedback workflows. Its purpose
+    is to make design assumptions explicit before they become software, regulation, or market rules.
+  items: []

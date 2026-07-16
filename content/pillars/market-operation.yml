@@ -1,0 +1,23 @@
+editorial_status: approved
+slug: market-operation
+file: market-operation.html
+eyebrow: The procedure of trust
+title: Market operation
+subtitle: 'Market operation defines the procedures that make the market credible: remuneration, procurement frequency, bid
+  properties, prequalification, baselining, activation, validation, and settlement.'
+cards:
+- title: Conceptual role
+  text: This pillar turns the framework into a participant-facing process. It is where incentives, reliability, auditability,
+    and operational burden are tested.
+  items: []
+- title: Questions for reviewers
+  text: Would participants trust the remuneration and settlement rules? Are prequalification and baselining scalable? Is the
+    procurement timing realistic?
+  items:
+  - Are the current features sufficient to describe real European market arrangements?
+  - Are there missing options from demonstrators, regulation, or operational practice?
+  - Does the terminology work across research, regulation, and implementation?
+- title: Connection to the platform
+  text: This pillar can be connected to dashboards, data exchange, market-clearing tools, and feedback workflows. Its purpose
+    is to make design assumptions explicit before they become software, regulation, or market rules.
+  items: []

@@ -1,0 +1,54 @@
+editorial_status: approved
+slug: connection-operational-interface
+file: connection-operational-interface.html
+mechanism: connection
+feedback_key: connection-operational
+hero_image: ../assets/connection-f3.webp
+eyebrow: Flexibility connection agreement · review dimension
+title: Operational interface
+subtitle: How will limits be forecast, communicated, controlled, verified, and made fail-safe?
+definition_title: What this dimension means
+definition_paragraphs:
+- The operational interface converts the contract into real-time or scheduled action. It includes metering, telemetry, communication,
+  forecasting, set-points, local controllers, cybersecurity, fallback behaviour, and verification.
+- A flexible access right is credible only if both parties can implement it safely. Poor communication or unclear control
+  priority can create network risk, asset damage, or disputes.
+choices:
+- title: Control mode
+  text: Static export limit, scheduled profile, remote set-point, dynamic operating envelope, or trip signal.
+- title: Communication
+  text: Portal, API, SCADA, smart meter, direct controller, or aggregator interface.
+- title: Update horizon
+  text: Long-term schedule, day-ahead, intraday, periodic real-time update, or emergency action.
+- title: Fail-safe
+  text: Default capacity, local autonomous limit, safe disconnection, or temporary firm fallback.
+example_title: How the dimension appears in practice
+example_text: A battery receives a dynamic import/export envelope every 15 minutes. The agreement must define latency, acknowledgement,
+  missing-message behaviour, local safety limits, and the evidence used for settlement or dispute.
+review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
+  a verifiable network, regulatory, commercial, or customer outcome.
+stakeholders:
+- name: DSO
+  text: Maintain secure, reliable, and scalable control.
+- name: Regulator
+  text: Set interoperability and proportionality expectations.
+- name: Developer or aggregator
+  text: Integrate DSO limits with plant and portfolio optimization.
+- name: Customer or FSP
+  text: Know equipment, maintenance, cybersecurity, and liability obligations.
+questions:
+- What happens when communication fails?
+- Which controller has priority?
+- How are set-points acknowledged and verified?
+- Who pays for equipment and upgrades?
+- Which cybersecurity standard is appropriate?
+evidence:
+- Latency and reliability tests
+- Fail-safe and recovery testing
+- Interoperability demonstration
+- Cybersecurity risk assessment
+- Operational responsibility matrix
+feedback_eyebrow: Feedback on operational interface
+feedback_title: What should be clarified, added, removed, or redesigned?
+feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
+  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.

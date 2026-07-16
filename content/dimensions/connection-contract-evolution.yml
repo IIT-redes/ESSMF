@@ -1,0 +1,54 @@
+editorial_status: approved
+slug: connection-contract-evolution
+file: connection-contract-evolution.html
+mechanism: connection
+feedback_key: connection-evolution
+hero_image: ../assets/connection-f2.webp
+eyebrow: Flexibility connection agreement · review dimension
+title: Contract evolution and reinforcement pathway
+subtitle: How will the agreement change as the network, project, and reinforcement plan evolve?
+definition_title: What this dimension means
+definition_paragraphs:
+- Contract evolution sets review dates, reinforcement milestones, parameter updates, conversion to firm access, transferability,
+  renewal, termination, and treatment of changes in network topology or project ownership.
+- A flexible connection may begin as a temporary solution but persist for many years. Without an explicit evolution pathway,
+  temporary access can become permanent uncertainty or substitute for efficient reinforcement.
+choices:
+- title: Review cycle
+  text: Event-based, annual, multi-year, or linked to planning milestones.
+- title: Firming pathway
+  text: Automatic, conditional, compensated, or subject to a new connection process.
+- title: Change rights
+  text: How DSO and user may change capacity, control technology, or operating rules.
+- title: Transfer and exit
+  text: Assignment, refinancing, asset sale, withdrawal, termination, and stranded-cost treatment.
+example_title: How the dimension appears in practice
+example_text: A wind project accepts non-firm access until a substation reinforcement is commissioned. The agreement should
+  define the expected date, consequences of delay, interim review, and automatic conversion after commissioning.
+review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
+  a verifiable network, regulatory, commercial, or customer outcome.
+stakeholders:
+- name: DSO
+  text: Align the agreement with network planning and investment incentives.
+- name: Regulator
+  text: Prevent indefinite deferral of necessary reinforcement.
+- name: Developer or aggregator
+  text: Protect financing, transferability, and asset value.
+- name: Customer or FSP
+  text: Know how long restrictions may last and how exit works.
+questions:
+- What event triggers review?
+- Who bears reinforcement delay risk?
+- Can the DSO tighten conditions after signature?
+- How is the agreement transferred?
+- When must flexible access convert to firm access?
+evidence:
+- Network development plan
+- Reinforcement cost-benefit analysis
+- Milestone and delay scenarios
+- Contract transferability review
+- Long-term curtailment forecast
+feedback_eyebrow: Feedback on contract evolution and reinforcement pathway
+feedback_title: What should be clarified, added, removed, or redesigned?
+feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
+  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.

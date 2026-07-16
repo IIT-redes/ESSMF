@@ -1,0 +1,137 @@
+editorial_status: approved
+key: tariff
+file: tariff-design.html
+hero:
+  eyebrow: Implicit flexibility through network-use price signals
+  title: Tariff design mechanism
+  philosophy: A network tariff is more than a bill; it is the grid's quiet instruction about when, where, and how capacity
+    should be used.
+  lead: Network tariffs primarily recover network costs, but their structure can also influence the timing, location, and
+    magnitude of withdrawals and injections. Because this flexibility is implicit rather than contracted, the design must
+    connect a real network cost driver to a response that customers can understand and deliver. We respectfully invite your
+    expert guidance to make tariff design more effective, fair, evidence-based, and compatible with explicit flexibility procurement.
+  primary_button: Understand the mechanism
+  secondary_button: Challenge the proposal
+sections:
+  overview:
+    eyebrow: Overview and orientation
+    title: Tariffs acquire flexibility indirectly
+    text: Tariff design is the implicit branch of the flexibility-acquisition portfolio. It does not buy a specific activation;
+      instead, it changes the economic conditions under which many users make ordinary consumption, charging, storage, and
+      injection decisions.
+  idea:
+    eyebrow: Our proposal
+    title: Evaluate the tariff as a chain from network need to customer response
+    text: ''
+  why:
+    eyebrow: Why it matters
+    title: A poorly coordinated tariff can solve one problem and create another
+    text: "A tariff may reduce a peak, shift it to another hour, distort a local-market baseline, or place risk\n        on\
+      \ users who cannot respond. Effectiveness therefore has to be tested against physical, behavioural,\n        regulatory,\
+      \ and distributional outcomes."
+  who:
+    eyebrow: Who is affected?
+    title: A multi-actor design
+    text: ''
+    where_title: Recurring, measurable network patterns
+    where_text: Tariffs are strongest where network stress has recurring temporal, capacity, or locational drivers and where
+      customers have enough information and controllability to respond.
+  framework:
+    eyebrow: Shared review structure
+    title: Review dimensions
+    text: Each dimension below is a separate review environment. Open a card to read the full explanation and leave focused
+      comments on that exact design dimension.
+dimensions:
+- id: tariff-cost-driver
+  href: tariff-network-cost-driver.html
+  number: '01'
+  title: Network cost driver
+  summary: What physical and economic network cost should the tariff represent?
+  link_label: Open detailed review page →
+- id: tariff-resolution
+  href: tariff-temporal-locational-resolution.html
+  number: '02'
+  title: Temporal and locational resolution
+  summary: How precisely should the tariff identify when and where network use is costly?
+  link_label: Open detailed review page →
+- id: tariff-response
+  href: tariff-response-capability.html
+  number: '03'
+  title: Response capability
+  summary: Can the exposed customers change consumption or injection in the required way?
+  link_label: Open detailed review page →
+- id: tariff-fairness
+  href: tariff-fairness-protection.html
+  number: '04'
+  title: Fairness and protection
+  summary: How should costs, benefits, risks, and opportunities be distributed?
+  link_label: Open detailed review page →
+- id: tariff-coordination
+  href: tariff-coordination-signals.html
+  number: '05'
+  title: Coordination with other signals
+  summary: How should tariffs coexist with retail prices, balancing, local markets, and connection conditions?
+  link_label: Open detailed review page →
+- id: tariff-performance
+  href: tariff-evidence-performance.html
+  number: '06'
+  title: Evidence and performance
+  summary: How will the tariff be tested, monitored, and revised after implementation?
+  link_label: Open detailed review page →
+visual_cards:
+- title: The customer interface
+  text: Bills and charging structures translate network design into a customer-facing signal.
+  image: ../assets/tariff-t2.webp
+- title: A changing resource base
+  text: Renewables, electrification, storage, and EV adoption alter when and where network costs arise.
+  image: ../assets/tariff-t3.webp
+- title: Network context
+  text: The same tariff can produce different value depending on local topology, hosting capacity, and flexibility potential.
+  image: ../assets/tariff-t4.webp
+- title: Distributional outcomes
+  text: Tariff alternatives can produce very different cost outcomes across customers and EV-adoption scenarios.
+  image: ../assets/tariff-t5.webp
+- title: Behavioural response
+  text: The same underlying demand can respond differently depending on incentives, automation, and constraints.
+  image: ../assets/tariff-t6.webp
+feedback:
+  eyebrow: Feedback environment
+  title: Which boundary conditions make tariff design a credible DSO mechanism?
+  text: ''
+challenge_intro:
+  eyebrow: Interactive stakeholder challenge
+  title: Four perspectives that should not be collapsed into one
+  text: Open each card to see targeted questions for the corresponding stakeholder group.
+challenges:
+- id: challenge-dso
+  title: DSO lens
+  question: Can the tariff demonstrably reduce the network need at the relevant place and time?
+  prompts:
+  - What network state triggers the signal?
+  - How is avoided reinforcement or congestion quantified?
+  - Could rebound create a new peak?
+- id: challenge-regulator
+  title: Regulatory lens
+  question: How far can cost-reflectivity go before affordability and predictability are undermined?
+  prompts:
+  - Which customers can realistically respond?
+  - Should vulnerable or inflexible customers be protected?
+  - How frequently may tariff parameters change?
+- id: challenge-market
+  title: Aggregator and retailer lens
+  question: Can the network tariff coexist with wholesale, balancing, and local-market signals?
+  prompts:
+  - Which signal has operational priority?
+  - Can aggregators forecast the tariff exposure?
+  - Could tariff response reduce market liquidity?
+- id: challenge-customer
+  title: Customer and FSP lens
+  question: Is the tariff understandable, actionable, and worth responding to?
+  prompts:
+  - What automation is required?
+  - How are benefits and risks communicated?
+  - Does the response lower the total bill or merely shift cost?
+final_feedback:
+  eyebrow: Final contribution
+  title: General comments and supporting material
+  text: Share regulatory examples, tariff studies, data, figures, or implementation lessons.

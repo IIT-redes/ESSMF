@@ -1,0 +1,54 @@
+editorial_status: approved
+slug: connection-access-right-design
+file: connection-access-right-design.html
+mechanism: connection
+feedback_key: connection-access-rights
+hero_image: ../assets/connection-f1.webp
+eyebrow: Flexibility connection agreement · review dimension
+title: Access-right design
+subtitle: What capacity right is granted, and under which network conditions?
+definition_title: What this dimension means
+definition_paragraphs:
+- Access-right design specifies whether the user receives firm, partially firm, interruptible, conditional, dynamic, temporary,
+  or long-term capacity. It defines the legal and operational meaning of being connected.
+- The access right is the foundation of the agreement. If it is vague, neither the DSO nor the user can value the connection,
+  finance the project, plan operation, or determine whether curtailment is compliant.
+choices:
+- title: Firmness
+  text: Firm, non-firm, partially firm, conditional, dynamic, or emergency-only limitation.
+- title: Direction
+  text: Import, export, or both, with potentially different limits.
+- title: Capacity envelope
+  text: Fixed limit, scheduled profile, seasonal limit, or dynamic operating envelope.
+- title: Duration
+  text: Temporary bridge, fixed-term contract, long-term arrangement, or periodic renewal.
+example_title: How the dimension appears in practice
+example_text: A solar-plus-storage project receives 10 MW firm export and up to 20 MW when local capacity is available. The
+  agreement must define how the additional 10 MW is calculated, communicated, and treated when the network changes.
+review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
+  a verifiable network, regulatory, commercial, or customer outcome.
+stakeholders:
+- name: DSO
+  text: Define an access envelope that is secure, measurable, and operationally manageable.
+- name: Regulator
+  text: Ensure comparable users receive transparent and non-discriminatory offers.
+- name: Developer or aggregator
+  text: Model revenue and dispatch under the granted access right.
+- name: Customer or FSP
+  text: Understand the practical difference between firm and flexible capacity.
+questions:
+- What exactly is guaranteed?
+- Which network states change the right?
+- Is the flexible option genuinely voluntary?
+- Can the right be transferred with the asset?
+- When and how can it become firm?
+evidence:
+- Capacity and contingency studies
+- Published eligibility methodology
+- Comparison with a firm-connection offer
+- Historical availability of flexible capacity
+- Contract bankability assessment
+feedback_eyebrow: Feedback on access-right design
+feedback_title: What should be clarified, added, removed, or redesigned?
+feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
+  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.

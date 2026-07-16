@@ -1,0 +1,23 @@
+editorial_status: approved
+slug: sub-market-coordination
+file: sub-market-coordination.html
+eyebrow: The logic of interaction
+title: Sub-market coordination
+subtitle: Sub-market coordination defines how interacting markets allocate flexibility when multiple buyers, timeframes, or
+  system needs compete for the same resources.
+cards:
+- title: Conceptual role
+  text: This pillar is essential when local flexibility can serve local DSO constraints, TSO balancing needs, congestion management,
+    or intraday positions. It addresses allocation principles, timing, and bid forwarding.
+  items: []
+- title: Questions for reviewers
+  text: Where could the same flexibility be double-counted, blocked, or inefficiently allocated? Is coordination clear enough
+    for real-time operation?
+  items:
+  - Are the current features sufficient to describe real European market arrangements?
+  - Are there missing options from demonstrators, regulation, or operational practice?
+  - Does the terminology work across research, regulation, and implementation?
+- title: Connection to the platform
+  text: This pillar can be connected to dashboards, data exchange, market-clearing tools, and feedback workflows. Its purpose
+    is to make design assumptions explicit before they become software, regulation, or market rules.
+  items: []

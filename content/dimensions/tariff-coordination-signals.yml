@@ -1,0 +1,56 @@
+editorial_status: approved
+slug: tariff-coordination-signals
+file: tariff-coordination-signals.html
+mechanism: tariff
+feedback_key: tariff-coordination
+hero_image: ../assets/tariff-t2.webp
+eyebrow: Tariff design mechanism · review dimension
+title: Coordination with other signals
+subtitle: How should tariffs coexist with retail prices, balancing, local markets, and connection conditions?
+definition_title: What this dimension means
+definition_paragraphs:
+- Coordination defines how the tariff interacts with other economic and operational signals that may reach the same asset.
+  These include wholesale prices, retail contracts, balancing activation, local flexibility markets, connection agreements,
+  and direct DSO control.
+- Signals can complement one another, but they can also conflict, contaminate baselines, create double payment, or lead an
+  asset to respond in a direction that is efficient for one market and harmful for the local network.
+choices:
+- title: Priority rule
+  text: Which instruction or incentive takes precedence under conflicting conditions.
+- title: Baseline rule
+  text: How routine tariff response is separated from explicitly remunerated activation.
+- title: Stacking rule
+  text: When the same asset may combine revenue streams and when this is prohibited.
+- title: Information exchange
+  text: What DSOs, retailers, aggregators, and market operators must share.
+example_title: How the dimension appears in practice
+example_text: An EV fleet faces a low wholesale price overnight but a local network peak in the same period. The retailer
+  encourages charging while the network tariff discourages it. Without a clear priority and customer proposition, the final
+  behaviour is uncertain.
+review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
+  a verifiable network, regulatory, commercial, or customer outcome.
+stakeholders:
+- name: DSO
+  text: Protect network security without unnecessarily blocking market participation.
+- name: Regulator
+  text: Prevent double recovery, double reward, and discriminatory priority rules.
+- name: Aggregator or retailer
+  text: Optimize a portfolio with predictable signal hierarchy and data.
+- name: Customer or FSP
+  text: Avoid contradictory instructions and unclear liability.
+questions:
+- What happens when wholesale and network signals point in opposite directions?
+- How is tariff response reflected in local-market baselines?
+- Can an asset receive a tariff benefit and an explicit payment for the same action?
+- Which actor communicates the final customer instruction?
+- What data exchange is necessary and proportionate?
+evidence:
+- Co-optimization and conflict simulations
+- Baseline sensitivity studies
+- Revenue-stacking analysis
+- Operational event logs
+- Customer and aggregator workflow testing
+feedback_eyebrow: Feedback on coordination with other signals
+feedback_title: What should be clarified, added, removed, or redesigned?
+feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
+  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.

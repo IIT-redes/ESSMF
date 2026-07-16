@@ -1,0 +1,23 @@
+editorial_status: approved
+slug: network-representation
+file: network-representation.html
+eyebrow: The physics inside the market
+title: Network representation
+subtitle: 'Network representation defines how physical constraints enter the market: voltage, congestion, current limits,
+  topology, locational granularity, zones, nodes, feeders, or virtual buses.'
+cards:
+- title: Conceptual role
+  text: This pillar is the bridge between market abstraction and grid physics. It helps decide when and how network constraints
+    are included without overexposing sensitive grid data.
+  items: []
+- title: Questions for reviewers
+  text: Is the network representation accurate enough for operation? Is it simple enough for market clearing? Where are zones,
+    sensitivities, or validation needed?
+  items:
+  - Are the current features sufficient to describe real European market arrangements?
+  - Are there missing options from demonstrators, regulation, or operational practice?
+  - Does the terminology work across research, regulation, and implementation?
+- title: Connection to the platform
+  text: This pillar can be connected to dashboards, data exchange, market-clearing tools, and feedback workflows. Its purpose
+    is to make design assumptions explicit before they become software, regulation, or market rules.
+  items: []

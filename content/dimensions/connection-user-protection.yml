@@ -1,0 +1,54 @@
+editorial_status: approved
+slug: connection-user-protection
+file: connection-user-protection.html
+mechanism: connection
+feedback_key: connection-protection
+hero_image: ../assets/connection-f6.webp
+eyebrow: Flexibility connection agreement · review dimension
+title: User protection and regulatory safeguards
+subtitle: How will voluntariness, transparency, equal treatment, remedy, and accountability be guaranteed?
+definition_title: What this dimension means
+definition_paragraphs:
+- User protection ensures that flexible access is a genuine and informed alternative rather than a forced transfer of network
+  risk. It covers standard terms, disclosure, non-discrimination, complaint handling, audit, and remedies.
+- The DSO typically has stronger information and bargaining power than an applicant. Without safeguards, flexible access may
+  become opaque, inconsistent, or unfair—especially for small customers.
+choices:
+- title: Disclosure
+  text: Firm alternative, expected delay, curtailment distribution, cost, benefit, and obligations.
+- title: Standardization
+  text: Mandatory definitions, contract templates, or minimum clauses.
+- title: Oversight
+  text: Regulatory approval, reporting, audit, and publication of outcomes.
+- title: Remedy
+  text: Complaint, compensation, contract revision, termination, or conversion rights.
+example_title: How the dimension appears in practice
+example_text: Two comparable applicants receive different curtailment limits because they connect to different feeders. The
+  DSO must explain the technical basis and apply a consistent methodology that the regulator can audit.
+review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
+  a verifiable network, regulatory, commercial, or customer outcome.
+stakeholders:
+- name: DSO
+  text: Use a transparent methodology and maintain evidence for decisions.
+- name: Regulator
+  text: Protect voluntariness, proportionality, and equal treatment.
+- name: Developer or aggregator
+  text: Rely on stable and enforceable terms.
+- name: Customer or FSP
+  text: Understand the offer and challenge non-compliance.
+questions:
+- What information must be provided before signature?
+- Which clauses should be standardized?
+- How is discrimination tested?
+- What independent verification is available?
+- What remedy applies when limits are exceeded?
+evidence:
+- Plain-language contract testing
+- Comparative applicant data
+- Regulatory reporting framework
+- Complaint and remedy process
+- Independent curtailment verification
+feedback_eyebrow: Feedback on user protection and regulatory safeguards
+feedback_title: What should be clarified, added, removed, or redesigned?
+feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
+  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.

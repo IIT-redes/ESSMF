@@ -1,0 +1,42 @@
+editorial_status: approved
+intro:
+  eyebrow: Complete reference library
+  title: All documents behind the website
+  text: The library retains the previous TMF resources and adds the new procurement-mechanism documents.
+items:
+- title: BeFlexible D1.1 regulatory framework
+  description: Roles, responsibilities and mechanism designs
+  file: docs/materials/beflexible-d1-1-regulatory-framework.pdf
+  link_label: Open document →
+- title: CEER DSO procurement of flexibility
+  description: Procedures, preconditions and procurement principles
+  file: docs/materials/ceer-dso-procurement-flexibility.pdf
+  link_label: Open document →
+- title: CEER alternative connection agreements
+  description: Flexible connections and non-firm access
+  file: docs/materials/ceer-alternative-connection-agreements.pdf
+  link_label: Open document →
+- title: Interaction between DSO mechanisms
+  description: Tariffs, connection agreements and local markets
+  file: docs/materials/mechanisms-interaction-preprint.pdf
+  link_label: Open document →
+- title: TMF and TSO–DSO coordination
+  description: Energies 2023 paper
+  file: docs/materials/tmf-tso-dso-coordination-energies-2023.pdf
+  link_label: Open document →
+- title: Market designs for system services
+  description: OneNet D3.1
+  file: docs/materials/onenet-d3-1-market-designs.pdf
+  link_label: Open document →
+- title: Techno-economic assessment
+  description: OneNet D11.2
+  file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+  link_label: Open document →
+- title: Local flexibility markets
+  description: Grid-segmentation paper
+  file: docs/materials/local-flexibility-markets-grid-segmentation.pdf
+  link_label: Open document →
+- title: Local flexibility-market preprint
+  description: Grid-segmentation approach
+  file: docs/materials/local-flexibility-market-preprint.pdf
+  link_label: Open document →

@@ -1,0 +1,27 @@
+editorial_status: approved
+eyebrow: Who we are
+title: A research team connecting market design, regulation, and power-system operation
+intro: We develop structured ways to compare flexibility acquisition mechanisms and invite expert scrutiny before concepts
+  become institutional or digital designs.
+team_image: ../assets/team-strip.png
+members:
+- initials: MT
+  name: Matteo Troncia
+  role: Professor and Researcher
+  program: BeFlexible
+  bio: Research leadership across electricity-market design, distribution-system flexibility, system services, and regulatory
+    coordination.
+  email: mtroncia@comillas.edu
+- initials: EO
+  name: Eliana Ormeño
+  role: Research Assistant
+  program: BeFlexible
+  bio: Research support linking literature, demonstrator evidence, stakeholder needs, and structured mechanism design.
+  email: eormeno@comillas.edu
+- initials: SS
+  name: Sajjad Solat
+  role: Postdoctoral Researcher
+  program: BeFlexible
+  bio: Research on flexibility acquisition, local markets, network-aware coordination, computational frameworks, and interactive
+    expert-review platforms.
+  email: ssolat@comillas.edu

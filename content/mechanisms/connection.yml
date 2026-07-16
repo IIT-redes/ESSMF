@@ -1,0 +1,139 @@
+editorial_status: approved
+key: connection
+file: flexibility-connection-agreement.html
+hero:
+  eyebrow: Conditional access under constrained network capacity
+  title: Flexibility connection agreement
+  philosophy: A connection is more than permission to use the grid; it is an agreement about how scarce capacity, risk, and
+    responsibility are shared.
+  lead: Flexible or alternative connection agreements offer access under defined operational limitations when fully firm capacity
+    is not immediately available or is not the most efficient solution. The mechanism can accelerate electrification and renewable
+    integration, but only if the access right, curtailment envelope, compensation, control, review, and path to firm access
+    are transparent. We respectfully invite your expert guidance to make flexible access efficient, voluntary, bankable, non-discriminatory,
+    and operationally credible.
+  primary_button: Understand the agreement
+  secondary_button: Challenge the proposal
+sections:
+  overview:
+    eyebrow: Overview and orientation
+    title: Connection flexibility changes the definition of network access
+    text: A flexibility connection agreement is the access-right branch of the portfolio. It uses the flexibility of a connection
+      applicant or existing user to fit additional demand, generation, or storage within a constrained network envelope.
+  idea:
+    eyebrow: Our proposal
+    title: Review the agreement as a complete allocation of rights, control, and risk
+    text: ''
+  why:
+    eyebrow: Why it matters
+    title: The mechanism can unlock capacity quickly, but its hidden costs may emerge later
+    text: "Poorly designed agreements can expose users to unbankable curtailment, discriminate between connection\n      \
+      \  applicants, weaken local-market liquidity, or postpone necessary reinforcement without accountability."
+  who:
+    eyebrow: Who is affected?
+    title: A contract with system-wide consequences
+    text: ''
+    where_title: Queues, reinforcement delays, and constrained hosting capacity
+    where_text: The mechanism is most relevant when a useful connection can be offered before full reinforcement, and when
+      the constraint can be monitored, forecast, and managed transparently.
+  framework:
+    eyebrow: Shared review structure
+    title: Review dimensions
+    text: Each dimension below is a separate review environment. Open a card to read the full explanation and leave focused
+      comments on that exact design dimension.
+dimensions:
+- id: connection-access-rights
+  href: connection-access-right-design.html
+  number: '01'
+  title: Access-right design
+  summary: What capacity right is granted, and under which network conditions?
+  link_label: Open detailed review page →
+- id: connection-curtailment
+  href: connection-curtailment-compensation.html
+  number: '02'
+  title: Curtailment and compensation
+  summary: When may access be restricted, how much, and with what compensation or protection?
+  link_label: Open detailed review page →
+- id: connection-operational
+  href: connection-operational-interface.html
+  number: '03'
+  title: Operational interface
+  summary: How will limits be forecast, communicated, controlled, verified, and made fail-safe?
+  link_label: Open detailed review page →
+- id: connection-protection
+  href: connection-user-protection.html
+  number: '04'
+  title: User protection and regulatory safeguards
+  summary: How will voluntariness, transparency, equal treatment, remedy, and accountability be guaranteed?
+  link_label: Open detailed review page →
+- id: connection-evolution
+  href: connection-contract-evolution.html
+  number: '05'
+  title: Contract evolution and reinforcement pathway
+  summary: How will the agreement change as the network, project, and reinforcement plan evolve?
+  link_label: Open detailed review page →
+- id: connection-market
+  href: connection-market-participation.html
+  number: '06'
+  title: Market participation and mechanism interaction
+  summary: Can the connected resource participate in markets without double obligation or conflicting control?
+  link_label: Open detailed review page →
+visual_cards:
+- title: A negotiated access boundary
+  text: The agreement aligns DSO capability and user investment under explicit conditions.
+  image: ../assets/connection-f1.webp
+- title: The constrained network
+  text: Substations and feeders define the physical envelope within which access can be offered.
+  image: ../assets/connection-f2.webp
+- title: Connection-point implementation
+  text: Metering, protection, control, and communication turn contractual limits into operational capability.
+  image: ../assets/connection-f3.webp
+- title: The wider network envelope
+  text: Access rights must remain consistent with upstream transmission and distribution constraints.
+  image: ../assets/connection-f4.webp
+- title: Dynamic operating conditions
+  text: Network capacity can change over time, requiring predictable control logic and transparent limits.
+  image: ../assets/connection-f5.webp
+- title: Monitoring and accountability
+  text: Operational data and independent oversight are essential for fair implementation.
+  image: ../assets/connection-f6.webp
+feedback:
+  eyebrow: Feedback environment
+  title: What makes flexible access efficient, bankable, and fair?
+  text: ''
+challenge_intro:
+  eyebrow: Interactive stakeholder challenge
+  title: Test the agreement from four perspectives
+  text: Open each card to expose the unresolved questions that should drive expert feedback.
+challenges:
+- id: challenge-dso
+  title: DSO lens
+  question: When does non-firm access create more system value than reinforcement or explicit procurement?
+  prompts:
+  - How is the constrained capacity calculated?
+  - Can the DSO forecast and control curtailment reliably?
+  - What triggers conversion to firm access?
+- id: challenge-regulator
+  title: Regulatory lens
+  question: How can alternative access remain voluntary, transparent, and non-discriminatory?
+  prompts:
+  - Should standard contract templates be mandatory?
+  - How are curtailment limits audited?
+  - Which risks may legally be transferred to the user?
+- id: challenge-developer
+  title: Developer and aggregator lens
+  question: Can developers finance and operate projects under uncertain access?
+  prompts:
+  - Is curtailment predictable enough for investment?
+  - Can flexibility obligations be aggregated or traded?
+  - Does the contract prevent participation in local markets?
+- id: challenge-customer
+  title: Customer and FSP lens
+  question: Does the agreement offer a genuine choice and understandable risk?
+  prompts:
+  - Is compensation proportionate to access limitations?
+  - Are notification and control arrangements practical?
+  - What remedy exists if curtailment exceeds the agreed envelope?
+final_feedback:
+  eyebrow: Final contribution
+  title: General comments and supporting material
+  text: Share contract examples, regulatory decisions, operational data, or connection-case evidence.

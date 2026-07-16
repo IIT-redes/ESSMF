@@ -1,0 +1,54 @@
+editorial_status: approved
+slug: connection-curtailment-compensation
+file: connection-curtailment-compensation.html
+mechanism: connection
+feedback_key: connection-curtailment
+hero_image: ../assets/connection-f5.webp
+eyebrow: Flexibility connection agreement · review dimension
+title: Curtailment and compensation
+subtitle: When may access be restricted, how much, and with what compensation or protection?
+definition_title: What this dimension means
+definition_paragraphs:
+- Curtailment and compensation define the trigger, priority, notice, frequency, duration, volume, cap, verification, and financial
+  treatment of a restriction on import or export.
+- Curtailment is the main risk transferred to the connected user. It must be bounded and measurable; otherwise the connection
+  may be technically available but commercially unusable.
+choices:
+- title: Trigger
+  text: Measured congestion, voltage, outage, maintenance, contingency, forecast condition, or emergency.
+- title: Priority
+  text: Pro rata, first connected, technical effectiveness, contractual class, or market-based selection.
+- title: Limit
+  text: Annual hours, energy volume, event count, duration, or financial exposure.
+- title: Compensation
+  text: No compensation, reduced connection charge, tariff discount, event payment, or excess-curtailment payment.
+example_title: How the dimension appears in practice
+example_text: A generator is curtailed during planned maintenance and unplanned congestion. The agreement should distinguish
+  the two, specify notice, establish annual caps, and define what happens if the DSO exceeds the contracted envelope.
+review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
+  a verifiable network, regulatory, commercial, or customer outcome.
+stakeholders:
+- name: DSO
+  text: Apply restrictions consistently and only when technically justified.
+- name: Regulator
+  text: Set minimum transparency, audit, and compensation safeguards.
+- name: Developer or aggregator
+  text: Quantify revenue-at-risk and manage portfolio exposure.
+- name: Customer or FSP
+  text: Verify events and access a practical remedy.
+questions:
+- Which events count as contractual curtailment?
+- How is priority among users determined?
+- What cap makes the risk financeable?
+- When is compensation required?
+- Who verifies whether an event was justified?
+evidence:
+- Curtailment duration curves
+- Event logs and network-state records
+- Revenue-at-risk modelling
+- Comparison of compensation options
+- Independent audit methodology
+feedback_eyebrow: Feedback on curtailment and compensation
+feedback_title: What should be clarified, added, removed, or redesigned?
+feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
+  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.

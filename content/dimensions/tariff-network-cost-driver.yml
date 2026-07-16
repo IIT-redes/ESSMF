@@ -1,0 +1,55 @@
+editorial_status: approved
+slug: tariff-network-cost-driver
+file: tariff-network-cost-driver.html
+mechanism: tariff
+feedback_key: tariff-cost-driver
+hero_image: ../assets/tariff-t4.webp
+eyebrow: Tariff design mechanism · review dimension
+title: Network cost driver
+subtitle: What physical and economic network cost should the tariff represent?
+definition_title: What this dimension means
+definition_paragraphs:
+- The network cost driver is the physical or economic reason why a tariff signal is introduced. It may be a coincident local
+  peak, transformer capacity, voltage stress, losses, reinforcement expenditure, or another measurable driver of network cost.
+- If the tariff is not linked to the actual network need, customers may change behaviour without producing useful system value.
+  A strong design therefore begins with the network problem and only then selects the charging variable.
+choices:
+- title: Physical driver
+  text: Peak loading, congestion, voltage, losses, hosting capacity, or reinforcement need.
+- title: Charging variable
+  text: Energy, measured peak, contracted capacity, physical connection capacity, or a combination.
+- title: Cost horizon
+  text: Historical cost recovery, forward-looking incremental cost, or both.
+- title: Allocation rule
+  text: How costs are distributed across voltage levels, customer groups, locations, and periods.
+example_title: How the dimension appears in practice
+example_text: A feeder experiences a winter evening peak caused by heat pumps and EV charging. An annual volumetric tariff
+  is unlikely to address this need. A capacity or time-differentiated charge may be more relevant, but only if the signal
+  is visible and customers can respond during the critical hours.
+review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
+  a verifiable network, regulatory, commercial, or customer outcome.
+stakeholders:
+- name: DSO
+  text: Demonstrate that the selected driver corresponds to a real network cost or constraint.
+- name: Regulator
+  text: Verify cost-reflectivity, non-discrimination, and consistency with allowed revenue.
+- name: Aggregator or retailer
+  text: Understand how the cost driver affects portfolios, baselines, and retail offers.
+- name: Customer or FSP
+  text: Understand which action changes the charge and whether that action is feasible.
+questions:
+- Is the driver measurable at the network level where the tariff is applied?
+- Does the charging variable represent causation or only correlation?
+- Could the same cost be recovered elsewhere?
+- Which customers can actually influence the driver?
+- How often should the driver and parameter values be reviewed?
+evidence:
+- Network loading and voltage studies
+- Forward-looking reinforcement-cost analysis
+- Coincidence and contribution analysis
+- Sensitivity to alternative charging variables
+- Distributional impact by customer group
+feedback_eyebrow: Feedback on network cost driver
+feedback_title: What should be clarified, added, removed, or redesigned?
+feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
+  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.

@@ -1,0 +1,23 @@
+editorial_status: approved
+slug: market-optimization
+file: market-optimization.html
+eyebrow: The clearing intelligence
+title: Market optimization
+subtitle: 'Market optimization defines how bids and constraints become a clearing result: through cost minimization, welfare,
+  feasibility, OPF, sensitivities, or simplified algorithms.'
+cards:
+- title: Conceptual role
+  text: This pillar evaluates whether optimization is centralized, sequential, simultaneous, distributed, or approximated.
+    It connects mathematical design to data availability and market transparency.
+  items: []
+- title: Questions for reviewers
+  text: Is the clearing method implementable with available data? Is it transparent enough? Does it include the right network
+    and market constraints?
+  items:
+  - Are the current features sufficient to describe real European market arrangements?
+  - Are there missing options from demonstrators, regulation, or operational practice?
+  - Does the terminology work across research, regulation, and implementation?
+- title: Connection to the platform
+  text: This pillar can be connected to dashboards, data exchange, market-clearing tools, and feedback workflows. Its purpose
+    is to make design assumptions explicit before they become software, regulation, or market rules.
+  items: []
