@@ -35,12 +35,9 @@ components:
     label: Editorial status
     options:
       values:
-        - name: draft
-          label: Draft
-        - name: review
-          label: Ready for review
-        - name: approved
-          label: Approved
+        - { name: draft, label: Draft }
+        - { name: review, label: Ready for review }
+        - { name: approved, label: Approved }
   intro_section:
     type: object
     fields:
@@ -115,207 +112,262 @@ content:
           - { name: text, type: text }
           - { name: steps, type: string, list: true }
           - { name: button, type: string }
-  - name: team
-    label: Who we are
-    type: file
-    path: content/team.yml
-    format: yaml
-    fields:
-      - { name: editorial_status, component: editorial_status }
-      - { name: eyebrow, type: string }
-      - { name: title, type: string }
-      - { name: intro, type: text }
-      - { name: team_image, type: image, options: { media: images } }
-      - name: members
-        type: object
-        list: true
-        fields:
-          - { name: initials, type: string }
-          - { name: name, type: string }
-          - { name: role, type: string }
-          - { name: program, type: string }
-          - { name: bio, type: text }
-          - { name: email, type: string }
-  - name: work
-    label: Our work
-    type: file
-    path: content/work.yml
-    format: yaml
-    fields:
-      - { name: editorial_status, component: editorial_status }
-      - { name: eyebrow, type: string }
-      - { name: title, type: string }
-      - { name: intro, type: text }
-  - name: library
-    label: Library
-    type: file
-    path: content/library.yml
-    format: yaml
-    fields:
-      - { name: editorial_status, component: editorial_status }
-      - { name: intro, component: intro_section }
-      - name: items
-        label: Documents
-        type: object
-        list: true
-        fields:
-          - { name: title, type: string }
-          - { name: description, type: text }
-          - { name: file, type: file, options: { media: documents } }
-          - { name: link_label, type: string }
-  - name: mechanisms
-    label: Mechanism overview pages
+
+  - name: mechanisms_workspace
+    label: Mechanisms and all review pages
     type: group
     items:
-      - name: tariff
-        label: Tariff design
-        type: file
-        path: content/mechanisms/tariff.yml
-        format: yaml
-        fields: &mechanism_fields
-          - { name: editorial_status, component: editorial_status }
-          - name: hero
-            type: object
-            fields:
-              - { name: eyebrow, type: string }
-              - { name: title, type: string }
-              - { name: philosophy, type: text }
-              - { name: lead, type: text }
-              - { name: primary_button, type: string }
-              - { name: secondary_button, type: string }
-          - name: sections
-            type: object
-            fields:
-              - { name: overview, component: intro_section }
-              - { name: idea, component: intro_section }
-              - { name: why, component: intro_section }
-              - name: who
+      - name: tariff_workspace
+        label: Tariff design mechanism
+        type: group
+        items:
+          - name: tariff_overview
+            label: 00 — Mechanism overview page
+            type: file
+            path: content/mechanisms/tariff.yml
+            format: yaml
+            fields: &mechanism_fields
+              - { name: editorial_status, component: editorial_status }
+              - name: hero
                 type: object
                 fields:
                   - { name: eyebrow, type: string }
                   - { name: title, type: string }
+                  - { name: philosophy, type: text }
+                  - { name: lead, type: text }
+                  - { name: primary_button, type: string }
+                  - { name: secondary_button, type: string }
+              - name: sections
+                type: object
+                fields:
+                  - { name: overview, component: intro_section }
+                  - { name: idea, component: intro_section }
+                  - { name: why, component: intro_section }
+                  - name: who
+                    type: object
+                    fields:
+                      - { name: eyebrow, type: string }
+                      - { name: title, type: string }
+                      - { name: text, type: text }
+                      - { name: where_title, type: string }
+                      - { name: where_text, type: text }
+                  - { name: framework, component: intro_section }
+              - name: dimensions
+                type: object
+                list: true
+                fields:
+                  - { name: id, type: string, readonly: true }
+                  - { name: href, type: string, readonly: true }
+                  - { name: number, type: string }
+                  - { name: title, type: string }
+                  - { name: summary, type: text }
+                  - { name: link_label, type: string }
+              - name: visual_cards
+                label: Visual cards
+                type: object
+                list: true
+                fields:
+                  - { name: image, type: image, options: { media: images } }
+                  - { name: title, type: string }
                   - { name: text, type: text }
-                  - { name: where_title, type: string }
-                  - { name: where_text, type: text }
-              - { name: framework, component: intro_section }
-          - name: dimensions
-            type: object
-            list: true
-            fields:
-              - { name: id, type: string, readonly: true }
-              - { name: href, type: string, readonly: true }
-              - { name: number, type: string }
-              - { name: title, type: string }
-              - { name: summary, type: text }
-              - { name: link_label, type: string }
-          - { name: feedback, component: intro_section }
-          - { name: challenge_intro, component: intro_section }
-          - name: challenges
-            type: object
-            list: true
-            fields:
-              - { name: id, type: string, readonly: true }
-              - { name: title, type: string }
-              - { name: question, type: text }
-              - { name: prompts, type: string, list: true }
-          - { name: final_feedback, component: intro_section }
-      - name: connection
+              - { name: feedback, component: intro_section }
+              - { name: challenge_intro, component: intro_section }
+              - name: challenges
+                type: object
+                list: true
+                fields:
+                  - { name: id, type: string, readonly: true }
+                  - { name: title, type: string }
+                  - { name: question, type: text }
+                  - { name: prompts, type: string, list: true }
+              - { name: final_feedback, component: intro_section }
+          - name: tariff_dimensions
+            label: Review-dimension pages
+            type: group
+            items:
+              - name: tariff_cost_driver
+                label: 01 — Network cost driver
+                type: file
+                path: content/dimensions/tariff-network-cost-driver.yml
+                format: yaml
+                fields: &dimension_fields
+                  - { name: editorial_status, component: editorial_status }
+                  - { name: slug, type: string, readonly: true }
+                  - { name: file, type: string, readonly: true }
+                  - { name: mechanism, type: string, readonly: true }
+                  - { name: feedback_key, type: string, readonly: true }
+                  - { name: hero_image, type: image, options: { media: images } }
+                  - { name: eyebrow, type: string }
+                  - { name: title, type: string }
+                  - { name: subtitle, type: text }
+                  - { name: definition_title, type: string }
+                  - { name: definition_paragraphs, type: text, list: true }
+                  - name: choices
+                    type: object
+                    list: true
+                    fields:
+                      - { name: title, type: string }
+                      - { name: text, type: text }
+                  - { name: example_title, type: string }
+                  - { name: example_text, type: text }
+                  - { name: review_principle, type: text }
+                  - name: stakeholders
+                    type: object
+                    list: true
+                    fields:
+                      - { name: name, type: string }
+                      - { name: text, type: text }
+                  - { name: questions, type: text, list: true }
+                  - { name: evidence, type: text, list: true }
+                  - { name: feedback_eyebrow, type: string }
+                  - { name: feedback_title, type: string }
+                  - { name: feedback_text, type: text }
+              - { name: tariff_resolution, label: "02 — Temporal and locational resolution", type: file, path: content/dimensions/tariff-temporal-locational-resolution.yml, format: yaml, fields: *dimension_fields }
+              - { name: tariff_response, label: "03 — Response capability", type: file, path: content/dimensions/tariff-response-capability.yml, format: yaml, fields: *dimension_fields }
+              - { name: tariff_fairness, label: "04 — Fairness and protection", type: file, path: content/dimensions/tariff-fairness-protection.yml, format: yaml, fields: *dimension_fields }
+              - { name: tariff_coordination, label: "05 — Coordination with other signals", type: file, path: content/dimensions/tariff-coordination-signals.yml, format: yaml, fields: *dimension_fields }
+              - { name: tariff_evidence, label: "06 — Evidence and performance", type: file, path: content/dimensions/tariff-evidence-performance.yml, format: yaml, fields: *dimension_fields }
+
+      - name: connection_workspace
         label: Flexibility connection agreement
-        type: file
-        path: content/mechanisms/connection.yml
-        format: yaml
-        fields: *mechanism_fields
-      - name: tmf
+        type: group
+        items:
+          - name: connection_overview
+            label: 00 — Mechanism overview page
+            type: file
+            path: content/mechanisms/connection.yml
+            format: yaml
+            fields: *mechanism_fields
+          - name: connection_dimensions
+            label: Review-dimension pages
+            type: group
+            items:
+              - { name: connection_access, label: "01 — Access-right design", type: file, path: content/dimensions/connection-access-right-design.yml, format: yaml, fields: *dimension_fields }
+              - { name: connection_curtailment, label: "02 — Curtailment and compensation", type: file, path: content/dimensions/connection-curtailment-compensation.yml, format: yaml, fields: *dimension_fields }
+              - { name: connection_operation, label: "03 — Operational interface", type: file, path: content/dimensions/connection-operational-interface.yml, format: yaml, fields: *dimension_fields }
+              - { name: connection_protection, label: "04 — User protection and safeguards", type: file, path: content/dimensions/connection-user-protection.yml, format: yaml, fields: *dimension_fields }
+              - { name: connection_evolution, label: "05 — Contract evolution", type: file, path: content/dimensions/connection-contract-evolution.yml, format: yaml, fields: *dimension_fields }
+              - { name: connection_market, label: "06 — Market participation and interaction", type: file, path: content/dimensions/connection-market-participation.yml, format: yaml, fields: *dimension_fields }
+
+      - name: tmf_workspace
         label: Theoretical market framework
+        type: group
+        items:
+          - name: tmf_overview
+            label: 00 — Framework overview page
+            type: file
+            path: content/mechanisms/tmf.yml
+            format: yaml
+            fields:
+              - { name: editorial_status, component: editorial_status }
+              - name: hero
+                type: object
+                fields:
+                  - { name: title, type: string }
+                  - { name: statement, type: text }
+                  - { name: lead, type: text }
+                  - { name: primary_button, type: string }
+                  - { name: secondary_button, type: string }
+              - name: sections
+                type: object
+                fields:
+                  - { name: journey, component: intro_section }
+                  - { name: idea, component: intro_section }
+                  - { name: why, component: intro_section }
+                  - { name: affected, component: intro_section }
+                  - { name: where, component: intro_section }
+                  - { name: framework-view, component: intro_section }
+                  - { name: review, component: intro_section }
+                  - { name: final-feedback, component: intro_section }
+              - name: pillars
+                type: object
+                list: true
+                fields:
+                  - { name: id, type: string, readonly: true }
+                  - { name: eyebrow, type: string }
+                  - { name: title, type: string }
+                  - { name: summary, type: text }
+          - name: tmf_pillars
+            label: Pillar detail pages
+            type: group
+            items:
+              - name: pillar_architecture
+                label: 01 — Market architecture
+                type: file
+                path: content/pillars/market-architecture.yml
+                format: yaml
+                fields: &pillar_fields
+                  - { name: editorial_status, component: editorial_status }
+                  - { name: slug, type: string, readonly: true }
+                  - { name: file, type: string, readonly: true }
+                  - { name: eyebrow, type: string }
+                  - { name: title, type: string }
+                  - { name: subtitle, type: text }
+                  - name: cards
+                    type: object
+                    list: true
+                    fields:
+                      - { name: title, type: string }
+                      - { name: text, type: text }
+                      - { name: items, type: text, list: true }
+              - { name: pillar_coordination, label: "02 — Sub-market coordination", type: file, path: content/pillars/sub-market-coordination.yml, format: yaml, fields: *pillar_fields }
+              - { name: pillar_optimization, label: "03 — Market optimization", type: file, path: content/pillars/market-optimization.yml, format: yaml, fields: *pillar_fields }
+              - { name: pillar_operation, label: "04 — Market operation", type: file, path: content/pillars/market-operation.yml, format: yaml, fields: *pillar_fields }
+              - { name: pillar_network, label: "05 — Network representation", type: file, path: content/pillars/network-representation.yml, format: yaml, fields: *pillar_fields }
+
+  - name: supporting_pages
+    label: Supporting pages
+    type: group
+    items:
+      - name: team
+        label: Who we are
         type: file
-        path: content/mechanisms/tmf.yml
+        path: content/team.yml
         format: yaml
         fields:
           - { name: editorial_status, component: editorial_status }
-          - name: hero
-            type: object
-            fields:
-              - { name: title, type: string }
-              - { name: statement, type: text }
-              - { name: lead, type: text }
-              - { name: primary_button, type: string }
-              - { name: secondary_button, type: string }
-          - name: sections
-            type: object
-            fields:
-              - { name: journey, component: intro_section }
-              - { name: idea, component: intro_section }
-              - { name: why, component: intro_section }
-              - { name: affected, component: intro_section }
-              - { name: where, component: intro_section }
-              - { name: framework-view, component: intro_section }
-              - { name: review, component: intro_section }
-              - { name: final-feedback, component: intro_section }
-          - name: pillars
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: intro, type: text }
+          - { name: team_image, type: image, options: { media: images } }
+          - name: members
             type: object
             list: true
             fields:
-              - { name: id, type: string, readonly: true }
-              - { name: eyebrow, type: string }
+              - { name: initials, type: string }
+              - { name: name, type: string }
+              - { name: role, type: string }
+              - { name: program, type: string }
+              - { name: bio, type: text }
+              - { name: email, type: string }
+      - name: work
+        label: Our work
+        type: file
+        path: content/work.yml
+        format: yaml
+        fields:
+          - { name: editorial_status, component: editorial_status }
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: intro, type: text }
+      - name: library
+        label: Library
+        type: file
+        path: content/library.yml
+        format: yaml
+        fields:
+          - { name: editorial_status, component: editorial_status }
+          - { name: intro, component: intro_section }
+          - name: items
+            label: Documents
+            type: object
+            list: true
+            fields:
               - { name: title, type: string }
-              - { name: summary, type: text }
-  - name: dimensions
-    label: Tariff and connection review dimensions
-    type: collection
-    path: content/dimensions
-    format: yaml
-    operations: { create: false, delete: false, rename: false }
-    view: { primary: title, fields: [mechanism, editorial_status] }
-    fields:
-      - { name: editorial_status, component: editorial_status }
-      - { name: slug, type: string, readonly: true }
-      - { name: mechanism, type: select, options: { values: [tariff, connection] }, readonly: true }
-      - { name: title, type: string }
-      - { name: eyebrow, type: string }
-      - { name: subtitle, type: text }
-      - { name: hero_image, type: image, options: { media: images } }
-      - { name: definition_title, type: string }
-      - { name: definition_paragraphs, type: text, list: true }
-      - name: choices
-        type: object
-        list: true
-        fields:
-          - { name: title, type: string }
-          - { name: text, type: text }
-      - { name: example_title, type: string }
-      - { name: example_text, type: text }
-      - { name: review_principle, type: text }
-      - name: stakeholders
-        type: object
-        list: true
-        fields:
-          - { name: name, type: string }
-          - { name: text, type: text }
-      - { name: questions, type: text, list: true }
-      - { name: evidence, type: text, list: true }
-      - { name: feedback_eyebrow, type: string }
-      - { name: feedback_title, type: string }
-      - { name: feedback_text, type: text }
-  - name: pillars
-    label: TMF pillar detail pages
-    type: collection
-    path: content/pillars
-    format: yaml
-    operations: { create: false, delete: false, rename: false }
-    view: { primary: title, fields: [editorial_status] }
-    fields:
-      - { name: editorial_status, component: editorial_status }
-      - { name: slug, type: string, readonly: true }
-      - { name: eyebrow, type: string }
-      - { name: title, type: string }
-      - { name: subtitle, type: text }
-      - name: cards
-        type: object
-        list: true
-        fields:
-          - { name: title, type: string }
-          - { name: text, type: text }
-          - { name: items, type: text, list: true }
+              - { name: description, type: text }
+              - { name: file, type: file, options: { media: documents } }
+              - { name: link_label, type: string }
+
   - name: feedback
     label: Forms and giscus settings
     type: file
