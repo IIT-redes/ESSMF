@@ -91,7 +91,7 @@ window.TMF_FEEDBACK_CONFIG = {
   },
   "mechanisms": {
     "tariff-design": {
-      "label": "Tariff design mechanism",
+      "label": "Tariff design",
       "googleFormUrl": "#",
       "giscusTerm": "flex-tariff-design",
       "giscusCategory": "",
@@ -105,7 +105,7 @@ window.TMF_FEEDBACK_CONFIG = {
       "giscusCategoryId": ""
     },
     "theoretical-market-framework": {
-      "label": "Theoretical market framework",
+      "label": "Electricity System Services Market",
       "googleFormUrl": "#",
       "giscusTerm": "theoretical-market-framework",
       "giscusCategory": "",

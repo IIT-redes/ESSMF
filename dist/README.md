@@ -6,4 +6,4 @@
 - Explained why tariff design, flexible connection agreements, and local flexibility markets are selected for deeper review.
 - Added a direct invitation to European experts and an explicit pathway from feedback to shared research lines.
 - Added philosophical statements and respectful invitations on the tariff and connection mechanism pages.
-- Restored the Theoretical Market Framework Feedback menu so every subsection scrolls to the exact pillar section on the TMF main page.
+- Restored the Electricity System Services Market Feedback menu so every subsection scrolls to the exact pillar section on the ESSM main page.

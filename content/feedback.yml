@@ -13,7 +13,7 @@ giscus:
   lang: en
 mechanisms:
 - key: tariff-design
-  label: Tariff design mechanism
+  label: Tariff design
   form_url: '#'
   giscus_term: flex-tariff-design
   giscus_category: ''
@@ -25,7 +25,7 @@ mechanisms:
   giscus_category: ''
   giscus_category_id: ''
 - key: theoretical-market-framework
-  label: Theoretical market framework
+  label: Electricity System Services Market
   form_url: '#'
   giscus_term: theoretical-market-framework
   giscus_category: ''

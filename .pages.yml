@@ -118,7 +118,7 @@ content:
     type: group
     items:
       - name: tariff_workspace
-        label: Tariff design mechanism
+        label: Tariff design
         type: group
         items:
           - name: tariff_overview
@@ -250,7 +250,7 @@ content:
               - { name: connection_market, label: "06 — Market participation and interaction", type: file, path: content/dimensions/connection-market-participation.yml, format: yaml, fields: *dimension_fields }
 
       - name: tmf_workspace
-        label: Theoretical market framework
+        label: Electricity System Services Market
         type: group
         items:
           - name: tmf_overview

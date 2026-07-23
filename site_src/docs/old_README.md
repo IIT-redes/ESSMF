@@ -1,7 +1,7 @@
-# Theoretical Market Framework
-## Theoretical Market Framework overview
-The Theoretical Market Framework (TMF) is proposed to analyze existing markets and guide the design and integration of new markets for procuring system services. The TMF helps describe the market architecture through a set of pillars, features, and sub-features, while identifying the corresponding design options.
-The TMF comprises five pillars, each with distinct characteristics: (i) overall market architecture, (ii) sub-market coordination, (iii) market optimization, (iv) market operation, and (v) network representation. Some attributes apply across the entire market, explaining sub-market coordination, while others are specific to individual sub-markets. A thorough market design and analysis requires systematically evaluating each pillar and its corresponding attributes for each feature or sub-feature.
+# Electricity System Services Market
+## Electricity System Services Market overview
+The Electricity System Services Market (ESSM) is proposed to analyze existing markets and guide the design and integration of new markets for procuring system services. The ESSM helps describe the market architecture through a set of pillars, features, and sub-features, while identifying the corresponding design options.
+The ESSM comprises five pillars, each with distinct characteristics: (i) overall market architecture, (ii) sub-market coordination, (iii) market optimization, (iv) market operation, and (v) network representation. Some attributes apply across the entire market, explaining sub-market coordination, while others are specific to individual sub-markets. A thorough market design and analysis requires systematically evaluating each pillar and its corresponding attributes for each feature or sub-feature.
 ![Theoretical_Market_Framework overview](docs/source/images/TMF_00_All_Pillars.svg)
 ## Market architecture pillar
 The 'market architecture' pillar encompasses the features that define the overarching characteristics of the market structure as a whole.
@@ -20,7 +20,7 @@ The ‘Network Representation’ pillar addresses the properties of the market a
 ![Theoretical_Market_Framework overview](docs/source/images/TMF_05_Net.svg)
 
 # References
-- Troncia, M., Chaves Ávila, J. P., Damas Silva, C., Gerard, H., & Willeghems, G. (2023). *Market-Based TSO–DSO Coordination: A Comprehensive Theoretical Market Framework and Lessons from Real-World Implementations*. *Energies*, 16(19), 6939. [https://doi.org/10.3390/en16196939](https://www.mdpi.com/1996-1073/16/19/6939)
+- Troncia, M., Chaves Ávila, J. P., Damas Silva, C., Gerard, H., & Willeghems, G. (2023). *Market-Based TSO–DSO Coordination: A Comprehensive Electricity System Services Market and Lessons from Real-World Implementations*. *Energies*, 16(19), 6939. [https://doi.org/10.3390/en16196939](https://www.mdpi.com/1996-1073/16/19/6939)
 
 - Troncia, M., Bindu, S., Chaves Ávila, J. P., Willeghems, G., Gerard, H., & Lacerda, M. (2023). *OneNet Deliverable D11.2 - Techno-economic assessment of proposed market schemes for standardized products D11.2*. [OneNet Deliverable D11.2](https://www.onenet-project.eu/wp-content/uploads/2024/01/OneNet_D11.2_V1.0.pdf)
 

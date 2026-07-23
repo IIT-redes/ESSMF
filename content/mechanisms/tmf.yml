@@ -1,18 +1,18 @@
 editorial_status: approved
 hero:
-  title: Theoretical Market Framework
+  title: Electricity System Services Market
   statement: A changing grid needs a compass for its markets.
-  lead: "A shared language for designing and comparing electricity-market frameworks across products,\n          actors, timeframes,\
-    \ coordination layers, and network constraints. We warmly invite your expert feedback to sharpen the framework for research,\
-    \ regulation, and implementation."
+  lead: "A shared language for designing and comparing electricity-market frameworks across products,\n        \
+    \  actors, timeframes, coordination layers, and network constraints. We warmly invite your expert feedback to\
+    \ sharpen the framework for research, regulation, and implementation."
   primary_button: Explore the proposal
   secondary_button: Contribute feedback
 sections:
   journey:
     eyebrow: The journey
     title: Four questions guide the discussion before the framework
-    text: 'The following path introduces the proposal as a sequence of design questions: what is being exchanged, why coordination
-      is needed, who is affected, and where the framework becomes implementable.'
+    text: 'The following path introduces the proposal as a sequence of design questions: what is being exchanged,
+      why coordination is needed, who is affected, and where the framework becomes implementable.'
   idea:
     eyebrow: What is the proposal?
     title: A market framework is not a diagram. It is a grammar for change.
@@ -32,8 +32,8 @@ sections:
   framework-view:
     eyebrow: The framework
     title: Five pillars for describing and designing flexibility markets
-    text: Each pillar captures a set of choices. Together, they help move from isolated local solutions toward market designs
-      that can be compared, assessed, and improved.
+    text: Each pillar captures a set of choices. Together, they help move from isolated local solutions toward market
+      designs that can be compared, assessed, and improved.
   review:
     eyebrow: Your contribution
     title: Help us make the framework sharper, not just more complete.
@@ -41,32 +41,32 @@ sections:
   final-feedback:
     eyebrow: Final feedback
     title: Overall comments and supporting material
-    text: "After the pillar-by-pillar review, we warmly invite you to share any general comment, concern,\n          reference,\
-      \ use case, implementation example, or supporting material that could help us improve\n          the proposed framework\
-      \ as a whole."
+    text: "After the pillar-by-pillar review, we warmly invite you to share any general comment, concern,\n    \
+      \      reference, use case, implementation example, or supporting material that could help us improve\n  \
+      \        the proposed framework as a whole."
 pillars:
 - id: market-architecture
   eyebrow: The structure of exchange
   title: Market architecture
-  summary: Market architecture defines what is traded, where it is traded, which actors participate, and how individual sub-markets
-    form one coordinated design space.
+  summary: Market architecture defines what is traded, where it is traded, which actors participate, and how individual
+    sub-markets form one coordinated design space.
 - id: sub-market-coordination
   eyebrow: The logic of interaction
   title: Sub-market coordination
-  summary: Sub-market coordination defines how flexibility is allocated when several markets, buyers, or system needs compete
-    for the same distributed resources.
+  summary: Sub-market coordination defines how flexibility is allocated when several markets, buyers, or system
+    needs compete for the same distributed resources.
 - id: market-optimization
   eyebrow: The clearing intelligence
   title: Market optimization
-  summary: Market optimization defines how bids, constraints, objectives, and sub-market interactions are transformed into
-    a clearing result.
+  summary: Market optimization defines how bids, constraints, objectives, and sub-market interactions are transformed
+    into a clearing result.
 - id: market-operation
   eyebrow: The procedure of trust
   title: Market operation
-  summary: 'Market operation defines the practical rules that make the market usable: remuneration, clearing type, procurement
-    frequency, bid properties, and market phases.'
+  summary: 'Market operation defines the practical rules that make the market usable: remuneration, clearing type,
+    procurement frequency, bid properties, and market phases.'
 - id: network-representation
   eyebrow: The physics inside the market
   title: Network representation
-  summary: Network representation defines how physical constraints, topology, voltage, congestion, and location are included
-    in the market design.
+  summary: Network representation defines how physical constraints, topology, voltage, congestion, and location
+    are included in the market design.

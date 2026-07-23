@@ -4,13 +4,13 @@ The CMS sidebar is now organised exactly like the website:
 
 - Homepage
 - Mechanisms and all review pages
-  - Tariff design mechanism
+  - Tariff design
     - Mechanism overview page
     - Six review-dimension pages
   - Flexibility connection agreement
     - Mechanism overview page
     - Six review-dimension pages
-  - Theoretical market framework
+  - Electricity System Services Market
     - Framework overview page
     - Five pillar detail pages
 - Supporting pages

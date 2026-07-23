@@ -92,9 +92,9 @@ window.TMF_FEEDBACK_CONFIG = {
   generalFeedbackUrl: "#",
   
   mechanisms: {
-    "tariff-design": { label: "Tariff design mechanism", googleFormUrl: "#", giscusTerm: "flex-tariff-design", giscusCategory: "", giscusCategoryId: "" },
+    "tariff-design": { label: "Tariff design", googleFormUrl: "#", giscusTerm: "flex-tariff-design", giscusCategory: "", giscusCategoryId: "" },
     "flexibility-connection-agreement": { label: "Flexibility connection agreement", googleFormUrl: "#", giscusTerm: "flex-connection-agreement", giscusCategory: "", giscusCategoryId: "" },
-    "theoretical-market-framework": { label: "Theoretical market framework", googleFormUrl: "#", giscusTerm: "theoretical-market-framework", giscusCategory: "", giscusCategoryId: "" }
+    "theoretical-market-framework": { label: "Electricity System Services Market", googleFormUrl: "#", giscusTerm: "theoretical-market-framework", giscusCategory: "", giscusCategoryId: "" }
   },
 
   sections: {

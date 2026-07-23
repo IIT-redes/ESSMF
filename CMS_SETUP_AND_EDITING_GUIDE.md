@@ -17,7 +17,7 @@
 3. Install the Pages CMS GitHub App for the account or organization that owns the repository.
 4. Give the app access to this repository.
 5. Open the repository in Pages CMS. It will automatically read `.pages.yml`.
-6. You should see editors for Homepage, Who we are, Library, Mechanisms, Review dimensions, TMF pillars, and Feedback settings.
+6. You should see editors for Homepage, Who we are, Library, Mechanisms, Review dimensions, ESSM pillars, and Feedback settings.
 
 ## C. Safest review workflow for colleagues
 

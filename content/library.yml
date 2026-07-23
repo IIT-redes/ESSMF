@@ -2,7 +2,7 @@ editorial_status: approved
 intro:
   eyebrow: Complete reference library
   title: All documents behind the website
-  text: The library retains the previous TMF resources and adds the new procurement-mechanism documents.
+  text: The library retains the previous ESSM resources and adds the new procurement-mechanism documents.
 items:
 - title: BeFlexible D1.1 regulatory framework
   description: Roles, responsibilities and mechanism designs
@@ -20,7 +20,7 @@ items:
   description: Tariffs, connection agreements and local markets
   file: docs/materials/mechanisms-interaction-preprint.pdf
   link_label: Open document →
-- title: TMF and TSO–DSO coordination
+- title: ESSM and TSO–DSO coordination
   description: Energies 2023 paper
   file: docs/materials/tmf-tso-dso-coordination-energies-2023.pdf
   link_label: Open document →

@@ -2,112 +2,114 @@ editorial_status: approved
 hero:
   eyebrow: DSO flexibility procurement at distribution level
   title: Flexibility acquisition mechanisms
-  philosophy: The road to flexibility is not a single market; it is a sequence of choices about investment, obligation, price,
-    access, and explicit procurement.
+  philosophy: The road to flexibility is not a single market; it is a sequence of choices about investment, obligation,
+    price, access, and explicit procurement.
   lead: "CEER identifies four main ways for DSOs to access third-party flexibility: rules-based approaches,\n  connection\
-    \ agreements, network tariffs, and market-based procurement. These instruments can be used\n  separately or together,\
-    \ while network reinforcement and DSO-owned resources remain part of the wider solution set."
+    \ agreements, network tariffs, and market-based procurement. These instruments can be used\n  separately or\
+    \ together, while network reinforcement and DSO-owned resources remain part of the wider solution set."
   invitation: "We warmly invite your expert feedback to sharpen the framework for research, regulation, and implementation.\n\
-    \  Your experience can help identify unresolved gaps, test interactions between mechanisms, and develop integrated\n \
-    \ practical approaches for European distribution systems."
+    \  Your experience can help identify unresolved gaps, test interactions between mechanisms, and develop integrated\n\
+    \  practical approaches for European distribution systems."
   primary_button: Follow the decision road
   secondary_button: Choose a review environment
 road_intro:
   eyebrow: The complete flexibility-acquisition landscape
   title: From a DSO network need to a justified mechanism portfolio
-  text: "Flexibility begins with a network need, not with a preferred instrument. A DSO should first compare\n      conventional\
-    \ reinforcement, DSO-owned resources, and access to third-party flexibility. CEER groups the\n      third-party routes\
-    \ into four categories: rules-based approaches, connection agreements, network tariffs,\n      and market-based procurement.\
-    \ The road below is a decision pathway - not a mandatory chronology - because\n      several mechanisms may coexist when\
-    \ their boundaries and interactions are clear."
+  text: "Flexibility begins with a network need, not with a preferred instrument. A DSO should first compare\n \
+    \     conventional reinforcement, DSO-owned resources, and access to third-party flexibility. CEER groups the\n\
+    \      third-party routes into four categories: rules-based approaches, connection agreements, network tariffs,\n\
+    \      and market-based procurement. The road below is a decision pathway - not a mandatory chronology - because\n\
+    \      several mechanisms may coexist when their boundaries and interactions are clear."
 road_turns:
 - number: '01'
   kicker: Start
   title: A network need emerges
-  text: Congestion, voltage problems, hosting-capacity limits, new connection demand, or a reinforcement need must first be
-    described by location, timeframe, duration, and certainty.
+  text: Congestion, voltage problems, hosting-capacity limits, new connection demand, or a reinforcement need must
+    first be described by location, timeframe, duration, and certainty.
   href: ''
   selected: false
 - number: '02'
   kicker: First comparison
   title: Reinforcement and DSO-owned resources
-  text: Flexibility should not be treated as a universal replacement for infrastructure. The DSO compares wires, operational
-    measures, owned resources, and third-party flexibility on whole-system cost, reliability, timing, and long-term value.
+  text: Flexibility should not be treated as a universal replacement for infrastructure. The DSO compares wires,
+    operational measures, owned resources, and third-party flexibility on whole-system cost, reliability, timing,
+    and long-term value.
   href: ''
   selected: false
 - number: '03'
   kicker: Administrative path
   title: Rules-based approach
-  text: Mandatory technical or behavioural requirements may provide a transparent backstop when incentive-based solutions
-    are unavailable or ineffective. Because the obligation is imposed rather than voluntarily contracted, proportionality,
-    legal basis, and user protection are central.
+  text: Mandatory technical or behavioural requirements may provide a transparent backstop when incentive-based
+    solutions are unavailable or ineffective. Because the obligation is imposed rather than voluntarily contracted,
+    proportionality, legal basis, and user protection are central.
   href: ''
   selected: false
 - number: '04'
   kicker: Selected deep dive - implicit signal
   title: Network tariff design
-  text: 'Tariffs can influence routine use of the grid and reduce the flexibility that the DSO later needs. The response is
-    implicit: no specific activation is contracted, and effectiveness depends on actual customer flexibility and interaction
-    with other price signals.'
+  text: 'Tariffs can influence routine use of the grid and reduce the flexibility that the DSO later needs. The
+    response is implicit: no specific activation is contracted, and effectiveness depends on actual customer flexibility
+    and interaction with other price signals.'
   href: pages/tariff-design.html
   selected: true
 - number: '05'
   kicker: Selected deep dive - access condition
   title: Flexibility connection agreement
-  text: Non-firm or conditional access can connect new demand, generation, or storage before full firm capacity is available.
-    It makes access rights, curtailment, compensation, control, and the path to reinforcement explicit.
+  text: Non-firm or conditional access can connect new demand, generation, or storage before full firm capacity
+    is available. It makes access rights, curtailment, compensation, control, and the path to reinforcement explicit.
   href: pages/flexibility-connection-agreement.html
   selected: true
 - number: '06'
   kicker: Selected deep dive - explicit procurement
   title: Market-based procurement and local flexibility markets
-  text: The DSO explicitly contracts a measurable service from network users or intermediaries. Competitive procurement is
-    attractive when it is liquid, cost-efficient, neutral, transparent, and operationally compatible with other markets.
+  text: The DSO explicitly contracts a measurable service from network users or intermediaries. Competitive procurement
+    is attractive when it is liquid, cost-efficient, neutral, transparent, and operationally compatible with other
+    markets.
   href: pages/theoretical-market-framework.html
   selected: true
 - number: '07'
   kicker: Destination
   title: An integrated and practical portfolio
-  text: The final design must define when each mechanism is appropriate, how signals are prioritized, how double charging
-    or double reward is prevented, and when reinforcement remains the efficient solution.
+  text: The final design must define when each mechanism is appropriate, how signals are prioritized, how double
+    charging or double reward is prevented, and when reinforcement remains the efficient solution.
   href: ''
   selected: false
 focus_intro:
   eyebrow: Why we selected three mechanisms for deeper research
   title: Three interfaces where regulation, system operation, and customer participation meet
-  text: "Rules-based approaches remain an important part of the CEER landscape, but this platform concentrates on\n      three\
-    \ mechanisms that create the most distinctive and interactive design interfaces: a price signal,\n      an access agreement,\
-    \ and an explicit procurement process. Together they cover the journey from influencing\n      ordinary behaviour, to\
-    \ allocating scarce connection capacity, to purchasing a verified service."
+  text: "Rules-based approaches remain an important part of the CEER landscape, but this platform concentrates on\n\
+    \      three mechanisms that create the most distinctive and interactive design interfaces: a price signal,\n\
+    \      an access agreement, and an explicit procurement process. Together they cover the journey from influencing\n\
+    \      ordinary behaviour, to allocating scarce connection capacity, to purchasing a verified service."
 focus_cards:
 - badge: Price
   title: Tariff design
-  text: Broad, preventive, and implicit. It can reduce future needs, but raises difficult questions about granularity, fairness,
-    customer response, rebound, and coordination with explicit markets.
+  text: Broad, preventive, and implicit. It can reduce future needs, but raises difficult questions about granularity,
+    fairness, customer response, rebound, and coordination with explicit markets.
 - badge: Access
   title: Flexible connection
-  text: Contractual, locational, and binding. It can unlock capacity quickly, but requires defensible curtailment rights,
-    compensation, operational control, and a credible reinforcement pathway.
+  text: Contractual, locational, and binding. It can unlock capacity quickly, but requires defensible curtailment
+    rights, compensation, operational control, and a credible reinforcement pathway.
 - badge: Service
   title: Local flexibility market
-  text: Explicit, targeted, and measurable. It can reveal the value of flexibility, but depends on products, liquidity, clearing,
-    coordination, network representation, settlement, and regulatory neutrality.
+  text: Explicit, targeted, and measurable. It can reveal the value of flexibility, but depends on products, liquidity,
+    clearing, coordination, network representation, settlement, and regulatory neutrality.
 interaction_callout:
   title: The research gap is often between the mechanisms
-  text: "A customer can be exposed to a network tariff, bound by a connection condition, and eligible to sell a local\n  \
-    \    service at the same time. The difficult questions concern signal priority, baselines, double commitment,\n      liquidity,\
-    \ compensation, cost recovery, and the boundary between flexibility and reinforcement."
+  text: "A customer can be exposed to a network tariff, bound by a connection condition, and eligible to sell a\
+    \ local\n      service at the same time. The difficult questions concern signal priority, baselines, double\
+    \ commitment,\n      liquidity, compensation, cost recovery, and the boundary between flexibility and reinforcement."
 mechanisms_intro:
   eyebrow: Three expert-review environments
   title: Choose a mechanism, examine its dimensions, and help shape the next research line
-  text: "Each mechanism page first explains the definition, philosophy, practical value, opportunities, and risks.\n  It then\
-    \ opens dimension-specific feedback environments so European experts can challenge assumptions,\n  identify implementation\
-    \ gaps, and propose evidence-based improvements."
+  text: "Each mechanism page first explains the definition, philosophy, practical value, opportunities, and risks.\n\
+    \  It then opens dimension-specific feedback environments so European experts can challenge assumptions,\n \
+    \ identify implementation gaps, and propose evidence-based improvements."
 mechanism_cards:
 - href: pages/tariff-design.html
   image: assets/tariff-t2.webp
   badge: Price signal
-  title: Tariff design mechanism
+  title: Tariff design
   summary: Review signal granularity, customer response, fairness, and coordination with explicit procurement.
   dimensions:
   - Network cost driver
@@ -133,7 +135,7 @@ mechanism_cards:
 - href: pages/theoretical-market-framework.html
   image: assets/tmf-screenshot.png
   badge: Market signal
-  title: Theoretical market framework
+  title: Electricity System Services Market
   summary: Review architecture, coordination, optimization, operation, and network representation.
   dimensions:
   - Market architecture
