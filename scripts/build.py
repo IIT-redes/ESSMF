@@ -191,6 +191,17 @@ def patch_tmf():
             qul.clear()
             for prompt in feedback_item.get('qna_prompts',[]):
                 li=s.new_tag('li'); li.string=prompt; qul.append(li)
+            # v11: feedback controls belong after the expert question/prompts, not before them.
+            # Keep them inside the question panel so the sequence is: understand -> evaluate -> respond.
+            actions=sec.select_one('.feedback-actions')
+            if actions:
+                actions.extract()
+                if qul:
+                    qul.insert_after(actions)
+                else:
+                    helper=qbox.select_one('.giscus-helper')
+                    if helper: helper.insert_before(actions)
+                    else: qbox.append(actions)
         # add per-pillar worksheet in its dedicated mapping-table area; never duplicate beside feedback buttons
         try:
             pd=yaml.safe_load((CONTENT/'pillars'/f"{item['id']}.yml").read_text(encoding='utf-8'))

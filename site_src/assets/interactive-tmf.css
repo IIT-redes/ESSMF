@@ -2948,3 +2948,8 @@ button.primary-menu-link[aria-expanded="true"] {
 .design-intelligence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}.design-intelligence-card{background:linear-gradient(145deg,#fff,#f5faff);border:1px solid var(--border);border-radius:22px;padding:22px;box-shadow:var(--shadow-soft)}.design-intelligence-card h3{margin:0 0 9px;color:var(--topic-color);font-size:1.08rem}.design-intelligence-card p{margin:0 0 14px;color:#405d74;line-height:1.63}.design-intelligence-card small{color:#6a7f90;font-weight:750;line-height:1.35}
 .pillar-mapping-checklist-section{max-width:1192px;margin:4px auto 58px;padding:28px 30px;display:grid;grid-template-columns:minmax(240px,.7fr) minmax(0,1.3fr);gap:28px;background:linear-gradient(135deg,#f4f9fd,#fff);border:1px solid var(--border);border-radius:26px;box-shadow:var(--shadow-soft)}.pillar-mapping-checklist-section h2{margin:0 0 8px;color:var(--topic-color)}.pillar-mapping-checklist-section p:not(.eyebrow){color:#496278;line-height:1.6}.pillar-mapping-checklist{margin:0;padding-left:22px;color:#3f5b71;line-height:1.58}.pillar-mapping-checklist li+li{margin-top:9px}
 @media(max-width:900px){.design-intelligence-grid,.pillar-mapping-checklist-section{grid-template-columns:1fr}.pillar-feature-map-section,.pillar-design-intelligence-section{padding-left:16px;padding-right:16px}}
+
+/* v11: place review actions after each pillar's expert question */
+.pillar-review-question>.feedback-actions{margin-top:16px;padding-top:14px;border-top:1px solid #dce8f1;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pillar-review-question>.feedback-actions .button{margin:0}
+.pillar-review-question>.giscus-helper{margin-top:12px!important}
