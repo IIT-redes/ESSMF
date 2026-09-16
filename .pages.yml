@@ -276,6 +276,7 @@ content:
                   - { name: why, component: intro_section }
                   - { name: affected, component: intro_section }
                   - { name: where, component: intro_section }
+                  - { name: spain-example, component: intro_section }
                   - { name: framework-view, component: intro_section }
                   - { name: review, component: intro_section }
                   - { name: final-feedback, component: intro_section }
@@ -287,6 +288,34 @@ content:
                   - { name: eyebrow, type: string }
                   - { name: title, type: string }
                   - { name: summary, type: text }
+              - name: spain_example
+                label: Spain implementation example
+                type: object
+                fields:
+                  - { name: image, type: image, options: { media: images } }
+                  - { name: image_alt, type: string }
+                  - { name: image_caption, type: text }
+                  - { name: explanation_title, type: string }
+                  - { name: explanation_intro, type: text }
+                  - { name: explanation_points, type: text, list: true }
+                  - { name: mapping_title, type: string }
+                  - name: mapping_rows
+                    type: object
+                    list: true
+                    fields:
+                      - { name: table_input, type: string }
+                      - { name: determines, type: text }
+                      - { name: figure_output, type: text }
+                  - { name: source_note, type: text }
+                  - { name: downloads_title, type: string }
+                  - name: downloads
+                    type: object
+                    list: true
+                    fields:
+                      - { name: title, type: string }
+                      - { name: description, type: text }
+                      - { name: file, type: file, options: { media: documents } }
+                      - { name: label, type: string }
           - name: tmf_pillars
             label: Pillar detail pages
             type: group
@@ -303,13 +332,39 @@ content:
                   - { name: eyebrow, type: string }
                   - { name: title, type: string }
                   - { name: subtitle, type: text }
-                  - name: cards
+                  - { name: download_file, type: file, options: { media: documents } }
+                  - { name: download_label, type: string }
+                  - { name: pdf_file, type: file, options: { media: documents } }
+                  - { name: pdf_label, type: string }
+                  - { name: preview_image, type: image, options: { media: images } }
+                  - { name: preview_alt, type: string }
+                  - { name: worksheet_title, type: string }
+                  - { name: worksheet_text, type: text }
+                  - { name: philosophy, label: "Tutorial philosophy", type: text }
+                  - { name: flowchart_caption, type: text }
+                  - { name: tutorial_intro, type: text }
+                  - name: tutorial_sections
                     type: object
                     list: true
                     fields:
                       - { name: title, type: string }
                       - { name: text, type: text }
                       - { name: items, type: text, list: true }
+                  - { name: terminology_intro, type: text }
+                  - name: terminology
+                    label: Standard terminology repository
+                    type: object
+                    list: true
+                    fields:
+                      - { name: term, type: string }
+                      - { name: definition, type: text }
+                      - { name: source, type: string }
+                  - name: source_basis
+                    type: object
+                    list: true
+                    fields:
+                      - { name: label, type: string }
+                      - { name: href, type: string }
               - { name: pillar_coordination, label: "02 — Sub-market coordination", type: file, path: content/pillars/sub-market-coordination.yml, format: yaml, fields: *pillar_fields }
               - { name: pillar_optimization, label: "03 — Market optimization", type: file, path: content/pillars/market-optimization.yml, format: yaml, fields: *pillar_fields }
               - { name: pillar_operation, label: "04 — Market operation", type: file, path: content/pillars/market-operation.yml, format: yaml, fields: *pillar_fields }
@@ -389,6 +444,12 @@ content:
           - { name: repo_id, type: string }
           - { name: category, type: string }
           - { name: category_id, type: string }
+          - { name: mapping, type: string }
+          - { name: strict, type: string }
+          - { name: reactions_enabled, type: string }
+          - { name: emit_metadata, type: string }
+          - { name: input_position, type: string }
+          - { name: loading, type: string }
           - { name: theme, type: string }
           - { name: lang, type: string }
       - name: mechanisms
@@ -402,9 +463,21 @@ content:
           - { name: giscus_category, type: string }
           - { name: giscus_category_id, type: string }
       - name: tmf_sections
+        label: TMF pillar Poll + Q&A channels
         type: object
         list: true
-        fields: *feedback_fields
+        fields:
+          - { name: key, type: string, readonly: true }
+          - { name: label, type: string }
+          - { name: poll_title, type: string }
+          - { name: poll_url, type: string }
+          - { name: qna_title, type: string }
+          - { name: qna_term, type: string }
+          - { name: qna_prompt, type: text }
+          - name: qna_prompts
+            type: string
+            list: true
+          - { name: giscus_term, type: string }
       - name: dimension_pages
         type: object
         list: true

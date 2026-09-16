@@ -1,5 +1,5 @@
 window.TMF_FEEDBACK_CONFIG = {
-  "githubHubUrl": "#",
+  "githubHubUrl": "https://github.com/IIT-redes/ESSMF",
   "pollUrl": "#",
   "uploadUrl": "#",
   "generalFeedbackUrl": "#",
@@ -116,36 +116,62 @@ window.TMF_FEEDBACK_CONFIG = {
     "marketArchitecture": {
       "label": "Market architecture",
       "googleFormUrl": "#",
-      "giscusTerm": "tmf-market-architecture"
+      "pollUrl": "#",
+      "pollTitle": "TMF Pillar 1 — Structured assessment",
+      "giscusTerm": "TMF Pillar 1 — Entire Market Architecture",
+      "qnaTitle": "TMF Pillar 1 — Entire Market Architecture",
+      "qnaPrompt": "Does the Entire Market Architecture pillar provide a sufficiently complete and unambiguous common language to reconstruct an existing flexibility market and to specify a new distribution-level market before coordination and clearing are designed?"
     },
     "subMarketCoordination": {
       "label": "Sub-market coordination",
       "googleFormUrl": "#",
-      "giscusTerm": "tmf-sub-market-coordination"
+      "pollUrl": "#",
+      "pollTitle": "TMF Pillar 2 — Structured assessment",
+      "giscusTerm": "TMF Pillar 2 — Sub-market Coordination",
+      "qnaTitle": "TMF Pillar 2 — Sub-market Coordination",
+      "qnaPrompt": "Does the Sub-market Coordination pillar capture the decisions needed to allocate the same flexibility resource pool across interacting local, TSO/DSO, wholesale or balancing sub-markets without double use, conflicting activation or avoidable barriers to value stacking?"
     },
     "marketOptimization": {
       "label": "Market optimization",
       "googleFormUrl": "#",
-      "giscusTerm": "tmf-market-optimization"
+      "pollUrl": "#",
+      "pollTitle": "TMF Pillar 3 — Structured assessment",
+      "giscusTerm": "TMF Pillar 3 — Market Optimisation",
+      "qnaTitle": "TMF Pillar 3 — Market Optimisation",
+      "qnaPrompt": "Do the TMF choices for optimisation methodology, the relationship among sub-market clearings and the clearing objective provide enough information to distinguish existing designs and to guide a new coordinated distribution-level market?"
     },
     "marketOperation": {
       "label": "Market operation",
       "googleFormUrl": "#",
-      "giscusTerm": "tmf-market-operation"
+      "pollUrl": "#",
+      "pollTitle": "TMF Pillar 4 — Structured assessment",
+      "giscusTerm": "TMF Pillar 4 — Market Operation",
+      "qnaTitle": "TMF Pillar 4 — Market Operation",
+      "qnaPrompt": "Does the Market Operation pillar contain the minimum operational information needed to compare how flexibility sub-markets actually run and to implement a new one without confusing operational rules with other TMF dimensions?"
     },
     "networkRepresentation": {
       "label": "Network representation",
       "googleFormUrl": "#",
-      "giscusTerm": "tmf-network-representation"
+      "pollUrl": "#",
+      "pollTitle": "TMF Pillar 5 — Structured assessment",
+      "giscusTerm": "TMF Pillar 5 — Network Representation",
+      "qnaTitle": "TMF Pillar 5 — Network Representation",
+      "qnaPrompt": "Does the Network Representation pillar adequately capture how and when distribution/transmission constraints are introduced so that a market result can be physically feasible while remaining implementable in terms of data, computation and information sharing?"
     }
   },
   "giscus": {
-    "enabled": false,
-    "repo": "OWNER/REPOSITORY",
-    "repoId": "PASTE_REPO_ID_HERE",
-    "category": "PASTE_DISCUSSION_CATEGORY_HERE",
-    "categoryId": "PASTE_CATEGORY_ID_HERE",
+    "enabled": true,
+    "repo": "IIT-redes/ESSMF",
+    "repoId": "R_kgDOTaxKGA",
+    "category": "Q&A",
+    "categoryId": "DIC_kwDOTaxKGM4DBV_N",
     "theme": "light",
-    "lang": "en"
+    "lang": "en",
+    "mapping": "specific",
+    "strict": "1",
+    "reactionsEnabled": "1",
+    "emitMetadata": "0",
+    "inputPosition": "top",
+    "loading": "lazy"
   }
 };

@@ -1,23 +1,159 @@
 editorial_status: approved
 slug: market-optimization
 file: market-optimization.html
+download_file: docs/materials/tmf_blank_03_market_optimisation.docx
+download_label: Download editable table (Word)
+pdf_file: docs/materials/tmf_blank_03_market_optimisation.pdf
+preview_image: assets/tmf_blank_03_market_optimisation_preview.png
+preview_alt: Blank ready-to-fill Market optimisation TMF table
+pdf_label: Open / download blank PDF
+worksheet_title: Ready-to-fill TMF mapping table
+worksheet_text: Use this exact blank table to map your own market with the same feature/sub-feature structure. Complete one
+  column per sub-market; then compare the resulting structure with other European cases.
 eyebrow: The clearing intelligence
 title: Market optimization
-subtitle: 'Market optimization defines how bids and constraints become a clearing result: through cost minimization, welfare,
-  feasibility, OPF, sensitivities, or simplified algorithms.'
-cards:
-- title: Conceptual role
-  text: This pillar evaluates whether optimization is centralized, sequential, simultaneous, distributed, or approximated.
-    It connects mathematical design to data availability and market transparency.
+subtitle: The Market Optimisation pillar describes how sub-markets are cleared, how clearing processes relate to each other,
+  and what objective the optimisation pursues.
+philosophy: This pillar turns market architecture and coordination rules into a clearing logic. OneNet distinguishes who performs
+  optimisation across network levels, whether coupled sub-markets are cleared together or in sequence, and which objective
+  governs the outcome. These choices change information needs, implementation complexity and the risk of economically sub-optimal
+  or conflicting results.
+flowchart_caption: 'The flowchart separates three questions: optimisation methodology, the strategy linking multiple sub-markets,
+  and the clearing objective.'
+tutorial_intro: Read this pillar only after the architecture and coordination rules are clear. It explains how the market
+  turns bids and constraints into a selected set of transactions.
+tutorial_sections:
+- title: 1. Choose the optimisation methodology
+  text: Centralised optimisation uses one algorithm across voltage levels and system operators. Decentralised optimisation
+    uses separate algorithms for different system levels and therefore requires coordination. Distributed organisation is
+    defined in the TMF as having no externally driven optimisation.
   items: []
-- title: Questions for reviewers
-  text: Is the clearing method implementable with available data? Is it transparent enough? Does it include the right network
-    and market constraints?
-  items:
-  - Are the current features sufficient to describe real European market arrangements?
-  - Are there missing options from demonstrators, regulation, or operational practice?
-  - Does the terminology work across research, regulation, and implementation?
-- title: Connection to the platform
-  text: This pillar can be connected to dashboards, data exchange, market-clearing tools, and feedback workflows. Its purpose
-    is to make design assumptions explicit before they become software, regulation, or market rules.
+- title: 2. Choose how coupled sub-markets are solved
+  text: Simultaneous optimisation solves the relevant sub-markets jointly while sharing resources. Sequential optimisation
+    clears one before the other. Independent optimisation clears markets in parallel without sharing resources, although some
+    clearing constraints may still be shared.
   items: []
+- title: 3. State the optimisation objective
+  text: The TMF includes objectives such as cost minimisation, social-welfare maximisation and reduction of counter-activations.
+    The 2023 paper defines welfare maximisation through the combined producer/FSP and buyer/SO surplus and notes that other
+    operational objectives may also be used.
+  items: []
+- title: 4. Analyse the information and coordination burden
+  text: OneNet links centralised designs to stronger grid representation and network-information exchange requirements. Decentralised/sequential
+    arrangements may lower those requirements but can produce a sub-optimal result from the perspective of the overall system.
+  items: []
+- title: 5. Check for double procurement and counter-actions
+  text: 'The optimisation strategy influences whether one market action creates an expensive countermeasure elsewhere and
+    how double procurement is prevented. OneNet’s demonstrators use different solutions: common centralised clearing versus
+    sequential local-first clearing with aggregation/forwarding rules.'
+  items: []
+terminology_intro: The repository below uses the optimisation terminology and option set formalised in the TMF and retained
+  in OneNet D11.2.
+terminology:
+- term: Market optimisation methodology
+  definition: The organisational approach used to optimise across related sub-markets and system levels. TMF options are centralised,
+    decentralised and distributed.
+  source: Troncia et al. (2023), §2.3 / OneNet D11.2 Fig. 5.4
+- term: Centralised optimisation
+  definition: One algorithm considers the relevant voltage levels and solves the system needs of all participating system
+    operators in one optimisation.
+  source: Troncia et al. (2023), §2.3
+- term: Decentralised optimisation
+  definition: Separate algorithms optimise different system levels, with at least one optimisation for transmission and one
+    for distribution; coordination is therefore required between optimisation levels.
+  source: Troncia et al. (2023), §2.3
+- term: Distributed organisation
+  definition: The TMF option in which there is no externally driven optimisation.
+  source: Troncia et al. (2023), §2.3
+- term: Sub-market optimisation strategy
+  definition: The rule describing how a pair of sub-markets is optimised relative to each other. TMF options are simultaneous,
+    sequential and independent.
+  source: Troncia et al. (2023), §2.3
+- term: Simultaneous optimisation
+  definition: The relevant sub-markets are optimised at the same time while sharing resources.
+  source: Troncia et al. (2023), §2.3
+- term: Sequential optimisation
+  definition: One sub-market is optimised before the other.
+  source: Troncia et al. (2023), §2.3
+- term: Independent optimisation
+  definition: Markets are cleared in parallel rather than jointly and do not share resources/bids, although clearing constraints
+    may be shared when needed.
+  source: Troncia et al. (2023), §2.3
+- term: Cost minimisation
+  definition: A TMF clearing-objective option in which the optimisation seeks the least-cost procurement outcome under the
+    modelled requirements and constraints.
+  source: OneNet D11.2, Fig. 5.4
+- term: Social-welfare maximisation
+  definition: An objective that maximises the combined surplus of the producer/FSP side and the buyer/SO side.
+  source: Troncia et al. (2023), §2.3
+- term: Reduction of counter-activations
+  definition: A TMF objective aimed at limiting actions in one market that must be offset by opposite or corrective actions
+    in another market.
+  source: Troncia et al. (2023), §2.3 / OneNet D11.2 Fig. 5.4
+source_basis:
+- label: OneNet D11.2 — updated TMF, Chapter 5.1
+  href: ../docs/materials/onenet-d11-2-techno-economic-assessment.pdf#page=58
+- label: Troncia et al. (2023) — TMF and OneNet lessons
+  href: ../docs/materials/tmf-tso-dso-coordination-energies-2023.pdf#page=3
+glossary:
+- term: Market optimisation methodology
+  definition: The organisational approach used to optimise across related sub-markets and system levels. TMF options are centralised,
+    decentralised and distributed.
+- term: Centralised optimisation
+  definition: One algorithm considers the relevant voltage levels and solves the system needs of all participating system
+    operators in one optimisation.
+- term: Decentralised optimisation
+  definition: Separate algorithms optimise different system levels, with at least one optimisation for transmission and one
+    for distribution; coordination is therefore required between optimisation levels.
+- term: Distributed organisation
+  definition: The TMF option in which there is no externally driven optimisation.
+- term: Sub-market optimisation strategy
+  definition: The rule describing how a pair of sub-markets is optimised relative to each other. TMF options are simultaneous,
+    sequential and independent.
+- term: Simultaneous optimisation
+  definition: The relevant sub-markets are optimised at the same time while sharing resources.
+- term: Sequential optimisation
+  definition: One sub-market is optimised before the other.
+- term: Independent optimisation
+  definition: Markets are cleared in parallel rather than jointly and do not share resources/bids, although clearing constraints
+    may be shared when needed.
+feature_matrix_intro: 'OneNet D11.2 retains three optimisation features: methodology, the strategy connecting sub-market clearings,
+  and the clearing objective.'
+feature_matrix:
+- feature: Market optimisation methodology
+  subfeature: Methodology
+  options: Centralised; decentralised; distributed
+  meaning: Defines the organisational form of optimisation across system levels and system operators.
+- feature: Sub-markets optimisation strategy
+  subfeature: Relationship between clearings
+  options: Simultaneous; sequential; independent
+  meaning: Defines whether related sub-markets are solved jointly, one after another, or in parallel without sharing resources.
+- feature: (Sub-)market optimisation objective
+  subfeature: Clearing objective
+  options: Cost minimisation; social-welfare maximisation; reducing counter-activations; other
+  meaning: States what the clearing process is explicitly trying to optimise.
+design_intelligence_intro: OneNet links optimisation choices to information-sharing requirements, implementation complexity,
+  overall efficiency and the risk of counter-actions or double procurement.
+design_intelligence:
+- title: Centralised and decentralised designs solve different coordination problems
+  text: Centralised optimisation can embed TSO–DSO coordination inside one clearing problem but increases grid-data and information-sharing
+    requirements. Decentralised designs use separate optimisation problems and therefore need explicit coordination rules.
+  source: Troncia et al. (2023), §2.3 and §4.3
+- title: Sequence changes economic outcomes
+  text: Sequential local-first clearing can protect local constraints and reduce information exchange, but the OneNet analysis
+    notes that it may lead to a sub-optimal result from the perspective of the overall power system.
+  source: Troncia et al. (2023), §4.3
+- title: The strategy must address counter-actions and double procurement
+  text: If one market action creates a need for an expensive countermeasure elsewhere, the clearing architecture is not neutral.
+    OneNet uses optimisation strategy and coordination rules to expose and mitigate this issue.
+  source: Troncia et al. (2023), §4.3
+- title: Objective functions must be explicit
+  text: The TMF distinguishes cost minimisation, social-welfare maximisation and reduction of counter-activations because
+    two architectures with similar timing and products can behave differently if they optimise different objectives.
+  source: OneNet D11.2, Fig. 5.4; Troncia et al. (2023), §2.3
+mapping_checklist:
+- Is it possible to identify whether the clearing is centralised, decentralised or distributed?
+- For every coupled pair of sub-markets, is the relationship simultaneous, sequential or independent?
+- Is the optimisation objective explicit and distinguishable from technical feasibility constraints?
+- Does the chosen architecture require grid/network information that the involved actors can realistically exchange?
+- How are counter-activations, double procurement and system-wide inefficiency detected or prevented?

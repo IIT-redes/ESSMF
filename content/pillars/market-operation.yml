@@ -1,23 +1,184 @@
 editorial_status: approved
 slug: market-operation
 file: market-operation.html
+download_file: docs/materials/tmf_blank_04_market_operation.docx
+download_label: Download editable table (Word)
+pdf_file: docs/materials/tmf_blank_04_market_operation.pdf
+preview_image: assets/tmf_blank_04_market_operation_preview.png
+preview_alt: Blank ready-to-fill Market operation TMF table
+pdf_label: Open / download blank PDF
+worksheet_title: Ready-to-fill TMF mapping table
+worksheet_text: Use this exact blank table to map your own market with the same feature/sub-feature structure. Complete one
+  column per sub-market; then compare the resulting structure with other European cases.
 eyebrow: The procedure of trust
 title: Market operation
-subtitle: 'Market operation defines the procedures that make the market credible: remuneration, procurement frequency, bid
-  properties, prequalification, baselining, activation, validation, and settlement.'
-cards:
-- title: Conceptual role
-  text: This pillar turns the framework into a participant-facing process. It is where incentives, reliability, auditability,
-    and operational burden are tested.
+subtitle: 'The Market Operation pillar describes the operational rules of each sub-market: remuneration, the remunerated product
+  attribute, clearing type, procurement frequency and the properties of accepted bids.'
+philosophy: This pillar is where market design becomes a repeatable transaction process. It does not describe prequalification,
+  baselining or settlement as separate pillar features; rather, the TMF pillar focuses on how bids are paid, what is paid,
+  how the market is cleared, how often it runs and what bid forms are accepted. OneNet D11.2 explicitly adds Bid properties
+  to the earlier framework.
+flowchart_caption: 'The flowchart shows the operational option set used by the TMF: remuneration, remunerated attribute, clearing
+  type, procurement frequency and bid properties.'
+tutorial_intro: Use this pillar to translate the market concept into rules that participants can act on and market operators
+  can implement consistently.
+tutorial_sections:
+- title: 1. Define the remuneration scheme
+  text: The TMF distinguishes no remuneration, negotiated price, pay-as-bid, uniform pay-as-clear, non-uniform pay-as-clear/nodal
+    pricing, and cost-based remuneration. The 2023 paper explains how these schemes differ in the price received by successful
+    providers.
   items: []
-- title: Questions for reviewers
-  text: Would participants trust the remuneration and settlement rules? Are prequalification and baselining scalable? Is the
-    procurement timing realistic?
-  items:
-  - Are the current features sufficient to describe real European market arrangements?
-  - Are there missing options from demonstrators, regulation, or operational practice?
-  - Does the terminology work across research, regulation, and implementation?
-- title: Connection to the platform
-  text: This pillar can be connected to dashboards, data exchange, market-clearing tools, and feedback workflows. Its purpose
-    is to make design assumptions explicit before they become software, regulation, or market rules.
+- title: 2. Specify what product attribute is remunerated
+  text: The framework records whether payment is for availability, activation, or both, and whether the remunerated quantity
+    concerns active, reactive or apparent power. This is important when capacity is reserved ahead of delivery and activation
+    is settled later.
   items: []
+- title: 3. Choose continuous or discrete clearing
+  text: In a continuous market, participants can trade while the market is open. In a discrete market, clearing takes place
+    in scheduled batches at defined intervals. The choice must match the timing and operational purpose of the service.
+  items: []
+- title: 4. Define procurement frequency separately from market timing
+  text: 'Procurement frequency records how often the sub-market runs. It is not the same as GOT/GCT: two markets can both
+    run daily yet close at different times before delivery.'
+  items: []
+- title: 5. Define the admissible bid format
+  text: D11.2 adds Bid properties to capture minimum bid size and bid structure. These features matter for participation barriers
+    and compatibility with other markets, including bid-forwarding possibilities.
+  items: []
+- title: 6. Review the operational trade-offs highlighted by OneNet
+  text: The OneNet analysis does not identify one universally superior remuneration, procurement timing or clearing type.
+    Availability procurement can increase confidence and extend the procurement window, while near-delivery procurement may
+    benefit from better system information. The appropriate choice remains service- and context-specific.
+  items: []
+terminology_intro: These definitions focus on the operational features that the TMF assigns to each individual sub-market.
+  Market phases such as prequalification, activation, measurement and settlement are treated elsewhere in D11.2 and should
+  not be confused with the pillar’s feature set.
+terminology:
+- term: Remuneration scheme
+  definition: The rule used to determine payment for successful market participation. TMF options include no remuneration,
+    negotiated price, pay-as-bid, uniform pay-as-clear, non-uniform pay-as-clear and cost-based remuneration.
+  source: Troncia et al. (2023), §2.4 / OneNet D11.2 Fig. 5.5
+- term: Negotiated price
+  definition: A price agreed through bilateral negotiation between the relevant parties.
+  source: Troncia et al. (2023), §2.4
+- term: Pay-as-bid
+  definition: A discriminatory-price auction in which each successful seller is paid the price requested in its accepted bid.
+  source: Troncia et al. (2023), §2.4
+- term: Uniform pay-as-clear
+  definition: A uniform-price auction in which successful sellers receive the same per-unit clearing price for the homogeneous
+    good or service.
+  source: Troncia et al. (2023), §2.4
+- term: Non-uniform pay-as-clear / nodal pricing
+  definition: A clearing approach with different prices at different grid nodes, reflecting locational value including congestion
+    and delivery effects.
+  source: Troncia et al. (2023), §2.4
+- term: Cost-based remuneration
+  definition: Payment based on a price or price curve set by the system operator for buying the service, potentially with
+    an agreed quantity.
+  source: Troncia et al. (2023), §2.4
+- term: Remunerated product attribute
+  definition: 'The product component for which payment is made: availability, activation, or both; D11.2 also distinguishes
+    active, reactive and apparent power.'
+  source: Troncia et al. (2023), §2.4 / OneNet D11.2 Fig. 5.5
+- term: Continuous clearing
+  definition: A market arrangement in which participants can buy or sell while the market is open.
+  source: Troncia et al. (2023), §2.4
+- term: Discrete clearing
+  definition: A recurring scheduled batch-clearing arrangement in which the market is cleared at discrete intervals.
+  source: Troncia et al. (2023), §2.4
+- term: Procurement frequency
+  definition: How often the sub-market is run. This is distinct from the gate timing/GCT of the individual market session.
+  source: Troncia et al. (2023), §2.4
+- term: Bid properties
+  definition: An additional D11.2 market-operation feature describing the nature of accepted bids through minimum bid size
+    and bid structure.
+  source: OneNet D11.2, §5.1.4
+- term: Minimum bid size
+  definition: The minimum volume of capacity or energy that a bid must contain in the market.
+  source: OneNet D11.2, Table 2.1
+- term: Bid structure
+  definition: The level of complexity permitted in a bid; the TMF distinguishes simple and complex structures at high level.
+  source: OneNet D11.2, Table 2.1 / Fig. 5.5
+source_basis:
+- label: OneNet D11.2 — updated TMF, Chapter 5.1
+  href: ../docs/materials/onenet-d11-2-techno-economic-assessment.pdf#page=58
+- label: Troncia et al. (2023) — TMF and OneNet lessons
+  href: ../docs/materials/tmf-tso-dso-coordination-energies-2023.pdf#page=3
+glossary:
+- term: Remuneration scheme
+  definition: The rule used to determine payment for successful market participation. TMF options include no remuneration,
+    negotiated price, pay-as-bid, uniform pay-as-clear, non-uniform pay-as-clear and cost-based remuneration.
+- term: Negotiated price
+  definition: A price agreed through bilateral negotiation between the relevant parties.
+- term: Pay-as-bid
+  definition: A discriminatory-price auction in which each successful seller is paid the price requested in its accepted bid.
+- term: Uniform pay-as-clear
+  definition: A uniform-price auction in which successful sellers receive the same per-unit clearing price for the homogeneous
+    good or service.
+- term: Non-uniform pay-as-clear / nodal pricing
+  definition: A clearing approach with different prices at different grid nodes, reflecting locational value including congestion
+    and delivery effects.
+- term: Cost-based remuneration
+  definition: Payment based on a price or price curve set by the system operator for buying the service, potentially with
+    an agreed quantity.
+- term: Remunerated product attribute
+  definition: 'The product component for which payment is made: availability, activation, or both; D11.2 also distinguishes
+    active, reactive and apparent power.'
+- term: Continuous clearing
+  definition: A market arrangement in which participants can buy or sell while the market is open.
+feature_matrix_intro: OneNet D11.2 describes operational aspects at sub-market level and explicitly adds Bid properties to
+  the earlier TMF.
+feature_matrix:
+- feature: Remuneration scheme
+  subfeature: Payment rule
+  options: No remuneration; negotiated price; pay-as-bid; uniform pay-as-clear; non-uniform pay-as-clear (nodal pricing);
+    cost-based remuneration
+  meaning: Defines how successful participation is financially remunerated.
+- feature: Remuneration of the product attribute
+  subfeature: What is remunerated
+  options: Availability; activation; availability + activation; for active, reactive or apparent power
+  meaning: Separates reservation/availability payment from activation/energy payment and identifies the physical quantity
+    concerned.
+- feature: Market clearing type
+  subfeature: Clearing mode
+  options: Continuous; discrete
+  meaning: States whether trades occur continuously while the market is open or through discrete clearing events.
+- feature: Procurement frequency
+  subfeature: How often the market runs
+  options: Event-based on SO call; daily; weekly; monthly; other
+  meaning: Describes repetition frequency and must not be confused with the GOT/GCT timing of a particular session.
+- feature: Bid properties
+  subfeature: Minimum bid size
+  options: Record the minimum bid-size value
+  meaning: Captures one important participation/compatibility threshold for bids.
+- feature: Bid properties
+  subfeature: Bid structure
+  options: Simple; complex
+  meaning: Records the high-level complexity of bids accepted in the sub-market.
+design_intelligence_intro: The OneNet assessment treats operation choices as case-specific. Remuneration, availability/activation
+  procurement, timing and clearing mode interact with liquidity, competition, information quality and participation barriers.
+design_intelligence:
+- title: Pricing rules cannot be assessed independently of market conditions
+  text: OneNet demonstrators use both pay-as-bid and pay-as-clear. The assessment discusses competition, product homogeneity
+    and locational differentiation as factors that affect the suitability of a pricing rule.
+  source: OneNet D11.2, §6 pricing-scheme assessment
+- title: Availability and activation solve different timing needs
+  text: Reserving availability in advance can increase SO confidence that flexibility will be present, while procuring closer
+    to delivery benefits from better information. The suitable arrangement is service- and context-dependent.
+  source: Troncia et al. (2023), §4.4
+- title: Procurement frequency is not gate timing
+  text: Markets may run at the same frequency while having different closure times. Keeping this distinction explicit is necessary
+    when assessing coordination and bid-forwarding compatibility.
+  source: Troncia et al. (2023), §2.4
+- title: Bid properties affect participation and interoperability
+  text: D11.2 identifies minimum bid size and bid structure as operational features. Its bid-forwarding analysis shows that
+    differences in minimum size or product structure can require aggregation or other processing before bids can move between
+    markets.
+  source: OneNet D11.2, §5.1.4 and §5.2
+mapping_checklist:
+- Can a reviewer identify exactly how accepted providers are paid?
+- Is it explicit whether availability, activation or both are remunerated and for which power quantity?
+- Is the market continuous or discrete, and how often is it run?
+- Are minimum bid size and bid structure explicit enough to judge participation barriers and cross-market compatibility?
+- Are operational choices being confused with separate processes such as prequalification or settlement, which the TMF treats
+  elsewhere?

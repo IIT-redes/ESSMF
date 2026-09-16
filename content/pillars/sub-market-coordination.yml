@@ -1,23 +1,180 @@
 editorial_status: approved
 slug: sub-market-coordination
 file: sub-market-coordination.html
+download_file: docs/materials/tmf_blank_02_sub_market_coordination.docx
+download_label: Download editable table (Word)
+pdf_file: docs/materials/tmf_blank_02_sub_market_coordination.pdf
+preview_image: assets/tmf_blank_02_sub_market_coordination_preview.png
+preview_alt: Blank ready-to-fill Sub-market coordination TMF table
+pdf_label: Open / download blank PDF
+worksheet_title: Ready-to-fill TMF mapping table
+worksheet_text: Use this exact blank table to map your own market with the same feature/sub-feature structure. Complete one
+  column per sub-market; then compare the resulting structure with other European cases.
 eyebrow: The logic of interaction
 title: Sub-market coordination
-subtitle: Sub-market coordination defines how interacting markets allocate flexibility when multiple buyers, timeframes, or
-  system needs compete for the same resources.
-cards:
-- title: Conceptual role
-  text: This pillar is essential when local flexibility can serve local DSO constraints, TSO balancing needs, congestion management,
-    or intraday positions. It addresses allocation principles, timing, and bid forwarding.
+subtitle: The Sub-market Coordination pillar describes how sub-markets interact when multiple system operators or markets
+  seek flexibility from the same resource pool, and in which market phase that coordination occurs.
+philosophy: This pillar is about allocation before it is about algorithms. It makes explicit which buyer has priority or exclusivity,
+  whether selection is binding or conditional, whether unused bids may move to another market, and when coordination is performed.
+  The OneNet analysis uses these choices to expose potential overlaps, double use, gaming opportunities and barriers to value
+  stacking.
+flowchart_caption: 'The flowchart shows the coordination choices that connect pairs of sub-markets: allocation principle,
+  access/commitment/forwarding rules and the market phase in which coordination is applied.'
+tutorial_intro: Apply this pillar to pairs of sub-markets that can draw on the same flexibility. The purpose is to make the
+  allocation logic visible before optimisation choices are assessed.
+tutorial_sections:
+- title: 1. Identify the pair of interacting sub-markets
+  text: The allocation principle is not one global rule for the whole architecture; it forms a link between two sub-markets.
+    The TMF applies the allocation logic when markets overlap in time and seek flexibility from the same transmission/distribution
+    resource pool under different system operators.
   items: []
-- title: Questions for reviewers
-  text: Where could the same flexibility be double-counted, blocked, or inefficiently allocated? Is coordination clear enough
-    for real-time operation?
-  items:
-  - Are the current features sufficient to describe real European market arrangements?
-  - Are there missing options from demonstrators, regulation, or operational practice?
-  - Does the terminology work across research, regulation, and implementation?
-- title: Connection to the platform
-  text: This pillar can be connected to dashboards, data exchange, market-clearing tools, and feedback workflows. Its purpose
-    is to make design assumptions explicit before they become software, regulation, or market rules.
+- title: 2. Set system-operator order
+  text: The TMF distinguishes priority for TSO, priority for DSO, exclusivity for TSO, exclusivity for DSO, and no priority
+    nor exclusivity. These options determine who can access scarce flexibility first or whether access is shared.
   items: []
+- title: 3. Define commitment and access
+  text: A formal commitment makes the buyer’s bid selection binding within the stated coordination rules. Conditional commitment
+    allows a first-stage local result to remain provisional until a later coordinated optimisation determines the final accepted
+    bids. TSO access to DERs is recorded separately.
+  items: []
+- title: 4. Decide whether bids can be forwarded
+  text: Bid forwarding transfers eligible bids that were not used in one market to another, potentially through an intermediate
+    processing stage. OneNet uses it as a coordination channel for resource allocation and value stacking, but highlights
+    the need to avoid conflicting activations and gaming.
+  items: []
+- title: 5. Place coordination in the market process
+  text: The timeframe-for-coordination feature records the market phase in which coordination occurs. D11.2 lists prequalification,
+    procurement, activation, measurement and settlement. Shared phases can reduce duplicated procedures, while some sub-markets
+    may still require dedicated processes.
+  items: []
+- title: 6. Use OneNet’s design tension as the review lens
+  text: The framework asks whether coordination improves overall resource allocation without creating conflictive overlap,
+    artificial congestion or unnecessary implementation complexity. Multi-level designs can be simpler and more local; common
+    markets can pursue broader economic efficiency but demand stronger coordination and information exchange.
+  items: []
+terminology_intro: These terms describe the rules connecting sub-markets. They should be read as pairwise coordination descriptors
+  rather than as isolated characteristics of one market.
+terminology:
+- term: Allocation principle of flexibility
+  definition: The rule determining how available flexibility at transmission or distribution level is divided between system
+    operators and sub-markets.
+  source: Troncia et al. (2023), §2.2
+- term: Priority for the TSO
+  definition: The TSO chooses flexibility first; bids not selected by the priority market may still be available to another
+    sub-market when forwarding is allowed.
+  source: Troncia et al. (2023), §2.2
+- term: Priority for the DSO
+  definition: The DSO chooses distribution-connected flexibility first; the framework associates this option with formal commitment
+    and possible bid forwarding.
+  source: Troncia et al. (2023), §2.2
+- term: Exclusivity for the TSO
+  definition: Only the TSO has access to the relevant bids; rejected bids are not forwarded under this option.
+  source: Troncia et al. (2023), §2.2
+- term: Exclusivity for the DSO
+  definition: Only the DSO has access to the relevant bids; the framework associates the option with formal commitment and
+    no forwarding of rejected bids.
+  source: Troncia et al. (2023), §2.2
+- term: No priority nor exclusivity
+  definition: Neither SO is pre-prioritised. The TMF links this to conditional commitment in decentralised optimisation and
+    formal commitment in centralised optimisation.
+  source: Troncia et al. (2023), §2.2
+- term: Formal commitment to bid selection
+  definition: The buyer’s selection is binding within the coordination arrangement even if another use of the same bid might
+    be preferable from a broader welfare perspective.
+  source: Troncia et al. (2023), §2.2
+- term: Conditional commitment to bid selection
+  definition: A first market result remains provisional and is integrated into a later coordinated optimisation, which determines
+    the final accepted bids and the beneficiary SO.
+  source: Troncia et al. (2023), §2.2
+- term: TSO access to DERs
+  definition: A TMF sub-feature recording whether the TSO can access flexibility from distributed energy resources within
+    the coordination arrangement.
+  source: OneNet D11.2, Fig. 5.3
+- term: Bid forwarding
+  definition: Transfer of eligible bids not used in one market to another market, potentially through an intermediary processing
+    step managed by a designated agent.
+  source: Troncia et al. (2023), §2.2 / OneNet D11.2 §2.2
+- term: Timeframe for coordination
+  definition: The market phase in which coordination is carried out between sub-markets.
+  source: Troncia et al. (2023), §2.2
+- term: Market phase for coordination
+  definition: D11.2 options include prequalification, procurement, activation, measurement and settlement.
+  source: OneNet D11.2, Fig. 5.3
+source_basis:
+- label: OneNet D11.2 — updated TMF, Chapter 5.1
+  href: ../docs/materials/onenet-d11-2-techno-economic-assessment.pdf#page=58
+- label: Troncia et al. (2023) — TMF and OneNet lessons
+  href: ../docs/materials/tmf-tso-dso-coordination-energies-2023.pdf#page=3
+glossary:
+- term: Allocation principle of flexibility
+  definition: The rule determining how available flexibility at transmission or distribution level is divided between system
+    operators and sub-markets.
+- term: Priority for the TSO
+  definition: The TSO chooses flexibility first; bids not selected by the priority market may still be available to another
+    sub-market when forwarding is allowed.
+- term: Priority for the DSO
+  definition: The DSO chooses distribution-connected flexibility first; the framework associates this option with formal commitment
+    and possible bid forwarding.
+- term: Exclusivity for the TSO
+  definition: Only the TSO has access to the relevant bids; rejected bids are not forwarded under this option.
+- term: Exclusivity for the DSO
+  definition: Only the DSO has access to the relevant bids; the framework associates the option with formal commitment and
+    no forwarding of rejected bids.
+- term: No priority nor exclusivity
+  definition: Neither SO is pre-prioritised. The TMF links this to conditional commitment in decentralised optimisation and
+    formal commitment in centralised optimisation.
+- term: Formal commitment to bid selection
+  definition: The buyer’s selection is binding within the coordination arrangement even if another use of the same bid might
+    be preferable from a broader welfare perspective.
+- term: Conditional commitment to bid selection
+  definition: A first market result remains provisional and is integrated into a later coordinated optimisation, which determines
+    the final accepted bids and the beneficiary SO.
+feature_matrix_intro: 'The updated OneNet coordination pillar describes pairwise interactions among sub-markets through two
+  features: allocation principle of flexibility and timeframe for coordination.'
+feature_matrix:
+- feature: Allocation principle of flexibility
+  subfeature: System operators order
+  options: Priority for TSO; priority for DSO; exclusivity for TSO; exclusivity for DSO; no priority nor exclusivity
+  meaning: Defines who has first or exclusive access to common flexibility when multiple system operators/sub-markets draw
+    from the same resource pool.
+- feature: Allocation principle of flexibility
+  subfeature: Commitment to bid selection
+  options: Formal; conditional
+  meaning: States whether the first-stage selection is binding or provisional pending later coordination.
+- feature: Allocation principle of flexibility
+  subfeature: TSO access to DERs
+  options: Yes; no; not applicable
+  meaning: Makes explicit whether the TSO can access distribution-connected flexibility in the considered interaction.
+- feature: Allocation principle of flexibility
+  subfeature: Forwarding of bids
+  options: Yes; no; not applicable
+  meaning: Records whether eligible bids can be transferred from one sub-market to another.
+- feature: Timeframe for coordination
+  subfeature: Market phase for coordination
+  options: Prequalification; procurement; activation; measurement; settlement
+  meaning: Identifies the stage(s) of the market process where coordination between the two sub-markets occurs.
+design_intelligence_intro: OneNet uses this pillar to reveal where shared resources, overlapping markets and sequencing rules
+  can create either value stacking or conflicts.
+design_intelligence:
+- title: The allocation principle is pairwise, not a single market-wide label
+  text: The TMF treats the allocation principle as a link between two sub-markets, especially when different system operators
+    procure flexibility in overlapping time windows from the same pool of resources.
+  source: Troncia et al. (2023), §2.2
+- title: Bid forwarding can improve allocation and value stacking
+  text: OneNet treats forwarding of unused eligible bids as a coordination mechanism between markets, but it requires compatibility
+    checks and may need intermediate processing such as filtering or aggregation.
+  source: OneNet D11.2, §2.2 and §5.2
+- title: Coordination must also prevent gaming and conflicting activation
+  text: The source highlights conflictive overlap, artificial congestion, double use and incompatible activations as risks
+    when the same resources are available to multiple markets.
+  source: Troncia et al. (2023), §4.2
+- title: Harmonising market phases can reduce barriers
+  text: Coordinating shared processes such as prequalification can reduce duplicated procedures and participation barriers,
+    although dedicated procedures may still be needed for market-specific requirements.
+  source: Troncia et al. (2023), §4.2; OneNet D11.2 harmonisation recommendations
+mapping_checklist:
+- For each pair of interacting sub-markets, is it clear whether one SO has priority, exclusivity, or neither?
+- Is bid selection formal or conditional, and at what point does a provisional decision become binding?
+- Can unused eligible bids move to another market, and what filtering/aggregation step is required before forwarding?
+- At which market phases is coordination performed, and are any processes duplicated unnecessarily?
+- Could the chosen sequence create double use, conflicting activation, artificial congestion or gaming incentives?

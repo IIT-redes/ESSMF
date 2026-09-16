@@ -2828,3 +2828,123 @@ button.primary-menu-link[aria-expanded="true"] {
   .road-marker { left:30px; top:50%; }
   .focus-rationale-grid { grid-template-columns:1fr; }
 }
+
+
+/* TMF revision v2: worksheet downloads, glossary, and Spanish implementation example */
+.worksheet-inline-link{margin-left:8px;}
+.spain-example-section{padding:86px 24px;background:linear-gradient(180deg,#f6fbff,#ffffff);}
+.spain-example-grid{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1.25fr .85fr;gap:24px;align-items:start;}
+.spain-example-figure,.spain-example-explanation,.spain-example-downloads{background:white;border:1px solid var(--border);border-radius:28px;padding:22px;box-shadow:var(--shadow-soft);}
+.spain-example-side{display:grid;gap:18px;}
+.spain-example-figure img{width:100%;display:block;border-radius:18px;border:1px solid var(--border);}
+.spain-example-figure figcaption{margin-top:12px;color:var(--muted);line-height:1.5;font-size:.95rem;}
+.spain-example-explanation h3,.spain-example-downloads h3{color:var(--blue-dark);margin-top:0;}
+.spain-example-explanation ol{padding-left:20px;color:var(--muted);line-height:1.55;}
+.spain-example-explanation li+li{margin-top:8px;}
+.download-card-grid{display:grid;gap:12px;margin-top:16px;}
+.download-card{display:block;text-decoration:none;color:inherit;border:1px solid var(--border);border-radius:18px;background:#f8fcff;padding:16px 18px;transition:.18s ease;}
+.download-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft);background:#eef8ff;}
+.download-card strong{display:block;color:var(--blue-dark);margin-bottom:6px;}
+.download-card em{display:block;color:var(--muted);font-style:normal;line-height:1.45;font-size:.94rem;}
+.download-card small{display:block;margin-top:10px;color:var(--blue);font-weight:900;}
+.pillar-extra-area{max-width:1240px;margin:0 auto 72px;padding:0 24px;display:grid;grid-template-columns:1.25fr .75fr;gap:22px;}
+.glossary-card h2,.worksheet-card h2{display:flex;align-items:center;gap:10px;}
+.mini-icon{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:12px;background:#eef8ff;color:var(--blue);font-weight:900;}
+.glossary-intro{color:var(--muted);line-height:1.65;}
+.glossary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px;}
+.glossary-term{padding:14px 16px;border-radius:16px;background:#f7fbff;border:1px solid var(--border);}
+.glossary-term strong{display:block;color:var(--blue-dark);margin-bottom:5px;}
+.glossary-term span{display:block;color:var(--muted);line-height:1.45;font-size:.94rem;}
+.worksheet-card p{color:var(--muted);line-height:1.65;}
+@media(max-width:980px){.spain-example-grid,.pillar-extra-area,.glossary-grid{grid-template-columns:1fr}.feedback-actions{align-items:flex-start}.worksheet-inline-link{margin-left:0}}
+
+
+/* v3 revisions: worksheet buttons, Spain example clarity, and progress celebration */
+.worksheet-inline-link{background:#fff!important;color:var(--blue-dark)!important;border-color:#b9d7eb!important;box-shadow:0 8px 20px rgba(10,38,70,.08)}
+.worksheet-inline-link .button-icon svg{stroke:currentColor;fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.feedback-actions{align-items:center}
+.spain-example-section .section-heading{max-width:980px}
+.spain-example-side{min-width:0}.spain-example-explanation,.spain-example-downloads{min-height:0}
+.spain-example-explanation .example-intro{margin:0 0 14px;color:var(--muted);line-height:1.65;font-weight:600}
+.spain-example-explanation ol{max-height:none!important;overflow:visible!important;padding-left:22px}
+.spain-example-explanation li{margin-bottom:10px;color:var(--muted);line-height:1.58}
+.download-card-grid{display:grid;gap:12px}.download-card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:18px;background:#f8fcff;text-decoration:none}.download-card strong{display:block;color:var(--blue-dark);margin-bottom:5px}.download-card em{display:block;color:var(--muted);font-style:normal;line-height:1.45}.download-card small{display:inline-block;margin-top:8px;color:var(--blue);font-weight:800}
+.feedback-progress{position:fixed;right:22px;bottom:22px;width:268px;z-index:999;background:rgba(255,255,255,.95);border:1px solid var(--border);border-radius:18px;padding:12px 14px;box-shadow:var(--shadow-soft);backdrop-filter:blur(10px)}
+.progress-label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;font-weight:800;color:var(--blue-dark)}
+.progress-track{height:10px;border-radius:999px;background:#d9eaf7;overflow:hidden}#progress-fill{height:100%;width:0%;border-radius:inherit;background:linear-gradient(90deg,var(--blue),var(--blue-light),#00a88f);transition:width .45s ease}
+.celebration{position:fixed;left:50%;top:20px;transform:translate(-50%,-120%);z-index:1000;padding:16px 24px;border-radius:24px;background:linear-gradient(120deg,#0b609f,#1597d3,#008f8c);color:#fff;box-shadow:0 22px 60px rgba(0,0,0,.25);opacity:0;transition:transform .45s ease,opacity .45s ease;text-align:center}.celebration.show{transform:translate(-50%,0);opacity:1}.celebration strong{display:block;font-size:1.25rem}.celebration span{display:block}.celebration i{display:block;font-style:normal;margin-top:6px;letter-spacing:.45em}.celebration.pulse-once{animation:celebratePulse .9s ease}@keyframes celebratePulse{0%{filter:brightness(1);transform:translate(-50%,0) scale(1)}45%{filter:brightness(1.22);transform:translate(-50%,0) scale(1.05)}100%{filter:brightness(1);transform:translate(-50%,0) scale(1)}}
+@media (max-width:860px){.feedback-progress{left:14px;right:14px;bottom:12px;width:auto}.spain-example-grid{grid-template-columns:1fr!important}}
+
+
+/* v4 precision revisions: exact pillar worksheets, Spain mapping, anchor return and 100% light celebration */
+.pillar-section{scroll-margin-top:110px}
+.pillar-worksheet-preview{grid-column:1/-1;max-width:1100px;width:100%;margin:10px auto 6px;display:grid;grid-template-columns:minmax(260px,.72fr) minmax(420px,1.28fr);gap:22px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:26px;padding:22px;box-shadow:var(--shadow-soft)}
+.pillar-worksheet-copy h3{margin:0 0 8px;color:var(--topic-color);font-size:1.25rem}.pillar-worksheet-copy p{margin:0 0 16px;color:var(--muted);line-height:1.65}.worksheet-preview-links{display:flex;flex-wrap:wrap;gap:10px}.pillar-worksheet-figure{margin:0;background:#f7fbff;border:1px solid #d6e4ef;border-radius:18px;padding:10px}.pillar-worksheet-figure img{width:100%;display:block;border-radius:10px}.pillar-worksheet-figure figcaption{margin-top:8px;color:var(--muted);font-size:.84rem;line-height:1.4}.worksheet-inline-link{order:3}.looks-fine-button{order:4}.load-comments{order:2}.feedback-form-link{order:1}
+.detail-worksheet-preview{margin:18px 0 12px;padding:8px;border:1px solid var(--border);border-radius:14px;background:#f7fbff}.detail-worksheet-preview img{display:block;width:100%;border-radius:8px}.detail-worksheet-pdf-link{margin:0 0 0 8px}
+.spain-example-section{background:linear-gradient(180deg,#f3f9fd 0%,#fff 100%)}.spain-example-grid{grid-template-columns:minmax(520px,1.05fr) minmax(460px,.95fr);align-items:start}.spain-example-explanation,.spain-mapping-card,.spain-example-downloads{background:#fff;border:1px solid var(--border);border-radius:28px;padding:24px;box-shadow:var(--shadow-soft)}.spain-example-explanation h3,.spain-mapping-card h3,.spain-example-downloads h3{margin:0 0 12px;color:var(--blue-dark)}.spain-example-explanation ol{padding-left:22px;margin-bottom:0}.spain-example-explanation li{color:#36556f;line-height:1.58}.spain-mapping-table-wrap{overflow:auto;border:1px solid #d8e5ef;border-radius:16px}.spain-mapping-table{width:100%;min-width:720px;border-collapse:collapse;font-size:.91rem}.spain-mapping-table th{background:#0b5f91;color:#fff;text-align:left;padding:11px 12px}.spain-mapping-table td{padding:11px 12px;vertical-align:top;border-top:1px solid #d8e5ef;color:#35556f;line-height:1.45}.spain-mapping-table tbody tr:nth-child(even) td{background:#f3f8fb}.spain-source-note{margin:12px 2px 0;color:#62798b;font-size:.84rem;line-height:1.45;font-style:italic}.spain-example-figure{position:sticky;top:95px}.spain-example-figure img{background:#fff}
+.feedback-progress.complete{border-color:#72cfb6;box-shadow:0 0 0 3px rgba(70,201,160,.13),0 14px 38px rgba(10,80,67,.20)}.feedback-progress.complete #progress-fill{background:linear-gradient(90deg,#0b75b9,#18b894,#ffd45f)}
+.tmf-light-show{position:fixed;inset:0;z-index:9998;pointer-events:none;overflow:hidden;background:radial-gradient(circle at 15% 20%,rgba(79,194,255,.45),transparent 28%),radial-gradient(circle at 85% 28%,rgba(255,224,97,.46),transparent 28%),radial-gradient(circle at 50% 82%,rgba(51,222,167,.42),transparent 34%);animation:tmfLightWash 4.4s ease-out forwards}.tmf-light-show::before,.tmf-light-show::after{content:"";position:absolute;inset:-18%;background:conic-gradient(from 0deg at 50% 50%,transparent 0 8%,rgba(255,255,255,.72) 10%,transparent 13% 28%,rgba(73,185,255,.52) 31%,transparent 35% 54%,rgba(255,219,85,.48) 58%,transparent 62% 80%,rgba(80,231,180,.48) 84%,transparent 88%);filter:blur(18px);mix-blend-mode:screen;animation:tmfSpinLights 3.8s cubic-bezier(.16,.8,.3,1) forwards}.tmf-light-show::after{animation-direction:reverse;animation-duration:4.6s;opacity:.72}.tmf-spark{position:absolute;left:var(--x);top:var(--y);width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 12px 4px rgba(255,255,255,.9),0 0 28px 9px rgba(64,187,255,.55);transform:scale(0);animation:tmfSpark 2.2s var(--delay) ease-out forwards}.tmf-review-complete .site-hero,.tmf-review-complete .pillar-section,.tmf-review-complete .framework-section{animation:tmfPageGlow 2.8s ease-in-out 1}.celebration{z-index:10000!important}.celebration.show{box-shadow:0 0 0 1px rgba(255,255,255,.5),0 0 38px 12px rgba(69,192,255,.40),0 24px 80px rgba(0,0,0,.28)!important}
+@keyframes tmfLightWash{0%{opacity:0}12%{opacity:1}70%{opacity:.82}100%{opacity:0}}@keyframes tmfSpinLights{0%{transform:scale(.7) rotate(-18deg);opacity:0}18%{opacity:.92}100%{transform:scale(1.3) rotate(165deg);opacity:0}}@keyframes tmfSpark{0%{transform:scale(0);opacity:0}18%{transform:scale(var(--scale));opacity:1}58%{transform:scale(calc(var(--scale)*1.4));opacity:.95}100%{transform:scale(0);opacity:0}}@keyframes tmfPageGlow{0%,100%{filter:none}35%{filter:brightness(1.08) saturate(1.08);box-shadow:inset 0 0 90px rgba(70,193,255,.12)}}
+@media(max-width:1050px){.spain-example-grid,.pillar-worksheet-preview{grid-template-columns:1fr}.spain-example-figure{position:static}.pillar-worksheet-preview{max-width:760px}}
+@media(prefers-reduced-motion:reduce){.tmf-light-show,.tmf-light-show::before,.tmf-light-show::after,.tmf-spark,.tmf-review-complete .site-hero,.tmf-review-complete .pillar-section,.tmf-review-complete .framework-section{animation:none!important}.tmf-light-show{display:none}}
+
+
+/* v5: single worksheet download location, GitHub peer-review prompts, and celebration */
+.pillar-review-question{grid-column:1/-1;margin:2px 0 10px;padding:15px 18px;border:1px solid #cfe0ec;border-left:5px solid var(--topic-color);border-radius:16px;background:linear-gradient(135deg,#f7fbff,#ffffff);box-shadow:0 8px 22px rgba(16,55,88,.06)}
+.pillar-review-question strong{display:block;margin-bottom:5px;color:var(--topic-color);font-size:.9rem;text-transform:uppercase;letter-spacing:.05em}.pillar-review-question p{margin:0!important;color:#35536b!important;line-height:1.58!important;font-weight:650}
+.github-pillar-discussion{order:2}.looks-fine-button{order:3}.feedback-form-link{order:1}
+.tmf-party-show{position:fixed;inset:0;z-index:9999;pointer-events:none;overflow:hidden}
+.tmf-confetti{position:absolute;left:var(--x);top:-8vh;font-size:16px;color:hsl(var(--hue) 88% 55%);filter:drop-shadow(0 2px 2px rgba(0,0,0,.12));animation:tmfConfettiFall var(--dur) var(--delay) cubic-bezier(.18,.72,.3,1) forwards}
+.tmf-chocolate{position:absolute;left:var(--x);top:-12vh;font-size:34px;transform:scale(var(--s));filter:drop-shadow(0 6px 5px rgba(0,0,0,.2));animation:tmfChocolateBounce var(--dur) var(--delay) cubic-bezier(.2,.75,.2,1) forwards}
+@keyframes tmfConfettiFall{0%{transform:translate3d(0,-12vh,0) rotate(0deg);opacity:0}8%{opacity:1}70%{opacity:1}100%{transform:translate3d(calc((var(--hue) - 180)*.08px),112vh,0) rotate(var(--rot));opacity:0}}
+@keyframes tmfChocolateBounce{0%{transform:translateY(-12vh) scale(var(--s)) rotate(-18deg);opacity:0}10%{opacity:1}70%{transform:translateY(78vh) scale(var(--s)) rotate(16deg)}82%{transform:translateY(66vh) scale(var(--s)) rotate(-8deg)}100%{transform:translateY(112vh) scale(var(--s)) rotate(10deg);opacity:0}}
+.celebration.show{max-width:min(760px,calc(100vw - 28px));padding:20px 28px!important}.celebration.show strong{font-size:1.35rem!important}.celebration.show span{margin-top:5px;line-height:1.45;font-weight:650}.celebration.show i{font-size:1.25rem;letter-spacing:.18em!important}
+@media(prefers-reduced-motion:reduce){.tmf-party-show{display:none!important}}
+
+/* Giscus expert-review integration */
+.giscus-helper{margin:.7rem 0 0;color:#526a80;font-size:.95rem;line-height:1.55}.comments-box{margin-top:18px;min-height:0;scroll-margin-top:110px}.comments-box:not(:empty){padding:18px;border:1px solid var(--border);border-radius:22px;background:rgba(255,255,255,.86);box-shadow:var(--shadow-soft)}.comments-placeholder{padding:16px 18px;border-radius:16px;background:#f4f9fd;color:#456078;line-height:1.55}.detail-discussion-panel{max-width:1240px;margin:0 auto;padding:0 24px 70px}.detail-discussion-panel .discussion-card{max-width:920px;margin:0 auto}.giscus,.giscus-frame{width:100%}
+
+/* v9: source-grounded pillar tutorial pages */
+.pillar-overview-layout{max-width:1240px;margin:0 auto;padding:70px 24px 32px;display:grid;grid-template-columns:minmax(0,.92fr) minmax(460px,1.08fr);gap:26px;align-items:stretch}
+.pillar-philosophy-card{margin:0;display:flex;flex-direction:column;justify-content:center;min-height:100%}
+.pillar-philosophy-card h2{margin-top:0;color:var(--topic-color)}
+.pillar-philosophy-text{font-size:1.04rem;line-height:1.75;color:#35536b}
+.pillar-source-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.source-badge{display:inline-flex;align-items:center;padding:8px 11px;border:1px solid var(--border);border-radius:999px;background:#f6fbff;color:var(--blue-dark);font-size:.82rem;font-weight:800;text-decoration:none}
+.pillar-overview-layout .detail-figure{margin:0;min-height:100%;display:flex;flex-direction:column;justify-content:center;background:#fff;border:1px solid var(--border);border-radius:26px;padding:18px;box-shadow:var(--shadow-soft)}
+.pillar-overview-layout .detail-figure a{display:flex;align-items:center;justify-content:center;min-height:380px}
+.pillar-overview-layout .detail-figure img{width:100%;max-height:530px;object-fit:contain;display:block}
+.pillar-flow-caption{margin-top:12px;color:var(--muted);font-size:.88rem;line-height:1.5;text-align:left}
+.tutorial-rich-section,.terminology-repository{max-width:1240px;margin:0 auto;padding:48px 24px 66px}
+.terminology-repository{padding-top:22px}
+.tutorial-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
+.tutorial-step-card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:22px;box-shadow:var(--shadow-soft)}
+.tutorial-step-card h3{margin:0 0 10px;color:var(--topic-color);font-size:1.13rem}.tutorial-step-card p{margin:0;color:#435e74;line-height:1.67}.tutorial-step-card ul{margin:14px 0 0;padding-left:20px;color:#435e74;line-height:1.58}.tutorial-step-card li+li{margin-top:6px}
+.term-repo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
+.term-repo-card{position:relative;background:linear-gradient(180deg,#fff,#f8fcff);border:1px solid var(--border);border-radius:18px;padding:18px;min-height:190px;box-shadow:0 8px 22px rgba(16,55,88,.055)}
+.term-repo-card h3{margin:0 0 9px;color:var(--topic-color);font-size:1.03rem}.term-repo-card p{margin:0 0 36px;color:#405d74;line-height:1.58;font-size:.94rem}.term-repo-card small{position:absolute;left:18px;right:18px;bottom:15px;color:#6a7f90;font-weight:700;line-height:1.35}
+.pillar-source-panel{max-width:1192px;margin:0 auto 72px;padding:24px 26px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:24px;align-items:center;background:#f5faff;border:1px solid var(--border);border-radius:26px}.pillar-source-panel h2{margin:0 0 8px;color:var(--blue-dark)}.pillar-source-panel p:not(.eyebrow){margin:0;color:#496278;line-height:1.62}.pillar-source-list{display:flex;flex-direction:column;gap:9px}.pillar-source-list .button{justify-content:center;text-align:center}
+@media(max-width:980px){.pillar-overview-layout,.pillar-source-panel{grid-template-columns:1fr}.pillar-overview-layout .detail-figure a{min-height:280px}.term-repo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.tutorial-grid,.term-repo-grid{grid-template-columns:1fr}.pillar-overview-layout,.tutorial-rich-section,.terminology-repository{padding-left:16px;padding-right:16px}.pillar-overview-layout .detail-figure a{min-height:220px}}
+
+
+/* v10: pillar review layout — explanation/feedback box and flowchart are peers in the same row */
+@media (min-width:901px){
+  .pillar-section{grid-template-columns:minmax(0,.92fr) minmax(420px,1.08fr);align-items:start;}
+  .pillar-section>.pillar-text{grid-column:1;grid-row:1;justify-self:stretch;max-width:none;align-self:stretch;background:#fff;border:1px solid var(--border);border-radius:26px;padding:28px;box-shadow:var(--shadow-soft)}
+  .pillar-section>.zoom-figure{grid-column:2;grid-row:1;justify-self:stretch;max-width:none;margin:0;align-self:stretch;display:flex;flex-direction:column}
+  .pillar-section>.zoom-figure .figure-viewport{flex:1;min-height:430px;display:flex;align-items:center}
+  .pillar-section>.pillar-review-question{grid-column:1/-1;grid-row:2}
+  .pillar-section>.pillar-worksheet-preview{grid-column:1/-1}
+  .pillar-section>.next-pillar-invite{grid-column:1/-1}
+  .pillar-section>.comments-box{grid-column:1/-1}
+}
+.pillar-review-prompts{margin:12px 0 2px;padding-left:22px;color:#456078;line-height:1.55}.pillar-review-prompts li+li{margin-top:6px}
+
+/* v10: rich source-grounded tutorial pages */
+.pillar-feature-map-section,.pillar-design-intelligence-section{max-width:1240px;margin:0 auto;padding:24px 24px 66px}
+.feature-matrix-wrap{overflow-x:auto;margin-top:22px;border:1px solid var(--border);border-radius:22px;background:#fff;box-shadow:var(--shadow-soft)}
+.feature-matrix-table{width:100%;min-width:880px;border-collapse:collapse}.feature-matrix-table th{background:#0b4f80;color:#fff;text-align:left;padding:14px 15px;font-size:.88rem;letter-spacing:.01em}.feature-matrix-table td{vertical-align:top;padding:14px 15px;border-top:1px solid #e2edf5;color:#405d74;line-height:1.5;font-size:.92rem}.feature-matrix-table tbody tr:nth-child(even){background:#f8fbfe}.feature-matrix-table td:first-child{font-weight:850;color:var(--topic-color);width:18%}.feature-matrix-table td:nth-child(2){font-weight:750;color:#244d6d;width:20%}.feature-matrix-table td:nth-child(3){width:29%}
+.design-intelligence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}.design-intelligence-card{background:linear-gradient(145deg,#fff,#f5faff);border:1px solid var(--border);border-radius:22px;padding:22px;box-shadow:var(--shadow-soft)}.design-intelligence-card h3{margin:0 0 9px;color:var(--topic-color);font-size:1.08rem}.design-intelligence-card p{margin:0 0 14px;color:#405d74;line-height:1.63}.design-intelligence-card small{color:#6a7f90;font-weight:750;line-height:1.35}
+.pillar-mapping-checklist-section{max-width:1192px;margin:4px auto 58px;padding:28px 30px;display:grid;grid-template-columns:minmax(240px,.7fr) minmax(0,1.3fr);gap:28px;background:linear-gradient(135deg,#f4f9fd,#fff);border:1px solid var(--border);border-radius:26px;box-shadow:var(--shadow-soft)}.pillar-mapping-checklist-section h2{margin:0 0 8px;color:var(--topic-color)}.pillar-mapping-checklist-section p:not(.eyebrow){color:#496278;line-height:1.6}.pillar-mapping-checklist{margin:0;padding-left:22px;color:#3f5b71;line-height:1.58}.pillar-mapping-checklist li+li{margin-top:9px}
+@media(max-width:900px){.design-intelligence-grid,.pillar-mapping-checklist-section{grid-template-columns:1fr}.pillar-feature-map-section,.pillar-design-intelligence-section{padding-left:16px;padding-right:16px}}

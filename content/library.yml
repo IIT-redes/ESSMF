@@ -40,3 +40,11 @@ items:
   description: Grid-segmentation approach
   file: docs/materials/local-flexibility-market-preprint.pdf
   link_label: Open document →
+- title: TMF blank worksheet pack - all pillars
+  description: Blank ready-to-fill Word workbook for mapping a market through the five TMF pillars.
+  file: docs/materials/tmf_blank_all_pillars_worksheet_pack.docx
+  link_label: Download DOCX
+- title: Spanish demonstrator filled TMF tables
+  description: Filled Spanish-case Word tables showing how the five TMF pillars map the demonstrator.
+  file: docs/materials/tmf_spanish_demo_filled_tables.docx
+  link_label: Download DOCX

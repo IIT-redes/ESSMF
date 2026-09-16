@@ -1,23 +1,259 @@
 editorial_status: approved
 slug: market-architecture
 file: market-architecture.html
+download_file: docs/materials/tmf_blank_01_entire_market_architecture.docx
+download_label: Download editable table (Word)
+pdf_file: docs/materials/tmf_blank_01_entire_market_architecture.pdf
+preview_image: assets/tmf_blank_01_entire_market_architecture_preview.png
+preview_alt: Blank ready-to-fill Market architecture TMF table
+pdf_label: Open / download blank PDF
+worksheet_title: Ready-to-fill TMF mapping table
+worksheet_text: Use this exact blank table to map your own market with the same feature/sub-feature structure. Complete one
+  column per sub-market; then compare the resulting structure with other European cases.
 eyebrow: The structure of exchange
 title: Market architecture
-subtitle: 'Market architecture defines the structure of exchange: sub-markets, services, products, location, and the roles
-  of actors who buy, sell, operate, or validate flexibility.'
-cards:
-- title: Conceptual role
-  text: This pillar clarifies whether a market is a single common mechanism, a multi-level structure, or a fragmented set
-    of sub-markets. It is where product definition, actor responsibility, and procurement area become explicit.
-  items: []
-- title: Questions for reviewers
-  text: Which actors are missing? Are the products and services precise enough? Does the spatial and temporal scope match
-    real operational needs?
+subtitle: 'The Entire Market Architecture pillar fixes the high-level structure of the market: the sub-markets that exist,
+  their timing and type, the services and products exchanged, where procurement is located, and the roles of the actors involved.'
+philosophy: 'The TMF treats market architecture as a system of interacting sub-markets rather than as one undifferentiated
+  marketplace. The architecture pillar therefore answers the first design question: what are the exchange spaces that exist,
+  and what must be specified for each of them before coordination and clearing can be analysed? OneNet D11.2 updates this
+  pillar with more explicit timing, product and participant descriptors so that different demonstrators can be described with
+  the same vocabulary.'
+flowchart_caption: The flowchart is the source TMF taxonomy for the Entire Market Architecture pillar. Read it from the high-level
+  sub-market structure toward service/product, location and actor choices.
+tutorial_intro: 'Use this pillar first: it establishes the market-design objects that every later pillar must coordinate,
+  clear, operate, and constrain. OneNet D11.2 treats it as the high-level description of the architecture as a whole and extends
+  the earlier TMF with more explicit timing, product, and participant descriptors.'
+tutorial_sections:
+- title: 1. Establish the sub-market landscape
+  text: Identify how many sub-markets form the architecture and record the timing and market type of each one. D11.2 adds
+    Gate Opening Time (GOT), Gate Closure Time (GCT) and Market Time Unit (MTU) to make the temporal dimension explicit.
   items:
-  - Are the current features sufficient to describe real European market arrangements?
-  - Are there missing options from demonstrators, regulation, or operational practice?
-  - Does the terminology work across research, regulation, and implementation?
-- title: Connection to the platform
-  text: This pillar can be connected to dashboards, data exchange, market-clearing tools, and feedback workflows. Its purpose
-    is to make design assumptions explicit before they become software, regulation, or market rules.
+  - Number of sub-markets.
+  - GOT, GCT and MTU for each sub-market.
+  - 'Sub-market type: bilateral negotiation, auction or exchange market.'
+- title: 2. Separate service from product
+  text: The TMF distinguishes the system need from the tradable unit used to procure flexibility. This separation is essential
+    when one product can serve more than one system need or when similar services are procured through different products.
+  items:
+  - 'Service: the system need/action to be delivered.'
+  - 'Product: the tradable unit acquired from flexibility providers.'
+  - Type of product and technical requirements, added explicitly in D11.2.
+- title: 3. Locate procurement in the grid
+  text: For each sub-market, describe the locational granularity, the responsible system operator and the voltage level of
+    participating resources. The framework makes location part of market design rather than an implementation afterthought.
+  items:
+  - Area, feeder or node granularity at transmission or distribution level.
+  - 'Responsible SO: TSO or DSO.'
+  - Voltage level of the resources.
+- title: 4. Make actor roles and participation explicit
+  text: Record who buys, who sells and who operates the market, together with technology eligibility, aggregation and participation
+    rules. D11.2 expands this part with allowed technologies, aggregation method and aggregation mix.
+  items:
+  - Buyer(s), seller(s) and market operator.
+  - Allowed generation, load and storage technologies.
+  - Aggregation method and aggregation mix.
+  - Optional, compulsory or hybrid participation.
+- title: 5. Use the pillar as a design-intelligence check
+  text: The OneNet analysis shows that temporal and spatial choices affect liquidity and competition, while product harmonisation
+    can improve interoperability but may conflict with local technical needs. Actor boundaries must also be clear to avoid
+    conflicts when products become interoperable across markets.
+  items:
+  - Ask whether the market window and procurement area are too narrow for liquidity.
+  - Check whether product harmonisation improves interoperability without losing necessary local specificity.
+  - Check that responsibilities remain unambiguous when the same resources can participate in several markets.
+- title: 6. Continue through the TMF workflow
+  text: 'The 2023 paper applies the TMF bottom-up: identify buyer-seller interactions, define the sub-markets, describe each
+    sub-market, describe interactions between sub-markets, then assemble the high-level market architecture. This pillar carries
+    the first three steps.'
   items: []
+terminology_intro: The definitions below preserve the terminology used by OneNet D11.2 and the Troncia et al. TMF paper. Where
+  D11.2 extends the earlier framework, that update is stated explicitly.
+terminology:
+- term: Market architecture
+  definition: The whole mechanism through which electricity products are exchanged to operate a delimited power system. In
+    the TMF it is represented as interacting sub-markets.
+  source: Troncia et al. (2023), §2
+- term: Sub-market
+  definition: A market operated by one market operator that is responsible for clearing that specific market according to
+    a specific objective.
+  source: Troncia et al. (2023), §2
+- term: Gate Opening Time (GOT)
+  definition: The TMF temporal sub-feature used to record when a sub-market gate opens. D11.2 adds GOT, together with GCT
+    and MTU, to improve the description of the market architecture time dimension.
+  source: OneNet D11.2, §5.1.1 / Fig. 5.2
+- term: Gate Closure Time (GCT)
+  definition: The TMF temporal sub-feature used to record when a sub-market gate closes. In D11.2 it is a key compatibility
+    variable when analysing how local and central markets can interact or forward bids.
+  source: OneNet D11.2, Table 2.1
+- term: Market Time Unit (MTU)
+  definition: The time granularity of the market interval/product recorded for a sub-market. D11.2 demonstrator comparisons
+    use MTU values such as 15 minutes and 1 hour and identify MTU mismatches as a potential barrier to bid forwarding.
+  source: OneNet D11.2, Table 2.1
+- term: Sub-market type
+  definition: The market-based solution used to acquire flexibility, such as bilateral negotiation, auction or exchange market.
+  source: Troncia et al. (2023), §2.1 / OneNet D11.2 Fig. 5.2
+- term: Service
+  definition: The action generally undertaken by the system operator to mitigate a technical scarcity that would otherwise
+    undermine network operation or create stability risks.
+  source: Troncia et al. (2023), §2.1
+- term: Product
+  definition: The tradable unit acquired by the network operator from flexibility providers that gives the option to deliver
+    a service when activated.
+  source: Troncia et al. (2023), §2.1
+- term: Type of product
+  definition: An explicit D11.2 Product(s) sub-feature that records the form of the exchanged product. D11.2 derives its options
+    from electricity-market product lists and uses it to compare compatibility across markets.
+  source: OneNet D11.2, §5.1.1 / Table 2.1
+- term: Technical requirements
+  definition: All technical properties that define the product based on the system service for which it is procured; D11.2
+    gives ramping as an example of such a property.
+  source: OneNet D11.2, §5.1.1 / Table 2.1
+- term: Locational granularity
+  definition: The level of detail used to represent the location of a buying or selling unit; TMF options include areas, feeders
+    and nodes at transmission or distribution level.
+  source: OneNet D11.2, Table 2.1 / Fig. 5.2
+- term: Responsible System Operator (SO)
+  definition: The actor taking the system-operator role for the sub-market; the TMF records whether that responsibility lies
+    with a TSO or DSO.
+  source: Troncia et al. (2023), §2.1 / OneNet D11.2 Fig. 5.2
+- term: Market Operator (MO)
+  definition: The actor responsible for operation/clearing of the sub-market. The TMF distinguishes TSO, DSO or an independent
+    market operator as possible market-operator arrangements.
+  source: Troncia et al. (2023), §2 / OneNet D11.2 Fig. 5.2
+- term: Flexibility/Service Provider (FSP/SP)
+  definition: The selling side that provides eligible flexibility or system-service capability, individually or through aggregation.
+  source: OneNet D11.2, Fig. 5.2 and demonstrator tables
+- term: Allowed technologies
+  definition: The D11.2 market-participant sub-feature that states which resource classes are eligible; Figure 5.2 explicitly
+    lists generators, loads and storage.
+  source: OneNet D11.2, Table 2.1
+- term: Aggregation method
+  definition: The D11.2 sub-feature that records how resources may be aggregated. Figure 5.2 lists none, area, voltage level,
+    substation, other, and not applicable as high-level options.
+  source: OneNet D11.2, Fig. 5.2
+- term: Aggregation mix allowed
+  definition: The D11.2 sub-feature that records what types of resources/bids may be combined inside an aggregation; Figure
+    5.2 lists technology-based, bid-based and other as high-level options.
+  source: OneNet D11.2, Fig. 5.2
+- term: Participation in sub-market
+  definition: Optional means providers may choose to participate; compulsory means certain parties are obliged to participate
+    under defined circumstances; hybrid combines compulsory and optional participation.
+  source: Troncia et al. (2023), §2.1
+source_basis:
+- label: OneNet D11.2 — updated TMF, Chapter 5.1
+  href: ../docs/materials/onenet-d11-2-techno-economic-assessment.pdf#page=58
+- label: Troncia et al. (2023) — TMF and OneNet lessons
+  href: ../docs/materials/tmf-tso-dso-coordination-energies-2023.pdf#page=3
+glossary:
+- term: Market architecture
+  definition: The whole mechanism through which electricity products are exchanged to operate a delimited power system. In
+    the TMF it is represented as interacting sub-markets.
+- term: Sub-market
+  definition: A market operated by one market operator that is responsible for clearing that specific market according to
+    a specific objective.
+- term: Gate Opening Time (GOT)
+  definition: The TMF temporal sub-feature that records the gate-opening time value for a sub-market; D11.2 adds GOT to make
+    market timing more explicit.
+- term: Gate Closure Time (GCT)
+  definition: The instant after which submitting or updating bids is no longer permitted.
+- term: Market Time Unit (MTU)
+  definition: The period for which a market price is established; D11.2 also describes it as the minimum duration for which
+    a sell or buy bid can be placed.
+- term: Sub-market type
+  definition: The market-based solution used to acquire flexibility, such as bilateral negotiation, auction or exchange market.
+- term: Service
+  definition: The action generally undertaken by the system operator to mitigate a technical scarcity that would otherwise
+    undermine network operation or create stability risks.
+- term: Product
+  definition: The tradable unit acquired by the network operator from flexibility providers that gives the option to deliver
+    a service when activated.
+feature_matrix_intro: 'This matrix follows the updated Entire Market Architecture structure in OneNet D11.2, Figures 5.1–5.2.
+  It is intended as a reading map: each row is a design choice that should be identifiable when describing an existing market
+  or specifying a new one.'
+feature_matrix:
+- feature: Sub-markets
+  subfeature: Number of sub-markets
+  options: Record the number of distinct sub-markets
+  meaning: Defines how many separate exchange/clearing spaces form the architecture.
+- feature: Sub-markets
+  subfeature: Gate Opening Time (GOT)
+  options: Record the GOT value
+  meaning: Makes the opening of each market session explicit in the temporal architecture.
+- feature: Sub-markets
+  subfeature: Gate Closure Time (GCT)
+  options: Record the GCT value
+  meaning: Makes the closing point of each market session explicit and allows timing compatibility across markets to be assessed.
+- feature: Sub-markets
+  subfeature: Market Time Unit (MTU)
+  options: Record the MTU value
+  meaning: Captures the time granularity of the traded market interval; D11.2 demonstrators use values such as 15 minutes
+    or 1 hour.
+- feature: Sub-markets
+  subfeature: Sub-market type
+  options: Bilateral negotiation; auction; exchange market
+  meaning: Identifies the market-based solution through which flexibility is acquired.
+- feature: Service(s)
+  subfeature: Service
+  options: Relevant system service(s), e.g. balancing, congestion management, voltage control; or service-agnostic
+  meaning: Identifies the system need/action that motivates procurement.
+- feature: Product(s)
+  subfeature: Type of product
+  options: Standardised; harmonised; specific; generalised product forms; availability and/or activation of active/reactive
+    power
+  meaning: Separates the tradable unit from the system service it may support.
+- feature: Product(s)
+  subfeature: Technical requirements
+  options: List the technical properties defined for the exchanged product, e.g. ramping
+  meaning: Records the technical conditions attached to the product for the service for which it is procured.
+- feature: Location
+  subfeature: Locational granularity
+  options: Area, feeder, or node at transmission or distribution level
+  meaning: Defines the spatial resolution at which flexibility is procured.
+- feature: Location
+  subfeature: Responsible SO / voltage level
+  options: TSO or DSO; record voltage level of resources
+  meaning: Connects the sub-market to the responsible system operator and the grid level of eligible resources.
+- feature: Market roles and actors
+  subfeature: Buyer(s), seller(s), market operator
+  options: TSO, DSO, MO/IMO, aggregator, FSP as applicable
+  meaning: Makes institutional responsibility and the sides of the transaction explicit.
+- feature: Market roles and actors
+  subfeature: Allowed technologies
+  options: Generators; loads; storage
+  meaning: States which resource classes may participate.
+- feature: Market roles and actors
+  subfeature: Aggregation method / aggregation mix allowed
+  options: 'Method: none, area, voltage level, substation, other, not applicable; mix: technology-based, bid-based, other'
+  meaning: Describes how individual resources may be grouped and what combinations are allowed.
+- feature: Market roles and actors
+  subfeature: Participation in sub-market
+  options: Optional; compulsory; hybrid
+  meaning: States whether eligible providers choose to participate, are obliged under defined conditions, or face a mixed
+    regime.
+design_intelligence_intro: The TMF does not treat these choices as independent checkboxes. The OneNet analysis highlights
+  interactions among temporal scope, spatial scope, product harmonisation, liquidity, competition, and actor responsibilities.
+design_intelligence:
+- title: Temporal and spatial scope shape liquidity
+  text: The OneNet analysis links larger market windows and broader procurement areas to a larger potential pool of FSPs,
+    while stressing that no generally valid size exists; the design must fit the case.
+  source: Troncia et al. (2023), §4.1
+- title: Product harmonisation creates a design trade-off
+  text: Standardised or harmonised products can improve interoperability, liquidity and competition, especially when the same
+    product can serve several system needs. The source also warns that local technical needs may justify tailored features.
+  source: Troncia et al. (2023), §4.1
+- title: Actor boundaries matter when markets become interoperable
+  text: When resources and products can move across markets, the architecture must make roles and responsibilities explicit
+    to avoid inefficient or conflicting actions between system operators and market operators.
+  source: Troncia et al. (2023), §4.1
+- title: Use the pillar bottom-up
+  text: The TMF application starts from buyer–seller interactions, defines sub-markets, describes each sub-market with the
+    TMF features, then describes interactions and reconstructs the overall architecture.
+  source: Troncia et al. (2023), §3
+mapping_checklist:
+- Can every sub-market be placed unambiguously on a common time axis using GOT, GCT and MTU?
+- Can the system service be distinguished from the product used to procure it?
+- Can an external reviewer identify the buyer, seller, market operator, responsible SO and eligible technologies without relying
+  on local institutional knowledge?
+- Is the spatial granularity explicit enough to compare the market with another jurisdiction?
+- Are aggregation and participation rules explicit enough to judge interoperability and bid-forwarding potential?

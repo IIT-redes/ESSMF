@@ -44,6 +44,12 @@ sections:
     text: "After the pillar-by-pillar review, we warmly invite you to share any general comment, concern,\n    \
       \      reference, use case, implementation example, or supporting material that could help us improve\n  \
       \        the proposed framework as a whole."
+  spain-example:
+    eyebrow: Worked implementation example
+    title: Spain case — from five filled TMF tables to one readable market architecture
+    text: 'The Spanish demonstrator illustrates the intended workflow of the framework: experts first fill the five
+      pillar tables using a common vocabulary; those entries are then translated into a single market-architecture
+      view. The figure is therefore a visual synthesis of the structured tables, not a separate design exercise.'
 pillars:
 - id: market-architecture
   eyebrow: The structure of exchange
@@ -70,3 +76,84 @@ pillars:
   title: Network representation
   summary: Network representation defines how physical constraints, topology, voltage, congestion, and location
     are included in the market design.
+spain_example:
+  image: assets/spain-market-structure.png
+  image_alt: Overview of the Market Architecture for the OneNet Spanish demonstrator
+  image_caption: Figure 5.7 / Spain case. The lower DSO layer contains the four OneNet local sub-markets; the upper
+    layer places the relevant existing day-ahead, intraday, balancing and TSO congestion-management markets in context.
+    The horizontal axis orders markets from long-term to near-real-time.
+  explanation_title: How the filled tables are translated into the market-structure figure
+  explanation_intro: 'D11.2 uses the TMF to describe the Spanish demonstrator systematically. The transformation
+    can be read as a seven-step mapping from table entries to visual elements:'
+  explanation_points:
+  - '1. Create the market blocks from Pillar 1. The Spanish architecture table identifies four DSO-side sub-markets:
+    LT-D-P-A, LT-D-P-AE, ST-D-P-E and RT-D-P-E. Each becomes a separate block in the DSO layer.'
+  - 2. Place the blocks on the time axis using GOT, GCT and MTU. The long-term markets open months/weeks ahead;
+    ST-D-P-E operates day-ahead or next-hour; RT-D-P-E is positioned on the day of delivery / near-real-time. Those
+    rows determine the left-to-right placement of the blocks.
+  - 3. Place the blocks on the buyer/system-operator axis using the location and actor rows. The DSO is the buyer
+    and responsible system operator; resources are connected at MV/LV and grouped in distribution-system areas.
+    This is why the four OneNet sub-markets appear in the DSO layer rather than the TSO layer.
+  - 4. Interpret each block using service and product rows. All four local sub-markets support congestion management,
+    while the traded attribute changes from active-power availability, to availability + activation, to activation.
+    The OneNet harmonised-product mapping distinguishes predictive long-term, predictive short-term and corrective
+    products.
+  - 5. Draw links using Pillar 2. The coordination table gives the DSO exclusive access to DERs in the demonstrator,
+    defines conditional commitment from long-term availability markets into ST-D-P-E, and records the conceptual
+    investigation of bid forwarding from ST-D-P-E toward the intraday energy market. These entries become the dashed
+    participation-forwarding and solid bid-forwarding arrows in the figure.
+  - 6. Read the sequencing from Pillars 3 and 4. The Spanish design is decentralised, sequential and cost-minimising;
+    the local markets use pay-as-bid auctions, discrete clearing, event-based DSO procurement, 10 kW minimum bids
+    and simple bid structures. These choices explain why the figure shows separate market sessions rather than one
+    simultaneously co-optimised clearing box.
+  - 7. Interpret the local nature through Pillar 5. Network constraints are represented with comprehensive/partial
+    grid data and incorporated when procurement areas are defined and during procurement. This supports the local
+    DSO procurement-area interpretation of the lower layer.
+  - 'Important boundary of the example: the filled Spanish TMF tables describe the OneNet local DSO markets. D11.2
+    then places existing day-ahead/intraday energy, balancing and TSO congestion-management markets above them to
+    show the wider architecture. Their integration with the local short-term markets was an open task; the possible
+    links were investigated conceptually rather than fully demonstrated.'
+  downloads_title: Download the worked Spain case
+  downloads:
+  - title: Filled Spanish TMF tables — DOCX
+    description: All five filled pillar tables in editable Word format.
+    file: docs/materials/tmf_spanish_demo_filled_tables.docx
+    label: Download filled tables (Word)
+  - title: Spain case — filled tables + resulting figure
+    description: The supplied Spain case PDF, including the five filled tables and the resulting market-architecture
+      figure.
+    file: docs/materials/tmf_spanish_demo_filled_tables_and_figure.pdf
+    label: Download Spain case PDF
+  - title: Spanish market-architecture figure
+    description: Standalone market-structure figure derived from the structured TMF mapping.
+    file: docs/materials/spain-market-structure.png
+    label: Download figure
+  - title: OneNet D11.2
+    description: Techno-economic assessment containing the TMF and the Spanish demonstrator description.
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    label: Open D11.2
+  mapping_title: Table-to-figure translation at a glance
+  mapping_rows:
+  - table_input: Pillar 1 — Sub-markets + GOT/GCT/MTU
+    determines: How many blocks exist and where they sit in time
+    figure_output: LT, day-ahead/next-hour, intraday and near-real-time positions
+  - table_input: Pillar 1 — Service + product
+    determines: Purpose and traded flexibility attribute
+    figure_output: Congestion-management markets with availability / activation logic
+  - table_input: Pillar 1 — Location + actors
+    determines: Who buys and at which grid layer
+    figure_output: Local OneNet blocks placed in the DSO layer
+  - table_input: Pillar 2 — Commitment + bid forwarding
+    determines: How sub-markets can interact
+    figure_output: Dashed participation-forwarding and solid bid-forwarding arrows
+  - table_input: Pillar 3 — Optimisation
+    determines: Relationship among clearing problems
+    figure_output: Separate sequential market blocks rather than one joint clearing block
+  - table_input: Pillar 4 — Operation
+    determines: Auction/clearing/session characteristics
+    figure_output: Operational interpretation of each local market session
+  - table_input: Pillar 5 — Network representation
+    determines: How locality and grid feasibility enter procurement
+    figure_output: Distribution procurement-area interpretation of the DSO layer
+  source_note: 'Source basis: OneNet D11.2, Section 5.1.6 (Spanish demonstrator), Figure 5.7 and Appendix Tables
+    9.7–9.11; filled Spain tables supplied for this website review.'

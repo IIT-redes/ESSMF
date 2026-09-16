@@ -1,23 +1,164 @@
 editorial_status: approved
 slug: network-representation
 file: network-representation.html
+download_file: docs/materials/tmf_blank_05_network_representation.docx
+download_label: Download editable table (Word)
+pdf_file: docs/materials/tmf_blank_05_network_representation.pdf
+preview_image: assets/tmf_blank_05_network_representation_preview.png
+preview_alt: Blank ready-to-fill Network representation TMF table
+pdf_label: Open / download blank PDF
+worksheet_title: Ready-to-fill TMF mapping table
+worksheet_text: Use this exact blank table to map your own market with the same feature/sub-feature structure. Complete one
+  column per sub-market; then compare the resulting structure with other European cases.
 eyebrow: The physics inside the market
 title: Network representation
-subtitle: 'Network representation defines how physical constraints enter the market: voltage, congestion, current limits,
-  topology, locational granularity, zones, nodes, feeders, or virtual buses.'
-cards:
-- title: Conceptual role
-  text: This pillar is the bridge between market abstraction and grid physics. It helps decide when and how network constraints
-    are included without overexposing sensitive grid data.
+subtitle: The Network Representation pillar specifies how network constraints are represented in the market architecture and
+  at which market phase those constraints are introduced.
+philosophy: 'This pillar is the interface between market abstraction and physical feasibility. The earlier TMF paper calls
+  it Grid Representation; D11.2 uses Network Representation and retains the two core questions: how network constraints are
+  represented, and when they enter the market process. The choice determines data needs, computational burden, information
+  exchange and the likelihood that a market-clearing result is physically feasible without later corrective action.'
+flowchart_caption: The D11.2 flowchart organises network representation into the form of constraint representation and the
+  timing of inclusion across market phases.
+tutorial_intro: Use this pillar to make explicit how much of the physical network the market “sees” and when that information
+  constrains procurement or activation.
+tutorial_sections:
+- title: 1. Choose the representation of network constraints
+  text: The TMF distinguishes different levels of network representation. The 2023 paper explains comprehensive grid data
+    and partial grid data; D11.2 also lists empirical rules and definition of procurement areas in the updated option set.
   items: []
-- title: Questions for reviewers
-  text: Is the network representation accurate enough for operation? Is it simple enough for market clearing? Where are zones,
-    sensitivities, or validation needed?
-  items:
-  - Are the current features sufficient to describe real European market arrangements?
-  - Are there missing options from demonstrators, regulation, or operational practice?
-  - Does the terminology work across research, regulation, and implementation?
-- title: Connection to the platform
-  text: This pillar can be connected to dashboards, data exchange, market-clearing tools, and feedback workflows. Its purpose
-    is to make design assumptions explicit before they become software, regulation, or market rules.
+- title: 2. Understand the fidelity/data trade-off
+  text: Comprehensive grid data can support detailed power-flow calculations but increases data, computation and information-sharing
+    requirements. Partial grid data can use sensitivities and constraint margins instead of a full network model. The framework
+    makes this trade-off a market-design decision.
   items: []
+- title: 3. Decide when constraints enter the process
+  text: D11.2 lists timing options such as definition of procurement areas, prequalification, procurement, activation, measurement
+    and settlement. The same architecture may therefore use network information at more than one stage.
+  items: []
+- title: 4. Check the consequence for feasibility
+  text: A less comprehensive representation can reduce implementation burden but may require additional checks or corrective
+    procedures after clearing. A more comprehensive representation can improve compliance with grid constraints but demands
+    more data and computation.
+  items: []
+- title: 5. Include governance and information-sharing implications
+  text: The OneNet analysis links network-model detail to grid-information availability, power-flow computation, data-exchange
+    timing, cyber-security and privacy concerns. These implications should be reviewed together with the optimisation methodology
+    rather than in isolation.
+  items: []
+terminology_intro: OneNet D11.2 updates the option set of this pillar. Where the reports list an option without a stand-alone
+  prose definition, the repository states that explicitly instead of inventing one.
+terminology:
+- term: Network / grid representation
+  definition: The TMF pillar describing how network constraints are represented and when they are included in the market architecture.
+    The 2023 paper uses “Grid Representation”; D11.2 uses “Network Representation”.
+  source: Troncia et al. (2023), §2.5 / OneNet D11.2 §5.1.5
+- term: Representation of network constraints
+  definition: The modelling approach used to account for physical network limits in the market design.
+  source: Troncia et al. (2023), §2.5
+- term: Comprehensive grid data
+  definition: A detailed representation of the electrical properties of the grid that allows the optimisation to calculate
+    grid phenomena and perform full power-flow calculations.
+  source: Troncia et al. (2023), §2.5
+- term: Partial grid data
+  definition: A reduced representation using information such as flexibility sensitivities to critical voltage/current constraints
+    and the corresponding margins, rather than a full grid model.
+  source: Troncia et al. (2023), §2.5
+- term: Empirical rules
+  definition: An explicit representation option listed in the updated D11.2 TMF. D11.2 lists the option but does not provide
+    a separate prose definition in §5.1.5.
+  source: OneNet D11.2, Fig. 5.6
+- term: Definition of procurement areas
+  definition: An explicit D11.2 option that uses the delineation of procurement areas as part of how network needs/constraints
+    are represented in the market architecture.
+  source: OneNet D11.2, Fig. 5.6 and demonstrator tables
+- term: Timing of inclusion of network constraints
+  definition: The market phase at which network constraints are introduced into the acquisition process.
+  source: Troncia et al. (2023), §2.5 / OneNet D11.2 Fig. 5.6
+- term: Prequalification
+  definition: A possible timing point at which technical eligibility and grid/product capability are checked before procurement.
+  source: OneNet D11.2, Table 2.2 / Fig. 5.6
+- term: Procurement phase
+  definition: The phase in which the buyer’s need meets sellers’ offers and binding product-exchange agreements are determined,
+    including bid collection and market clearing.
+  source: OneNet D11.2, Table 2.2
+- term: Activation
+  definition: The process that triggers delivery of the procured service.
+  source: OneNet D11.2, Table 2.2
+- term: Measurement
+  definition: The process used to observe provider and/or grid behaviour during service provision and collect legally relevant
+    measurements.
+  source: OneNet D11.2, Table 2.2
+- term: Settlement
+  definition: The procedures used to determine and execute the monetary exchange between buyer and seller based on measured
+    service provision.
+  source: OneNet D11.2, Table 2.2
+source_basis:
+- label: OneNet D11.2 — updated TMF, Chapter 5.1
+  href: ../docs/materials/onenet-d11-2-techno-economic-assessment.pdf#page=58
+- label: Troncia et al. (2023) — TMF and OneNet lessons
+  href: ../docs/materials/tmf-tso-dso-coordination-energies-2023.pdf#page=3
+glossary:
+- term: Network / grid representation
+  definition: The TMF pillar describing how network constraints are represented and when they are included in the market architecture.
+    The 2023 paper uses “Grid Representation”; D11.2 uses “Network Representation”.
+- term: Representation of network constraints
+  definition: The modelling approach used to account for physical network limits in the market design.
+- term: Comprehensive grid data
+  definition: A detailed representation of the electrical properties of the grid that allows the optimisation to calculate
+    grid phenomena and perform full power-flow calculations.
+- term: Partial grid data
+  definition: A reduced representation using information such as flexibility sensitivities to critical voltage/current constraints
+    and the corresponding margins, rather than a full grid model.
+- term: Empirical rules
+  definition: An explicit representation option listed in the updated D11.2 TMF. D11.2 lists the option but does not provide
+    a separate prose definition in §5.1.5.
+- term: Definition of procurement areas
+  definition: An explicit D11.2 option that uses the delineation of procurement areas as part of how network needs/constraints
+    are represented in the market architecture.
+- term: Timing of inclusion of network constraints
+  definition: The market phase at which network constraints are introduced into the acquisition process.
+- term: Prequalification
+  definition: A possible timing point at which technical eligibility and grid/product capability are checked before procurement.
+feature_matrix_intro: 'The OneNet Network Representation pillar asks two questions only: how network constraints are represented,
+  and at which market phase they are introduced.'
+feature_matrix:
+- feature: Representation of network constraints
+  subfeature: Level/form of representation
+  options: Comprehensive grid data; partial grid data; empirical rules
+  meaning: Defines how much network physics/information is embedded in or around market clearing.
+- feature: Timing of inclusion of network constraints
+  subfeature: Market phase
+  options: Definition of procurement areas; prequalification; procurement; activation; measurement; settlement
+  meaning: Defines when network feasibility information influences the market process.
+design_intelligence_intro: The OneNet/Troncia analysis frames network representation as a techno-economic trade-off between
+  physical fidelity and the data, computation, information exchange and governance burden required to obtain it.
+design_intelligence:
+- title: Comprehensive grid data increases physical detail and information burden
+  text: The peer-reviewed TMF explains comprehensive grid data as a representation of electrical grid properties that allows
+    the optimisation to perform detailed power-flow calculations.
+  source: Troncia et al. (2023), §2.5
+- title: Partial grid data can use sensitivities and margins
+  text: The TMF describes partial grid data as using the sensitivity of flexibility to critical voltage/current constraints
+    and associated margins, avoiding a full network model in the market clearing.
+  source: Troncia et al. (2023), §2.5
+- title: Less complete representation can require corrective checks
+  text: OneNet notes that representation comprehensiveness affects whether clearing results comply with grid constraints and
+    therefore whether further corrective procedures are needed to ensure feasibility.
+  source: Troncia et al. (2023), §4.5
+- title: The timing of network inclusion is itself a design choice
+  text: D11.2 allows network constraints to enter at procurement-area definition, prequalification, procurement, activation,
+    measurement or settlement, meaning feasibility can be protected at several different points in the process.
+  source: OneNet D11.2, Fig. 5.6
+- title: Information governance is part of the trade-off
+  text: The OneNet analysis connects grid-model detail with data availability, power-flow computation, data-exchange timing,
+    cyber-security and privacy concerns among TSOs, DSOs and other stakeholders.
+  source: Troncia et al. (2023), §4.5
+mapping_checklist:
+- Does the market use comprehensive grid data, partial grid data or empirical rules to protect network feasibility?
+- Can the data actually be shared at the required time and with acceptable computational burden?
+- At which market phases do network constraints influence eligibility, procurement, activation or verification?
+- If the representation is simplified, what additional check or corrective action ensures that the final result is physically
+  feasible?
+- Is the network-representation choice consistent with the optimisation methodology and the information available to each
+  system operator?

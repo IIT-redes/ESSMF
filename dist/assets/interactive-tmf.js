@@ -160,6 +160,22 @@
   }
 
   function setupFeedbackForms() {
+    document.querySelectorAll(".structured-poll-link").forEach(link => {
+      const section = link.closest(".pillar-section");
+      const item = section ? cfg.sections?.[section.dataset.sectionKey] : null;
+      const url = item?.pollUrl;
+      if (isUrl(url)) {
+        link.href = url;
+      } else {
+        link.href = "#";
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const title = item?.pollTitle || item?.label || "this pillar";
+          showNotice(link, `Create the GitHub Poll for ${title}, then paste its discussion URL into the site feedback configuration.`);
+        });
+      }
+    });
+
     document.querySelectorAll(".feedback-form-link").forEach(link => {
       let item;
       if (link.dataset.feedbackPage) {
@@ -206,6 +222,13 @@
   }
 
   function giscusSettingsFor(button) {
+    if (button.dataset.giscusTerm) {
+      return {
+        term: button.dataset.giscusTerm,
+        category: button.dataset.giscusCategory || cfg.giscus?.category,
+        categoryId: button.dataset.giscusCategoryId || cfg.giscus?.categoryId
+      };
+    }
     if (button.dataset.feedbackPage) {
       const item = cfg.feedbackPages?.[button.dataset.feedbackPage] || {};
       return {
@@ -232,6 +255,23 @@
   }
 
   function setupGiscus() {
+    const discussionSearchUrl = term =>
+      `https://github.com/${encodeURIComponent((cfg.giscus || {}).repo || "IIT-redes/ESSMF")}/discussions?discussions_q=${encodeURIComponent(term)}`;
+
+    const resetExistingGiscus = currentHost => {
+      document.querySelectorAll(".comments-box").forEach(box => {
+        if (box === currentHost) return;
+        box.innerHTML = "";
+      });
+      document.querySelectorAll(".load-comments").forEach(b => {
+        if (!b.closest("section")?.contains(currentHost)) {
+          b.setAttribute("aria-expanded", "false");
+          const lbl = b.querySelector("span:last-child");
+          if (lbl) lbl.textContent = "Open discussion";
+        }
+      });
+    };
+
     document.querySelectorAll(".load-comments").forEach(button => {
       button.addEventListener("click", () => {
         const global = cfg.giscus || {};
@@ -239,12 +279,24 @@
         const host = button.closest("section")?.querySelector(".comments-box") ||
                      document.querySelector(`[data-comments-for="${button.dataset.mechanism}"]`);
         if (!host) return;
-        host.innerHTML = "";
 
-        if (!global.enabled || !global.repo || !global.repoId || !settings.category || !settings.categoryId) {
-          host.innerHTML = '<div class="comments-placeholder">The discussion channel is ready, but its giscus repository/category settings are not configured yet.</div>';
+        resetExistingGiscus(host);
+        host.innerHTML = "";
+        host.scrollIntoView({ behavior: "smooth", block: "center" });
+
+        const configured = global.enabled && global.repo && global.repoId && settings.category && settings.categoryId
+          && !String(settings.category).startsWith("PASTE_") && !String(settings.categoryId).startsWith("PASTE_");
+        if (!configured) {
+          host.innerHTML = '<div class="comments-placeholder"><strong>Giscus is configured in the page, but the repository/category details are incomplete.</strong></div>';
           return;
         }
+
+        // Giscus is most reliable with one active widget per page.  We mount only the
+        // discussion that the reviewer explicitly opens, using a unique term per pillar.
+        const mount = document.createElement("div");
+        mount.className = "giscus";
+        mount.setAttribute("data-active-term", settings.term);
+        host.appendChild(mount);
 
         const script = document.createElement("script");
         script.src = "https://giscus.app/client.js";
@@ -254,30 +306,152 @@
         script.dataset.repoId = global.repoId;
         script.dataset.category = settings.category;
         script.dataset.categoryId = settings.categoryId;
-        script.dataset.mapping = "specific";
+        script.dataset.mapping = global.mapping || "specific";
         script.dataset.term = settings.term;
-        script.dataset.strict = "1";
-        script.dataset.reactionsEnabled = "1";
-        script.dataset.emitMetadata = "0";
-        script.dataset.inputPosition = "top";
+        script.dataset.strict = String(global.strict ?? "0");
+        script.dataset.reactionsEnabled = String(global.reactionsEnabled ?? "1");
+        script.dataset.emitMetadata = String(global.emitMetadata ?? "0");
+        script.dataset.inputPosition = global.inputPosition || "top";
         script.dataset.theme = global.theme || "light";
         script.dataset.lang = global.lang || "en";
+        if (global.loading) script.dataset.loading = global.loading;
         host.appendChild(script);
+
+        button.setAttribute("aria-expanded", "true");
+        const label = button.querySelector("span:last-child");
+        if (label) label.textContent = "Discussion opened";
+
+        // Helpful fallback: if the iframe does not appear, the most common reasons are
+        // testing from file:// instead of HTTP(S), or the Giscus GitHub App not being
+        // installed/authorised for this repository.
+        window.setTimeout(() => {
+          if (!host.querySelector(".giscus-frame")) {
+            const helper = document.createElement("div");
+            helper.className = "comments-placeholder giscus-diagnostic";
+            helper.innerHTML = `<strong>The discussion widget has not loaded yet.</strong><br>
+              Test the site through GitHub Pages or <code>preview_local.bat</code> (not by double-clicking the HTML file), and confirm that the Giscus GitHub App has access to <strong>${global.repo}</strong>.<br>
+              <a href="${discussionSearchUrl(settings.term)}" target="_blank" rel="noopener">Open/search this pillar discussion directly on GitHub</a> ·
+              <a href="https://github.com/apps/giscus" target="_blank" rel="noopener">Check Giscus App access</a>`;
+            host.appendChild(helper);
+          }
+        }, 9000);
       });
     });
   }
 
   function setupProgressButtons() {
-    const completed = new Set();
-    document.querySelectorAll(".looks-fine-button").forEach(button => {
+    const buttons = [...document.querySelectorAll(".looks-fine-button")];
+    if (!buttons.length) return;
+
+    const storageKey = "tmf-feedback-progress:" + location.pathname.replace(/[^a-z0-9_-]+/gi, "-");
+    const uniqueKeys = [...new Set(buttons.map(b => b.dataset.progressKey || b.dataset.pillar).filter(Boolean))];
+    const total = uniqueKeys.length || buttons.length;
+    const percentEl = document.getElementById("progress-percent");
+    const fillEl = document.getElementById("progress-fill");
+    const progressBox = document.querySelector(".feedback-progress");
+    const celebration = document.getElementById("celebration");
+
+    const safeLoad = () => {
+      try {
+        const raw = localStorage.getItem(storageKey);
+        return new Set((raw ? JSON.parse(raw) : []).filter(Boolean));
+      } catch (_) {
+        return new Set();
+      }
+    };
+    const completed = safeLoad();
+    const safeSave = () => {
+      try { localStorage.setItem(storageKey, JSON.stringify([...completed])); } catch (_) { /* local file preview may block storage */ }
+    };
+
+    const launchLightCelebration = () => {
+      document.querySelectorAll('.tmf-light-show,.tmf-party-show').forEach(el => el.remove());
+
+      const light = document.createElement('div');
+      light.className = 'tmf-light-show';
+      light.setAttribute('aria-hidden','true');
+      for (let i=0; i<34; i++) {
+        const spark = document.createElement('span');
+        spark.className = 'tmf-spark';
+        spark.style.setProperty('--x', (Math.random()*100).toFixed(2) + 'vw');
+        spark.style.setProperty('--y', (Math.random()*100).toFixed(2) + 'vh');
+        spark.style.setProperty('--delay', (Math.random()*1.1).toFixed(2) + 's');
+        spark.style.setProperty('--scale', (0.55 + Math.random()*1.65).toFixed(2));
+        light.appendChild(spark);
+      }
+      document.body.appendChild(light);
+
+      const party = document.createElement('div');
+      party.className = 'tmf-party-show';
+      party.setAttribute('aria-hidden','true');
+      const confettiShapes = ['■','●','◆','▲','▰'];
+      for (let i=0; i<90; i++) {
+        const c = document.createElement('span');
+        c.className = 'tmf-confetti';
+        c.textContent = confettiShapes[Math.floor(Math.random()*confettiShapes.length)];
+        c.style.setProperty('--x', (Math.random()*100).toFixed(2) + 'vw');
+        c.style.setProperty('--delay', (Math.random()*1.3).toFixed(2) + 's');
+        c.style.setProperty('--dur', (2.8 + Math.random()*2.3).toFixed(2) + 's');
+        c.style.setProperty('--rot', (360 + Math.random()*1080).toFixed(0) + 'deg');
+        c.style.setProperty('--hue', (Math.random()*360).toFixed(0));
+        party.appendChild(c);
+      }
+      for (let i=0; i<22; i++) {
+        const ch = document.createElement('span');
+        ch.className = 'tmf-chocolate';
+        ch.textContent = ['🍫','🍬','🍪'][i%3];
+        ch.style.setProperty('--x', (3 + Math.random()*94).toFixed(2) + 'vw');
+        ch.style.setProperty('--delay', (Math.random()*1.15).toFixed(2) + 's');
+        ch.style.setProperty('--dur', (3.0 + Math.random()*1.7).toFixed(2) + 's');
+        ch.style.setProperty('--s', (0.8 + Math.random()*1.0).toFixed(2));
+        party.appendChild(ch);
+      }
+      document.body.appendChild(party);
+      document.body.classList.add('tmf-review-complete');
+      setTimeout(() => document.body.classList.remove('tmf-review-complete'), 5200);
+      setTimeout(() => light.remove(), 6100);
+      setTimeout(() => party.remove(), 6500);
+    };
+
+    const update = (flash=false) => {
+      buttons.forEach(button => {
+        const key = button.dataset.progressKey || button.dataset.pillar;
+        const done = key && completed.has(key);
+        button.classList.toggle("completed", !!done);
+        button.setAttribute('aria-pressed', done ? 'true' : 'false');
+        const text = button.querySelector("span:last-child");
+        if (text) text.textContent = done ? "Recorded: no further feedback" : "No further feedback";
+      });
+      const count = uniqueKeys.filter(k => completed.has(k)).length;
+      const pct = total ? Math.round((count / total) * 100) : 0;
+      if (percentEl) percentEl.textContent = pct + "%";
+      if (fillEl) fillEl.style.width = pct + "%";
+      if (progressBox) {
+        progressBox.setAttribute('aria-valuemin','0');
+        progressBox.setAttribute('aria-valuemax','100');
+        progressBox.setAttribute('aria-valuenow',String(pct));
+        progressBox.classList.toggle('complete', pct >= 100);
+      }
+      safeSave();
+      if (pct >= 100 && celebration && flash) {
+        celebration.innerHTML = "<strong>100% — review completed!</strong><span>Thank you sincerely for your time, expertise, and contribution. Your feedback helps us build a clearer common language for European flexibility-market design.</span><i>🎉 🍫 🎊</i>";
+        celebration.classList.add("show", "pulse-once");
+        launchLightCelebration();
+        setTimeout(() => celebration.classList.remove("show", "pulse-once"), 5200);
+      }
+    };
+
+    buttons.forEach(button => {
       button.addEventListener("click", () => {
         const key = button.dataset.progressKey || button.dataset.pillar;
-        if (key) completed.add(key);
-        button.classList.add("completed");
-        const text = button.querySelector("span:last-child");
-        if (text) text.textContent = "Recorded: no further feedback";
+        if (!key) return;
+        const wasComplete = uniqueKeys.every(k => completed.has(k));
+        completed.add(key);
+        const nowComplete = uniqueKeys.every(k => completed.has(k));
+        update(nowComplete && !wasComplete);
       });
     });
+    update(false);
   }
 
   function setupActiveNavigation() {
