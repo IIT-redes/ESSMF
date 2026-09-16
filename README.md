@@ -1,14 +1,13 @@
-# Flexibility Acquisition Mechanisms — CMS-ready repository
+# ESSMF website source
 
-This repository separates **content** from **design**. Colleagues edit YAML files through Pages CMS; GitHub Actions rebuilds and publishes the website.
+**Deployment note:** this repository now contains a real root `index.html`, so GitHub Pages can serve the website even if Pages is set to "Deploy from branch / root". The preferred mode is still **GitHub Actions**, which builds and deploys `dist`. See `DEPLOYMENT_README_V12.md`.
 
-## Important folders
+# Flexibility Acquisition Mechanisms - integrated storyline revision
 
-- `content/` — editable website text, review dimensions, library, team, forms, and giscus settings.
-- `site_src/` — HTML/CSS/JavaScript design source. Editors should normally not change it.
-- `scripts/build.py` — combines content with the existing design.
-- `dist/` — generated website uploaded to GitHub Pages.
-- `.pages.yml` — Pages CMS editing interface.
-- `.github/workflows/` — validation and publication automation.
-
-Read `CMS_SETUP_AND_EDITING_GUIDE.md` first. A one-page colleague guide is in `QUICK_GUIDE_FOR_EDITORS.md`.
+## Main changes
+- Rebuilt the first page around the CEER flexibility-access landscape.
+- Added a seven-turn decision road covering network need, reinforcement/DSO-owned resources, rules-based approaches, tariffs, connection agreements, market-based procurement, and integrated portfolio design.
+- Explained why tariff design, flexible connection agreements, and local flexibility markets are selected for deeper review.
+- Added a direct invitation to European experts and an explicit pathway from feedback to shared research lines.
+- Added philosophical statements and respectful invitations on the tariff and connection mechanism pages.
+- Restored the Electricity System Services Market Feedback menu so every subsection scrolls to the exact pillar section on the ESSM main page.
