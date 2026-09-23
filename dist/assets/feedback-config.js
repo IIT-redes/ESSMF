@@ -3,6 +3,7 @@ window.TMF_FEEDBACK_CONFIG = {
   "pollUrl": "#",
   "uploadUrl": "#",
   "generalFeedbackUrl": "#",
+  "generalGiscusTerm": "Theoretical Market Framework — General comments",
   "feedbackPages": {
     "connection-access-rights": {
       "label": "Access-right design",
@@ -98,7 +99,7 @@ window.TMF_FEEDBACK_CONFIG = {
       "giscusCategoryId": ""
     },
     "flexibility-connection-agreement": {
-      "label": "Flexibility connection agreement",
+      "label": "Flexible connection agreement",
       "googleFormUrl": "#",
       "giscusTerm": "flex-connection-agreement",
       "giscusCategory": "",
@@ -120,7 +121,7 @@ window.TMF_FEEDBACK_CONFIG = {
       "pollTitle": "TMF Pillar 1 — Structured assessment",
       "giscusTerm": "TMF Pillar 1 — Entire Market Architecture",
       "qnaTitle": "TMF Pillar 1 — Entire Market Architecture",
-      "qnaPrompt": "Does the Entire Market Architecture pillar provide a sufficiently complete and unambiguous common language to reconstruct an existing flexibility market and to specify a new distribution-level market before coordination and clearing are designed?"
+      "qnaPrompt": "Can this pillar describe an existing flexibility market unambiguously and guide a new distribution-level market?"
     },
     "subMarketCoordination": {
       "label": "Sub-market coordination",
@@ -129,7 +130,7 @@ window.TMF_FEEDBACK_CONFIG = {
       "pollTitle": "TMF Pillar 2 — Structured assessment",
       "giscusTerm": "TMF Pillar 2 — Sub-market Coordination",
       "qnaTitle": "TMF Pillar 2 — Sub-market Coordination",
-      "qnaPrompt": "Does the Sub-market Coordination pillar capture the decisions needed to allocate the same flexibility resource pool across interacting local, TSO/DSO, wholesale or balancing sub-markets without double use, conflicting activation or avoidable barriers to value stacking?"
+      "qnaPrompt": "Does this pillar capture how shared flexibility is allocated across interacting markets without double use or conflicting activation?"
     },
     "marketOptimization": {
       "label": "Market optimization",
@@ -138,7 +139,7 @@ window.TMF_FEEDBACK_CONFIG = {
       "pollTitle": "TMF Pillar 3 — Structured assessment",
       "giscusTerm": "TMF Pillar 3 — Market Optimisation",
       "qnaTitle": "TMF Pillar 3 — Market Optimisation",
-      "qnaPrompt": "Do the TMF choices for optimisation methodology, the relationship among sub-market clearings and the clearing objective provide enough information to distinguish existing designs and to guide a new coordinated distribution-level market?"
+      "qnaPrompt": "Do these optimisation fields distinguish existing designs and guide a new coordinated distribution-level market?"
     },
     "marketOperation": {
       "label": "Market operation",
@@ -147,7 +148,7 @@ window.TMF_FEEDBACK_CONFIG = {
       "pollTitle": "TMF Pillar 4 — Structured assessment",
       "giscusTerm": "TMF Pillar 4 — Market Operation",
       "qnaTitle": "TMF Pillar 4 — Market Operation",
-      "qnaPrompt": "Does the Market Operation pillar contain the minimum operational information needed to compare how flexibility sub-markets actually run and to implement a new one without confusing operational rules with other TMF dimensions?"
+      "qnaPrompt": "Does this pillar contain the minimum information needed to compare and implement sub-market operation?"
     },
     "networkRepresentation": {
       "label": "Network representation",
@@ -156,7 +157,7 @@ window.TMF_FEEDBACK_CONFIG = {
       "pollTitle": "TMF Pillar 5 — Structured assessment",
       "giscusTerm": "TMF Pillar 5 — Network Representation",
       "qnaTitle": "TMF Pillar 5 — Network Representation",
-      "qnaPrompt": "Does the Network Representation pillar adequately capture how and when distribution/transmission constraints are introduced so that a market result can be physically feasible while remaining implementable in terms of data, computation and information sharing?"
+      "qnaPrompt": "Does this pillar capture how and when network constraints enter the market so that results remain physically feasible?"
     }
   },
   "giscus": {

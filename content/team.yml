@@ -3,25 +3,41 @@ eyebrow: Who we are
 title: A research team connecting market design, regulation, and power-system operation
 intro: We develop structured ways to compare flexibility acquisition mechanisms and invite expert scrutiny before concepts
   become institutional or digital designs.
-team_image: ../assets/team-strip.png
+team_image: ''
 members:
 - initials: MT
   name: Matteo Troncia
-  role: Professor and Researcher
-  program: BeFlexible
-  bio: Research leadership across electricity-market design, distribution-system flexibility, system services, and regulatory
+  role: Research Assistant Professor · Area Coordinator
+  program: Distributed Resources, Networks and Flexibility
+  bio: Research leadership in electricity-market design, distribution-system flexibility, system services, and TSO–DSO/regulatory
     coordination.
-  email: mtroncia@comillas.edu
-- initials: EO
-  name: Eliana Ormeño
-  role: Research Assistant
-  program: BeFlexible
-  bio: Research support linking literature, demonstrator evidence, stakeholder needs, and structured mechanism design.
-  email: eormeno@comillas.edu
+  email: matteo.troncia@iit.comillas.edu
+  profile_url: https://www.iit.comillas.edu/personas/mtroncia
+  photo_url: https://www.iit.comillas.edu/personas/resources/images/personal/fotos/2787.jpg
+- initials: JC
+  name: Dr. José Pablo Chaves Ávila
+  role: Associate Professor · Deputy Director, IIT
+  program: Distributed Resources, Networks and Flexibility
+  bio: Research and leadership across electricity regulation, flexibility markets, distributed resources, TSO–DSO coordination,
+    and European energy-system innovation.
+  email: jose.chaves@iit.comillas.edu
+  profile_url: https://www.iit.comillas.edu/personas/jchaves
+  photo_url: https://www.iit.comillas.edu/personas/resources/images/personal/fotos/2322.jpg
 - initials: SS
   name: Sajjad Solat
   role: Postdoctoral Researcher
-  program: BeFlexible
+  program: Distributed Resources, Networks and Flexibility
   bio: Research on flexibility acquisition, local markets, network-aware coordination, computational frameworks, and interactive
     expert-review platforms.
   email: ssolat@comillas.edu
+  profile_url: https://www.iit.comillas.edu/personas/ssolat
+  photo_url: https://www.iit.comillas.edu/personas/resources/images/personal/fotos/3315.jpg
+- initials: DS
+  name: Donatello Scarfiello
+  role: Doctoral Candidate · Research Assistant
+  program: Distributed Resources, Networks and Flexibility
+  bio: Research on distributed energy resources, power-system flexibility, and energy-market analysis, with prior industry
+    experience in portfolio optimisation and short-term energy markets.
+  email: dscarfiello@comillas.edu
+  profile_url: https://www.iit.comillas.edu/personas/dscarfiello
+  photo_url: https://www.iit.comillas.edu/personas/resources/images/personal/fotos/3053.jpg

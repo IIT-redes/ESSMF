@@ -20,18 +20,6 @@ items:
   description: Tariffs, connection agreements and local markets
   file: docs/materials/mechanisms-interaction-preprint.pdf
   link_label: Open document →
-- title: ESSM and TSO–DSO coordination
-  description: Energies 2023 paper
-  file: docs/materials/tmf-tso-dso-coordination-energies-2023.pdf
-  link_label: Open document →
-- title: Market designs for system services
-  description: OneNet D3.1
-  file: docs/materials/onenet-d3-1-market-designs.pdf
-  link_label: Open document →
-- title: Techno-economic assessment
-  description: OneNet D11.2
-  file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
-  link_label: Open document →
 - title: Local flexibility markets
   description: Grid-segmentation paper
   file: docs/materials/local-flexibility-markets-grid-segmentation.pdf
@@ -40,11 +28,13 @@ items:
   description: Grid-segmentation approach
   file: docs/materials/local-flexibility-market-preprint.pdf
   link_label: Open document →
-- title: TMF blank worksheet pack - all pillars
-  description: Blank ready-to-fill Word workbook for mapping a market through the five TMF pillars.
+- title: Theoretical Market Framework blank worksheet pack - all pillars
+  description: Blank ready-to-fill Word workbook for mapping a market through the five Theoretical Market Framework
+    pillars.
   file: docs/materials/tmf_blank_all_pillars_worksheet_pack.docx
   link_label: Download DOCX
-- title: Spanish demonstrator filled TMF tables
-  description: Filled Spanish-case Word tables showing how the five TMF pillars map the demonstrator.
-  file: docs/materials/tmf_spanish_demo_filled_tables.docx
-  link_label: Download DOCX
+- title: Theoretical Market Framework illustrative case example
+  description: Five filled Theoretical Market Framework tables and the resulting illustrative market-architecture
+    figure.
+  file: docs/materials/case-example-filled-tables-and-figure.pdf
+  link_label: Open PDF

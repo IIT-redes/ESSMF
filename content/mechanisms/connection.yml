@@ -3,7 +3,7 @@ key: connection
 file: flexibility-connection-agreement.html
 hero:
   eyebrow: Conditional access under constrained network capacity
-  title: Flexibility connection agreement
+  title: Flexible connection agreement
   philosophy: A connection is more than permission to use the grid; it is an agreement about how scarce capacity, risk, and
     responsibility are shared.
   lead: Flexible or alternative connection agreements offer access under defined operational limitations when fully firm capacity
@@ -17,7 +17,7 @@ sections:
   overview:
     eyebrow: Overview and orientation
     title: Connection flexibility changes the definition of network access
-    text: A flexibility connection agreement is the access-right branch of the portfolio. It uses the flexibility of a connection
+    text: A flexible connection agreement is the access-right branch of the portfolio. It uses the flexibility of a connection
       applicant or existing user to fit additional demand, generation, or storage within a constrained network envelope.
   idea:
     eyebrow: Our proposal

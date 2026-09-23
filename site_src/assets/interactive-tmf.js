@@ -319,7 +319,7 @@
 
         button.setAttribute("aria-expanded", "true");
         const label = button.querySelector("span:last-child");
-        if (label) label.textContent = "Discussion opened";
+        if (label) label.textContent = "Discussion opened"; else button.textContent = "Discussion opened";
 
         // Helpful fallback: if the iframe does not appear, the most common reasons are
         // testing from file:// instead of HTTP(S), or the Giscus GitHub App not being
@@ -340,113 +340,118 @@
   }
 
   function setupProgressButtons() {
-    const buttons = [...document.querySelectorAll(".looks-fine-button")];
-    if (!buttons.length) return;
+    // v15: one shared review state across the main TMF page and all five pillar sub-pages.
+    // Any of the three feedback actions completes that pillar once; repeat clicks never add more than 20%.
+    const canonicalKeys = ['marketArchitecture','subMarketCoordination','marketOptimization','marketOperation','networkRepresentation'];
+    const configuredKeys = Object.keys(cfg.sections || {});
+    const noFurtherButtons = [...document.querySelectorAll('.looks-fine-button')];
+    const progressActions = [...document.querySelectorAll('.structured-poll-link, .load-comments, .looks-fine-button')]
+      .filter(el => el.closest('.pillar-section'));
 
-    const storageKey = "tmf-feedback-progress:" + location.pathname.replace(/[^a-z0-9_-]+/gi, "-");
-    const uniqueKeys = [...new Set(buttons.map(b => b.dataset.progressKey || b.dataset.pillar).filter(Boolean))];
-    const total = uniqueKeys.length || buttons.length;
-    const percentEl = document.getElementById("progress-percent");
-    const fillEl = document.getElementById("progress-fill");
-    const progressBox = document.querySelector(".feedback-progress");
-    const celebration = document.getElementById("celebration");
-
-    const safeLoad = () => {
-      try {
-        const raw = localStorage.getItem(storageKey);
-        return new Set((raw ? JSON.parse(raw) : []).filter(Boolean));
-      } catch (_) {
-        return new Set();
-      }
+    const keyForElement = (el) => {
+      const sec = el?.closest('.pillar-section');
+      return el?.dataset?.progressKey || sec?.dataset?.sectionKey || el?.dataset?.pillar || sec?.id || '';
     };
-    const completed = safeLoad();
+    const domKeys = [...new Set(progressActions.map(keyForElement).filter(Boolean))];
+    const uniqueKeys = configuredKeys.length ? configuredKeys : canonicalKeys;
+    if (!uniqueKeys.length) return;
+
+    const storageKey = 'theoretical-market-framework-feedback-progress:all-pillars-v16';
+    const noFurtherStorageKey = storageKey + ':no-further';
+    const percentEl = document.getElementById('progress-percent');
+    const fillEl = document.getElementById('progress-fill');
+    const progressBox = document.querySelector('.feedback-progress');
+    let celebration = document.getElementById('celebration');
+    if (!celebration) {
+      celebration = document.createElement('div');
+      celebration.id = 'celebration';
+      celebration.className = 'celebration';
+      celebration.setAttribute('aria-live','polite');
+      document.body.appendChild(celebration);
+    }
+
+    const safeLoad = (key) => {
+      try {
+        const raw = localStorage.getItem(key);
+        return new Set((raw ? JSON.parse(raw) : []).filter(Boolean));
+      } catch (_) { return new Set(); }
+    };
+    const completed = safeLoad(storageKey);
+    const noFurtherRecorded = safeLoad(noFurtherStorageKey);
     const safeSave = () => {
-      try { localStorage.setItem(storageKey, JSON.stringify([...completed])); } catch (_) { /* local file preview may block storage */ }
+      try {
+        localStorage.setItem(storageKey, JSON.stringify([...completed]));
+        localStorage.setItem(noFurtherStorageKey, JSON.stringify([...noFurtherRecorded]));
+      } catch (_) { /* storage may be blocked in some local previews */ }
     };
 
     const launchLightCelebration = () => {
       document.querySelectorAll('.tmf-light-show,.tmf-party-show').forEach(el => el.remove());
-
       const light = document.createElement('div');
-      light.className = 'tmf-light-show';
-      light.setAttribute('aria-hidden','true');
+      light.className = 'tmf-light-show'; light.setAttribute('aria-hidden','true');
       for (let i=0; i<34; i++) {
-        const spark = document.createElement('span');
-        spark.className = 'tmf-spark';
+        const spark = document.createElement('span'); spark.className = 'tmf-spark';
         spark.style.setProperty('--x', (Math.random()*100).toFixed(2) + 'vw');
         spark.style.setProperty('--y', (Math.random()*100).toFixed(2) + 'vh');
         spark.style.setProperty('--delay', (Math.random()*1.1).toFixed(2) + 's');
-        spark.style.setProperty('--scale', (0.55 + Math.random()*1.65).toFixed(2));
-        light.appendChild(spark);
+        spark.style.setProperty('--scale', (0.55 + Math.random()*1.65).toFixed(2)); light.appendChild(spark);
       }
       document.body.appendChild(light);
-
-      const party = document.createElement('div');
-      party.className = 'tmf-party-show';
-      party.setAttribute('aria-hidden','true');
+      const party = document.createElement('div'); party.className = 'tmf-party-show'; party.setAttribute('aria-hidden','true');
       const confettiShapes = ['■','●','◆','▲','▰'];
       for (let i=0; i<90; i++) {
-        const c = document.createElement('span');
-        c.className = 'tmf-confetti';
+        const c = document.createElement('span'); c.className = 'tmf-confetti';
         c.textContent = confettiShapes[Math.floor(Math.random()*confettiShapes.length)];
         c.style.setProperty('--x', (Math.random()*100).toFixed(2) + 'vw');
         c.style.setProperty('--delay', (Math.random()*1.3).toFixed(2) + 's');
         c.style.setProperty('--dur', (2.8 + Math.random()*2.3).toFixed(2) + 's');
         c.style.setProperty('--rot', (360 + Math.random()*1080).toFixed(0) + 'deg');
-        c.style.setProperty('--hue', (Math.random()*360).toFixed(0));
-        party.appendChild(c);
+        c.style.setProperty('--hue', (Math.random()*360).toFixed(0)); party.appendChild(c);
       }
       for (let i=0; i<22; i++) {
-        const ch = document.createElement('span');
-        ch.className = 'tmf-chocolate';
-        ch.textContent = ['🍫','🍬','🍪'][i%3];
+        const ch = document.createElement('span'); ch.className = 'tmf-chocolate'; ch.textContent = ['🍫','🍬','🍪'][i%3];
         ch.style.setProperty('--x', (3 + Math.random()*94).toFixed(2) + 'vw');
         ch.style.setProperty('--delay', (Math.random()*1.15).toFixed(2) + 's');
         ch.style.setProperty('--dur', (3.0 + Math.random()*1.7).toFixed(2) + 's');
-        ch.style.setProperty('--s', (0.8 + Math.random()*1.0).toFixed(2));
-        party.appendChild(ch);
+        ch.style.setProperty('--s', (0.8 + Math.random()*1.0).toFixed(2)); party.appendChild(ch);
       }
-      document.body.appendChild(party);
-      document.body.classList.add('tmf-review-complete');
+      document.body.appendChild(party); document.body.classList.add('tmf-review-complete');
       setTimeout(() => document.body.classList.remove('tmf-review-complete'), 5200);
-      setTimeout(() => light.remove(), 6100);
-      setTimeout(() => party.remove(), 6500);
+      setTimeout(() => light.remove(), 6100); setTimeout(() => party.remove(), 6500);
     };
 
     const update = (flash=false) => {
-      buttons.forEach(button => {
-        const key = button.dataset.progressKey || button.dataset.pillar;
-        const done = key && completed.has(key);
-        button.classList.toggle("completed", !!done);
-        button.setAttribute('aria-pressed', done ? 'true' : 'false');
-        const text = button.querySelector("span:last-child");
-        if (text) text.textContent = done ? "Recorded: no further feedback" : "No further feedback";
+      noFurtherButtons.forEach(button => {
+        const key = keyForElement(button);
+        const explicitlyNoFurther = key && noFurtherRecorded.has(key);
+        button.classList.toggle('completed', !!explicitlyNoFurther);
+        button.setAttribute('aria-pressed', explicitlyNoFurther ? 'true' : 'false');
+        const textNode = button.querySelector('span:last-child');
+        if (textNode) textNode.textContent = explicitlyNoFurther ? 'Recorded: no further feedback' : 'No further feedback';
+        else button.textContent = explicitlyNoFurther ? 'Recorded: no further feedback' : 'No further feedback';
       });
       const count = uniqueKeys.filter(k => completed.has(k)).length;
-      const pct = total ? Math.round((count / total) * 100) : 0;
-      if (percentEl) percentEl.textContent = pct + "%";
-      if (fillEl) fillEl.style.width = pct + "%";
+      const pct = Math.round((count / uniqueKeys.length) * 100);
+      if (percentEl) percentEl.textContent = pct + '%';
+      if (fillEl) fillEl.style.width = pct + '%';
       if (progressBox) {
-        progressBox.setAttribute('aria-valuemin','0');
-        progressBox.setAttribute('aria-valuemax','100');
-        progressBox.setAttribute('aria-valuenow',String(pct));
-        progressBox.classList.toggle('complete', pct >= 100);
+        progressBox.setAttribute('aria-valuemin','0'); progressBox.setAttribute('aria-valuemax','100');
+        progressBox.setAttribute('aria-valuenow',String(pct)); progressBox.classList.toggle('complete', pct >= 100);
       }
       safeSave();
-      if (pct >= 100 && celebration && flash) {
-        celebration.innerHTML = "<strong>100% — review completed!</strong><span>Thank you sincerely for your time, expertise, and contribution. Your feedback helps us build a clearer common language for European flexibility-market design.</span><i>🎉 🍫 🎊</i>";
-        celebration.classList.add("show", "pulse-once");
-        launchLightCelebration();
-        setTimeout(() => celebration.classList.remove("show", "pulse-once"), 5200);
+      if (pct === 100 && uniqueKeys.length === 5 && flash) {
+        celebration.innerHTML = '<strong>100% — review completed!</strong><span>Thank you sincerely for your time, expertise, and contribution. Your feedback helps us build a clearer common language for European flexibility-market design.</span><i>🎉 🍫 🎊</i>';
+        celebration.classList.add('show','pulse-once'); launchLightCelebration();
+        setTimeout(() => celebration.classList.remove('show','pulse-once'), 5200);
       }
     };
 
-    buttons.forEach(button => {
-      button.addEventListener("click", () => {
-        const key = button.dataset.progressKey || button.dataset.pillar;
-        if (!key) return;
+    progressActions.forEach(action => {
+      action.addEventListener('click', () => {
+        const key = keyForElement(action); if (!key || !uniqueKeys.includes(key)) return;
         const wasComplete = uniqueKeys.every(k => completed.has(k));
         completed.add(key);
+        if (action.classList.contains('looks-fine-button')) noFurtherRecorded.add(key);
         const nowComplete = uniqueKeys.every(k => completed.has(k));
         update(nowComplete && !wasComplete);
       });

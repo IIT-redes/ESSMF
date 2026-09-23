@@ -54,7 +54,7 @@ road_turns:
   selected: true
 - number: '05'
   kicker: Selected deep dive - access condition
-  title: Flexibility connection agreement
+  title: Flexible connection agreement
   text: Non-firm or conditional access can connect new demand, generation, or storage before full firm capacity
     is available. It makes access rights, curtailment, compensation, control, and the path to reinforcement explicit.
   href: pages/flexibility-connection-agreement.html
@@ -122,7 +122,7 @@ mechanism_cards:
 - href: pages/flexibility-connection-agreement.html
   image: assets/connection-f1.webp
   badge: Access signal
-  title: Flexibility connection agreement
+  title: Flexible connection agreement
   summary: Review access rights, curtailment, compensation, operational control, and market interaction.
   dimensions:
   - Access-right design

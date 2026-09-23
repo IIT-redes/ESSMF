@@ -229,7 +229,7 @@ content:
               - { name: tariff_evidence, label: "06 — Evidence and performance", type: file, path: content/dimensions/tariff-evidence-performance.yml, format: yaml, fields: *dimension_fields }
 
       - name: connection_workspace
-        label: Flexibility connection agreement
+        label: Flexible connection agreement
         type: group
         items:
           - name: connection_overview
@@ -276,7 +276,7 @@ content:
                   - { name: why, component: intro_section }
                   - { name: affected, component: intro_section }
                   - { name: where, component: intro_section }
-                  - { name: spain-example, component: intro_section }
+                  - { name: case-example, component: intro_section }
                   - { name: framework-view, component: intro_section }
                   - { name: review, component: intro_section }
                   - { name: final-feedback, component: intro_section }
@@ -288,8 +288,8 @@ content:
                   - { name: eyebrow, type: string }
                   - { name: title, type: string }
                   - { name: summary, type: text }
-              - name: spain_example
-                label: Spain implementation example
+              - name: case_example
+                label: Illustrative case example
                 type: object
                 fields:
                   - { name: image, type: image, options: { media: images } }
@@ -350,21 +350,17 @@ content:
                       - { name: title, type: string }
                       - { name: text, type: text }
                       - { name: items, type: text, list: true }
-                  - { name: terminology_intro, type: text }
-                  - name: terminology
-                    label: Standard terminology repository
+                  - { name: feature_matrix_intro, type: text }
+                  - name: feature_matrix
+                    label: Feature / definition / data-type table
                     type: object
                     list: true
                     fields:
-                      - { name: term, type: string }
+                      - { name: feature, type: string }
+                      - { name: subfeature, type: string }
+                      - { name: datatype, type: string }
                       - { name: definition, type: text }
-                      - { name: source, type: string }
-                  - name: source_basis
-                    type: object
-                    list: true
-                    fields:
-                      - { name: label, type: string }
-                      - { name: href, type: string }
+                      - { name: meaning, type: text }
               - { name: pillar_coordination, label: "02 — Sub-market coordination", type: file, path: content/pillars/sub-market-coordination.yml, format: yaml, fields: *pillar_fields }
               - { name: pillar_optimization, label: "03 — Market optimization", type: file, path: content/pillars/market-optimization.yml, format: yaml, fields: *pillar_fields }
               - { name: pillar_operation, label: "04 — Market operation", type: file, path: content/pillars/market-operation.yml, format: yaml, fields: *pillar_fields }
@@ -395,6 +391,8 @@ content:
               - { name: program, type: string }
               - { name: bio, type: text }
               - { name: email, type: string }
+              - { name: profile_url, type: string }
+              - { name: photo_url, type: string, label: IIT profile photo URL }
       - name: work
         label: Our work
         type: file
@@ -405,6 +403,18 @@ content:
           - { name: eyebrow, type: string }
           - { name: title, type: string }
           - { name: intro, type: text }
+          - name: projects
+            type: object
+            list: true
+            fields:
+              - { name: acronym, type: string }
+              - { name: title, type: string }
+              - { name: programme, type: string }
+              - { name: grant, type: string }
+              - { name: period, type: string }
+              - { name: people, type: string }
+              - { name: relevance, type: text }
+              - { name: url, type: string }
       - name: library
         label: Library
         type: file
@@ -436,6 +446,7 @@ content:
           - { name: poll_url, type: string }
           - { name: upload_url, type: string }
           - { name: general_feedback_url, type: string }
+          - { name: general_giscus_term, type: string }
       - name: giscus
         type: object
         fields:
@@ -463,7 +474,7 @@ content:
           - { name: giscus_category, type: string }
           - { name: giscus_category_id, type: string }
       - name: tmf_sections
-        label: TMF pillar Poll + Q&A channels
+        label: Theoretical Market Framework pillar Poll + Q&A channels
         type: object
         list: true
         fields:

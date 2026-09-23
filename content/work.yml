@@ -1,4 +1,60 @@
-editorial_status: draft
+editorial_status: approved
 eyebrow: Our work
-title: Our work
-intro: Content reserved for future project outputs, publications, demonstrators, and collaborative research lines.
+title: Selected European project experience
+intro: Our team builds on experience from major European Commission projects on flexibility, electricity-market
+  integration, TSO–DSO coordination, smart distribution grids, resilience, and energy communities. This is a selected—not
+  exhaustive—portfolio.
+projects:
+- acronym: BeFlexible
+  title: BOOSTING ENGAGEMENT TO INCREASE FLEXIBILITY
+  programme: Horizon Europe
+  grant: '101075438'
+  period: 2022–2026
+  people: Matteo Troncia · José Pablo Chaves Ávila
+  relevance: Large-scale flexibility demonstrations, DSO–TSO cooperation, interoperable smart-grid operation, regulatory
+    frameworks, and efficient flexibility mechanisms.
+  url: https://cordis.europa.eu/project/id/101075438
+- acronym: OneNet
+  title: One network for Europe
+  programme: Horizon 2020
+  grant: '957739'
+  period: 2020–2024
+  people: Matteo Troncia · José Pablo Chaves Ávila
+  relevance: Pan-European TSO–DSO coordination, harmonised system-service markets, flexibility products, market
+    architecture, scalability, and replicability.
+  url: https://cordis.europa.eu/project/id/957739
+- acronym: EUniversal
+  title: Market enabling interface to unlock flexibility solutions for smarter distribution grids
+  programme: Horizon 2020
+  grant: '864334'
+  period: 2020–2023
+  people: Matteo Troncia · José Pablo Chaves Ávila
+  relevance: Market-oriented flexibility services, active distribution-system management, interoperability, and
+    the Universal Market Enabling Interface linking grids and markets.
+  url: https://cordis.europa.eu/project/id/864334
+- acronym: CoordiNet
+  title: Large-scale TSO–DSO coordination for reliable and efficient grid-service procurement
+  programme: Horizon 2020
+  grant: '824414'
+  period: 2019–2022
+  people: Matteo Troncia · José Pablo Chaves Ávila
+  relevance: TSO–DSO coordination, standardised system-service products, market platforms, demonstrators, and scalable
+    flexibility-market design.
+  url: https://cordis.europa.eu/project/id/824414
+- acronym: eFORT
+  title: Establishment of a framework for transforming current EPES into a more resilient, reliable and secure system
+  programme: Horizon Europe
+  grant: '101075665'
+  period: 2022–2026
+  people: José Pablo Chaves Ávila
+  relevance: Resilience, reliability and security of electric power and energy systems across their value chain.
+  url: https://cordis.europa.eu/project/id/101075665
+- acronym: SOCIAREM
+  title: SOlar Open Community Instruments for All Residents in Europe and the Mediterranean region
+  programme: Horizon Europe
+  grant: '101235482'
+  period: 2025–2029
+  people: Matteo Troncia
+  relevance: Open instruments for solar and energy-community participation across Europe and the Mediterranean,
+    extending flexibility and consumer-centric market experience.
+  url: https://cordis.europa.eu/project/id/101235482

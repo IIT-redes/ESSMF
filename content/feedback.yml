@@ -3,6 +3,7 @@ general:
   poll_url: '#'
   upload_url: '#'
   general_feedback_url: '#'
+  general_giscus_term: Theoretical Market Framework — General comments
 giscus:
   enabled: true
   repo: IIT-redes/ESSMF
@@ -25,7 +26,7 @@ mechanisms:
   giscus_category: ''
   giscus_category_id: ''
 - key: flexibility-connection-agreement
-  label: Flexibility connection agreement
+  label: Flexible connection agreement
   form_url: '#'
   giscus_term: flex-connection-agreement
   giscus_category: ''
@@ -45,17 +46,13 @@ tmf_sections:
   poll_url: '#'
   poll_title: TMF Pillar 1 — Structured assessment
   qna_title: TMF Pillar 1 — Entire Market Architecture
-  qna_prompt: Does the Entire Market Architecture pillar provide a sufficiently complete and unambiguous common language to
-    reconstruct an existing flexibility market and to specify a new distribution-level market before coordination and clearing
-    are designed?
+  qna_prompt: Can this pillar describe an existing flexibility market unambiguously and guide a new distribution-level
+    market?
   qna_prompts:
-  - Can every sub-market be described consistently through number, GOT, GCT, MTU and sub-market type?
-  - Are service and product sufficiently separated, including product type and technical requirements?
-  - Are locational granularity, responsible SO, voltage level, buyer, seller, market operator, eligible technologies, aggregation
-    and participation rules sufficient for cross-country comparison?
-  - Which feature is missing, ambiguous, overlapping or too context-specific to support harmonised European market descriptions?
-  - Would this pillar alone let another expert reproduce the high-level architecture of your market without relying on undocumented
-    local knowledge?
+  - Are sub-market number, GOT, GCT, MTU and market type sufficient?
+  - Are service, product and technical requirements clearly separated?
+  - Are location, actor, eligibility and aggregation fields sufficient?
+  - What is missing, ambiguous or too context-specific for cross-country comparison?
 - key: subMarketCoordination
   label: Sub-market coordination
   form_url: '#'
@@ -64,17 +61,13 @@ tmf_sections:
   poll_url: '#'
   poll_title: TMF Pillar 2 — Structured assessment
   qna_title: TMF Pillar 2 — Sub-market Coordination
-  qna_prompt: Does the Sub-market Coordination pillar capture the decisions needed to allocate the same flexibility resource
-    pool across interacting local, TSO/DSO, wholesale or balancing sub-markets without double use, conflicting activation
-    or avoidable barriers to value stacking?
+  qna_prompt: Does this pillar capture how shared flexibility is allocated across interacting markets without double
+    use or conflicting activation?
   qna_prompts:
-  - For each pair of interacting sub-markets, are priority/exclusivity rules between system operators explicit enough?
-  - Are TSO access to DERs and formal versus conditional commitment to bid selection sufficient to reconstruct how a real
-    design works?
-  - Is bid forwarding described at the right level, including whether filtering, aggregation or another intermediate processing
-    step is required?
-  - Are the coordination phases—prequalification, procurement, activation, measurement and settlement—sufficiently explicit?
-  - Which additional rule would be needed to expose gaming risk, conflicting activations or inefficient overlapping procurement?
+  - Are priority/exclusivity and TSO access to DERs explicit enough?
+  - Are formal/conditional commitment rules sufficient?
+  - Is bid forwarding described with the required processing steps?
+  - Are the relevant coordination phases complete?
 - key: marketOptimization
   label: Market optimization
   form_url: '#'
@@ -83,18 +76,13 @@ tmf_sections:
   poll_url: '#'
   poll_title: TMF Pillar 3 — Structured assessment
   qna_title: TMF Pillar 3 — Market Optimisation
-  qna_prompt: Do the TMF choices for optimisation methodology, the relationship among sub-market clearings and the clearing
-    objective provide enough information to distinguish existing designs and to guide a new coordinated distribution-level
+  qna_prompt: Do these optimisation fields distinguish existing designs and guide a new coordinated distribution-level
     market?
   qna_prompts:
-  - Is the distinction between centralised, decentralised and distributed organisation sufficiently clear for real implementations?
-  - Does simultaneous, sequential or independent optimisation fully describe the relationship between coupled sub-markets
-    in your case?
-  - Is the objective—cost minimisation, social-welfare maximisation, reducing counter-activations or other—explicit enough
-    to explain the resulting dispatch/procurement?
-  - What additional information is needed to understand grid-data requirements, information exchange and computational responsibility?
-  - Can the pillar reveal risks of double procurement, counter-activations or system-wide inefficiency created by local-first
-    or sequential clearing?
+  - Is centralised/decentralised/distributed organisation clear enough?
+  - Do simultaneous/sequential/independent choices capture the clearing relationship?
+  - Is the optimisation objective explicit enough?
+  - What information is still needed to understand responsibility and coordination?
 - key: marketOperation
   label: Market operation
   form_url: '#'
@@ -103,16 +91,12 @@ tmf_sections:
   poll_url: '#'
   poll_title: TMF Pillar 4 — Structured assessment
   qna_title: TMF Pillar 4 — Market Operation
-  qna_prompt: Does the Market Operation pillar contain the minimum operational information needed to compare how flexibility
-    sub-markets actually run and to implement a new one without confusing operational rules with other TMF dimensions?
+  qna_prompt: Does this pillar contain the minimum information needed to compare and implement sub-market operation?
   qna_prompts:
-  - Are the remuneration options sufficient to describe how successful providers are paid in your market?
-  - Is it clear whether availability, activation or both are remunerated and for active, reactive or apparent power?
-  - Do continuous/discrete clearing and procurement frequency capture the temporal operating logic without duplicating GOT/GCT?
-  - Are minimum bid size and bid structure sufficient to understand participation barriers and interoperability with other
-    markets?
-  - Which operational element, if any, is indispensable for implementation but genuinely missing from this pillar rather than
-    belonging to another pillar/process?
+  - Are remuneration options sufficient?
+  - Is availability versus activation remuneration clear?
+  - Do clearing type and procurement frequency capture operating logic?
+  - Are minimum bid size and bid structure sufficient?
 - key: networkRepresentation
   label: Network representation
   form_url: '#'
@@ -121,17 +105,13 @@ tmf_sections:
   poll_url: '#'
   poll_title: TMF Pillar 5 — Structured assessment
   qna_title: TMF Pillar 5 — Network Representation
-  qna_prompt: Does the Network Representation pillar adequately capture how and when distribution/transmission constraints
-    are introduced so that a market result can be physically feasible while remaining implementable in terms of data, computation
-    and information sharing?
+  qna_prompt: Does this pillar capture how and when network constraints enter the market so that results remain
+    physically feasible?
   qna_prompts:
-  - Is the distinction between comprehensive grid data, partial grid data and empirical rules sufficient for the network models
-    used in practice?
-  - 'At which phases should network constraints be introduced: procurement-area definition, prequalification, procurement,
-    activation, measurement and/or settlement?'
-  - What validation or corrective step is required when simplified network representation is used?
-  - Does the pillar expose the trade-off between physical fidelity and data/computational/cyber-security burden?
-  - Which additional representation or timing option is necessary for real DSO-level implementation, if any?
+  - Are comprehensive grid data, partial grid data and empirical rules sufficient?
+  - At which phases should network constraints enter?
+  - What validation is needed when simplified representations are used?
+  - What additional option is needed for practical DSO implementation?
 dimension_pages:
 - key: connection-access-rights
   label: Access-right design
