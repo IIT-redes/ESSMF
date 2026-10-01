@@ -8,20 +8,18 @@ preview_image: assets/tmf_blank_05_network_representation_preview.png
 preview_alt: Blank ready-to-fill Network representation Theoretical Market Framework table
 pdf_label: Open / download blank PDF
 worksheet_title: Ready-to-fill Theoretical Market Framework mapping table
-worksheet_text: For each Market 1-4, record the network representation and the phase(s) where constraints enter
-  the process.
+worksheet_text: For each market, record the network representation and the phase(s) where constraints enter.
 eyebrow: The physics inside the market
 title: Network representation
 subtitle: Defines how network constraints are represented and when they enter the market process.
-philosophy: This pillar connects market decisions to grid physics. It records the level of network information used
-  and the phase at which network constraints affect procurement or activation.
+philosophy: Connects market decisions to grid physics by stating how network constraints are represented and when
+  they affect the process.
 flowchart_caption: 'Theoretical Market Framework taxonomy for network representation: representation of constraints
   and timing of their inclusion.'
-tutorial_intro: Use this pillar to state how physical feasibility is checked without hiding the data and modelling
-  assumptions.
+tutorial_intro: State how physical feasibility is checked and what network information is used.
 tutorial_sections:
 - title: 1. Choose the representation
-  text: State whether the market uses comprehensive grid data, partial grid data or empirical rules.
+  text: State the market uses comprehensive grid data, partial grid data or empirical rules.
   items:
   - Describe any sensitivity or reduced-network representation in Additional Information.
 - title: 2. Place constraints in the process
@@ -33,13 +31,13 @@ tutorial_sections:
   text: Balance physical fidelity with data, computation and information-sharing requirements.
   items:
   - State any validation or corrective step used with simplified models.
-feature_matrix_intro: Use this table as both a terminology reference and a data-entry guide for Network Representation.
+feature_matrix_intro: Use the table to define the network-modelling choices and expected data.
 feature_matrix:
 - feature: Representation of network constraints
   subfeature: Level/form of representation
   datatype: 'Categorical: comprehensive grid data / partial grid data / empirical rules'
   definition: Modelling approach used to account for physical network limits in the market design.
-  meaning: Select the representation used and describe it if needed.
+  meaning: Select representation used and describe it if needed.
 - feature: Timing of inclusion of network constraints
   subfeature: Market phase
   datatype: 'Multi-select: procurement areas / prequalification / procurement / activation / measurement / settlement'

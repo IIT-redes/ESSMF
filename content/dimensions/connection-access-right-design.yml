@@ -9,10 +9,9 @@ title: Access-right design
 subtitle: What capacity right is granted, and under which network conditions?
 definition_title: What this dimension means
 definition_paragraphs:
-- Access-right design specifies whether the user receives firm, partially firm, interruptible, conditional, dynamic, temporary,
-  or long-term capacity. It defines the legal and operational meaning of being connected.
-- The access right is the foundation of the agreement. If it is vague, neither the DSO nor the user can value the connection,
-  finance the project, plan operation, or determine whether curtailment is compliant.
+- Access-right design specifies whether the user receives firm, partially firm, interruptible, conditional, dynamic,
+  temporary, or long-term capacity. It defines the legal and operational meaning of being connected.
+- The access right is the foundation of the agreement.
 choices:
 - title: Firmness
   text: Firm, non-firm, partially firm, conditional, dynamic, or emergency-only limitation.
@@ -23,10 +22,10 @@ choices:
 - title: Duration
   text: Temporary bridge, fixed-term contract, long-term arrangement, or periodic renewal.
 example_title: How the dimension appears in practice
-example_text: A solar-plus-storage project receives 10 MW firm export and up to 20 MW when local capacity is available. The
-  agreement must define how the additional 10 MW is calculated, communicated, and treated when the network changes.
-review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
-  a verifiable network, regulatory, commercial, or customer outcome.
+example_text: A solar-plus-storage project receives 10 MW firm export and up to 20 MW when local capacity is available.
+  The agreement must define how the additional 10 MW is calculated, communicated, and treated when the network changes.
+review_principle: A credible design links the choice to a measurable network, regulatory, commercial, or customer
+  outcome.
 stakeholders:
 - name: DSO
   text: Define an access envelope that is secure, measurable, and operationally manageable.
@@ -50,5 +49,5 @@ evidence:
 - Contract bankability assessment
 feedback_eyebrow: Feedback on access-right design
 feedback_title: What should be clarified, added, removed, or redesigned?
-feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
-  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.
+feedback_text: Please comment on the definition, choices, feasibility, evidence, and interaction with other flexibility
+  mechanisms.

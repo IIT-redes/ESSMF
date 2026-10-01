@@ -9,10 +9,9 @@ title: Operational interface
 subtitle: How will limits be forecast, communicated, controlled, verified, and made fail-safe?
 definition_title: What this dimension means
 definition_paragraphs:
-- The operational interface converts the contract into real-time or scheduled action. It includes metering, telemetry, communication,
-  forecasting, set-points, local controllers, cybersecurity, fallback behaviour, and verification.
-- A flexible access right is credible only if both parties can implement it safely. Poor communication or unclear control
-  priority can create network risk, asset damage, or disputes.
+- The operational interface converts the contract into real-time or scheduled action. It includes metering, telemetry,
+  communication, forecasting, set-points, local controllers, cybersecurity, fallback behaviour, and verification.
+- A flexible access right is credible only if both parties can implement it safely.
 choices:
 - title: Control mode
   text: Static export limit, scheduled profile, remote set-point, dynamic operating envelope, or trip signal.
@@ -23,10 +22,10 @@ choices:
 - title: Fail-safe
   text: Default capacity, local autonomous limit, safe disconnection, or temporary firm fallback.
 example_title: How the dimension appears in practice
-example_text: A battery receives a dynamic import/export envelope every 15 minutes. The agreement must define latency, acknowledgement,
-  missing-message behaviour, local safety limits, and the evidence used for settlement or dispute.
-review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
-  a verifiable network, regulatory, commercial, or customer outcome.
+example_text: A battery receives a dynamic import/export envelope every 15 minutes. The agreement must define latency,
+  acknowledgement, missing-message behaviour, local safety limits, and the evidence used for settlement or dispute.
+review_principle: A credible design links the choice to a measurable network, regulatory, commercial, or customer
+  outcome.
 stakeholders:
 - name: DSO
   text: Maintain secure, reliable, and scalable control.
@@ -50,5 +49,5 @@ evidence:
 - Operational responsibility matrix
 feedback_eyebrow: Feedback on operational interface
 feedback_title: What should be clarified, added, removed, or redesigned?
-feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
-  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.
+feedback_text: Please comment on the definition, choices, feasibility, evidence, and interaction with other flexibility
+  mechanisms.

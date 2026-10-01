@@ -8,23 +8,22 @@ preview_image: assets/tmf_blank_02_sub_market_coordination_preview.png
 preview_alt: Blank ready-to-fill Sub-market coordination Theoretical Market Framework table
 pdf_label: Open / download blank PDF
 worksheet_title: Ready-to-fill Theoretical Market Framework mapping table
-worksheet_text: Use the same Market 1-4 labels as Pillar 1. Record coordination rules for the relevant interactions
-  and explain pairwise conditions in Additional Information.
+worksheet_text: Keep the Market 1–4 labels from Pillar 1 and record the coordination rule for each relevant interaction.
 eyebrow: The logic of interaction
 title: Sub-market coordination
 subtitle: Defines how interacting sub-markets share flexibility and coordinate decisions.
-philosophy: This pillar describes how sub-markets interact when they draw on the same flexibility resources. It
-  makes priority, access, commitment, bid forwarding and coordination timing explicit.
+philosophy: Describes how markets compete for or share the same flexibility resources, including priority, access,
+  commitment, forwarding, and timing.
 flowchart_caption: 'Theoretical Market Framework taxonomy for coordination: allocation of flexibility and timing
   of coordination.'
-tutorial_intro: Use the same Market 1-4 labels as in Pillar 1 and describe how relevant sub-markets interact.
+tutorial_intro: Use the same Market 1–4 labels and describe only the interactions that actually apply.
 tutorial_sections:
 - title: 1. Set access order
   text: Record whether the TSO or DSO has priority, exclusivity, or neither.
   items:
   - Use the rule that applies to the interacting markets.
 - title: 2. Define commitment and access
-  text: State whether bid selection is formal or conditional and whether the TSO can access DERs.
+  text: State bid selection is formal or conditional and whether the TSO can access DERs.
   items:
   - A conditional result remains provisional until later coordination.
 - title: 3. Define bid forwarding
@@ -32,16 +31,16 @@ tutorial_sections:
   items:
   - Note any filtering, aggregation or processing needed before forwarding.
 - title: 4. Place coordination in time
-  text: State whether coordination occurs during prequalification, procurement, activation, measurement or settlement.
+  text: State coordination occurs during prequalification, procurement, activation, measurement or settlement.
   items:
   - Use Additional Information for pairwise interaction details.
-feature_matrix_intro: Use this table as both a terminology reference and a data-entry guide for Sub-market Coordination.
+feature_matrix_intro: Use the table to define each coordination choice and the data expected.
 feature_matrix:
 - feature: Allocation principle of flexibility
   subfeature: System operators order
   datatype: 'Categorical: TSO/DSO priority, TSO/DSO exclusivity, none'
   definition: Rule determining which system operator gets first or exclusive access to shared flexibility.
-  meaning: Select the access order for the considered interaction.
+  meaning: Select access order for the considered interaction.
 - feature: Allocation principle of flexibility
   subfeature: TSO access to DERs
   datatype: Boolean / N/A
@@ -51,7 +50,7 @@ feature_matrix:
   subfeature: Commitment to bid selection
   datatype: 'Categorical: formal / conditional / N/A'
   definition: Whether a first-stage bid selection is binding or remains provisional pending later coordination.
-  meaning: Record the commitment rule.
+  meaning: Record commitment rule.
 - feature: Allocation principle of flexibility
   subfeature: Forwarding of bids
   datatype: Boolean / N/A + note

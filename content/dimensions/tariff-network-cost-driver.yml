@@ -9,10 +9,11 @@ title: Network cost driver
 subtitle: What physical and economic network cost should the tariff represent?
 definition_title: What this dimension means
 definition_paragraphs:
-- The network cost driver is the physical or economic reason why a tariff signal is introduced. It may be a coincident local
-  peak, transformer capacity, voltage stress, losses, reinforcement expenditure, or another measurable driver of network cost.
-- If the tariff is not linked to the actual network need, customers may change behaviour without producing useful system value.
-  A strong design therefore begins with the network problem and only then selects the charging variable.
+- The network cost driver is the physical or economic reason why a tariff signal is introduced. It may be a coincident
+  local peak, transformer capacity, voltage stress, losses, reinforcement expenditure, or another measurable driver
+  of network cost.
+- If the tariff is not linked to the actual network need, customers may change behaviour without producing useful
+  system value.
 choices:
 - title: Physical driver
   text: Peak loading, congestion, voltage, losses, hosting capacity, or reinforcement need.
@@ -23,11 +24,10 @@ choices:
 - title: Allocation rule
   text: How costs are distributed across voltage levels, customer groups, locations, and periods.
 example_title: How the dimension appears in practice
-example_text: A feeder experiences a winter evening peak caused by heat pumps and EV charging. An annual volumetric tariff
-  is unlikely to address this need. A capacity or time-differentiated charge may be more relevant, but only if the signal
-  is visible and customers can respond during the critical hours.
-review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
-  a verifiable network, regulatory, commercial, or customer outcome.
+example_text: A feeder experiences a winter evening peak caused by heat pumps and EV charging. An annual volumetric
+  tariff is unlikely to address this need.
+review_principle: A credible design links the choice to a measurable network, regulatory, commercial, or customer
+  outcome.
 stakeholders:
 - name: DSO
   text: Demonstrate that the selected driver corresponds to a real network cost or constraint.
@@ -51,5 +51,5 @@ evidence:
 - Distributional impact by customer group
 feedback_eyebrow: Feedback on network cost driver
 feedback_title: What should be clarified, added, removed, or redesigned?
-feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
-  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.
+feedback_text: Please comment on the definition, choices, feasibility, evidence, and interaction with other flexibility
+  mechanisms.

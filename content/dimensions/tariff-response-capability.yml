@@ -9,10 +9,11 @@ title: Response capability
 subtitle: Can the exposed customers change consumption or injection in the required way?
 definition_title: What this dimension means
 definition_paragraphs:
-- Response capability links the tariff signal to realistic customer action. It includes flexible demand, smart EV charging,
-  storage, generation control, thermal inertia, industrial scheduling, and automated energy-management systems.
-- A theoretically efficient tariff is ineffective if customers lack controllable assets, information, automation, or authority
-  over their consumption. Response capability must therefore be assessed before assigning network cost responsibility.
+- Response capability links the tariff signal to realistic customer action. It includes flexible demand, smart EV
+  charging, storage, generation control, thermal inertia, industrial scheduling, and automated energy-management
+  systems.
+- A theoretically efficient tariff is ineffective if customers lack controllable assets, information, automation,
+  or authority over their consumption.
 choices:
 - title: Eligible resources
   text: Demand, EVs, heat pumps, storage, distributed generation, and industrial processes.
@@ -23,11 +24,11 @@ choices:
 - title: Participation model
   text: Default exposure, optional tariff, protected class, or delegated response service.
 example_title: How the dimension appears in practice
-example_text: Two customers have the same peak demand, but one owns a battery and automated EV charger while the other is
-  a tenant with no control over heating. Exposing both to the same dynamic capacity signal may be formally equal but practically
-  unequal.
-review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
-  a verifiable network, regulatory, commercial, or customer outcome.
+example_text: Two customers have the same peak demand, but one owns a battery and automated EV charger while the
+  other is a tenant with no control over heating. Exposing both to the same dynamic capacity signal may be formally
+  equal but practically unequal.
+review_principle: A credible design links the choice to a measurable network, regulatory, commercial, or customer
+  outcome.
 stakeholders:
 - name: DSO
   text: Estimate dependable response rather than assuming elasticity.
@@ -51,5 +52,5 @@ evidence:
 - Cost and payback of enabling technology
 feedback_eyebrow: Feedback on response capability
 feedback_title: What should be clarified, added, removed, or redesigned?
-feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
-  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.
+feedback_text: Please comment on the definition, choices, feasibility, evidence, and interaction with other flexibility
+  mechanisms.

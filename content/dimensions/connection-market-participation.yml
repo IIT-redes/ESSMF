@@ -9,10 +9,10 @@ title: Market participation and mechanism interaction
 subtitle: Can the connected resource participate in markets without double obligation or conflicting control?
 definition_title: What this dimension means
 definition_paragraphs:
-- Market participation defines whether capacity subject to a flexible connection may be aggregated or offered in local flexibility,
-  balancing, wholesale, or other markets, and how DSO access limits interact with those commitments.
-- A resource can create value in several markets, but part of its flexibility may already be committed through the connection
-  agreement. Clear boundaries are needed to protect network security while avoiding unnecessary exclusion.
+- Market participation defines whether capacity subject to a flexible connection may be aggregated or offered in
+  local flexibility, balancing, wholesale, or other markets, and how DSO access limits interact with those commitments.
+- A resource can create value in several markets, but part of its flexibility may already be committed through the
+  connection agreement.
 choices:
 - title: Eligibility
   text: Full participation, participation within the operating envelope, or restricted services.
@@ -23,11 +23,11 @@ choices:
 - title: Double commitment
   text: How the same capacity is prevented from satisfying two incompatible obligations.
 example_title: How the dimension appears in practice
-example_text: A battery with a flexible import connection offers upward balancing and local congestion relief. Its market
-  bids must remain feasible within the DSO operating envelope, and the baseline must not reward compliance that is already
-  mandatory.
-review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
-  a verifiable network, regulatory, commercial, or customer outcome.
+example_text: A battery with a flexible import connection offers upward balancing and local congestion relief. Its
+  market bids must remain feasible within the DSO operating envelope, and the baseline must not reward compliance
+  that is already mandatory.
+review_principle: A credible design links the choice to a measurable network, regulatory, commercial, or customer
+  outcome.
 stakeholders:
 - name: DSO
   text: Maintain security while enabling efficient value stacking.
@@ -51,5 +51,5 @@ evidence:
 - Data and interoperability assessment
 feedback_eyebrow: Feedback on market participation and mechanism interaction
 feedback_title: What should be clarified, added, removed, or redesigned?
-feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
-  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.
+feedback_text: Please comment on the definition, choices, feasibility, evidence, and interaction with other flexibility
+  mechanisms.

@@ -8,17 +8,17 @@ preview_image: assets/tmf_blank_01_entire_market_architecture_preview.png
 preview_alt: Blank ready-to-fill Market architecture Theoretical Market Framework table
 pdf_label: Open / download blank PDF
 worksheet_title: Ready-to-fill Theoretical Market Framework mapping table
-worksheet_text: Start with this table. Use one column per sub-market (Market 1-4), keep the same labels in all five
-  pillar tables, and use Additional Information for assumptions or exceptions.
+worksheet_text: Use one column per market, keep the same Market 1–4 labels across all five pillar tables, and note
+  assumptions or exceptions in Additional Information.
 eyebrow: The structure of exchange
 title: Market architecture
 subtitle: 'Defines the market structure: sub-markets, timing, products, location and actor roles.'
-philosophy: This pillar describes the market architecture as a set of interacting sub-markets. It records what each
-  market is, when it operates, what it trades, where it applies and who participates.
+philosophy: 'Describes the market as interacting sub-markets: what exists, when it operates, what it trades, where
+  it applies, and who participates.'
 flowchart_caption: 'Theoretical Market Framework taxonomy for market architecture: sub-markets, services/products,
   location and actors.'
-tutorial_intro: Start here. The choices in this pillar define the objects that later pillars coordinate, clear,
-  operate and constrain.
+tutorial_intro: 'Start here: these choices define the market objects that the other pillars coordinate, clear, operate,
+  and constrain.'
 tutorial_sections:
 - title: 1. Define each sub-market
   text: List the sub-markets and record GOT, GCT, MTU and market type.
@@ -40,19 +40,18 @@ tutorial_sections:
   items:
   - Look for timing or granularity mismatches.
   - Check whether roles remain clear when resources join several markets.
-feature_matrix_intro: Use this table as both a terminology reference and a data-entry guide for the Market Architecture
-  pillar.
+feature_matrix_intro: Use the table as a compact terminology reference and data-entry guide.
 feature_matrix:
 - feature: Sub-markets
   subfeature: Number of sub-markets
   datatype: Integer
   definition: Count of distinct exchange/clearing spaces in the architecture.
-  meaning: Enter the number of separate sub-markets.
+  meaning: Enter number of separate sub-markets.
 - feature: Sub-markets
   subfeature: Gate Opening Time (GOT)
   datatype: Time / relative time
   definition: When the gate for submitting market bids or offers opens.
-  meaning: Record the opening point for each sub-market.
+  meaning: Record opening point for each sub-market.
 - feature: Sub-markets
   subfeature: Gate Closure Time (GCT)
   datatype: Time / relative time
@@ -62,18 +61,18 @@ feature_matrix:
   subfeature: Market Time Unit (MTU)
   datatype: Duration (e.g. 15 min, 1 h)
   definition: Time granularity of the traded market interval/product.
-  meaning: Record the interval used by the market.
+  meaning: Record interval used by the market.
 - feature: Sub-markets
   subfeature: Sub-market type
   datatype: 'Categorical: bilateral / auction / exchange'
   definition: Market-based arrangement used to acquire flexibility.
-  meaning: Choose the clearing/trading arrangement.
+  meaning: Choose clearing/trading arrangement.
 - feature: Service(s)
   subfeature: Service
   datatype: Categorical / list
   definition: System need or action for which flexibility is procured, such as congestion management or voltage
     control.
-  meaning: State the system need, not the traded product.
+  meaning: State system need, not the traded product.
 - feature: Product(s)
   subfeature: Type of product
   datatype: Categorical / list
@@ -93,22 +92,22 @@ feature_matrix:
   subfeature: Responsible System Operator
   datatype: 'Categorical: TSO / DSO'
   definition: System operator responsible for the sub-market or system need.
-  meaning: Identify the responsible SO.
+  meaning: Identify responsible SO.
 - feature: Location
   subfeature: Voltage level where resources are located
   datatype: Categorical / text
   definition: Grid voltage level of eligible resources.
-  meaning: Record the relevant voltage class(es).
+  meaning: Record relevant voltage class(es).
 - feature: Market roles and actors
   subfeature: Who is the buyer(s)
   datatype: Actor / role
   definition: Actor procuring the service or product.
-  meaning: Identify the buyer for each sub-market.
+  meaning: Identify buyer for each sub-market.
 - feature: Market roles and actors
   subfeature: Who is the seller(s)
   datatype: Actor / role
   definition: Service-providing unit, group or other eligible seller of flexibility.
-  meaning: Identify the selling side.
+  meaning: Identify selling side.
 - feature: Market roles and actors
   subfeature: Allowed technologies
   datatype: 'Multi-select: generators / loads / storage'
@@ -128,9 +127,9 @@ feature_matrix:
   subfeature: Who is the MO
   datatype: Actor / role
   definition: Actor responsible for operating and clearing the sub-market.
-  meaning: Identify the market operator.
+  meaning: Identify market operator.
 - feature: Market roles and actors
   subfeature: Participation in sub-market
   datatype: 'Categorical: optional / compulsory / hybrid'
   definition: Rule defining whether eligible providers choose, must, or partly must participate.
-  meaning: Record the participation regime.
+  meaning: Record participation regime.

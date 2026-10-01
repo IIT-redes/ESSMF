@@ -4,21 +4,18 @@ file: flexibility-connection-agreement.html
 hero:
   eyebrow: Conditional access under constrained network capacity
   title: Flexible connection agreement
-  philosophy: A connection is more than permission to use the grid; it is an agreement about how scarce capacity, risk, and
-    responsibility are shared.
-  lead: Flexible or alternative connection agreements offer access under defined operational limitations when fully firm capacity
-    is not immediately available or is not the most efficient solution. The mechanism can accelerate electrification and renewable
-    integration, but only if the access right, curtailment envelope, compensation, control, review, and path to firm access
-    are transparent. We respectfully invite your expert guidance to make flexible access efficient, voluntary, bankable, non-discriminatory,
-    and operationally credible.
+  philosophy: A flexible connection defines how scarce capacity, operational limits, risk, and responsibility are
+    shared.
+  lead: Flexible connections can accelerate access when firm capacity is unavailable. The agreement must make access
+    rights, curtailment, compensation, control, review, and the path to firm access clear.
   primary_button: Understand the agreement
   secondary_button: Challenge the proposal
 sections:
   overview:
     eyebrow: Overview and orientation
     title: Connection flexibility changes the definition of network access
-    text: A flexible connection agreement is the access-right branch of the portfolio. It uses the flexibility of a connection
-      applicant or existing user to fit additional demand, generation, or storage within a constrained network envelope.
+    text: A flexible connection uses controllable access conditions to connect demand, generation, or storage within
+      a constrained network envelope.
   idea:
     eyebrow: Our proposal
     title: Review the agreement as a complete allocation of rights, control, and risk
@@ -26,20 +23,19 @@ sections:
   why:
     eyebrow: Why it matters
     title: The mechanism can unlock capacity quickly, but its hidden costs may emerge later
-    text: "Poorly designed agreements can expose users to unbankable curtailment, discriminate between connection\n      \
-      \  applicants, weaken local-market liquidity, or postpone necessary reinforcement without accountability."
+    text: Poor design can create unbankable curtailment, unequal treatment, market conflicts, or indefinite delay
+      of reinforcement.
   who:
     eyebrow: Who is affected?
     title: A contract with system-wide consequences
     text: ''
     where_title: Queues, reinforcement delays, and constrained hosting capacity
-    where_text: The mechanism is most relevant when a useful connection can be offered before full reinforcement, and when
-      the constraint can be monitored, forecast, and managed transparently.
+    where_text: Most relevant where useful access can be offered before reinforcement and the constraint can be
+      monitored and managed transparently.
   framework:
     eyebrow: Shared review structure
     title: Review dimensions
-    text: Each dimension below is a separate review environment. Open a card to read the full explanation and leave focused
-      comments on that exact design dimension.
+    text: Open a dimension to review its design choices and leave focused feedback.
 dimensions:
 - id: connection-access-rights
   href: connection-access-right-design.html
@@ -79,22 +75,22 @@ dimensions:
   link_label: Open detailed review page →
 visual_cards:
 - title: A negotiated access boundary
-  text: The agreement aligns DSO capability and user investment under explicit conditions.
+  text: Match user investment with a clear, secure access envelope.
   image: ../assets/connection-f1.webp
 - title: The constrained network
-  text: Substations and feeders define the physical envelope within which access can be offered.
+  text: Feeders and substations define the physical capacity available.
   image: ../assets/connection-f2.webp
 - title: Connection-point implementation
-  text: Metering, protection, control, and communication turn contractual limits into operational capability.
+  text: Metering, protection, control, and communication make limits operational.
   image: ../assets/connection-f3.webp
 - title: The wider network envelope
-  text: Access rights must remain consistent with upstream transmission and distribution constraints.
+  text: Access must remain consistent with upstream network constraints.
   image: ../assets/connection-f4.webp
 - title: Dynamic operating conditions
-  text: Network capacity can change over time, requiring predictable control logic and transparent limits.
+  text: Capacity can change over time, so control logic must be predictable.
   image: ../assets/connection-f5.webp
 - title: Monitoring and accountability
-  text: Operational data and independent oversight are essential for fair implementation.
+  text: Operational data and oversight support fair implementation.
   image: ../assets/connection-f6.webp
 feedback:
   eyebrow: Feedback environment
@@ -103,7 +99,7 @@ feedback:
 challenge_intro:
   eyebrow: Interactive stakeholder challenge
   title: Test the agreement from four perspectives
-  text: Open each card to expose the unresolved questions that should drive expert feedback.
+  text: Open a stakeholder card to test the agreement from that perspective.
 challenges:
 - id: challenge-dso
   title: DSO lens
@@ -136,4 +132,4 @@ challenges:
 final_feedback:
   eyebrow: Final contribution
   title: General comments and supporting material
-  text: Share contract examples, regulatory decisions, operational data, or connection-case evidence.
+  text: Share contract examples, regulatory decisions, operational data, or case evidence.

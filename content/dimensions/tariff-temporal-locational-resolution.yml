@@ -9,11 +9,11 @@ title: Temporal and locational resolution
 subtitle: How precisely should the tariff identify when and where network use is costly?
 definition_title: What this dimension means
 definition_paragraphs:
-- Resolution describes the level of detail in the tariff signal. Temporal resolution may range from annual or seasonal charges
-  to hourly or dynamic signals. Locational resolution may range from a national tariff to zones, feeders, substations, or
-  connection points.
-- Greater granularity can improve cost-reflectivity, but it also increases complexity, volatility, data requirements, and
-  the risk that customers cannot understand or act on the signal.
+- Resolution describes the level of detail in the tariff signal. Temporal resolution may range from annual or seasonal
+  charges to hourly or dynamic signals. Locational resolution may range from a national tariff to zones, feeders,
+  substations, or connection points.
+- Greater granularity can improve cost-reflectivity, but it also increases complexity, volatility, data requirements,
+  and the risk that customers cannot understand or act on the signal.
 choices:
 - title: Temporal structure
   text: Annual, seasonal, peak/off-peak, hourly, critical-peak, or dynamic.
@@ -24,11 +24,10 @@ choices:
 - title: Stability rule
   text: How frequently parameters may change and how customers are protected from abrupt redesign.
 example_title: How the dimension appears in practice
-example_text: A substation is constrained only on a few summer afternoons. A broad annual charge spreads the signal across
-  all hours and users. A targeted critical-peak period can be more effective, but customers need reliable advance notice and
-  the DSO needs a transparent trigger for declaring the period.
-review_principle: The mechanism is credible only when the selected design can be explained in plain language and linked to
-  a verifiable network, regulatory, commercial, or customer outcome.
+example_text: A substation is constrained only on a few summer afternoons. A broad annual charge spreads the signal
+  across all hours and users.
+review_principle: A credible design links the choice to a measurable network, regulatory, commercial, or customer
+  outcome.
 stakeholders:
 - name: DSO
   text: Choose sufficient granularity to address the constraint without creating an operational control tariff.
@@ -52,5 +51,5 @@ evidence:
 - Complexity and comprehension testing
 feedback_eyebrow: Feedback on temporal and locational resolution
 feedback_title: What should be clarified, added, removed, or redesigned?
-feedback_text: Please comment specifically on the definition, design choices, stakeholder responsibilities, implementation
-  feasibility, evidence requirements, and interaction with the other flexibility acquisition mechanisms.
+feedback_text: Please comment on the definition, choices, feasibility, evidence, and interaction with other flexibility
+  mechanisms.

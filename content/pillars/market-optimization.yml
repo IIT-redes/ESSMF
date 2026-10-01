@@ -8,30 +8,29 @@ preview_image: assets/tmf_blank_03_market_optimisation_preview.png
 preview_alt: Blank ready-to-fill Market optimisation Theoretical Market Framework table
 pdf_label: Open / download blank PDF
 worksheet_title: Ready-to-fill Theoretical Market Framework mapping table
-worksheet_text: For each Market 1-4, record the optimisation methodology, its relationship with other clearings,
-  and the clearing objective.
+worksheet_text: For each market, record the optimisation method, clearing relationship, and objective.
 eyebrow: The clearing intelligence
 title: Market optimization
 subtitle: Defines how related sub-markets are organised, solved and optimised.
-philosophy: This pillar records the organisation of optimisation, the relationship between sub-market clearings
-  and the objective used to select the market outcome.
+philosophy: Describes where optimisation responsibility sits, how related clearings are linked, and what objective
+  selects the outcome.
 flowchart_caption: 'Theoretical Market Framework taxonomy for optimisation: methodology, clearing relationship and
   objective.'
-tutorial_intro: Describe the clearing logic for each market and how it relates to other sub-markets.
+tutorial_intro: Record the clearing logic for each market and its relationship with the others.
 tutorial_sections:
 - title: 1. Choose the optimisation methodology
-  text: State whether optimisation is centralised, decentralised or distributed.
+  text: State optimisation is centralised, decentralised or distributed.
   items:
   - This describes where optimisation responsibility sits.
 - title: 2. Define the clearing relationship
-  text: State whether related sub-markets are solved simultaneously, sequentially or independently.
+  text: State related sub-markets are solved simultaneously, sequentially or independently.
   items:
   - Use the same market labels as the other pillar tables.
 - title: 3. State the objective
-  text: Record the clearing objective, such as cost minimisation, social-welfare maximisation or reduction of counter-activations.
+  text: Record clearing objective, such as cost minimisation, social-welfare maximisation or reduction of counter-activations.
   items:
   - Use Other only when the objective is clearly specified.
-feature_matrix_intro: Use this table as both a terminology reference and a data-entry guide for Market Optimisation.
+feature_matrix_intro: Use the table to define the optimisation choices and expected data.
 feature_matrix:
 - feature: Market optimisation
   subfeature: Optimisation methodology
@@ -42,9 +41,9 @@ feature_matrix:
   subfeature: Relationship between clearings
   datatype: 'Categorical: simultaneous / sequential / independent'
   definition: Rule describing whether related sub-markets are solved together, one after another, or separately.
-  meaning: Record the relationship among clearings.
+  meaning: Record relationship among clearings.
 - feature: Sub-market clearing objective
   subfeature: Optimisation objective
   datatype: Categorical / text
   definition: Quantity the clearing process seeks to optimise, e.g. cost, social welfare or counter-activations.
-  meaning: State the objective used to select the result.
+  meaning: State objective used to select the result.

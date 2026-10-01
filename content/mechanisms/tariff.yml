@@ -4,22 +4,17 @@ file: tariff-design.html
 hero:
   eyebrow: Implicit flexibility through network-use price signals
   title: Tariff design
-  philosophy: A network tariff is more than a bill; it is the grid's quiet instruction about when, where, and how
-    capacity should be used.
-  lead: Network tariffs primarily recover network costs, but their structure can also influence the timing, location,
-    and magnitude of withdrawals and injections. Because this flexibility is implicit rather than contracted, the
-    design must connect a real network cost driver to a response that customers can understand and deliver. We respectfully
-    invite your expert guidance to make tariff design more effective, fair, evidence-based, and compatible with
-    explicit flexibility procurement.
+  philosophy: A network tariff is a price signal about when, where, and how grid capacity is used.
+  lead: Tariffs recover network costs and can also influence withdrawals and injections. Good design links a real
+    network cost driver to a signal customers can understand and act on.
   primary_button: Understand the mechanism
   secondary_button: Challenge the proposal
 sections:
   overview:
     eyebrow: Overview and orientation
     title: Tariffs acquire flexibility indirectly
-    text: Tariff design is the implicit branch of the flexibility-acquisition portfolio. It does not buy a specific
-      activation; instead, it changes the economic conditions under which many users make ordinary consumption,
-      charging, storage, and injection decisions.
+    text: 'Tariffs acquire flexibility indirectly: they change routine consumption, charging, storage, and injection
+      decisions rather than buying a specific activation.'
   idea:
     eyebrow: Our proposal
     title: Evaluate the tariff as a chain from network need to customer response
@@ -27,21 +22,19 @@ sections:
   why:
     eyebrow: Why it matters
     title: A poorly coordinated tariff can solve one problem and create another
-    text: "A tariff may reduce a peak, shift it to another hour, distort a local-market baseline, or place risk\n\
-      \        on users who cannot respond. Effectiveness therefore has to be tested against physical, behavioural,\n\
-      \        regulatory, and distributional outcomes."
+    text: A tariff can reduce one peak but shift another, distort baselines, or burden users who cannot respond.
+      Test both network value and distributional impact.
   who:
     eyebrow: Who is affected?
     title: A multi-actor design
     text: ''
     where_title: Recurring, measurable network patterns
-    where_text: Tariffs are strongest where network stress has recurring temporal, capacity, or locational drivers
-      and where customers have enough information and controllability to respond.
+    where_text: Best suited to recurring, measurable network patterns where customers have enough information and
+      controllability to respond.
   framework:
     eyebrow: Shared review structure
     title: Review dimensions
-    text: Each dimension below is a separate review environment. Open a card to read the full explanation and leave
-      focused comments on that exact design dimension.
+    text: Open a dimension to review its design choices and leave focused feedback.
 dimensions:
 - id: tariff-cost-driver
   href: tariff-network-cost-driver.html
@@ -81,20 +74,19 @@ dimensions:
   link_label: Open detailed review page →
 visual_cards:
 - title: The customer interface
-  text: Bills and charging structures translate network design into a customer-facing signal.
+  text: Bills and charging structures turn network design into a customer signal.
   image: ../assets/tariff-t2.webp
 - title: A changing resource base
-  text: Renewables, electrification, storage, and EV adoption alter when and where network costs arise.
+  text: Renewables, EVs, storage, and electrification reshape network costs.
   image: ../assets/tariff-t3.webp
 - title: Network context
-  text: The same tariff can produce different value depending on local topology, hosting capacity, and flexibility
-    potential.
+  text: The same tariff can have different value across locations and grid conditions.
   image: ../assets/tariff-t4.webp
 - title: Distributional outcomes
-  text: Tariff alternatives can produce very different cost outcomes across customers and EV-adoption scenarios.
+  text: Tariff choices can shift costs and benefits across customer groups.
   image: ../assets/tariff-t5.webp
 - title: Behavioural response
-  text: The same underlying demand can respond differently depending on incentives, automation, and constraints.
+  text: Response depends on incentives, automation, and practical constraints.
   image: ../assets/tariff-t6.webp
 feedback:
   eyebrow: Feedback environment
@@ -103,7 +95,7 @@ feedback:
 challenge_intro:
   eyebrow: Interactive stakeholder challenge
   title: Four perspectives that should not be collapsed into one
-  text: Open each card to see targeted questions for the corresponding stakeholder group.
+  text: Open a stakeholder card to test the design from that perspective.
 challenges:
 - id: challenge-dso
   title: DSO lens
@@ -136,4 +128,4 @@ challenges:
 final_feedback:
   eyebrow: Final contribution
   title: General comments and supporting material
-  text: Share regulatory examples, tariff studies, data, figures, or implementation lessons.
+  text: Share relevant regulatory examples, studies, data, or implementation lessons.

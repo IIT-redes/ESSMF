@@ -8,36 +8,36 @@ preview_image: assets/tmf_blank_04_market_operation_preview.png
 preview_alt: Blank ready-to-fill Market operation Theoretical Market Framework table
 pdf_label: Open / download blank PDF
 worksheet_title: Ready-to-fill Theoretical Market Framework mapping table
-worksheet_text: For each Market 1-4, record remuneration, clearing type, procurement frequency, minimum bid size
-  and bid structure.
+worksheet_text: For each market, record remuneration, clearing type, procurement frequency, minimum bid size, and
+  bid structure.
 eyebrow: The procedure of trust
 title: Market operation
 subtitle: 'Defines the operating rules of each sub-market: payment, clearing, frequency and bid properties.'
-philosophy: This pillar describes how each sub-market operates in practice. It records remuneration, what is paid
-  for, clearing mode, procurement frequency and the bid properties accepted by the market.
+philosophy: 'Describes the practical operating rules: payment, what is remunerated, clearing mode, procurement frequency,
+  and bid properties.'
 flowchart_caption: 'Theoretical Market Framework taxonomy for market operation: remuneration, clearing, procurement
   frequency and bid properties.'
-tutorial_intro: Use this pillar to describe the operational rules that participants face in each sub-market.
+tutorial_intro: Record the rules participants face in each market.
 tutorial_sections:
 - title: 1. Define remuneration
-  text: Record the payment rule and whether availability, activation or both are remunerated.
+  text: Record payment rule and whether availability, activation or both are remunerated.
   items:
   - Also record whether the product concerns active, reactive or apparent power.
 - title: 2. Define clearing and frequency
-  text: State whether clearing is continuous or discrete and how often procurement is run.
+  text: State clearing is continuous or discrete and how often procurement is run.
   items:
   - Keep procurement frequency separate from GOT/GCT.
 - title: 3. Define bid properties
   text: Record minimum bid size and whether bids are simple or complex.
   items:
   - These choices can create participation or interoperability barriers.
-feature_matrix_intro: Use this table as both a terminology reference and a data-entry guide for Market Operation.
+feature_matrix_intro: Use the table to define each operating rule and expected data.
 feature_matrix:
 - feature: Remuneration scheme
   subfeature: Payment rule
   datatype: 'Categorical: no remuneration / negotiated / pay-as-bid / pay-as-clear / nodal / cost-based'
   definition: Rule used to determine payment for successful market participation.
-  meaning: Select the payment rule used in the market.
+  meaning: Select payment rule used in the market.
 - feature: Remunerated product attribute
   subfeature: What is remunerated
   datatype: 'Multi-select: availability / activation; active / reactive / apparent power'
@@ -47,7 +47,7 @@ feature_matrix:
   subfeature: Clearing mode
   datatype: 'Categorical: continuous / discrete'
   definition: Whether trades clear continuously while open or in discrete clearing events.
-  meaning: Choose the clearing mode.
+  meaning: Choose clearing mode.
 - feature: Procurement frequency
   subfeature: How often procurement runs
   datatype: 'Categorical: event-based / daily / weekly / monthly / other'
@@ -57,9 +57,9 @@ feature_matrix:
   subfeature: Minimum bid size
   datatype: Numeric + unit (kW/MW)
   definition: Minimum capacity or energy volume accepted in a bid.
-  meaning: Enter the threshold and unit.
+  meaning: Enter threshold and unit.
 - feature: Bid properties
   subfeature: Bid structure
   datatype: 'Categorical: simple / complex'
   definition: High-level complexity of bids accepted by the market.
-  meaning: Record the permitted bid structure.
+  meaning: Record permitted bid structure.

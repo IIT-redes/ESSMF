@@ -2,15 +2,15 @@ editorial_status: approved
 hero:
   title: Electricity System Services Market
   statement: A changing grid needs a compass for its markets.
-  lead: A common language for describing, comparing and improving flexibility-market designs. Review the five Theoretical
-    Market Framework pillars and contribute expert feedback.
+  lead: A common language for describing, comparing, and improving flexibility-market designs. Review the five pillars
+    and contribute expert feedback.
   primary_button: Explore the proposal
   secondary_button: Contribute feedback
 sections:
   journey:
     eyebrow: The journey
     title: Four questions guide the discussion before the framework
-    text: Four short questions introduce the proposal before the five-pillar framework.
+    text: Four short questions introduce the proposal before the five pillars.
   idea:
     eyebrow: What is the proposal?
     title: A market framework is not a diagram. It is a grammar for change.
@@ -30,23 +30,20 @@ sections:
   case-example:
     eyebrow: Illustrative case
     title: Case example — from five filled Theoretical Market Framework tables to one market-architecture view
-    text: 'This illustrative case shows the workflow: fill the five pillar tables with consistent market labels,
-      then translate those entries into one market-architecture figure.'
+    text: 'A worked case shows the process: complete the five pillar tables with consistent market labels, then
+      translate them into one architecture view.'
   framework-view:
     eyebrow: The framework
     title: Five pillars for describing and designing flexibility markets
-    text: Each pillar captures a distinct design layer. Together they form a comparable description of a flexibility
-      market.
+    text: Each pillar captures one design layer; together they provide a comparable market description.
   review:
     eyebrow: Your contribution
     title: Help us make the framework sharper, not just more complete.
-    text: Open a pillar detail page, read its definitions and mapping table, then leave feedback there.
+    text: Open a pillar page, scan the definitions and mapping table, then leave focused feedback.
   final-feedback:
     eyebrow: Final feedback
     title: Overall comments and supporting material
-    text: "After the pillar-by-pillar review, we warmly invite you to share any general comment, concern,\n    \
-      \      reference, use case, implementation example, or supporting material that could help us improve\n  \
-      \        the proposed framework as a whole."
+    text: Share cross-pillar comments, concerns, examples, references, or supporting material.
 pillars:
 - id: market-architecture
   eyebrow: The structure of exchange
@@ -71,31 +68,25 @@ pillars:
 case_example:
   image: assets/case-example-market-structure.png
   image_alt: Illustrative case market architecture mapped from the Theoretical Market Framework tables
-  image_caption: Illustrative market architecture produced from the filled Theoretical Market Framework tables.
-    The lower layer shows local DSO-side sub-markets; the upper layer provides the wider market context.
+  image_caption: Worked architecture produced from the five filled framework tables.
   explanation_title: How to fill the tables and translate them into the figure
-  explanation_intro: Use the same Market 1-4 labels across all five tables. Fill only what is known and use Additional
-    Information for assumptions, exceptions or pairwise coordination details.
+  explanation_intro: Keep the same Market 1–4 labels across all five tables. Record only known information; use
+    Additional Information for assumptions, exceptions, and pairwise conditions.
   explanation_points:
-  - '1. Start with Pillar 1: define each sub-market, its timing, product, location and actors. Each market becomes
-    a block in the architecture.'
-  - 2. Keep Market 1-4 consistent in Pillars 2-5. Pillar 2 records interaction rules; Pillar 3 clearing logic; Pillar
-    4 operating rules; Pillar 5 network representation.
-  - 3. Use “Not applicable” where a field does not apply. Do not guess missing information; explain uncertainty
-    in Additional Information.
-  - 4. Place blocks horizontally from long-term to near-real-time using GOT/GCT/MTU, and vertically by buyer/system-operator
-    layer and location.
-  - 5. Add links only when the coordination table supports them. Use the remaining pillars to explain sequencing,
-    operation and network-feasibility checks.
+  - '1. Pillar 1 defines each market: timing, product, location, and actors. Each market becomes a block.'
+  - 2. Keep the same labels in Pillars 2–5 to describe coordination, clearing, operation, and network constraints.
+  - 3. Use “Not applicable” where needed and record uncertainty in Additional Information.
+  - 4. Position blocks in time using GOT/GCT/MTU and by layer using buyer, operator, and location.
+  - 5. Draw links only when coordination rules support them; use the remaining pillars to explain how the sessions
+    work.
   downloads_title: Download the illustrative case
   downloads:
   - title: Case example — filled tables + figure
-    description: The supplied illustrative case with five filled Theoretical Market Framework tables and the resulting
-      market-architecture figure.
+    description: Five filled framework tables plus the resulting market-architecture figure.
     file: docs/materials/case-example-filled-tables-and-figure.pdf
     label: Download case example PDF
   - title: Case example market-architecture figure
-    description: Standalone figure derived from the structured Theoretical Market Framework mapping.
+    description: Standalone architecture figure derived from the structured mapping.
     file: docs/materials/case-example-market-structure.png
     label: Download figure
   mapping_title: From table entries to the figure
@@ -115,5 +106,4 @@ case_example:
   - table_input: Pillar 5 — network representation
     determines: How grid feasibility enters
     figure_output: Local procurement-area and network-check interpretation
-  source_note: Illustrative case based on the provided case-example tables. It is a worked example, not a definitive
-    representation of a specific national market.
+  source_note: Illustrative worked case only; it is not a definitive national-market representation.
