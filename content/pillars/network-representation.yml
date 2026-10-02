@@ -31,15 +31,24 @@ tutorial_sections:
   text: Balance physical fidelity with data, computation and information-sharing requirements.
   items:
   - State any validation or corrective step used with simplified models.
-feature_matrix_intro: Use the table to define the network-modelling choices and expected data.
+feature_matrix_intro: Use the table as a compact terminology and data-entry guide. The final column links each definition
+  to its source section; open the cited page or download the full source PDF.
 feature_matrix:
 - feature: Representation of network constraints
   subfeature: Level/form of representation
   datatype: 'Categorical: comprehensive grid data / partial grid data / empirical rules'
   definition: Modelling approach used to account for physical network limits in the market design.
   meaning: Select representation used and describe it if needed.
+  references: &id001
+  - label: Troncia et al. (2023), §2.5
+    file: docs/materials/tmf-tso-dso-coordination-energies-2023.pdf
+    page: 7
+  - label: OneNet D11.2, §5.1.5
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 64
 - feature: Timing of inclusion of network constraints
   subfeature: Market phase
   datatype: 'Multi-select: procurement areas / prequalification / procurement / activation / measurement / settlement'
   definition: Phase(s) at which network feasibility information influences the acquisition process.
   meaning: Select all phases where grid constraints are applied.
+  references: *id001

@@ -40,96 +40,145 @@ tutorial_sections:
   items:
   - Look for timing or granularity mismatches.
   - Check whether roles remain clear when resources join several markets.
-feature_matrix_intro: Use the table as a compact terminology reference and data-entry guide.
+feature_matrix_intro: Use the table as a compact terminology and data-entry guide. The final column links each definition
+  to its source section; open the cited page or download the full source PDF.
 feature_matrix:
 - feature: Sub-markets
   subfeature: Number of sub-markets
   datatype: Integer
   definition: Count of distinct exchange/clearing spaces in the architecture.
   meaning: Enter number of separate sub-markets.
+  references: &id001
+  - label: Troncia et al. (2023), §2.1
+    file: docs/materials/tmf-tso-dso-coordination-energies-2023.pdf
+    page: 4
 - feature: Sub-markets
   subfeature: Gate Opening Time (GOT)
   datatype: Time / relative time
   definition: When the gate for submitting market bids or offers opens.
   meaning: Record opening point for each sub-market.
+  references:
+  - label: OneNet D11.2, §5.1.1
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 58
 - feature: Sub-markets
   subfeature: Gate Closure Time (GCT)
   datatype: Time / relative time
   definition: When the gate for submitting or updating bids closes.
   meaning: Use it to compare timing compatibility across markets.
+  references:
+  - label: OneNet D11.2, §5.1.1
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 58
 - feature: Sub-markets
   subfeature: Market Time Unit (MTU)
   datatype: Duration (e.g. 15 min, 1 h)
   definition: Time granularity of the traded market interval/product.
   meaning: Record interval used by the market.
+  references:
+  - label: OneNet D11.2, §5.1.1
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 58
 - feature: Sub-markets
   subfeature: Sub-market type
   datatype: 'Categorical: bilateral / auction / exchange'
   definition: Market-based arrangement used to acquire flexibility.
   meaning: Choose clearing/trading arrangement.
+  references: *id001
 - feature: Service(s)
   subfeature: Service
   datatype: Categorical / list
   definition: System need or action for which flexibility is procured, such as congestion management or voltage
     control.
   meaning: State system need, not the traded product.
+  references: *id001
 - feature: Product(s)
   subfeature: Type of product
   datatype: Categorical / list
   definition: Form of the exchanged product, including availability and/or activation of active or reactive power.
   meaning: Describe what is actually traded.
+  references:
+  - label: Troncia et al. (2023), §2.1
+    file: docs/materials/tmf-tso-dso-coordination-energies-2023.pdf
+    page: 4
+  - label: OneNet D11.2, §5.1.1
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 58
 - feature: Product(s)
   subfeature: Technical requirements
   datatype: Text / list
   definition: Technical properties required for the product and service, such as ramping or response capability.
   meaning: List the relevant technical conditions.
+  references:
+  - label: OneNet D11.2, §5.1.1
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 58
 - feature: Location
   subfeature: Level of spatial granularity
   datatype: 'Categorical: area / feeder / node'
   definition: Spatial resolution at which flexibility is located or procured.
   meaning: Record both granularity and whether it is at transmission or distribution level.
+  references: *id001
 - feature: Location
   subfeature: Responsible System Operator
   datatype: 'Categorical: TSO / DSO'
   definition: System operator responsible for the sub-market or system need.
   meaning: Identify responsible SO.
+  references: *id001
 - feature: Location
   subfeature: Voltage level where resources are located
   datatype: Categorical / text
   definition: Grid voltage level of eligible resources.
   meaning: Record relevant voltage class(es).
+  references: *id001
 - feature: Market roles and actors
   subfeature: Who is the buyer(s)
   datatype: Actor / role
   definition: Actor procuring the service or product.
   meaning: Identify buyer for each sub-market.
+  references: *id001
 - feature: Market roles and actors
   subfeature: Who is the seller(s)
   datatype: Actor / role
   definition: Service-providing unit, group or other eligible seller of flexibility.
   meaning: Identify selling side.
+  references: *id001
 - feature: Market roles and actors
   subfeature: Allowed technologies
   datatype: 'Multi-select: generators / loads / storage'
   definition: Resource classes eligible to participate.
   meaning: Select all eligible technology classes.
+  references:
+  - label: OneNet D11.2, §5.1.1
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 58
 - feature: Market roles and actors
   subfeature: Aggregation method
   datatype: Categorical / text
   definition: Rule used to group individual resources, e.g. by area, voltage level or substation.
   meaning: State how resources may be aggregated.
+  references:
+  - label: OneNet D11.2, §5.1.1
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 58
 - feature: Market roles and actors
   subfeature: Aggregation mix allowed
   datatype: Categorical / text
   definition: Rule defining which resource or bid types may be combined in one aggregation.
   meaning: State permitted combinations and restrictions.
+  references:
+  - label: OneNet D11.2, §5.1.1
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 58
 - feature: Market roles and actors
   subfeature: Who is the MO
   datatype: Actor / role
   definition: Actor responsible for operating and clearing the sub-market.
   meaning: Identify market operator.
+  references: *id001
 - feature: Market roles and actors
   subfeature: Participation in sub-market
   datatype: 'Categorical: optional / compulsory / hybrid'
   definition: Rule defining whether eligible providers choose, must, or partly must participate.
   meaning: Record participation regime.
+  references: *id001

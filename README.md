@@ -1,7 +1,3 @@
-# ESSMF website source
-
-**Deployment note:** this repository now contains a real root `index.html`, so GitHub Pages can serve the website even if Pages is set to "Deploy from branch / root". The preferred mode is still **GitHub Actions**, which builds and deploys `dist`. See `DEPLOYMENT_README_V12.md`.
-
 # Flexibility Acquisition Mechanisms - integrated storyline revision
 
 ## Main changes

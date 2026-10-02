@@ -30,20 +30,30 @@ tutorial_sections:
   text: Record clearing objective, such as cost minimisation, social-welfare maximisation or reduction of counter-activations.
   items:
   - Use Other only when the objective is clearly specified.
-feature_matrix_intro: Use the table to define the optimisation choices and expected data.
+feature_matrix_intro: Use the table as a compact terminology and data-entry guide. The final column links each definition
+  to its source section; open the cited page or download the full source PDF.
 feature_matrix:
 - feature: Market optimisation
   subfeature: Optimisation methodology
   datatype: 'Categorical: centralised / decentralised / distributed'
   definition: Organisational approach used to optimise across related markets and system levels.
   meaning: Choose where optimisation responsibility is located.
+  references: &id001
+  - label: Troncia et al. (2023), §2.3
+    file: docs/materials/tmf-tso-dso-coordination-energies-2023.pdf
+    page: 5
+  - label: OneNet D11.2, §5.1.3
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 61
 - feature: Submarkets optimisation strategy
   subfeature: Relationship between clearings
   datatype: 'Categorical: simultaneous / sequential / independent'
   definition: Rule describing whether related sub-markets are solved together, one after another, or separately.
   meaning: Record relationship among clearings.
+  references: *id001
 - feature: Sub-market clearing objective
   subfeature: Optimisation objective
   datatype: Categorical / text
   definition: Quantity the clearing process seeks to optimise, e.g. cost, social welfare or counter-activations.
   meaning: State objective used to select the result.
+  references: *id001

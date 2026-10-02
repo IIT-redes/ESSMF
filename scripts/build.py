@@ -378,7 +378,7 @@ def patch_pillars():
             thead=table.find('thead')
             if thead:
                 thead.clear(); tr=s.new_tag('tr')
-                for label in ['Feature','Sub-feature / decision','Data type','Definition','How to read the choice']:
+                for label in ['Feature','Sub-feature / decision','Data type','Definition','How to read the choice','Definition source']:
                     th=s.new_tag('th'); th.string=label; tr.append(th)
                 thead.append(tr)
         body=s.select_one('.feature-matrix-body')
@@ -388,6 +388,20 @@ def patch_pillars():
                 tr=s.new_tag('tr')
                 for key in ['feature','subfeature','datatype','definition','meaning']:
                     td=s.new_tag('td'); td.string=row.get(key,''); tr.append(td)
+                src_td=s.new_tag('td',attrs={'class':'definition-source-cell'})
+                refs=row.get('references',[]) or []
+                for i,ref in enumerate(refs):
+                    block=s.new_tag('div',attrs={'class':'definition-reference'})
+                    label=s.new_tag('span',attrs={'class':'definition-reference-label'}); label.string=ref.get('label','Source'); block.append(label)
+                    actions=s.new_tag('span',attrs={'class':'definition-reference-actions'})
+                    f=ref.get('file','')
+                    if f:
+                        href='../'+f.lstrip('/')
+                        p=ref.get('page')
+                        open_a=s.new_tag('a',attrs={'href': href + (f'#page={p}' if p else ''),'target':'_blank','rel':'noopener'}); open_a.string='Open'; actions.append(open_a)
+                        dl=s.new_tag('a',attrs={'href':href,'download':''}); dl.string='Download'; actions.append(dl)
+                    block.append(actions); src_td.append(block)
+                tr.append(src_td)
                 body.append(tr)
 
         # v16: source/evidence and apply-the-pillar sections are intentionally removed.

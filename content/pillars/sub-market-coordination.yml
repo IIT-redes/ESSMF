@@ -34,30 +34,42 @@ tutorial_sections:
   text: State coordination occurs during prequalification, procurement, activation, measurement or settlement.
   items:
   - Use Additional Information for pairwise interaction details.
-feature_matrix_intro: Use the table to define each coordination choice and the data expected.
+feature_matrix_intro: Use the table as a compact terminology and data-entry guide. The final column links each definition
+  to its source section; open the cited page or download the full source PDF.
 feature_matrix:
 - feature: Allocation principle of flexibility
   subfeature: System operators order
   datatype: 'Categorical: TSO/DSO priority, TSO/DSO exclusivity, none'
   definition: Rule determining which system operator gets first or exclusive access to shared flexibility.
   meaning: Select access order for the considered interaction.
+  references: &id001
+  - label: Troncia et al. (2023), §2.2
+    file: docs/materials/tmf-tso-dso-coordination-energies-2023.pdf
+    page: 5
+  - label: OneNet D11.2, §5.1.2
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 61
 - feature: Allocation principle of flexibility
   subfeature: TSO access to DERs
   datatype: Boolean / N/A
   definition: Whether the TSO can access distribution-connected flexibility in the arrangement.
   meaning: Record yes, no or not applicable.
+  references: *id001
 - feature: Allocation principle of flexibility
   subfeature: Commitment to bid selection
   datatype: 'Categorical: formal / conditional / N/A'
   definition: Whether a first-stage bid selection is binding or remains provisional pending later coordination.
   meaning: Record commitment rule.
+  references: *id001
 - feature: Allocation principle of flexibility
   subfeature: Forwarding of bids
   datatype: Boolean / N/A + note
   definition: Transfer of eligible unused bids from one market to another, possibly after processing.
   meaning: Record whether forwarding is allowed and describe any processing.
+  references: *id001
 - feature: Timeframe for coordination
   subfeature: Market phase for coordination between submarkets
   datatype: 'Multi-select: prequalification / procurement / activation / measurement / settlement'
   definition: Market phase(s) in which coordination between the sub-markets occurs.
   meaning: Select all phases where coordination is applied.
+  references: *id001

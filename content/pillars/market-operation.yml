@@ -31,35 +31,51 @@ tutorial_sections:
   text: Record minimum bid size and whether bids are simple or complex.
   items:
   - These choices can create participation or interoperability barriers.
-feature_matrix_intro: Use the table to define each operating rule and expected data.
+feature_matrix_intro: Use the table as a compact terminology and data-entry guide. The final column links each definition
+  to its source section; open the cited page or download the full source PDF.
 feature_matrix:
 - feature: Remuneration scheme
   subfeature: Payment rule
   datatype: 'Categorical: no remuneration / negotiated / pay-as-bid / pay-as-clear / nodal / cost-based'
   definition: Rule used to determine payment for successful market participation.
   meaning: Select payment rule used in the market.
+  references: &id001
+  - label: Troncia et al. (2023), §2.4
+    file: docs/materials/tmf-tso-dso-coordination-energies-2023.pdf
+    page: 6
 - feature: Remunerated product attribute
   subfeature: What is remunerated
   datatype: 'Multi-select: availability / activation; active / reactive / apparent power'
   definition: Product component and physical quantity for which payment is made.
   meaning: Record whether availability, activation or both are paid.
+  references: *id001
 - feature: Market clearing type
   subfeature: Clearing mode
   datatype: 'Categorical: continuous / discrete'
   definition: Whether trades clear continuously while open or in discrete clearing events.
   meaning: Choose clearing mode.
+  references: *id001
 - feature: Procurement frequency
   subfeature: How often procurement runs
   datatype: 'Categorical: event-based / daily / weekly / monthly / other'
   definition: How often the sub-market procurement process is run.
   meaning: Record repetition frequency, not session gate timing.
+  references: *id001
 - feature: Bid properties
   subfeature: Minimum bid size
   datatype: Numeric + unit (kW/MW)
   definition: Minimum capacity or energy volume accepted in a bid.
   meaning: Enter threshold and unit.
+  references:
+  - label: OneNet D11.2, §5.1.4
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 62
 - feature: Bid properties
   subfeature: Bid structure
   datatype: 'Categorical: simple / complex'
   definition: High-level complexity of bids accepted by the market.
   meaning: Record permitted bid structure.
+  references:
+  - label: OneNet D11.2, §5.1.4
+    file: docs/materials/onenet-d11-2-techno-economic-assessment.pdf
+    page: 62

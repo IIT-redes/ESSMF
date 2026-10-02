@@ -1,0 +1,1827 @@
+             energies
+Article
+Market-Based TSO–DSO Coordination: A Comprehensive
+Theoretical Market Framework and Lessons from
+Real-World Implementations
+Matteo Troncia 1, * , José Pablo Chaves Ávila 1 , Carlos Damas Silva 2 , Helena Gerard 3,4
+and Gwen Willeghems 3,4
+
+                                         1   Institute for Research in Technology (IIT), Comillas Pontifical University, 28015 Madrid, Spain
+                                         2   E-REDES, Distribuição de Eletricidade, S.A., 1050-121 Lisbon, Portugal
+                                         3   Flemish Institute for Technological Research (VITO), Boeretang 200, 2400 Mol, Belgium
+                                         4   EnergyVille, Thor Park 8310-8320, 3600 Genk, Belgium
+                                         *   Correspondence: matteo.troncia@iit.comillas.edu
+
+
+                                         Abstract: This paper introduces a theoretical market framework (TMF) for conceptualizing and
+                                         designing electricity markets, integrating transmission system operator and distribution system
+                                         operator (TSO–DSO) coordination mechanisms. The TMF represents a comprehensive tool that
+                                         formalizes new, innovative market concepts and their impact on existing markets, and outlines
+                                         fundamental categories and decisions essential to market design. This paper, through the TMF,
+                                         addresses the integration challenges posed by new mechanisms for system services. Utilizing the
+                                         TMF, the study maps 13 European demonstrators’ TSO–DSO coordination solutions, identifying
+                                         real-world challenges in designing and implementing novel system services markets. Drawing on
+                                         these real-world insights, the paper offers market design and policy recommendations to address
+                                         and overcome the specific challenges in market-based TSO–DSO coordination.
+
+                                         Keywords: TSO–DSO coordination; real-world demonstrators; electricity market design; system services
+Citation: Troncia, M.; Chaves Ávila,
+J.P.; Damas Silva, C.; Gerard, H.;
+Willeghems, G. Market-Based
+TSO–DSO Coordination: A                  1. Introduction
+Comprehensive Theoretical Market
+                                              The climate and policy goals driving the ongoing energy transition and decarboniza-
+Framework and Lessons from
+Real-World Implementations.
+                                         tion of our society call for the electricity sector to contribute through the massive use of
+Energies 2023, 16, 6939.
+                                         renewable energy sources and energy efficiency [1]. With the considerable presence of
+https://doi.org/10.3390/
+                                         intermittent energy sources and the need to maximize the use of existing infrastructure, it is
+en16196939                               increasingly important to adopt a more interactive approach to operating the electric power
+                                         system [2]. Addressing the power system transformation at a reasonable cost, without
+Academic Editor: Jay Zarnikau
+                                         harming the electricity supply security and quality, calls for unlocking the support from the
+Received: 29 August 2023                 already connected resources and fostering new resources availability [3–6]. In this context,
+Revised: 22 September 2023               cooperation and coordination among SOs are crucial for efficiently managing resources
+Accepted: 28 September 2023              and infrastructures; nevertheless, the involved actors’ coordination procedures must be
+Published: 3 October 2023                carefully designed to strive for economic efficiency [7]. In order to promote investments in
+                                         renewable energy sources (RESs) and enable coordinated procurement of system services
+                                         by both DSOs and TSOs for secure system operation, efficient, integrated, coordinated,
+                                         and scalable markets are essential in future power systems. These markets should in-
+Copyright: © 2023 by the authors.
+                                         clude balancing services, non-frequency ancillary services, and congestion management
+Licensee MDPI, Basel, Switzerland.
+                                         services [8,9]. Ultimately, such markets aim to provide real choice for all end-customers
+This article is an open access article
+                                         and contribute to energy supply security and sustainability [10].
+distributed under the terms and
+                                              Market design is a complex task that encompasses the interplay of multiple markets
+conditions of the Creative Commons
+Attribution (CC BY) license (https://
+                                         and policy instruments [11–13]. The current market designs for electricity face barriers that
+creativecommons.org/licenses/by/
+                                         hinder the efficient integration of renewable energy sources (RESs), leading to a slower
+4.0/).                                   and more expensive energy transition. Several studies in the literature have highlighted
+
+
+
+
+Energies 2023, 16, 6939. https://doi.org/10.3390/en16196939                                                   https://www.mdpi.com/journal/energies
+Energies 2023, 16, 6939                                                                                           2 of 28
+
+
+
+
+                          these barriers and proposed alternative market designs mainly focusing on wholesale
+                          electricity markets, capacity auctions for system adequacy, and balancing [11,14–23]. The
+                          identified hotspots mainly concern time and spatial granularity, market timing, market
+                          sequence, traded products, market power risks, and price settlement rules [11,15,17–19,24].
+                          To outclass the identified challenges, a market architecture having a novel market sequence
+                          for electricity and balancing is proposed for Colombia [18], and improvements for the
+                          capacity markets of Chile, Brazil, and Europe are proposed in [14,19,21]. An alternative
+                          design for the European balancing market considering different timing is investigated
+                          in [20]. A novel market design for North America based on differentiating the wholesale
+                          transmission service and retail end-use service and introducing the concept of demand
+                          subscription service with fixed cost recovery is proposed in [23]. Auction design for
+                          congestion management markets is investigated in [16]. The reviewed proposals cover
+                          part of the entire electricity market architecture and consider the integration of large-scale
+                          RESs. The emergence of mid- and small-scale RES and new actors (i.e., prosumers, demand
+                          response customers, aggregators, and energy communities) and the operators’ need for
+                          system services drive the creation of flexibility markets to engage them as FSPs. Hence,
+                          the consequent power system decentralization calls for integrating those markets into the
+                          entire electricity market architecture and enhancing TSO–DSO coordination.
+                                To contribute to the design of integrated electricity markets, this paper proposes a
+                          theoretical market framework (TMF) for describing and designing innovative electricity
+                          markets. The TMF allows studying the market-based TSO–DSO coordination as well as the
+                          challenges of integrating the novel market mechanisms with existing energy and service
+                          markets. Regulatory frameworks, such as [10] promote market-based mechanisms for
+                          procuring system services, fostering the need for dedicated research on the market-based
+                          mechanism for TSO–DSO coordination. Previous work has been conducted on coordination
+                          between TSOs and DSOs. Researchers in [25] proposed five different service-agnostic
+                          coordination schemes (CSs) that define each system operator’s roles and responsibilities
+                          when procuring and using system services provided by the distribution grid. This analysis
+                          was further extended by [26–28], who developed seven CS. Then, more specifically for the
+                          joint procurement of balancing ancillary services and congestion management services, [29]
+                          distinguished three market models for coordination while [30] identified five market
+                          design options. Finally, focused on congestion management, [31] describes TSO–DSO
+                          coordination under different systems states. However, while these papers and reports
+                          describe conceptual market designs concerning flexibility allocation, they do not describe
+                          the other market parameters and aspects that also need to be considered while designing
+                          a coordinated, integrated market, such as market optimization and operation options.
+                          Our framework attempts to fill that gap by adding several fundamental categories with
+                          possible choices that need to be made while designing a market, and hence defining a
+                          single and compact framework to support flexibility market design and analysis. Through
+                          the development of the TMF, the paper leverages 13 demonstrators’ proposals to develop
+                          and test innovative market-based and technical mechanisms for TSO–DSO coordination.
+                          These proposals are framed within the European H2020 OneNet project, the largest project
+                          addressing TSO–DSO coordination to date [32]. The OneNet project core challenge is to
+                          unlock flexibility markets at all levels while considering and identifying the associated
+                          TSO–DSO operational challenges and proposing mechanisms to support the electricity
+                          system with flexibility services. In this context, 13 different market realities located all
+                          across Europe were assessed within the project demonstration activities.
+                                The TMF proposed in this paper is adopted, within the OneNet project, to map the
+                          coordination schemes proposed by OneNet demonstrators to contribute to the definition
+                          of the building blocks for the demonstrator activities and, more importantly, to provide
+                          recommendations for the design of the novel European electricity market. Consequently,
+                          this mapping activity points out the real-world challenges of designing and implementing
+                          novel markets for system services. Moreover, it highlights and discusses market gaps,
+                          distortions, and inefficiencies that could arise when the novel markets are integrated into
+Energies 2023, 16, 6939                                                                                            3 of 28
+
+
+
+
+                          the existing electricity market architecture. The challenges that the paper describes regard
+                          structural aspects (e.g., number of sub-markets within a unique market architecture, size of
+                          the procurement areas, and roles and responsibilities of the market actors), coordination
+                          aspects (i.e., allocation of the available flexibility between buyers and sub-markets), op-
+                          timization aspects (e.g., market optimization methodology and strategy, inclusion of the
+                          grid constraints), operational choices (e.g., remuneration schemes, clearing mechanism,
+                          timing of the procurement), and grid representation aspects (i.e., grid representation and
+                          corresponding market phases).
+                               The main contributions of this paper can be summarized as follows:
+                          1.   Development of the TMF to formalize new, innovative market concepts and their
+                               impact on existing markets;
+                          2.   Application of this framework to the market design concepts proposed by the OneNet
+                               demonstrators;
+                          3.   Identification of real-world challenges of designing, implementing and integrating
+                               novel markets for system services into the existing market architecture.
+                               The manuscript discusses the theoretical findings concerning TSO–DSO market-based
+                          coordination and the challenges emerging from the experience of the OneNet demonstrators.
+                          Moreover, it contributes to setting the basis for improving the evolution of the European
+                          electricity markets by providing recommendations on market design.
+
+                          2. The Theoretical Market Framework
+                               The TMF proposed in this paper aims to categorize market concepts, support the
+                          analysis of existing markets, and guide the design and integration of novel markets for
+                          procuring system services. Moreover, its adoption eases the communication of market
+                          concepts. The TMF describes and defines high-level coordination models and, more
+                          specifically, market architecture. In this paper, we consider electricity market architecture as
+                          the whole mechanism that allows the exchange of electricity products to operate a delimited
+                          power system (e.g., a country’s power system). The concept of market architecture is further
+                          addressed in Section 3; more specifically, the TMF relies on the concept of interaction, and
+                          the set of interactions in the market architecture defines the coordination between actors.
+                          The TMF assumes the entire market architecture is composed of sub-markets that may
+                          interact, with the following definition for sub-markets: “a sub-market is assumed to be
+                          operated by one market operator responsible for the market-clearing of this specific market
+                          according to a specific objective” [33].
+                               Following the experience of OneNet project demonstrators, the framework focuses
+                          on the market-based mechanisms to procure system services in which TSOs and DSOs are
+                          the primary buyers of system services. As shown in Figure 1, the framework consists of
+                          five pillars composed of different features. These pillars are the following: (i) entire market
+                          architecture, (ii) sub-market coordination, (iii) market optimization, (iv) market operation,
+                          and (v) grid representation. The first two pillars set up the entire market structure and
+                          define the coordination type, while the last three pillars describe the market clearing
+                          dimensions. Some features apply to the entire market to represent how the coordination
+                          and integration perform, while others apply to the individual sub-markets. Going through
+                          each pillar and selecting the desired attribute for each feature, the system service markets
+                          are designed while considering the context requirements. In what follows, each pillar is
+                          described in more detail.
+Energies 2023, 16, 6939
+                   x FOR PEER REVIEW                                                                                                             4 4of
+                                                                                                                                                     of 29
+                                                                                                                                                        28
+
+
+
+
+                                 Figure
+                                 Figure 1.
+                                        1. Key
+                                           Key elements
+                                               elements of
+                                                        of the
+                                                           the theoretical
+                                                               theoretical market
+                                                                           market framework.
+                                                                                  framework.
+
+                                       Entire Market Architecture
+                                 2.1. Entire            Architecture
+                                        The entire market architecture pillar is formed by five features: sub-markets,              sub-markets, ser-  ser-
+                                             products(s), location,
+                                 vices(s), products(s),       location, and and market
+                                                                                   market roles and actors. In       In Appendix
+                                                                                                                         Appendix A,     A, Figure
+                                                                                                                                              Figure A1
+                                 depicts thethestructure
+                                                  structure of the
+                                                                 of entire   market market
+                                                                      the entire        architecture    pillar describing
+                                                                                                  architecture       pillar features,
+                                                                                                                              describing   sub-features,
+                                                                                                                                                 features,
+                                 and options. and options.
+                                 sub-features,
+                                        The ‘sub-markets’
+                                       The   ‘sub-markets’ feature
+                                                                feature of of the
+                                                                                the entire
+                                                                                    entire market
+                                                                                            market architecture
+                                                                                                       architecture pillar
+                                                                                                                       pillar applies
+                                                                                                                                applies to  to the
+                                                                                                                                                the entire
+                                                                                                                                                    entire
+                                 market    and   describes    the  following      attributes:   the   ‘number     of sub-markets’;
+                                 market and describes the following attributes: the ‘number of sub-markets’; the ‘timing of              the   ‘timing   of
+                                 the  sub-markets’     (i.e., when    these    sub-markets     take   place)   which
+                                 the sub-markets’ (i.e., when these sub-markets take place) which captures the temporalcaptures     the  temporal     link-
+                                 age between
+                                 linkage          different
+                                            between           sub-markets;
+                                                        different    sub-markets; and the   sub-market
+                                                                                          and the sub-market type (i.e.,
+                                                                                                                     typethe(i.e.,
+                                                                                                                              typethe of market-based
+                                                                                                                                          type of mar-
+                                 solution) used
+                                 ket-based          to acquire
+                                               solution)    usedflexibility
+                                                                    to acquire   (e.g., bilateral(e.g.,
+                                                                                   flexibility     negotiation,
+                                                                                                         bilateralauction,     or exchange
+                                                                                                                     negotiation,      auction,market).
+                                                                                                                                                    or ex-
+                                        The   features
+                                 change market).          service(s)    and     product(s)    apply     to  each   sub-market        and   concern      the
+                                 specific  marketed      product(s)     (i.e., “a  tradable   unit   that  the   network
+                                       The features service(s) and product(s) apply to each sub-market and concern the      operator     acquires    from
+                                 the flexibility
+                                 specific          providers
+                                            marketed             and that
+                                                          product(s)         entails
+                                                                          (i.e.,       the option
+                                                                                  “a tradable        to deliver
+                                                                                                  unit   that thea service
+                                                                                                                     network       case of activation’)
+                                                                                                                               in operator       acquires
+                                 and   service(s)  (i.e., ‘the  action,   generally     undertaken      by
+                                 from the flexibility providers and that entails the option to deliver a service in to
+                                                                                                            the  SO,  which    is needed      casemitigate
+                                                                                                                                                    of ac-
+                                 a technical    scarcity   or  scarcities    that  otherwise     would     undermine      network
+                                 tivation’) and service(s) (i.e., ‘the action, generally undertaken by the SO, which is needed          operation     and
+                                 may create stability risks”) [34].
+                                 to mitigate a technical scarcity or scarcities that otherwise would undermine network
+                                        Similarly to service(s) and product(s), the feature ‘location’ is applied to every single
+                                 operation and may create stability risks”) [34].
+                                 sub-market. The ‘level of spatial granularity’ measures the size of the specific independent
+                                       Similarly to service(s) and product(s), the feature ‘location’ is applied to every single
+                                 areas considered for flexibility procurement. In power systems, locational granularity can
+                                 sub-market. The ‘level of spatial granularity’ measures the size of the specific inde-
+                                 be in terms of nodes, voltage levels, and feeders. Then, for each market, the ‘responsible
+                                 pendent areas considered for flexibility procurement. In power systems, locational gran-
+                                 SO’ must be defined, i.e., the actor who takes up the role of SO. Finally, the voltage level(s)
+                                 ularity can be in terms of nodes, voltage levels, and feeders. Then, for each market, the
+                                 where flexibility is procured needs to be defined for each sub-market.
+                                 ‘responsible SO’ must be defined, i.e., the actor who takes up the role of SO. Finally, the
+                                        The fourth feature looks at ‘market roles and actors’ involved in each sub-market.
+                                 voltage level(s) where flexibility is procured needs to be defined for each sub-market.
+                                 It defines the actors who buy and sell flexibility and who take up the role of MO. In
+                                       The fourth feature looks at ‘market roles and actors’ involved in each sub-market. It
+                                 addition, it defines whether participation in the sub-market is optional, compulsory, or
+                                 defines the actors who buy and sell flexibility and who take up the role of MO. In addi-
+                                 hybrid. Optional participation means that FSPs can choose to participate in the sub-market.
+                                 tion,  it defines
+                                 Compulsory           whether
+                                                  means     thatparticipation
+                                                                   under certainincircumstances,
+                                                                                          the sub-market        is optional,
+                                                                                                            certain   partiescompulsory,
+                                                                                                                                 might be obligatedor hy-
+                                 brid.  Optional     participation     means      that   FSPs can   choose     to  participate
+                                 to participate in the sub-market. For instance, in Italy, generators larger than 10 MW           in  the  sub-market.
+                                 Compulsory
+                                 are obligatedmeans         that under
+                                                    to participate          certain
+                                                                        in the          circumstances,
+                                                                                  ancillary                 certain parties
+                                                                                              services market.        However,   might new besources
+                                                                                                                                               obligated of
+                                 to participate    in  the  sub-market.        For  instance,   in  Italy,   generators
+                                 flexibility are also allowed to voluntarily participate in that same market [35]. In this larger    than    10   MWcase,
+                                                                                                                                                       are
+                                 obligated
+                                 participation to participate
+                                                  is compulsory   in the
+                                                                       andancillary
+                                                                              optional,services    market. However, new sources of flexi-
+                                                                                           hence hybrid.
+Energies 2023, 16, 6939                                                                                               5 of 28
+
+
+
+
+                          2.2. Sub-Market Coordination
+                                 The features in the sub-market coordination pillar are the allocation principle of
+                          flexibility and timeframe for coordination. In Appendix A, Figure A2 shows the structure
+                          of the sub-market coordination pillar depicting features, sub-features, and possible options.
+                                 The feature ‘allocation principle of flexibility’ of the sub-market coordination pillar
+                          determines how the amount of flexibility at the transmission or distribution level is divided
+                          between SOs and sub-markets. Hence, the allocation principle does not apply as one
+                          principle to the entire market, but forms a link between two sub-markets. Moreover,
+                          the allocation principle only applies when (i) resources are procured in the same time
+                          window, (ii) from both the transmission and distribution grid or distribution grid only, and
+                          (iii) by different SOs. When these conditions do not apply, the SO who needs flexibility
+                          has the exclusive use of this flexibility. In the TMF, we distinguish five options for ‘system
+                          operator order’ which are related to the ‘commitment to bid selection’ and the ‘TSO access
+                          to DERs’. First, ‘priority for the TSO’ means that the TSO is the first to choose the sources
+                          of flexibility (at distribution or transmission level). Commitment to bid selection is formal,
+                          signifying that the offered flexibility can be used by the SO while respecting the constraints
+                          of the other SOs whose grid might be impacted. Therefore, formal commitment to bid
+                          selection implies the selection of the bids by the buyer (e.g., an SO), independent if, from a
+                          welfare perspective, it would be more beneficial to let another SO use the bids for another
+                          purpose. Additionally, bids are forwarded to other sub-markets as the TSO has priority but
+                          no exclusive use over the bids. A second option is ‘priority for the DSO,‘ meaning that the
+                          DSO is the first to choose. These sources are located at the distribution level only. There is a
+                          formal commitment to bid selection. Bids can be forwarded to other sub-markets. The third
+                          option, ‘exclusivity for the TSO’, denotes that the TSO is the only one with access to the bids.
+                          Commitment to bid selection is formal, and rejected bids are not forwarded. Similarly, the
+                          option’ exclusivity for the DSO’ implies that the DSO is the only one with access to the bids,
+                          with a formal commitment to bid selection and no forwarding of rejected bids. The final
+                          option, ‘no priority nor exclusivity for TSO or DSO’, implies a conditional commitment to
+                          bid selection in a decentralized optimization (i.e., more than one sub-market) and a formal
+                          one in a centralized optimization (i.e., only one sub-market).
+                                 Conditional commitment refers to the fact that a particular local market with local
+                          grid constraints is run first, but without any formal commitment to the market participants.
+                          The preliminary results are then shared with the TSO market and integrated into a second
+                          market optimization that considers the system objectives. Based on the outcome of that
+                          second optimization, the local market is informed about the accepted bids and for whom
+                          (for the DSO or the TSO) [25]. For clarity purposes, this paper describes the TMF under the
+                          hypothesis of having one DSO and one TSO at the national level. For scenarios in which
+                          several local DSOs are connected to a regional DSO, and hence one additional layer exists
+                          (e.g., Sweden, Germany), the same principles apply to the relation between the local DSO
+                          and regional DSO and the relation DSO-TSO.
+                                 ‘Forwarding of bids’, as proposed in [36], refers to transferring eligible bids not utilized
+                          in one market to another. This transfer may occur via an intermediary processing step
+                          managed by a designated agent.
+                                 The ‘timeframe for the coordination’ feature notes in which market phase of each
+                          sub-market the coordination will take place, i.e., prequalification, procurement, activation,
+                          measurement, activation, and settlement control.
+
+                          2.3. Market Optimization
+                              The market optimization pillar entails as features: market optimization methodology,
+                          sub-market optimization strategy, and (sub-)market optimization objective. In Appendix A,
+                          Figure A3 deals with the structure of the market optimization pillar.
+                              The first feature of the market optimization pillar is the ‘market optimization method-
+                          ology’ which describes the different options for market optimization between two sub-
+                          markets. We distinguish three possibilities, i.e., centralized and decentralized optimization,
+Energies 2023, 16, 6939                                                                                              6 of 28
+
+
+
+
+                          and distributed organization. In centralized optimization, one algorithm considers all volt-
+                          age levels, including transmission and distribution. Therefore, one optimization for all SOs
+                          solves all their system needs. In decentralized optimization, several algorithms optimize
+                          for different levels, i.e., at least one for the transmission and one for the distribution levels,
+                          and require coordination. There is one optimization for each SO to procure its system needs.
+                          Then, coordination is needed between the different optimization levels. In a distributed
+                          market organization, there is no (externally driven) optimization [37].
+                                 The ‘sub-market optimization strategy’ feature looks at the market optimization ap-
+                          plied to couples of sub-markets. This happens, for instance, in the case of more than one
+                          sub-market, or when one sub-market procures two products through separate optimization
+                          schemes. In simultaneous optimization, both sub-markets are optimized simultaneously
+                          while sharing resources. Sequential optimization means that one market is optimized
+                          before the other. Independent optimization means that markets are cleared simultaneously
+                          (i.e., in parallel, rather than jointly) while only sharing some clearing constraints (if needed)
+                          rather than sharing resources (i.e., bids).
+                                 The third feature is the ‘(sub-) market optimization objective’. Sub-markets can be
+                          optimized according to social welfare maximization or other objectives, such as reducing
+                          counter-activations. Maximizing social welfare means maximizing the producer (i.e., FSP)
+                          and buyer (i.e., SO) surplus. Markets may also have other objectives, such as reducing the
+                          counter-activations from another market, for instance, congestion management after the
+                          energy market.
+
+                          2.4. Market Operation
+                                The features of the market operation pillar are the following: remuneration scheme,
+                          remuneration of the product attribute, market-clearing type, and procurement frequency.
+                          In Appendix A, Figure A4 presents the structure of the market operation pillar showing
+                          the potential design options.
+                                The first feature of the market operation pillar is the ‘remuneration scheme’. Six
+                          options can be distinguished: no remuneration, negotiated price, pay-as-bid, uniform pay-
+                          as-clear, non-uniform pay-as-clear (i.e., nodal pricing), and cost-based remuneration. When
+                          the trade happens through bilateral negotiation, the price is negotiated. The remuneration
+                          method ‘pay-as-bid’ (i.e., discriminatory price auction) implies that each seller receives
+                          payment for the offered good or service equal to the requested selling price. Hence, the
+                          market price is different for each market participant if they bid at different prices [38].
+                          The ‘uniform pay-as-cleared’ remuneration (i.e., uniform price auction) implies that all
+                          sellers receive the same per-unit price for the offered homogenous good or service which is
+                          equal to the lowest accepted bid, regardless of the sellers’ actual selling price. Therefore,
+                          the market price is at the intersection of supply and demand curves, which also sets the
+                          cleared quantity, i.e., the traded volume [38,39]. Then, ‘non-uniform pay-as-cleared’ refers
+                          to nodal pricing, which method determines different clearing prices for the different grid
+                          nodes. The nodal price reflects energy’s locational value, including energy and delivery
+                          costs (i.e., losses and congestion) [40]. Finally, remuneration is cost-based when based on a
+                          determined price or price curve the SO sets for buying a service and potentially agreeing
+                          with the FSP on the specified quantity [38]. It is important to note that the FSP may not be
+                          remunerated at all in case of mandatory requirements.
+                                The second feature describes the ‘remuneration of the product attribute’. Remunera-
+                          tion can be for availability, activation, or both, and for active, reactive, and apparent power.
+                                The third feature looks at the ‘market-clearing type’. In a continuous market, a market
+                          participant can buy and sell assets at any given time when the market is open. Following a
+                          discrete auction, market clearing is a recurring, scheduled, frequent batch auction market
+                          where the respective market is cleared at discrete intervals (e.g., each quarter-hour) through
+                          a uniform auction [26].
+                                The ‘procurement frequency’ feature refers to how often the sub-market is run. The
+                          difference with the timing of the sub-markets is that, while the procurement frequency
+Energies 2023, 16, 6939                                                                                              7 of 28
+
+
+
+
+                          can be identical for different markets, they can still have different timing or GCT. For
+                          example, in Belgium, the FCR, aFRR, and mFRR capacity (availability) markets have a daily
+                          procurement frequency. However, the GCT of the FCR market is planned before that of the
+                          aFRR market, and the GCT of the aFRR market is planned before the one of mFRR market.
+
+                          2.5. Grid Representation
+                               The grid representation pillar includes the features representation of grid constraints
+                          and timing for the inclusions of grid constraints. In Appendix A, Figure A5 shows the
+                          structure of the grid representation pillar highlighting the possible design options.
+                               The first feature in the grid representation pillar describes how the ‘representation of
+                          grid constraints’ is addressed. EU-SysFlex distinguishes three possible ways to represent
+                          grid constraints [37]. First, comprehensive grid data describes the electrical properties of
+                          the grid to depict its dynamics. This way, the optimization algorithm can calculate diverse
+                          grid phenomena and complete power flow calculations. Secondly, partial grid data uses the
+                          sensitivities of flexibilities towards critical V/I constraints and V/I margins in the grid, e.g.,
+                          for one topology. Thirdly, bid limitations only are used when the SO reduces or rejects bids
+                          which, if accepted as submitted, would cause grid constraints to be violated. Bid limitations
+                          can be sent after a pre-selection step or before the selection led by the optimization operator
+                          responsible for selecting bids (clear the market or choose in an order book), considering grid
+                          data and switching measures [37]. The feature timing of the inclusion of grid constraints
+                          refers to the market phase in which grid constraints are included.
+
+                          3. Application of the Theoretical Market Framework to the OneNet Demonstrators
+                               The proposed TMF is used in this paper to describe the OneNet demonstrators’ market
+                          architecture to support identifying the corresponding gaps and strengths. The TMF is a tool
+                          for bottom-up market architecture analysis and design. Starting from the description of
+                          every single market-based interaction, the TMF allows for a comprehensive description of
+                          the entire market architecture. This section describes the application of the TMF to OneNet
+                          demonstrators. This section provides proof of concept of the application of the TMF. The
+                          application of the TMF to the OneNet demonstrators follows the following five steps:
+                          1.   Identification of buyer–seller interactions;
+                          2.   Definition of sub-markets of the market architecture;
+                          3.   Description of each sub-market using the TMF features;
+                          4.   Description of the interactions between sub-markets using the TMF features;
+                          5.   High-level description of the market architecture.
+                               System service procurement and provision require coordinating the power system
+                          actors involved (i.e., TSO, DSO, and FSP). The TMF studies this coordination by relying
+                          on the interaction concept since the set of interactions in the market architecture defines
+                          the coordination between actors. The interaction between provider and beneficiary can
+                          be classified as technical-based or market-based. As shown in Figure 2, in market-based
+                          interactions, the actors interact through a market architecture which may include the
+                          interaction with the actor that plays the market operator and, eventually, the market
+                          platform. The technical-based interaction is characterized by information exchange and
+                          control actions. These interactions are facilitated by a technical architecture, including
+                          interoperable platforms, communication protocols, etc., whose complexity may vary. This
+                          paper focuses on market-based coordination, hence, on the set of market-based interactions
+                          tested in the OneNet project.
+                          interactions, the actors interact through a market architecture which may include the
+                          interaction with the actor that plays the market operator and, eventually, the market
+                          platform. The technical-based interaction is characterized by information exchange and
+                          control actions. These interactions are facilitated by a technical architecture, including
+                          interoperable platforms, communication protocols, etc., whose complexity may vary.
+Energies 2023, 16, 6939                                                                                        8 of 28
+                          This paper focuses on market-based coordination, hence, on the set of market-based
+                          interactions tested in the OneNet project.
+
+
+
+
+                          Figure      Scheme
+                          Figure2.2.Scheme of of
+                                              thethe possible
+                                                  possible      interactions
+                                                           interactions      between
+                                                                        between       the involved
+                                                                                the actors actors involved  in service
+                                                                                                    in system   systemprocure-
+                                                                                                                       service
+                          procurement and provision.
+                          ment and provision.
+
+                          3.1. Procedure
+                          3.1. ProcedureAdopted
+                                         Adopted to
+                                                  to Analyze
+                                                     Analyze the
+                                                              the OneNet
+                                                                  OneNet Demonstrators
+                                                                         Demonstrators Using
+                                                                                       Using the
+                                                                                              theTMF
+                                                                                                 TMF
+                                  TheTMF
+                                 The   TMFstarts
+                                              startsanalyzing
+                                                       analyzingthe   thesingle
+                                                                           singlebuyer–seller
+                                                                                   buyer–sellerinteractions
+                                                                                                   interactionsto    todescribe
+                                                                                                                        describethe   theoverall
+                                                                                                                                           overall
+                          market
+                           marketarchitecture.
+                                      architecture. Therefore,
+                                                       Therefore,ititconstitutes
+                                                                         constitutesaabottom-up
+                                                                                         bottom-up approach
+                                                                                                        approachto    tomarket
+                                                                                                                         marketdesigndesignand and
+                           analysis.As
+                          analysis.     Asaafirst
+                                              firststep,
+                                                     step,thethemarket
+                                                                  market  architecture’s
+                                                                             architecture’sanalysis
+                                                                                              analysis     design)
+                                                                                                      (or (or  design)requires   studying
+                                                                                                                           requires            the
+                                                                                                                                        studying
+                          buyer–seller
+                           the buyer–sellerinteractions    in terms
+                                                  interactions      in of  generalized
+                                                                        terms             productsproducts
+                                                                                 of generalized       (e.g., P, Q,(e.g.,
+                                                                                                                    availability,     activation)
+                                                                                                                           P, Q, availability,
+                          and   timing. More
+                           activation)            specifically,
+                                          and timing.       Morethe    identification
+                                                                     specifically,   theand  analysis of the
+                                                                                          identification     andmarket     seller
+                                                                                                                    analysis    ofinteractions
+                                                                                                                                     the market
+                          part   of the  OneNet     demonstrators        is addressed     considering
+                           seller interactions part of the OneNet demonstrators is addressed considering the   business     use  cases    (BUCs)the
+                          defined    according     to the   standardized      IEC   62559   methodology       and
+                           business use cases (BUCs) defined according to the standardized IEC 62559 methodology    described      through     the
+                          corresponding
+                           and describedtemplate through[41].  the In   the second step,
+                                                                     corresponding           the sub-markets
+                                                                                          template     [41]. In the  that second
+                                                                                                                            form thestep,market the
+                           sub-marketsare
+                          architecture         identified
+                                            that   form the  and   located
+                                                                market       considering
+                                                                           architecture     theidentified
+                                                                                          are    buyer and  and    locateddimensions.
+                                                                                                               temporal       consideringThe    the
+                          sub-markets       are characterized
+                           buyer and temporal            dimensions. by market-based
+                                                                           The sub-markets interactions    that differ in
+                                                                                                  are characterized         byterms     of actors
+                                                                                                                                market-based
+                          involved,
+                           interactions generalized
+                                           that diﬀerproducts,
+                                                          in terms and      timing.
+                                                                       of actors      The necessary
+                                                                                  involved,             information
+                                                                                              generalized      products,  forand
+                                                                                                                               accomplishing
+                                                                                                                                    timing. The
+                          the  second    step  has   been   obtained     from   the  BUCs   description
+                           necessary information for accomplishing the second step has been obtained from   and   complemented          through the
+                          consultation      moments       with   demonstrators’       partners.
+                           BUCs description and complemented through consultation moments with    Based    on  the   information       collected
+                          in  the previous steps,
+                           demonstrators’               the third
+                                                partners.      Based step
+                                                                        onisthe
+                                                                              devoted    to processing
+                                                                                 information      collectedtheininformation
+                                                                                                                  the previous    to formalize
+                                                                                                                                       steps, the
+                          athird
+                             detailed    description      of  each   sub-market      through    the  TMF     features
+                                   step is devoted to processing the information to formalize a detailed description     that   apply     to sub- of
+                          markets     individually     (e.g.,   procurement      frequency,    responsible     system
+                           each sub-market through the TMF features that apply to sub-markets individually (e.g.,         operator).     Similar
+                          to  Step 3, in Step
+                           procurement           4, the interaction
+                                             frequency,       responsible between
+                                                                              system theoperator).
+                                                                                         couples ofSimilar
+                                                                                                       sub-markets
+                                                                                                                 to Step is characterized
+                                                                                                                             3, in Step 4, the   in
+                          terms    of TMF    features    (e.g.,  allocation   principle   of flexibility).  Hence,
+                           interaction between the couples of sub-markets is characterized in terms of TMF features    in  Steps   3  and   4, the
+                          collected    information
+                           (e.g., allocation            is organized
+                                                principle                 into tables
+                                                              of flexibility).  Hence,based     on the
+                                                                                          in Steps  3 andpillars
+                                                                                                             4, theand   the corresponding
+                                                                                                                      collected    information
+                          features that form the TMF, as defined in Section 2. These tables are tools for addressing
+                           is organized into tables based on the pillars and the corresponding features that form the
+                          the TMF-based analysis, and once filled, they represent the database that contains all the
+                           TMF, as defined in Section 2. These tables are tools for addressing the TMF-based
+                          necessary information to describe the market architecture. Section 3.2 reports an excerpt of
+                           analysis, and once filled, they represent the database that contains all the necessary
+                          the TMF tables adopted for analyzing the OneNet demonstrators.
+                           information to describe the market architecture. Section 3.2 reports an excerpt of the TMF
+                                 Moreover, the obtained TMF description can be represented graphically; Figure 3
+                           tables adopted for analyzing the OneNet demonstrators.
+                          depicts the outcome of applying Steps 1 to 4 of the TMF described in Section 2 to the
+                                  Moreover, the obtained TMF description can be represented graphically; Figure 3
+                          OneNet demonstrators’ market proposals. According to the TMF, Figure 3 describes the
+                           depicts the outcome of applying Steps 1 to 4 of the TMF described in Section 2 to the
+                          market architecture considering the allocation of flexibility according to the temporal and
+                           OneNet demonstrators’ market proposals. According to the TMF, Figure 3 describes the
+                          buyer dimensions. The temporal dimension describes the sequence of sub-markets, hence,
+                           market architecture considering the allocation of flexibility according to the temporal and
+                          the temporal allocation of flexibility from long-term to near-real-time. The buyer dimension
+                           buyer dimensions. The temporal dimension describes the sequence of sub-markets,
+                          describes the allocation of flexibility between the buyers. Hence, the outcome of Steps 1 to
+                          4 allows transposing the market-based interactions into a market architecture formed by
+                          sub-markets that interact. Finally, to complement the TMF application and generalize the
+                          obtained description, elements from a top-down perspective are introduced in the fifth step,
+                          the outcome of which is depicted in Figure 4. This paper maps the TMF representations
+                          of the OneNet project demonstrators’ market architectures towards the corresponding
+                          coordination schemes, as defined in the CoordiNet project [26,28].
+                          of Steps 1 to 4 allows transposing the market-based interactions into a market architec-
+                                    of Steps 1 to 4 allows transposing the market-based interactions into a market
+                          ture formed by sub-markets that interact. Finally, to complement the TMF application
+                                    architecture formed by sub-markets that interact. Finally, to complement the TMF
+                          and generalize the obtained description, elements from a top-down perspective are in-
+                                    application and generalize the obtained description, elements from a top-down
+                          troduced in the fifth step, the outcome of which is depicted in Figure 4. This paper maps
+                                    perspective are introduced in the fifth step, the outcome of which is depicted in Figure 4.
+                          the TMF representations of the OneNet project demonstrators’ market architectures to-
+                                    This paper maps the TMF representations of the OneNet project demonstrators’ market
+Energies 2023, 16, 6939   wards the corresponding coordination schemes, as defined in the CoordiNet project                         9 of 28
+                                    architectures towards the corresponding coordination schemes, as defined in the
+                          [26,28].
+                                    CoordiNet project [26,28].
+
+
+
+
+                          Figure 3. Generalized market architecture for the OneNet demonstrators described according to
+                                    Figure                 marketarchitecture
+                                               Generalizedmarket
+                                            3. Generalized
+                                    Figure 3.                      architecture
+                                                                              forfor
+                                                                                   thethe OneNet
+                                                                                        OneNet   demonstrators
+                                                                                               demonstrators    described
+                                                                                                             described     according
+                                                                                                                       according to to TMF.
+                          TMF.
+                                    TMF.
+
+
+
+
+                          Figure 4. Figure
+                                    Market 4.
+                                            architectures of OneNetofdemonstrators
+                                              Market architectures                 in terms ofinTSO–DSO
+                                                                      OneNet demonstrators                coordination
+                                                                                                terms of TSO–DSO    coordination schemes.
+                                    Figure 4. Market architectures of OneNet demonstrators in terms of TSO–DSO coordination
+                          schemes.
+                                    schemes.
+                                         Figure 3 shows a generalized example of bidirectional interactions along the buyer
+                                    dimension (i.e., the DSO sub-markets that trigger the TSO sub-markets and vice-versa); both
+                                    directions can be described using the TMF. Figure 3 depicts the case where the buyers (TSO
+                                    and DSO) act as single buyers in each sub-market. However, the TMF can also effectively
+                                    describe the cases in which TSO and DSO are buyers in the same sub-market (common
+                                    sub-market), as the two layers collapse in a single TSO–DSO layer; hence the common
+                                    sub-market then holds on the horizontal axis shown in Figure 3. If all sub-markets of the
+                                    market architecture have both TSO and DSO as buyers, the vertical axis collapses. Figure 3
+                                    shows that considering the generalized products exchanged, the market architecture is
+                                    formed by two types of sub-markets: the availability and activation sub-markets. The
+                                    availability of sub-markets can be linked to the activation ones with an interaction (dotted
+                                    arrow) that commits the participants in the former to also participate in the latter. The
+                                    bid forwarding interaction (full arrow) links sub-markets of the same type. Figure 3
+                                    describes the generalized market architecture of OneNet demonstrators; each specific
+                                    market architecture adopted by the OneNet demonstrators can be obtained by customizing
+                                    the diagram (deleting sub-markets and interactions, specifying common sub-markets).
+Energies 2023, 16, 6939                                                                                                     10 of 28
+
+
+
+
+                                    Finally, according to Step 5 of the methodology adopted, a top-down descriptive
+                               approach is used to characterize the market architecture in terms of the global characteristics
+                               of the TSO–DSO coordination and complement the market architectures’ description (the
+                               aforementioned Step 5). In this paper, the approach proposed in [26,28,29] is used to classify
+                               the OneNet market architectures analyzed through the TMF in terms of coordination
+                               schemes. Figure 4 depicts the outcome of this step concerning the OneNet demonstrators;
+                               each country block represents the corresponding market architecture obtainable from
+                               Figure 3. Figure 4 also describes the market architectures in terms of the timing of the
+                               TSO–DSO coordination and the corresponding level of market-based coordination. As
+                               a result, the OneNet demonstrators belong to three different market models that define
+                               specific TSO–DSO coordination schemas: common, multi-level, and fragmented [25–29].
+                               The common market model defines a single TSO–DSO market to procure system services
+                               from resources connected to transmission and distribution grids. Unlike the common
+                               market model, the multi-level market model distinguishes the markets for TSO and DSO,
+                               where the TSO has access to DERs. In the fragmented market model, TSO and DSO have
+                               dedicated non-linked markets, the TSO does not have access to DERs.
+                                    Figure 4 shows that the northern and Greek demonstrators implement the common
+                               market model. The Polish, Portuguese, Cypriot, and French (for LT) market architectures
+                               implement a multi-level market model. The common and multi-level market models
+                               include both market-based and technical-based TSO–DSO coordination. The Hungarian,
+                               Slovenian, Spanish, Czech, and French demonstrators proposed a fragmented market
+                               architecture. For clarity, the following paragraphs describe the TMF application to the
+                               market architectures demonstrated in the OneNet project.
+
+                               3.2. TMF Analysis of the Northern and Polish Demonstrators’ Market Architectures
+                                        To present the capability of TMF, the Polish and northern OneNet demonstrators (The
+                                   Polish and northern OneNet demonstrators are described in detail in deliverables D7.1,
+                                   D7.2, D7.4, D10.2, D10.3 [32]) are discussed in more detail to present how the TMF applies
+                                   to market architectures characterized by a market-based TSO–DSO coordination based
+                                   on opposing design principles. Figures 5 and 6, respectively, represent the application
+                                   of the TMF to the northern and Polish demonstrators. These figures depict the market
+Energies 2023, 16, x FOR PEER REVIEW                                                                                    11 of 30
+                                   architecture of the demonstrators mentioned; they represent a particularization of the
+                                   generalized market architecture in Figure 3. Table 1 reports the nomenclature used in
+                                   this paper to describe the sub-markets of the analyzed demonstrators. Moreover, Table 2
+                                   tables used
+                                   contains  an to elaborate
+                                                 excerpt      thetables
+                                                          of the  TMF description  of the the
+                                                                        used to elaborate     TMFarchitectures
+                                                                                          market                    the OneNet
+                                                                                                                of the
+                                                                                                    description of      market
+                                   northern and   Polish demonstrators.
+                                   architectures of the OneNet northern and Polish demonstrators.
+
+
+
+
+                               Figure 5. Schematic representation of the market architecture for the
+                                                                                                 the Polish
+                                                                                                     Polish demonstrator.
+                                                                                                            demonstrator.
+Energies 2023, 16, 6939                                                                                                       11 of 28
+                                 Figure 5. Schematic representation of the market architecture for the Polish demonstrator.
+
+
+
+
+                                 Figure 6. Schematic representation of the market architecture
+                                                                                  architecture for
+                                                                                               for the
+                                                                                                   the northern
+                                                                                                       northern demonstrator.
+                                                                                                                demonstrator.
+
+                                 Table 1.
+                                 Table 1. Nomenclature
+                                          Nomenclature adopted
+                                                       adopted for
+                                                               for naming
+                                                                   naming the
+                                                                          the sub-markets.
+                                                                              sub-markets.
+
+  Element
+       Element        First        First            Second Second                   ThirdThird                    Fourth
+                                                                                                                    Fourth
+             Timing (considering            Grid connection of             Electric variable of the       Generalized product
+  Meaning                 Timing (considering           Grid connection of       Electric variable of the   Generalized product
+       Meaning gate closure time)
+                            gate closure time)service providers
+                                                         service providers     product   traded
+                                                                                     product  traded              traded
+                                                                                                                    traded
+                       LT           LT                 T          T                    P    P                        AA
+                  (Long-term) (Long-term)      (Transmission)
+                                                          (Transmission)       (Active  power)
+                                                                                     (Active power)          (Availability)
+                                                                                                                (Availability)
+                       MT           MT                 D          D                   Q     Q                        EE
+                (Medium-term)(Medium-term)      (Distribution)
+                                                           (Distribution)     (Reactive  power)
+                                                                                    (Reactive power)          (Activation)
+                                                                                                                 (Activation)
+                                                      TD         TD                   PQ PQ                         AEAE
+  Options
+       Options         DA           DA
+                                            (Transmission       and
+                                                        (Transmission   and (Active  and reactive
+                                                                                  (Active  and reactive    (Availability
+                                                                                                              (Availabilityand
+                                                                                                                            and
+                 (Day-ahead)  (Day-ahead)
+                                                            distribution)
+                                                 distribution)                     power) power)                  activation)
+                                                                                                               activation)
+                       ID           ID
+                   (intraday) (intraday)
+                      NRT          NRT
+                                (Near-real-time)
+
+
+                                 Table 2. ‘Entire market architecture’ pillar applied to OneNet demonstrators.
+
+                             Polish                  Polish              Northern                Northern          Northern
+       Attribute
+                            DA-D-P-E               DA-TD-P-AE           LT-TD-P-AE              ID-TD-P-E         NRT-TD-P-E
+                                                                Feature: Sub-market dimension
+     Timing of the                                                    More than month       From weeks ahead
+                            Day-ahead               Day-ahead                                                    Near-real-time
+     sub-markets                                                     ahead, event-based        to intraday
+   Sub-market type        Auction market       Auction market          Auction market        Auction market      Auction market
+                                                                      Feature: Service(s)
+                                                                                                                  Congestion
+                           Congestion            Congestion                                    Congestion
+                                                                                                                  management,
+        Service            management,          management,            Service agnostic       management,
+                                                                                                                   frequency
+                          voltage control     frequency control                             frequency control
+                                                                                                                     control
+                                                                     Feature: Product(s)
+                                                                        Active power
+       Product            Active power             Active power                               Active power        Active power
+                                                                       availability and
+       procured            activation               activation                                 activation          activation
+                                                                         activation
+Energies 2023, 16, 6939                                                                                                      12 of 28
+
+
+
+
+                                  Table 2. Cont.
+
+                              Polish                 Polish             Northern                  Northern         Northern
+       Attribute
+                             DA-D-P-E              DA-TD-P-AE          LT-TD-P-AE                ID-TD-P-E        NRT-TD-P-E
+                                                                     Feature: Location
+                                                    National,
+                                                                          National,             National,            National,
+    Level of spatial                           transmission grid
+                          Distribution grid                          transmission grid     transmission grid    transmission grid
+      granularity                               distribution grid
+                                                                      distribution grid     distribution grid    distribution grid
+                                                 interface nodes
+     Responsible
+       system                   DSO                   TSO               TSO, DSO                 TSO, DSO          TSO, DSO
+      operator
+                                                   HV, MV, LV
+   Voltage level for
+                              MV, LV           (frequency control       HV, MV, LV           HV, MV, LV           HV, MV, LV
+      resources
+                                                     only)
+                                                              Feature: Market roles and actors
+      Who is the
+                                DSO                   TSO               TSO, DSO                 TSO, DSO          TSO, DSO
+       buyer(s)
+ Who is the seller(s)           FSP                   FSP                   FSP                    FSP                 FSP
+    Who is the MO               DSO                   TSO             DSO, TSO, IMO        DSO, TSO, IMO        DSO, TSO, IMO
+     Participation
+                              Hybrid                 Hybrid              Optional                 Hybrid            Optional
+    in sub-market
+
+
+                                         The proposed Polish demonstrator’s market architecture has a multilayer TSO–DSO
+                                  structure. As generalized by Figure 3, TSO and DSO are alternatively the only buyers in
+                                  the sub-markets belonging to the respective layer; several sub-markets form each layer that
+                                  spans from weeks ahead to near-real-time, as shown in Figure 5. The OneNet sub-markets
+                                  are the new ones developed in the project: the MT-D-P-A and the DA-D-P-E (colored in
+                                  grey). Both sub-markets have the DSO as the only buyer and the resources connected to the
+                                  distribution network are allowed to bid. The generalized product of the MT-D-P-A is active
+                                  power availability (i.e., capacity), while the DA-D-P-E deals with active power activation
+                                  (i.e., energy). The capacity bids cleared in the first market determine the obligation to
+                                  participate with energy bids in the second market. The leftover bids of the DA-D-P-E are
+                                  forwarded to the integrated balancing and congestion management market through a bid
+                                  filtering and aggregation process that considers the DSO grid constraints compliance, the
+                                  point of connection of the resources, and the bid characteristics.
+                                         The northern demonstrator, on the contrary, proposes a common TSO–DSO market
+                                  architecture in which all sub-markets involve both the TSO and DSO as buyers. Hence,
+                                  considering Figure 6, a common TSO–DSO layer characterizes the market architecture of the
+                                  OneNet demonstrator. As depicted in Figure 6, the sub-markets in the market architecture of
+                                  the northern demonstrator span from long-term to near-real-time procurement. The OneNet
+                                  sub-markets developed by the northern demonstrator are colored in grey in Figure 6. In
+                                  all these markets, both the TSO and DSO are buyers, and all the resources connected to
+                                  the transmission and distribution grid can participate. The LT-TD-P-AE submarket is a
+                                  long-term submarket in which the resources submit active power availability bids (i.e.,
+                                  capacity) with an active power activation (i.e., energy) price. The DA-TD-P-A is a day-ahead
+                                  sub-market concerning the active power availability product, while ID-TD-P-E and the NRT-
+                                  TD-P-E are respectively an intraday and a near-real-time sub-market in which active power
+                                  activation products are exchanged. As shown in Figure 6, the sub-markets concerning
+                                  availability products determine for the cleared bids the participation forwarding towards
+                                  the related sub-markets dealing with activation products. Moreover, bid forwarding exists
+                                  among the intraday energy market, ID-TD-P-E and NRT-TD-P-E sub-markets.
+                                         For brevity, the main aspects of the market architecture characterizing the Polish
+                                  and the northern demonstrators are presented in the following the TMF pillars and fea-
+                                  tures. This section focuses on a set of sub-markets and interactions; this set has been
+Energies 2023, 16, 6939                                                                                                        13 of 28
+
+
+
+
+                                  selected to describe the greatest variety of circumstances observed in the OneNetžlinebreak
+                                  demonstration activities.
+                                        Considering the Polish demonstrator, the first sub-market of interest is the DA-D-
+                                  P-E, the second sub-market considered is the DA-TD-P-AE sub-market of the integrated
+                                  balancing and congestion management market which takes place DA and includes bids
+                                  from resources from transmission and distribution grids (TD). From the northern demon-
+                                  strator, the sub-markets described in this paper are the LT-TD-P-AE, the ID-TD-P-E, and
+                                  the NRT-TD-P-E.
+                                        For brevity, only the application of the most significant pillars is discussed in this paper;
+                                  details can be found in OneNet deliverable 3.1 [42] and updated in OneNet Deliverable
+                                  11.2. Table 2 describes the three selected sub-markets in terms of the features and attributes
+                                  defined by the corresponding TMF pillar outlining the structural aspects that characterize
+                                  the selected sub-markets pointing out similarities and differences.
+                                        As shown in Table 2, all sub-markets are auction markets in which active power activa-
+                                  tion is procured to address different operational issues. The three sub-markets encompass
+                                  different market areas considering the power system (i.e., distribution, transmission, and
+                                  distribution and transmission), buyers, sellers’ participation, and market operators (MO).
+                                  While in the Polish demonstrator, the MO role is assigned to the relevant SO, in the case of
+                                  the northern sub-market, the MO role can be assigned to the TSO, DSO, or an independent
+                                  MO if available in the sub-market area. It is worth mentioning that discussing the role
+                                  assignment task performed by the demonstrators is out of this paper’s scope. Table 3 shows
+                                  the TMF application to the linkages between the sub-markets that form one market architec-
+                                  ture through the features of the market optimization and sub-markets coordination pillars.
+                                  More specifically, it describes the linkage between the Polish demonstrator’s sub-markets
+                                  and the linkage between the northern demonstrator’s sub-markets described in this paper.
+
+                                  Table 3. TMF sub-market linkage applied to OneNet demonstrators.
+
+                                                                                           Northern              Northern
+                                                          Polish Demonstrator
+                                                                                          Demonstrator          Demonstrator
+                                          A                   DA-D-P-E                   Intraday energy          ID-TD-P-E
+        Sub-markets
+                                          B                   DA-TD-P-E                     ID-TD-P-E            NRT-TD-P-E
+                                                       Market optimization pillar
+     Feature: Market optimization methodology                Decentralized                 Centralized           Centralized
+                  Feature: Sub-markets
+                                                               Sequential                 Simultaneous            Sequential
+                  optimization strategy
+                                                     Sub-markets coordination pillar
+                                                                  Yes                           Yes
+         Feature:               Forwarding of bids        (only for frequency          (only for congestion          Yes
+  Allocation principle of                                       control)                   management)
+        flexibility                                           Conditional                   Conditional
+                               Commitment to bid
+                                                          (forwarded bids are          (bids with locational       Formal
+                                  selection
+                                                              aggregated)                  information)
+                                     System
+                                                            Priority for DSO               No Priority           No Priority
+                                 operators order
+
+
+                                       Considering the market optimization pillar, the Polish demonstrator’s sub-markets in
+                                  Table 3 show a decentralized optimization methodology since the procurement of system
+                                  services is addressed first at the local level, prioritizing the DSO. On the contrary, the
+                                  sub-markets of the northern demonstrator are characterized by a centralized procurement
+                                  of system services. Concerning the optimization methodology, the two Polish sub-markets
+                                  are optimized (i.e., cleared) sequentially; conversely, the northern demonstrator’s sub-
+                                  markets are simultaneously optimized. Considering the sub-market optimization pillar,
+                                  the feature concerning the overall allocation principle of flexibility is discussed. In the
+                                  Polish demonstrator’s sub-markets, the bids are forwarded from the local market (DA-
+Energies 2023, 16, 6939                                                                                            14 of 28
+
+
+
+
+                          D-P-E) to the national one (DA-D-P-E). In the latter, the forwarded bids can only be
+                          used for energy balancing services. The commitment to bid selection is conditional since
+                          the bids are forwarded in an aggregated way with a prior distribution grid constraint
+                          check. The aggregated bids represent a balancing offer at the TSO–DSO coupling point
+                          that does not endanger the operation of the DSO network. As described in Table 3, the
+                          Polish demonstrator’s sub-markets linkage prioritizes the DSO in allocating flexibility.
+                          Moreover, Table 3 shows that the sub-markets linkage in the northern demonstrator’s
+                          market architecture regards the intraday energy market and the short-term congestion
+                          management market (ID-TD-P-E). A centralized market optimization methodology is
+                          adopted while the two sub-markets are simultaneously optimized. The ID-TD-P-E and NRT-
+                          TD-P-E sub-markets linkage is characterized by a sequential optimization strategy since
+                          the ID-TD-P-E closes before forwarding the leftover bids to the NRT-TD-P-E submarket.
+                          Considering the sub-market coordination pillar, the bids submitted to the intraday energy
+                          market are also made available for the ID-TD-P-E sub-market if they include locational
+                          information. Consequently, those bids can also be used for congestion management in
+                          addition to those already submitted to the ID-TD-P-E sub-market only. Hence, the intraday
+                          energy market and the ID-TD-P-E sub-market share a set of bids: the former is a continuous
+                          trading market, while the latter is an auction market with a GCT of 2 h ahead of the
+                          activation time. In this case, bid forwarding is conditional since it requires the bids to
+                          include locational information, the grid constraints compliance check, and a checking
+                          process involving the market platforms to ensure the uniqueness of bid selection among the
+                          sub-markets and avoid double clearing. The bid forwarding that links the ID-TD-P-E and
+                          NRT-TD-P-E sub-markets is formal since no procedures are required to transfer the bids
+                          across the sub-markets. The in-depth analysis of the formal and conditional bid forwarding
+                          characteristics for the analyzed market architectures is out of this paper’s scope and is part
+                          of further research within the OneNet project in OneNet Deliverables 3.3 and 11.2.
+                                Regarding the overall allocation principle of flexibility between the intraday energy
+                          and the ID-TD-P-E sub-market, the linkage features in Table 3 show no priority or exclusiv-
+                          ity for TSO or DSO. Tables 2 and 3 prove the TMF capability to capture the characteristics
+                          of the sub-markets delivering a concise but comprehensive market aspects description.
+                          Moreover, the TMF adoption allows for an effective comparative analysis of different sub-
+                          markets. In particular, the analysis based on the TMF allows observing the OneNet market
+                          architectures from different dimensions: time allocation of flexibility, buyer allocation of
+                          flexibility, and TSO–DSO interaction level.
+                                Overall, the two demonstrators’ market architectures described in this paper differ de-
+                          spite the common ambition of achieving liquid markets for system services. Implementing
+                          specific design choices depends on the specific ambitions and boundary conditions [38].
+                          Both demonstrators aim to achieve a high level of liquidity thanks to the market scope and
+                          trading volume. It is worth nothing that, as stated in [43] the liquidity concept is slippery
+                          and elusive, mainly because it includes a number of transactional properties of the market.
+                          In [44] in financial markets, liquidity considers three dimensions: tightness, depth and
+                          resiliency. Tightness refers to the cost of turning a position over a short time; it is referred
+                          to transaction costs and usually measured with the bid-ask spread. Depth refers to the
+                          size that the bid order flow requires to change prices. Resiliency indicates the speed at
+                          which prices recover from shocks. Therefore, if positions in the market can be changed
+                          with small changes in prices and prices can be recovered from shocks then the market are
+                          called liquid. High trading volumes and competition can contribute to high liquidity levels.
+                          The demonstrators unlock DERs’ potential by creating multiple business opportunities
+                          for DERs. The northern demonstrator aims to integrate local and national markets in one
+                          cross-border market architecture involving multiple TSOs and DSOs. Therefore, DERs will
+                          provide system services to multiple system operators to solve cross-border needs. The
+                          Polish demonstrator aims to enhance the TSO–DSO cooperation at the national level by
+                          enabling DERs to support the power system operation. Participation in the balancing
+                          market contributes to increase the liquidity in local markets.
+Energies 2023, 16, 6939                                                                                                       15 of 28
+
+
+
+
+                                       It is worth noting that in the OneNet demonstration activities, to avoid interfering with
+                                  the existing electricity market functioning, the Polish demonstrator considers an emulated
+                                  integrated balancing and congestion management market, while the northern demonstrator
+                                  considers an emulated intraday energy market. However, the analysis presented in this
+                                  paper conceptually extends the boundaries determined by the limits imposed on the
+                                  demonstration activities that, by definition, have demonstrative scope.
+                                       The TMF assists in evaluating and comparing market design choices which insights
+                                  can inform policy decisions, guide market reforms, or shape the development of new
+                                  market architectures. Table 4 resumes and compares the OneNet Polish and northern
+                                  demonstrators market designs based on the TMF pillars.
+
+                                  Table 4. Comparison of the TMF application to the OneNet Polish and northern demonstrators
+                                  considering the TMF pillars.
+
+                                                       Polish Demonstrator                         Northern Demonstrator
+                                             Multi-layered TSO–DSO market                  Common TSO–DSO market architecture
+                                             architecture for congestion management        characterized by service-agnostic
+          Entire market architecture         and                                           products for congestion management and
+                                             voltage control with active power             frequency control with active power
+                                             activation products.                          activation and availability products.
+                                                                                           Bids from intraday energy markets can be
+                                             Forwarding of bids from local to national
+                                                                                           forwarded to other markets if bids
+                   Sub-market                market with priority to DSO for flexibility
+                                                                                           include locational information and pass
+                  coordination               allocation. Bid forwarding considers
+                                                                                           grid constraints check. No priority to
+                                             aggregation with grid constraint check.
+                                                                                           TSO or DSO for flexibility allocation.
+                                             Decentralized optimization with               Centralized market optimization and
+                                             sequential strategy. The local market         simultaneous markets optimization. Bid
+                    Market
+                                             (DA-D-P-E) has priority, bids may be          sharing between intraday energy market
+                  optimization
+                                             forwarded to the national level               and other sub-markets, given certain
+                                             (DA-TD-P-AE).                                 conditions.
+                                             Day-ahead operational procedures with
+                                                                                           From long-term to near-real-time, with
+                     Market                  specific auction mechanisms for
+                                                                                           auction mechanisms for multiple
+                    operation                congestion management and voltage
+                                                                                           services.
+                                             control.
+                                                                                           Bids including locational information are
+                                             Grid constraints check at the DSO level
+                                                                                           checked for grid constraints compliance.
+                      Grid                   with detailed representation of grid.
+                                                                                           Moreover, bid forwarding and selection
+                 representation              Forwarded bids undergo aggregation
+                                                                                           checks the uniqueness of bids among
+                                             considering DSO grid constraints.
+                                                                                           sub-markets to prevent double clearing
+
+
+                                       Overall, the Polish demonstrator’s design offers a localized approach with multiple
+                                  layers and DSO priority, which might be more suitable for regions with distinct local
+                                  challenges but may face sub-optimal allocation of resources when integrating with broader
+                                  grids. While the northern demonstrator’s design which could be more efficient for regions
+                                  aiming for wider grid integration but that might overlook specific local needs. The modular
+                                  approach of the Polish demonstrator design has a reduced need for data sharing between
+                                  TSO and DSOs and implementation complexity. The northern demonstrator presents an
+                                  integrated design that requires joint TSO–DSO operations and increased data sharing
+                                  requirements.
+
+                                  4. Real-World Challenges of Implementing TSO–DSO Market-Based Coordination
+                                       In OneNet project activities, the TMF application has supported and encouraged
+                                  market design through an iterative process. Furthermore, the application of the TMF to the
+                                  OneNet demonstrators, thanks to the process of translating the demonstration activities
+                                  into the TMF-based description by checking every feature that forms the TMF pillars (see
+                                  Section 3.1), allowed us to identify the challenges for the real-world implementation of
+                                  a market architecture devoted to system service procurement. In fact, each TMF feature
+Energies 2023, 16, 6939                                                                                            16 of 28
+
+
+
+
+                          represents a design aspect to be defined when devising a market architecture; these design
+                          aspects are not independent; mutual influence exists, as noticeable in the discussion in
+                          this section. The TMF application points out similarities and differences among the dif-
+                          ferent market architectures proposed in OneNet. The process described in Section 3.1 of
+                          formalizing the market architectures according to the TMF pillars and features led us to
+                          discover a non-exhaustive (and non-prioritized) set of real-world challenges concerning the
+                          design of integrated TSO–DSO markets. Basically, each TMF feature has different options;
+                          in the addressed market design and analysis process, the pros and cons of the different
+                          solutions are assessed, leading to the identification of the challenges that characterize the
+                          deployment of TSO–DSO market-based coordination in the real world. Adopting the TMF
+                          allows identifying all necessary dimensions and features for electricity market design, by
+                          providing a comprehensive overview of the possible options the TMF supports market
+                          design to avoid incoherent choices and highlights the impacts of the trade-off choices
+                          allowing mitigating market distortions and inefficiencies.
+                                This section focuses on the outcome of the TMF application to the OneNet demon-
+                          strators by discussing the challenges identified thanks to the analysis of the TMF features.
+                          Moreover, the solutions proposed within the OneNet project to address the identified
+                          challenges are presented. The presented outcome has been possible thanks to the high fre-
+                          quency and great variety of interactions and consultation moments among the stakeholders
+                          and the variety of market architectures proposed by the OneNet demonstrators that cover
+                          different system service needs.
+                                The research activities described in this paper point out that one of the main concerns
+                          related to system service procurement is achieving a satisfactory level of participation
+                          that gives TSOs and DSOs certainty on service providers’ reliability at competitive costs.
+                          This aspect represents the main real-world challenge for market-based mechanisms for
+                          procuring system services. Solving this challenge requires devising mechanisms that
+                          guarantee liquidity and a high level of competition. This paper adopts a generalized
+                          liquidity definition, a mechanism is “liquid” if the price related to the sellers’ willingness
+                          to sell is close to the price related to the buyers’ willingness to buy, and the quantity offered
+                          is enough to satisfy the need of the buyer(s) [45]. Moreover, we consider a mechanism
+                          “competitive” if the participation of buyers and sellers determines final prices that reflect the
+                          marginal costs related to the product provision [46]. The achievement of satisfactory levels
+                          of liquidity and competition represents a challenge that can be addressed by considering
+                          the different design choices pointed out by the TMF.
+
+                          4.1. Challenges Related to the Design of Market Architecture Structural Aspects
+                               The ‘entire market architecture’ pillar, through the features ‘number of sub-markets’,
+                          ‘timing of sub-markets’, and ‘locational granularity’, concerns structural aspects such as
+                          the temporal and spatial dimensions that influence the market architecture’s liquidity and
+                          competition. In terms of temporal dimension, a large market window increases the chance
+                          of more FSPs participating. Similarly, considering the spatial dimension, a larger market
+                          area allows for encompassing more FSPs. As observed in the context of OneNet, setting-up
+                          the number and the spatial and temporal dimensions of the sub-markets is a market design
+                          challenge since no solution of general validity exists; market design has to identify the
+                          best-case specific compromising solutions. The OneNet demonstrators described in this
+                          paper address this challenge by pursuing an expanded spatial dimension for the market.
+                          The northern demonstrator considers a market area that includes several countries. Due to
+                          bid forwarding, the Polish demonstrator forwards the products offered in the local markets
+                          to the national level. Considering the temporal dimension, both demonstrators exploit a
+                          short-term procurement for the sub-markets described in this paper; hence, the contribution
+                          of this design aspect to liquidity and competition is limited.
+                               The ‘service’ and ‘product’ TMF features highlight the market design challenge con-
+                          cerning the optimal compromise between standardized service-agnostic and dedicated
+                          products. Product standardization and substitutability influence the liquidity and competi-
+Energies 2023, 16, 6939                                                                                           17 of 28
+
+
+
+
+                          tion achieved by the market. A standardized or harmonized product definition enhances
+                          market interoperability, hence liquidity and competition. Moreover, these aspects are also
+                          strengthened if the same product can be exploited to solve the different system needs of
+                          both TSOs and DSOs. However, the benefits of increased harmonization and standardiza-
+                          tion of flexibility products should be compared to the advantages that tailored product
+                          features might have to address local needs. The demonstrators described in this paper
+                          address this challenge similarly by considering service-agnostic products instead of service-
+                          specific products; this influences the number of sub-markets in the market architecture and
+                          increases liquidity since different system service needs are solved using the same product.
+                          Moreover, cross-border and cross-SO markets are enabled in the northern demonstrator
+                          due to the achieved product interoperability.
+                               Interoperability of products across markets and SOs poses a challenge related to
+                          defining boundaries for the activity of the different actors to avoid inefficiencies and
+                          conflicts. This challenge is related to the ‘market roles and actors’ TMF feature. The
+                          northern demonstrator addresses this challenge by involving an IMO for the common TSO
+                          and DSO markets. The Polish demonstrator addresses this challenge differently by adopting
+                          separate markets for TSOs and DSOs and establishing technical rules for aggregating the
+                          bids forwarded from the DSO market (DA-D-P-E) to the TSO one (DA-TD-P-E).
+
+                          4.2. Challenges Related to Sub-Market Coordination Aspects
+                                The TMF ‘sub-market coordination’ pillar points out the design aspects to address the
+                          challenges for achieving effective coordination among the sub-markets and then among
+                          TSOs and DSOs for procuring system services from the same pool of FSPs. The ‘allocation
+                          principle of flexibility’ feature highlights the market design challenge of allowing TSO–DSO
+                          coordination for procuring system services from the same pool of resources by avoiding
+                          inefficiencies, conflictive overlapping, and gaming. The optimal allocation of resources
+                          and products between sub-markets leads to an efficient market architecture; an effective
+                          allocation of flexibility across sub-markets can be achieved by devising a sub-markets’ time
+                          sequence that avoids conflictive overlapping and room for gaming (e.g., creating artificial
+                          congestions by overbidding in one market to be called in another one). Moreover, market
+                          operational processes such as bid forwarding represent a valuable measure to distribute
+                          the available resources across the sub-markets. However, it has to be carefully designed to
+                          enhance market liquidity and competition by avoiding technical issues between TSO and
+                          DSO (e.g., conflictive activation) and gaming (e.g., artificial congestion due to overbidding).
+                          The northern demonstrator deals with the challenge of effectively allocating flexibility
+                          among sub-markets by defining bid forwarding from the intraday energy sub-market to
+                          the ID-TD-P-E sub-market for the bids that embed locational information. Differently, the
+                          Polish demonstrator defines aggregation rules at the TSO/DSO interface before bid for-
+                          warding from the local (DA-D-P-E) sub-market to the integrating balancing and congestion
+                          management sub-markets.
+                                Overall, the allocation of flexibility among sub-markets defines the priorities in the
+                          TSO–DSO coordination. In common markets (northern demonstrator), no priority nor
+                          exclusivity is pre-established but rather overall economic efficiency. While in the multi-level
+                          market model adopted by the Polish demonstrator, the DSO prioritizes the allocation of
+                          the flexibility available from the same pool of resources. In terms of economic efficiency,
+                          this option can lead to sub-optimal results considering the overall national power system.
+                          However, the multi-level market model is less complex, leading to lower implementation
+                          costs and time and better suits local conditions due to the higher granularity (e.g., it allows
+                          adopting smaller bid size, less demanding ramps, and tailored market clearing timeframes).
+                                The ‘timeframe for coordination’ feature regards the efficient resource allocation by
+                          considering the design aspects related to the coordination of the market phases from pre-
+                          qualification to settlement that the sub-market can share (e.g., the prequalification process
+                          can be addressed once for all sub-markets, settlement coordination across sub-markets can
+                          avoid unnecessary cash flows). This feature highlights a market design challenge since the
+Energies 2023, 16, 6939                                                                                           18 of 28
+
+
+
+
+                          overall market efficiency is enhanced if duplication of procedures across sub-markets is
+                          avoided; however, a dedicated process may be preferred in some cases to address pecu-
+                          liarities and specific needs (e.g., a sub-market may require very restrictive prequalification
+                          procedures that are not necessary for participating to the other sub-markets). In addition,
+                          in this case, a solution of general validity does not exist; identifying the solution that best
+                          fits is a market design challenge. The solutions developed by the OneNet demonstrators
+                          concern the prequalification phase coordination to decrease the barriers to FSPs market par-
+                          ticipation. The definition of a common procedure for prequalification has been discussed
+                          to find a compromise among the requirements of the different parties involved (i.e., TSOs,
+                          DSOs, and MOs) and define a shared flexibility register; further information is available
+                          in [41]. Cross-country prequalification procedures are also proposed and demonstrated in
+                          OneNet.
+
+                          4.3. Challenges Related to Market Optimization Design Aspects
+                               The challenges related to the ‘market optimization’ pillar concern the overall pro-
+                          curement economic efficiency, the flexibility allocation among sub-markets, the TSO–DSO
+                          coordination timing and information exchange, and the market gaming risk. The ‘market
+                          optimization methodology’ feature highlights the market design challenge of adopting a
+                          centralized or decentralized optimization methodology (i.e., common TSO–DSO model
+                          or disjoint DSO and TSO markets), which choice determines the requirements in terms
+                          of timing and content of TSO–DSO coordination and the related requirements for infor-
+                          mation and corresponding data availability concerning grid representation and power
+                          flow calculation. The ‘submarket optimization strategy’ feature regards the market design
+                          challenge of activating the FSPs considering the effect on the overall system operation
+                          costs (e.g., solving a local network congestion may create a power imbalance that requires
+                          an expensive countermeasure). This feature’s choices influence the overall economic ef-
+                          ficiency achieved; moreover, they have an implication on the countermeasures to avoid
+                          double procurements and discourage gaming. The northern and Polish demonstrators
+                          address these challenges differently. The northern demonstrator defines a centralized
+                          procurement where local operational issues can be solved by activating bids with locational
+                          information. In this case, the central and local needs are simultaneously addressed and the
+                          TSO–DSO coordination is embedded in the market clearing, preventing the need for addi-
+                          tional countermeasures and double procurements. However, this design choice increases
+                          the requirement for grid representation and network information sharing among TSOs
+                          and DSOs. The Polish demonstrator proposes a decentralized procurement characterized
+                          by a sequential optimization strategy in which the local needs are solved first; then, the
+                          central needs are addressed with the contribution of the forwarded aggregated leftover
+                          bids. The TSO–DSO coordination is embedded in the bid aggregation rules since the DSO
+                          checks the FSPs activation to avoid distribution network constraint violation. In the Polish
+                          demonstrator, double procurement is avoided by designing a decentralized and sequential
+                          optimization in which a local market is solved before a central market in which DER bids
+                          are submitted in an aggregated way if there are local market leftovers. This design choice
+                          is characterized by a lower requirement for grid representation and network information
+                          sharing among TSOs and DSOs. However, sub-markets decentralized optimization may
+                          lead to sub-optimal solutions in terms of overall economic efficiency.
+
+                          4.4. Challenges Related to Market Operation Design Aspects
+                               Regarding the ‘market operation’ pillar design choices, the main challenges concern-
+                          ing the effectiveness of the remuneration scheme (related to the ‘remuneration scheme’
+                          feature), the coordination of availability and activation procurement from FSPs (related
+                          to the ‘remuneration of the product attribute’ feature) and the corresponding timing for
+                          procurement (related ‘procurement frequency’ features), and the cost-effectiveness of the
+                          market related to the ‘market-clearing type’ feature choices are discussed in this section.
+Energies 2023, 16, 6939                                                                                           19 of 28
+
+
+
+
+                                 Considering the ‘remuneration scheme’ feature, the OneNet demonstrators alterna-
+                          tively propose pay-as-bid and pay-as-cleared for remunerating similar products. The
+                          market design challenge identified by this choice relates to the impact on market efficiency;
+                          in-depth research involving real-world demonstrators is needed to identify the factors
+                          relevant to the local and central electricity market that can lead to the design of effective
+                          case-specific solutions. The ‘remuneration of the product attribute’ feature leads to the
+                          market design challenge of setting up, or not, an availability sub-market related to an
+                          activation sub-market to enhance the overall liquidity and competition in providing the
+                          related system service. Setting up availability and activation sub-markets increases the
+                          temporal dimension for procurement and increases the confidence of TSOs and DSOs
+                          towards the availability of FSPs. However, no solutions of general validity exist and the
+                          most suitable timeframe for procuring flexibility has to be found depending on the system
+                          service need and context [38]. This aspect also influences the temporal size of the market; as
+                          pointed out by the ‘procurement frequency’ feature, timeframes can vary from year ahead
+                          until near-real-time. As observed while analyzing the OneNet demonstrators, TSOs, DSOs,
+                          and FSPs may have a conflictive perspective since SOs may prefer, in some situations, to
+                          procure flexibility at time frames closer to service delivery (e.g., when more information on
+                          the system conditions is available), while FSPs may prefer to be informed long in advance
+                          (i.e., to reschedule the core business activities optimally). However, in other scenarios,
+                          SOs may prefer to procure system services long in advance (e.g., in the case of planned
+                          maintenance), while FSPs would prefer to commit the system service provision closer to
+                          the time of delivery (e.g., to decrease the burden of forecasting generation or load patterns).
+                          In the OneNet project, the challenges related to identifying the most suitable correlation
+                          between availability and activation markets and timing of system service procurement
+                          are addressed by proposing and testing, thanks to a large number of demonstrators, a
+                          great variety of solutions. However, the analysis of the obtained outcome has to consider
+                          the impact of the initial and local conditions and the specific demonstrator’s objective, as
+                          reflected in the differences among the OneNet demonstrators. The ‘market-clearing type’
+                          feature concerns the market design challenge of adopting a continuous trading or a discrete
+                          auction scheme. The design choice is case-specific and has to be based on the need for
+                          designing the markets, finding a compromise between the timing with respect to the time
+                          of service delivery and the cost-effectiveness.
+
+                          4.5. Challenges Related to Grid Representation in the Market Architecture
+                                Electricity markets have to deal with power system network constraints; how and in
+                          which phase to include the grid representation in the market architecture represents an open
+                          challenge for integrated TSO–DSO markets pointed out by the ‘grid representation’ TMF
+                          pillar. The grid representation comprehensiveness has implications on the grid information
+                          availability, computational requirement for power flow calculation, data exchange timing
+                          requirements, and cyber security and data privacy issues related to network and user data
+                          gathering, storage, and sharing among the different stakeholders such as TSOs and DSOs.
+                          The ‘representation of grid constraints’ feature deals with the market design challenge of
+                          achieving an adequate level of comprehensiveness for the grid representation. Different
+                          levels of comprehensiveness for the grid representation can be exploited, influencing the
+                          compliance of the market-clearing results with grid constraints and the need for further
+                          corrective procedures to ensure the feasibility of the final market result. Moreover, the
+                          ‘timing of grid constraints inclusion’ feature highlights the market design challenge of
+                          identifying the market phases to embed the network with the service procurement (i.e.,
+                          definition of procurement areas, prequalification, procurement, monitoring, activation, and
+                          settlement). Achieving a satisfactory level of techno-economic effectiveness is a market
+                          design challenge since identifying the most effective level of comprehensiveness for grid
+                          representation in the different market phases for integrated TSO–DSO markets is case-
+                          specific and depends on the perspective of the involved actors and relevant stakeholders.
+                          The challenges related to the grid representation pillar will be further investigated in
+Energies 2023, 16, 6939                                                                                                         20 of 28
+
+
+
+
+                                    OneNet project activities. The northern demonstrator aims to address this challenge
+                                    by relying on comprehensive grid data and detailed power flow analysis; the Polish
+                                    demonstrator exploits partial grid data (i.e., sensitivity indicators) and DSO grid constraints
+                                    check for bid aggregation before forwarding.
+
+                                    4.6. Analysis of Challenges and Recommendations across the Analyzed Demonstrators
+                                         The analysis of the northern and Polish demonstrators highlights common themes such
+                                    as the importance of effective TSO–DSO coordination, product standardization, and the
+                                    grid representation challenges. Considering the two demonstrators whose TMF application
+                                    is described in Section 3, both the Polish and northern OneNet demonstrators address
+                                    distinct challenges in market design, offering valuable insights into crafting efficient and
+                                    responsive energy markets. Table 5 lists the main market design challenges by highlighting
+                                    the specific demonstrator’s challenge and the corresponding solution adopted.
+
+                                    Table 5. Comparative analysis of challenges, recommendations, and solutions from the Polish and
+                                    northern OneNet demonstrators.
+
+                    Market
+                    Design                             Demonstrator’s Challenge                    Demonstrator’s Solution
+                   Challenge
+                                                                                            In Polish demonstrator prioritization is
+                                                The Polish demonstrator aims at
+                                                                                            given to local markets, with flexibility
+                                                enhancing TSO–DSO cooperation at the
+                                                                                            allocations from local markets to national
+                                                national level. The complexity arises in
+                                                                                            ones. Decentralized optimization to
+                                                achieving an efficient multi-layered
+                                                                                            ensure local constraints are accounted for
+                                                TSO–DSO structure.
+                     Market                                                                 before scaling to a national perspective.
+                   Integration                  The northern demonstrator seeks to          The northern demonstrator adopted a
+                                                integrate local and national markets in     common TSO–DSO market architecture,
+                                                one cross-border architecture involving     integrating both TSO and DSO as buyers
+                                                multiple TSOs and DSOs. The complexity      in a single coordination platform that
+                                                here is in managing interactions across     realizes a centralized market
+                                                borders.                                    optimization.
+                                                For the Polish demonstrator: ensuring       Polish demonstrator solution: unlock
+                                                market liquidity while focusing primarily   DERs’ potential by creating multiple
+                                                on local markets and TSO–DSO                business opportunities with value staking
+                                                interactions at the national level.         from the local to the national level.
+              Liquidity and DERs
+                                                                                            For the northern demonstrator: a
+                 participation
+                                                                                            common TSO–DSO market, ensuring all
+                                                For the northern demonstrator: ensuring
+                                                                                            stakeholders, regardless of region,
+                                                market liquidity with cross-border
+                                                                                            operate on a single platform unlocking
+                                                markets integration.
+                                                                                            cross-border and cross-service market
+                                                                                            participation.
+                                                                                            Polish demonstrator: sequential
+                                                For both Polish and northern                optimization and forwarding of bids
+                                                demonstrators: ensure adequate              from local to national markets, with
+               Ensuring proper                                                              prioritization for DSOs.
+                                                coordination between sub-markets that
+            allocation of flexibility
+                                                realizes a proper flow and prioritization   Northern demonstrator: centralized
+                                                of bids and optimizes flexibility           optimization with shared bids between
+                                                allocation.                                 sub-markets without TSO or DSO
+                                                                                            priority.
+Energies 2023, 16, 6939                                                                                                   21 of 28
+
+
+
+
+                                Table 5. Cont.
+
+                    Market
+                    Design                         Demonstrator’s Challenge                   Demonstrator’s Solution
+                   Challenge
+                                                                                       Polish demonstrator: bid filtering and
+                                            For both Polish and northern               aggregation at DSO level with grid
+                                            demonstrators: with increasing             constraints check before bid forwarding
+                 Maintaining                distributed energy resources               to the TSO market.
+           grid security with DERs          participating in the market, maintaining   Northern demonstrator: flexibility
+                                            the security of the electricity supply     register with prequalification to ensure
+                                            becomes more complex.                      grid constraints are respected and the
+                                                                                       uniqueness of bid selection among the
+                                                                                       sub-markets avoiding double clearing.
+
+                                4.7. Policy Recommendations and Insights Emerged from the Applicationof the TMF
+                                     Applying the TMF provides a structured and systematic approach to understanding
+                                and designing market architectures. Hence, the TMF offers a framework that policymakers
+                                can leverage to derive specific, actionable insights for policy formulation. More specifically,
+                                the TMF analysis supports policymakers in identifying systemic and specific challenges
+                                in market design (e.g., the trade-offs between centralized vs. decentralized procurement
+                                mechanisms, the extent of grid representation required, or the intricacies of TSO–DSO
+                                coordination) that allow formulating policies that set clear guidelines.
+                                     Applying the TMF to the OneNet demonstrators sheds light on factors influencing
+                                market liquidity and competition, such as product interoperability, spatial and temporal
+                                dimensions of sub-markets, and a coordinated allocation of available flexibility. As a
+                                practical implementation, the policies may promote product standardization across markets
+                                or mandate service-agnostic products. Similarly, guidelines setting coherent spatial and
+                                temporal dimensions of sub-markets to ensure their coordination and promote value
+                                staking for system service providers to foster higher participation and better competition,
+                                as highlighted by the OneNet demonstrators in which the TMF description of market
+                                features supports establishing coherent temporal coordination across energy markets,
+                                ensuring consistency in auction timings, bid submission deadlines, and settlement periods.
+                                     The TMF application underlines the challenge of identifying the level of grid repre-
+                                sentation in market architecture depending on the adopted market design requirements.
+                                To address this challenge, considering the features of the adopted market architecture,
+                                policymakers can set standards on grid data collection, storage, and sharing, ensuring that
+                                while grid representation is comprehensive, it is also operationally viable.
+                                     The application of the TMF promoted the use of precise and common market nomen-
+                                clatures and definitions, easing the interaction of the relevant stakeholders in the demon-
+                                strators and facilitating the market design process. The TMF for the OneNet demonstrators
+                                support facilitated a comprehensive market description. TMF’s method of providing a de-
+                                tailed, structured breakdown of market interactions, from individual buyer–seller dynamics
+                                to broader market architectures, offers a blueprint for comprehensive market analysis. The
+                                TFM supports policymakers in promoting standardized market definitions and nomencla-
+                                tures, ensuring clarity and minimizing ambiguities across regional markets. Moreover, TMF
+                                provides policymakers with a systematic framework to base stakeholder consultations.
+                                     Each analyzed demonstrator offers unique insights into how these challenges can be
+                                approached, the diversity of possible solutions allows appreciating the need for adaptability
+                                in policy design. However, several common broad themes relevant to policy-making can
+                                be identified from the OneNet demonstrator analysis.
+                                     Emphasize TSO–DSO Coordination: Effective coordination between TSOs and DSOs is
+                                pivotal. Regardless of the method, the importance of TSO–DSO synergy cannot
+                                be understated.
+                                     Clear Definitions and Nomenclature: Given the intricacies involved, especially with
+                                diverse stakeholders interacting, maintaining a clear database of definitions and nomencla-
+Energies 2023, 16, 6939                                                                                          22 of 28
+
+
+
+
+                          ture is essential. This ensures consistent communication, reduces ambiguities, and aids in
+                          the smooth implementation of market mechanisms.
+                               Robust Technology and Data Management: Bid forwarding, grid constraints checks,
+                          and ensuring bid uniqueness across sub-markets are critical processes that require robust
+                          technological solutions. Investing in data management and technological platforms will
+                          streamline operations and ensure market efficiency.
+                               Scalability vs. Specificity: While the northern demonstrator leans towards a broader,
+                          more-integrated approach (cross-border markets), the Polish demonstrator focuses on a
+                          more localized approach, tailoring solutions to the specific needs of regions. Both are valid,
+                          emphasizing that market design should be adapted to specific ambitions and regional con-
+                          ditions. This trade-off between scalability and specificity is a key insight for policymakers.
+                               Interoperability vs. Complexity: The northern demonstrator’s emphasis on product
+                          interoperability suggests a vision for a more interconnected European energy market. How-
+                          ever, the Polish approach, which separates TSO and DSO markets, points out that simplicity
+                          can sometimes be preferred on integration, especially when dealing with complex systems.
+                               Adaptive Design: Both demonstrators provide valuable insights into the need for a
+                          flexible design for market architectures. While standardization and harmonization are
+                          crucial, structures must be adapted to local conditions and needs.
+
+                          5. Conclusions
+                                This paper contributes to the power system evolution by addressing the perspective
+                          of integrating markets for system service products (also known as flexibility markets) into
+                          the electricity market architecture. The proposed TMF is an instrument to guide market
+                          design activities. Furthermore, the TMF supports policymakers in identifying challenges,
+                          barriers, and gaps that characterize a particular electricity market architecture. The TMF
+                          is a descriptive tool to analyze the market-based TSO–DSO coordination and a valuable
+                          prescriptive tool to guide market design and integration. It represents a single tool to
+                          describe the great variety of TSO–DSO markets by using fundamental parameters and
+                          aspects for designing coordinated and integrated markets. The TMF supports market
+                          analysts and designers by pointing out a comprehensive set of categories with possible
+                          choices that need to be made while devising an electricity market architecture.
+                                This paper describes the application of the TMF to support the real-world demon-
+                          strators of the OneNet project, proving the TMF’s capability in delivering a systematic
+                          description of the fundamental market design aspects of the TSO–DSO coordination. The
+                          adoption of the TMF supported and encouraged the market design, engaging the electricity
+                          actors in the demonstrators (TSOs, DSOs, and IMOs). Therefore, adopting the TMF is
+                          beneficial for the electricity market designers since its concise but comprehensive structure
+                          eases the communication on market concepts and market design.
+                                Furthermore, applying the TMF to the OneNet demonstrators allowed us to identify a
+                          set of challenges for the real-world implementation of market-based TSO–DSO coordination
+                          devoted to system service procurement. The dimension of the OneNet project favored
+                          reaching this outcome since the great variety of scenarios and involved actors led to
+                          diverse demonstrators. The application of the TMF points out similarities and differences
+                          among the proposed market architectures. This paper presents the analysis of the solutions
+                          adopted by the OneNet demonstrators to address the identified challenges and, on this
+                          basis, delivers recommendations on the possible design choices whose beneficiaries are
+                          TSOs, DSOs, MOs, regulatory bodies, and policy decision-makers.
+                                The analysis of the identified challenges highlights that “one solution does not fill
+                          all”; depending on the context, the same service need can be solved by adopting different
+                          TSO–DSO market design choices. The application of the TMF supports market-efficiency
+                          assessment by providing a general framework that harmonizes concepts useful also for a
+                          broader market assessment that complements quantitative market-efficiency evaluation.
+                          On the one hand, the TMF offers a systematic approach that comprehensively dissects
+                          complex market architectures, reducing potential biases. It allows categorizing markets
+Energies 2023, 16, 6939                                                                                                  23 of 28
+
+
+
+
+                          into TSO–DSO-Customer models, ensuring both macro- and micro-level analyses. The
+                          standardized nature of the TMF enables easier comparisons of different market architectures
+                          and clearer communication between stakeholders. It aids in pinpointing specific areas of
+                          concern, promoting an iterative approach to market design that remains relevant over time.
+                          Furthermore, the TMF is adaptable to various market structures, showcasing its versatility.
+                               On the other hand, the TMF’s detailed nature might be challenging for those unfamiliar
+                          with electricity market topics. While it aims to be comprehensive, it might sometimes
+                          miss out on specific nuances, suggesting a need for regular updates. The framework is
+                          resource-intensive, demanding both expertise and time, and its effectiveness relies on
+                          accurate and detailed information. Though the TMF emphasizes qualitative assessments, a
+                          subsequent step involving quantitative analysis becomes crucial to ensure the efficiency of
+                          the designed market.
+                               Further research will focus on an in-depth analysis of the identified challenges related
+                          to market integration and harmonization and assessing the proposed solutions. Moreover,
+                          quantitative approaches to assess market functioning will be developed based on the TMF
+                          qualitative modeling of the market architecture designs.
+
+                          Author Contributions: Conceptualization, M.T., J.P.C.Á., C.D.S., H.G. and G.W.; methodology, M.T.,
+                          J.P.C.Á., C.D.S., H.G. and G.W.; formal analysis, M.T., C.D.S. and G.W.; investigation, M.T., C.D.S.
+                          and G.W.; validation, J.P.C.Á., H.G. and G.W.; resources, M.T. and C.D.S.; data curation, M.T.;
+                          writing—original draft, M.T. and G.W.; writing—review and editing; J.P.C.Á., C.D.S., H.G. and G.W.;
+                          visualization, M.T. and G.W.; supervision, J.P.C.Á. and H.G.; project administration J.P.C.Á., C.D.S.
+                          and H.G.; funding acquisition, J.P.C.Á. and H.G. All authors have read and agreed to the published
+                          version of the manuscript.
+                          Funding: This research has received funding from the European Union’s Horizon 2020 research and
+                          innovation programme under grant agreement No 957739 (OneNet project).
+                          Data Availability Statement: 3rd Party Data. Restrictions apply to the availability of these data. Data
+                          were obtained from OneNet project partners and are available https://onenet-project.eu/ (accessed
+                          on 29 June 2021). with the permission of OneNet project consortium.
+                          Acknowledgments: The authors express sincere gratitude to the partners from the OneNet demon-
+                          strators for their continued support in the activities that led to this paper.
+                          Conflicts of Interest: The authors declare no conflict of interest.
+
+                          Abbreviations
+
+                          aFRR              automatic frequency restoration reserves
+                          CS                coordination schemes
+                          D                 distribution network
+                          DA                day-ahead
+                          DSO               distribution system operator
+                          FCR               frequency containment reserves
+                          FSP               flexible service provider
+                          GCT               gate closure time
+                          H2020             Horizon 2020
+                          HV                high voltage
+                          ID                intraday
+                          IMO               independent market operator
+                          LT                long-term
+                          LV                low voltage
+                          mFRR              manual frequency restoration reserves
+                          MO                market operator
+                          MV                medium voltage
+                          NRT               near-real-time
+Energies 2023, 16, 6939                                                                                                                          24 of 28
+
+
+
+
+                                     P                  active power
+                                     Q                  reactive power
+                                     RES                renewable energy source
+                                     SO                 system operator
+                                     ST                 short-term
+                                     T                  transmission network
+                                     TMF                theoretical market framework
+                                     TSO                transmission system operator
+                                     V/I                voltage or current
+
+                                     Appendix A
+       Energies 2023, 16, x FOR PEER REVIEW                                                                                           25 of 29
+                                               In Appendix A, the detailed structure (i.e., pillar, feature, sub-features, and possible
+                                       options) of each pillar of the theoretical market framework is depicted. Figure A1 depicts the
+                                       structure of the entire market architecture pillar, Figure A2 shows the structure of the sub-
+                                            the  structure  of the entire market architecture pillar, Figure A2 shows the structure of the 25 of 29
+                                       market
+                             Energies 2023,         coordination
+                                            16, x FOR PEER REVIEW pillar, Figure A3 deals with the structure of the market optimization
+                                            sub-market coordination pillar, Figure A3 deals with the structure of the market optimi-
+                                       pillar,    Figure A4 presents the structure of the market operation pillar, and finally Figure A5
+                                            zation pillar, Figure A4 presents the structure of the market operation pillar, and finally
+                                       showsFigure theA5structure ofstructure
+                                                          shows the  the gridofrepresentation   pillar. pillar.
+                                                                                 the grid representation
+                                                          the structure of the entire market architecture pillar, Figure A2 shows the structure of the
+                                                          sub-market coordination pillar, Figure A3 deals with the structure of the market optimi-
+                                                          zation pillar, Figure A4 presents the structure of the market operation pillar, and finally
+                                                          Figure A5 shows the structure of the grid representation pillar.
+
+
+
+
+                                        Figure A1. Structure of the entire market architecture pillar.
+                                     Figure A1. Structure of the entire market architecture pillar.
+                                                          Figure A1. Structure of the entire market architecture pillar.
+
+
+
+
+                                                          Figure A2. Structure of the sub-market coordination pillar.
+                                     Figure A2. Structure of the sub-market coordination pillar.
+                                        Figure A2. Structure of the sub-market coordination pillar.
+Energies 2023, 16, 6939                                                                                                                           25 of 28
+    Energies 2023, 16, x FOR PEER REVIEW                                                                                               26 of 29
+
+
+
+
+        Energies 2023, 16, x FOR PEER REVIEW                                                                                26 of 29
+
+
+
+
+                                         Figure A3.
+                                         Figure A3.Structure
+                                                    Structureofof
+                                                                the market
+                                                                  the      optimization
+                                                                      market            pillar.
+                                                                              optimization   pillar.
+                                          Figure A3. Structure of the market optimization pillar.
+
+
+
+
+        Energies 2023, 16, x FOR PEER REVIEW
+                                           Figure A4. Structure of the market operation pillar.                             27 of 29
+                                         Figure A4. Structure of the market operation pillar.
+                                          Figure A4. Structure of the market operation pillar.
+
+
+
+
+                                         Figure A5. Structure of the grid representation pillar.
+                                         Figure A5. Structure of the grid representation pillar.
+        References
+        1.   European Commission. COM (2018) 773 Final, A Clean Planet for All: A European Strategic Long-Term Vision for A Prosper-
+             ous,    Modern,     Competitive     and Climate      Neutral Economy. 28 November            2018. Available    online:
+             https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52018DC0773 (accessed on 10 December 2020).
+        2.   CIGRE Working Group C6.19. CIGRE Technical Brochure,Planning and Optimization Methods for Active Distribution Sys-
+             tems;                  CIGRE,                 Paris.              2016.                 Available               online:
+Energies 2023, 16, 6939                                                                                                              26 of 28
+
+
+
+
+References
+1.    European Commission. COM (2018) 773 Final, A Clean Planet for All: A European Strategic Long-Term Vision for A Prosperous,
+      Modern, Competitive and Climate Neutral Economy. 28 November 2018. Available online: https://eur-lex.europa.eu/legal-
+      content/EN/TXT/?uri=CELEX%3A52018DC0773 (accessed on 10 December 2020).
+2.    CIGRE Working Group C6.19. CIGRE Technical Brochure, Planning and Optimization Methods for Active Distribution Systems;
+      CIGRE, Paris. 2016. Available online: https://e-cigre.org/publication/ELT_276_7-planning-and-optimization-methods-for-
+      active-distribution-systems (accessed on 13 April 2023).
+3.    Hillberg, E.; Antony, Z.; Barbara, H.; Steven, W.; Jean, P.; Jean-Yves, B.; Sebastian, L.; Gianluigi, M.; Kjetil, U.; Irina, O.; et al.
+      Flexibility needs in the future power system. In International Smart Grid Action Network—ISGAN Annex 6; ISGAN: Vienna, Austria,
+      2019. [CrossRef]
+4.    International Renewable Energy Agency (IRENA). Power System Flexibility for the Energy Transition, Part 1: Overview for Policy
+      Makers. 2018. Available online: https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2018/Nov/IRENA_
+      Power_system_flexibility_1_2018.pdf (accessed on 5 February 2021).
+5.    International Energy Agency (IEA). Status of Power System Transformation 2019—Power System Flexibility. IEA Webstore. 2019.
+      Available online: https://webstore.iea.org/status-of-power-system-transformation-2019 (accessed on 5 February 2021).
+6.    Gerres, T.; Ávila, J.P.C.; Martínez, F.M.; Abbad, M.R.; Arín, R.C.; Miralles, Á.S. Rethinking the electricity market design:
+      Remuneration mechanisms to reach high RES shares. Results from a Spanish case study. Energy Policy 2019, 129, 1320–1330.
+      [CrossRef]
+7.    Vicente-Pastor, A.; Nieto-Martin, J.; Bunn, D.W.; Laur, A. Evaluation of Flexibility Markets for Retailer–DSO–TSO Coordination.
+      IEEE Trans. Power Syst. 2019, 34, 2003–2012. [CrossRef]
+8.    Bertsch, J.; Growitsch, C.; Lorenczik, S.; Nagl, S. Flexibility in Europe’s power sector—An additional requirement or an automatic
+      complement? Energy Econ. 2016, 53, 118–131. [CrossRef]
+9.    Lind, L.; Cossent, R.; Chaves-Ávila, J.P.; Román, T.G.S. Transmission and distribution coordination in power systems with high
+      shares of distributed energy resources providing balancing and congestion management services. WIREs Energy Environ. 2019, 8,
+      e357. [CrossRef]
+10.   European Union, Directive (EU) 2019/944 of the European Parliament and of the Council of 5 June 2019 on Common Rules for
+      the Internal Market for Electricity and Amending Directive 2012/27/EU (Text with EEA relevance.), OJ L. 2019. Available online:
+      http://data.europa.eu/eli/dir/2019/944/oj/eng (accessed on 26 December 2020).
+11.   Bublitz, A.; Keles, D.; Zimmermann, F.; Fraunholz, C.; Fichtner, W. A survey on electricity market design: Insights from theory
+      and real-world implementations of capacity remuneration mechanisms. Energy Econ. 2019, 80, 1059–1078. [CrossRef]
+12.   Cramton, P. Electricity market design. Oxf. Rev. Econ. Policy 2017, 33, 589–612. [CrossRef]
+13.   Poudineh, R.; Peng, D. Electricity Market Design for A Decarbonised Future: An Integrated Approach; Oxford Institute for Energy
+      Studies: Oxford, UK, 2017. [CrossRef]
+14.   Anatolitis, V.; Azanbayev, A.; Fleck, A.-K. How to design efficient renewable energy auctions? Empirical insights from Europe.
+      Energy Policy 2022, 166, 112982. [CrossRef]
+15.   Bell, K.; Gill, S. Delivering a highly distributed electricity system: Technical, regulatory and policy challenges. Energy Policy 2018,
+      113, 765–777. [CrossRef]
+16.   Bellenbaum, J.; Höckner, J.; Weber, C. Designing flexibility procurement markets for congestion management—investigating
+      two-stage procurement auctions. Energy Econ. 2022, 106, 105775. [CrossRef]
+17.   Hu, J.; Harmsen, R.; Crijns-Graus, W.; Worrell, E.; van den Broek, M. Identifying barriers to large-scale integration of variable
+      renewable electricity into the electricity market: A literature review of market design. Renew. Sustain. Energy Rev. 2018, 81,
+      2181–2195. [CrossRef]
+18.   Mastropietro, P.; Rodilla, P.; Rangel, L.E.; Batlle, C. Reforming the colombian electricity market for an efficient integration of
+      renewables: A proposal. Energy Policy 2020, 139, 111346. [CrossRef]
+19.   Muñoz, F.D.; Suazo-Martínez, C.; Pereira, E.; Moreno, R. Electricity market design for low-carbon and flexible systems: Room for
+      improvement in Chile. Energy Policy 2021, 148, 111997. [CrossRef]
+20.   Petitet, M.; Perrot, M.; Mathieu, S.; Ernst, D.; Phulpin, Y. Impact of gate closure time on the efficiency of power systems balancing.
+      Energy Policy 2019, 129, 562–573. [CrossRef]
+21.   Tolmasquim, M.T.; de Barros Correia, T.; Porto, N.A.; Kruger, W. Electricity market design and renewable energy auctions: The
+      case of Brazil. Energy Policy 2021, 158, 112558. [CrossRef]
+22.   van der Veen, R. Designing Multinational Electricity Balancing Markets. 2012. Available online: https://repository.tudelft.nl/
+      islandora/object/uuid%3Ae1c5777e-be4c-4df3-a764-f622c828c709 (accessed on 2 June 2022).
+23.   Woo, C.K.; Milstein, I.; Tishler, A.; Zarnikau, J. A wholesale electricity market design sans missing money and price manipulation.
+      Energy Policy 2019, 134, 110988. [CrossRef]
+24.   Abbasy, A.; van der Veen, R.; Hakvoort, R. Timing of Markets- the Key Variable in Design of Ancillary Service Markets for
+      Power Reserves. In Proceedings of the 3rd World Congress on Social Simulation: Scientific Advances in Understanding Societal
+      Processes and Dynamics, Kassel, Germany, 6–9 September 2010; pp. 1–14.
+25.   Gerard, H.; Puente, E.I.R.; Six, D. Coordination between transmission and distribution system operators in the electricity sector:
+      A conceptual framework. Util. Policy 2018, 50, 40–48. [CrossRef]
+Energies 2023, 16, 6939                                                                                                       27 of 28
+
+
+
+
+26.   Delnooz, A.; Vanschoenwinkel, J.; Rivero, E.; Madina, C. Coordinet Deliverable 1.3—Definition of Scenarios and Products for the
+      Demonstration Campaigns. Coordinet Project (EU H2020). 2019. Available online: https://private.coordinet-project.eu/files/
+      documentos/5d72415ced279Coordinet_Deliverable_1.3.pdf (accessed on 14 June 2023).
+27.   Gürses-Tran, G.; Monti, A.; Vanschoenwinkel, J.; Kessels, K.; Chaves-Ávila, J.P.; Lind, L. Business use case development for
+      TSO–DSO interoperable platforms in large-scale demonstrations. In Proceedings of the CIRED 2020 Berlin Workshop (CIRED
+      2020), Berlin, Germany, 22–23 September 2020; Volume Se2020, pp. 672–674. [CrossRef]
+28.   Ruwaida, Y.; Chaves-Avila, J.P.; Etherden, N.; Gomez-Arriola, I.; Gürses-Tran, G.; Kessels, K.; Madina, C.; Sanjab, A.; Santos-
+      Mugica, M.; Trakas, D.N.; et al. TSO-DSO-Customer coordination for purchasing flexibility system services: Challenges and
+      lessons learned from a demonstration in Sweden. IEEE Trans. Power Syst. 2022, 38, 1883–1895. [CrossRef]
+29.   E. CEDEC, ENTSO-E, E. GEODE TSO-DSO Report-An Integrated Approach to Active System Management. 2019. Available
+      online: https://docstore.entsoe.eu/Documents/Publications/Position%20papers%20and%20reports/TSO-DSO_ASM_2019_1
+      90416.pdf (accessed on 7 December 2020).
+30.   INTERRFACE. H2020 Project INTERRFACE Deliverable 3.1—Definition of New/Changing Requirements for Services. INTERRFACE
+      H2020 Project; Interrface: Luxemburg, 2020.
+31.   Hadush, S.Y.; Meeus, L. DSO-TSO cooperation issues and solutions for distribution grid congestion management. Energy Policy
+      2018, 120, 610–621. [CrossRef]
+32.   OneNet Project. OneNet H2020 Project OneNet H2020 Project Website. Available online: https://onenet-project.eu/ (accessed on
+      29 June 2021).
+33.   Kessels, K.; Torbaghan, S.S.; Virag, A.; Le Cadre, H. D3.2 Magnitude Project—Evaluation of Future Market Designs for Multi En-
+      ergy System. March 2019. Available online: https://www.magnitude-project.eu/wp-content/uploads/2019/07/MAGNITUDE_
+      DEL3.2_R1.0-submitted.pdf (accessed on 31 May 2021).
+34.   Drivakou, K.; Bachoumis, T.; Tzoumpas, A.; Troncia, M.; Dominguez, F. OneNet Deliverable 2.1—Review on Markets and
+      Platforms in Related Activities. OneNet H2020 Project. March 2021. Available online: https://onenet-project.eu/wp-content/
+      uploads/2021/08/D2.1-Review-on-markets-and-platforms-in-related-activities-1.pdf (accessed on 18 November 2021).
+35.   Italian Regulatory Authority for Energy, Networks and Environment (ARERA) DCO 322/2019/R/eel, Testo Integrato del
+      Dispacciamento Elettrico (TIDE)—Orientamenti Complessivi. 23 July 2019. Available online: https://www.arera.it/allegati/
+      docs/19/322-19.pdf (accessed on 18 November 2021).
+36.   Bindu, S.; Troncia, M.; Ávila, J.P.C.; Sanjab, A. Bid Forwarding as a Way to Connect Sequential Markets: Opportunities and
+      Barriers. In Proceedings of the 2023 19th International Conference on the European Energy Market (EEM), Lappeenranta, Finland,
+      6–8 June 2023; pp. 1–6. [CrossRef]
+37.   Magois, S.; Serra, M.; Loevenbruck, P.; Budke, J.; Kacprzak, P.; Willeghems, G.; Puente, E.R.; Delaney, N. Conceptual Market
+      Organisations for the Provision of Innovative System Services: Role Models, Associated Market Designs and Regulatory
+      Frameworks—EU-SysFlex Deliverable 3.2. EU-SysFlex H2020 Project. 2020. Available online: https://eu-sysflex.com/wp-
+      content/uploads/2020/06/EU-SysFlex_Task-3.2-Deliverable-Final.pdf (accessed on 30 November 2020).
+38.   EUniversal H2020 Project EUniversal Deliverable: D5.1—Identification of Relevant Market Mechanisms for the Procurement
+      of Flexibility Needs and Grid Services. EUniversal H2020 Project. 2021. Available online: https://euniversal.eu/wp-content/
+      uploads/2021/02/EUniversal_D5.1.pdf (accessed on 4 March 2021).
+39.   EPEX SPOT–GME–Nord Pool–OMIE–OPCOM–OTE–TGE EUPHEMIA Public Description—PCR Market Coupling Algorithm.
+      Price Coupling of Regions (PCR) Project. 2016. Available online: https://www.nemo-committee.eu/assets/files/Euphemia-
+      Public-Description.pdf (accessed on 10 November 2021).
+40.   European Commission, Joint Research Centre. Nodal Pricing in the European Internal Electricity Market; Publications Office:
+      Luxemburg, 2020; Available online: https://data.europa.eu/doi/10.2760/41018 (accessed on 27 September 2021).
+41.   Drivakou, K.; Bachoumis, T.; Tzoumpas, A.; Augusto, C.; Giovanett, S.; Dominguez, F.; Troncia, M.; Lind, L.; Oliveira, F.;
+      Gandhi, S.; et al. Business Use Cases for the OneNet D2.3. Deliverable D2.3 OneNet H2020 Project. 2021. Available online:
+      https://onenet-project.eu/wp-content/uploads/2022/10/D2.3-Business-Use-Cases-for-the-OneNet.pdf (accessed on 5 June
+      2022).
+42.   Ávila, J.P.C.; Troncia, M.; Silva, C.D.; Willeghems, G. OneNet Deliverable 3.1—Overview of Market Designs for the Procurement
+      of System Services by DSOs and TSOs. OneNet H2020 Project. 2021. Available online: https://onenet-project.eu/wp-content/
+      uploads/2021/08/D31-Overview-of-market-designs-for-the-procurement-of-system-services-by-DSOs-and-TSOs-1.pdf (ac-
+      cessed on 29 November 2022).
+43.   Avila, J.P.C. European Short-Term Electricity Market Designs under High Penetration of Wind Power; TU Delft, Delft University of
+      Technology: Delft, The Netherlands, 2014; Available online: http://repository.tudelft.nl/view/ir/uuid:cbc2c7bd-d65e-4f4c-9f88-
+      2ab55c11def8/ (accessed on 4 January 2016).
+44.   Kyle, A.S. Continuous Auctions and Insider Trading. Econometrica 1985, 53, 1315–1335. [CrossRef]
+Energies 2023, 16, 6939                                                                                                            28 of 28
+
+
+
+
+45.   Ávila, J.P.C. European Short-term Electricity Market Designs under High Penetration of Wind Power; Universidad Pontificia de Comillas
+      & Université Paris-Sud: Enschede, The Netherlands, 2014; Available online: https://repositorio.comillas.edu/xmlui/handle/11
+      531/2683 (accessed on 5 June 2022).
+46.   Bompard, E.; Ma, Y.; Napoli, R.; Abrate, G. The Demand Elasticity Impacts on the Strategic Bidding Behavior of the Electricity
+      Producers. IEEE Trans. Power Syst. 2007, 22, 188–197. [CrossRef]
+
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.
+

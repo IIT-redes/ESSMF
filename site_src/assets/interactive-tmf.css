@@ -3009,3 +3009,21 @@ button.primary-menu-link[aria-expanded="true"] {
 .floating-home{width:auto;height:48px;border-radius:999px;padding:0 16px;gap:8px;font-size:.95rem;white-space:nowrap}
 .floating-home-icon{font-size:1.12rem;line-height:1}.floating-home-text{font-weight:850}
 @media(max-width:680px){.pillar-feedback-section{margin-left:14px;margin-right:14px;padding:26px 20px}.floating-home{right:10px;bottom:72px;padding:0 12px}.floating-home-text{font-size:.82rem}.feature-matrix-table{min-width:980px}}
+
+
+/* v19 — row-level definition references */
+.feature-matrix-table{min-width:1320px}
+.feature-matrix-table td:first-child{width:12%}
+.feature-matrix-table td:nth-child(2){width:15%}
+.feature-matrix-table td:nth-child(3){width:13%}
+.feature-matrix-table td:nth-child(4){width:22%}
+.feature-matrix-table td:nth-child(5){width:20%}
+.feature-matrix-table td:nth-child(6){width:18%}
+.definition-source-cell{min-width:205px}
+.definition-reference{display:flex;flex-direction:column;gap:6px;padding:2px 0 8px}
+.definition-reference+.definition-reference{border-top:1px solid #dbe8f1;padding-top:9px}
+.definition-reference-label{font-weight:750;color:#264f6f;line-height:1.35}
+.definition-reference-actions{display:flex;gap:8px;flex-wrap:wrap}
+.definition-reference-actions a{display:inline-flex;align-items:center;padding:4px 9px;border-radius:999px;border:1px solid #c9ddea;background:#f7fbfe;color:#0b5f8f;font-weight:750;font-size:.78rem;text-decoration:none}
+.definition-reference-actions a:hover{background:#eaf5fb;border-color:#9dc8dd}
+@media(max-width:680px){.feature-matrix-table{min-width:1240px}}

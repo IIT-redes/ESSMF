@@ -361,6 +361,14 @@ content:
                       - { name: datatype, type: string }
                       - { name: definition, type: text }
                       - { name: meaning, type: text }
+                      - name: references
+                        label: Definition references
+                        type: object
+                        list: true
+                        fields:
+                          - { name: label, type: string }
+                          - { name: file, type: string }
+                          - { name: page, type: number }
               - { name: pillar_coordination, label: "02 — Sub-market coordination", type: file, path: content/pillars/sub-market-coordination.yml, format: yaml, fields: *pillar_fields }
               - { name: pillar_optimization, label: "03 — Market optimization", type: file, path: content/pillars/market-optimization.yml, format: yaml, fields: *pillar_fields }
               - { name: pillar_operation, label: "04 — Market operation", type: file, path: content/pillars/market-operation.yml, format: yaml, fields: *pillar_fields }
