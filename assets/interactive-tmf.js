@@ -340,24 +340,30 @@
   }
 
   function setupProgressButtons() {
-    // v15: one shared review state across the main TMF page and all five pillar sub-pages.
-    // Either remaining feedback action completes that pillar once; repeat clicks never add more than 20%.
+    // One shared review state across the main framework page and all five pillar sub-pages.
+    // A pillar is completed by either feedback action: opening its embedded discussion or
+    // selecting "No further feedback". Multiple actions for the same pillar still count once.
+    // Session storage keeps progress while reviewers navigate/refresh within the same visit,
+    // but a genuinely new browsing session starts again at 0%.
     const canonicalKeys = ['marketArchitecture','subMarketCoordination','marketOptimization','marketOperation','networkRepresentation'];
     const configuredKeys = Object.keys(cfg.sections || {});
+    const uniqueKeys = configuredKeys.length ? configuredKeys : canonicalKeys;
+    if (!uniqueKeys.length) return;
+
     const noFurtherButtons = [...document.querySelectorAll('.looks-fine-button')];
-    const progressActions = [...document.querySelectorAll('.load-comments, .looks-fine-button')]
+    const discussionButtons = [...document.querySelectorAll('.load-comments')];
+    const progressActions = [...discussionButtons, ...noFurtherButtons]
       .filter(el => el.closest('.pillar-section'));
 
     const keyForElement = (el) => {
       const sec = el?.closest('.pillar-section');
       return el?.dataset?.progressKey || sec?.dataset?.sectionKey || el?.dataset?.pillar || sec?.id || '';
     };
-    const domKeys = [...new Set(progressActions.map(keyForElement).filter(Boolean))];
-    const uniqueKeys = configuredKeys.length ? configuredKeys : canonicalKeys;
-    if (!uniqueKeys.length) return;
 
-    const storageKey = 'theoretical-market-framework-feedback-progress:all-pillars-v16';
+    const storageKey = 'theoretical-market-framework-feedback-progress:session-v21';
     const noFurtherStorageKey = storageKey + ':no-further';
+    const celebrationStorageKey = storageKey + ':celebrated';
+
     const percentEl = document.getElementById('progress-percent');
     const fillEl = document.getElementById('progress-fill');
     const progressBox = document.querySelector('.feedback-progress');
@@ -370,19 +376,63 @@
       document.body.appendChild(celebration);
     }
 
-    const safeLoad = (key) => {
+    const getStorage = () => {
+      // sessionStorage is intentional: it survives internal navigation and refreshes in
+      // the same review visit, but starts clean when the reviewer begins a new session.
       try {
-        const raw = localStorage.getItem(key);
-        return new Set((raw ? JSON.parse(raw) : []).filter(Boolean));
-      } catch (_) { return new Set(); }
+        const test = '__tmf_feedback_test__';
+        sessionStorage.setItem(test, '1');
+        sessionStorage.removeItem(test);
+        return sessionStorage;
+      } catch (_) {
+        try {
+          const test = '__tmf_feedback_test__';
+          localStorage.setItem(test, '1');
+          localStorage.removeItem(test);
+          return localStorage;
+        } catch (_) {
+          return null;
+        }
+      }
     };
-    const completed = safeLoad(storageKey);
-    const noFurtherRecorded = safeLoad(noFurtherStorageKey);
-    const safeSave = () => {
+    const storage = getStorage();
+
+    const loadSet = (key) => {
+      if (!storage) return new Set();
       try {
-        localStorage.setItem(storageKey, JSON.stringify([...completed]));
-        localStorage.setItem(noFurtherStorageKey, JSON.stringify([...noFurtherRecorded]));
-      } catch (_) { /* storage may be blocked in some local previews */ }
+        const raw = storage.getItem(key);
+        const values = raw ? JSON.parse(raw) : [];
+        return new Set(Array.isArray(values) ? values.filter(v => uniqueKeys.includes(v)) : []);
+      } catch (_) {
+        return new Set();
+      }
+    };
+
+    let completed = loadSet(storageKey);
+    let noFurtherRecorded = loadSet(noFurtherStorageKey);
+
+    const syncFromStorage = () => {
+      completed = loadSet(storageKey);
+      noFurtherRecorded = loadSet(noFurtherStorageKey);
+    };
+
+    const saveState = () => {
+      if (!storage) return;
+      try {
+        storage.setItem(storageKey, JSON.stringify([...completed]));
+        storage.setItem(noFurtherStorageKey, JSON.stringify([...noFurtherRecorded]));
+      } catch (_) { /* storage can be blocked in some local previews */ }
+    };
+
+    const hasCelebrated = () => {
+      if (!storage) return false;
+      try { return storage.getItem(celebrationStorageKey) === '1'; }
+      catch (_) { return false; }
+    };
+    const markCelebrated = () => {
+      if (!storage) return;
+      try { storage.setItem(celebrationStorageKey, '1'); }
+      catch (_) { /* no-op */ }
     };
 
     const launchLightCelebration = () => {
@@ -420,7 +470,16 @@
       setTimeout(() => light.remove(), 6100); setTimeout(() => party.remove(), 6500);
     };
 
-    const update = (flash=false) => {
+    const showCelebration = () => {
+      if (hasCelebrated()) return;
+      markCelebrated();
+      celebration.innerHTML = '<strong>100% — review completed!</strong><span>Thank you sincerely for your time, expertise, and contribution. Your feedback helps us build a clearer common language for European flexibility-market design.</span><i>🎉 🍫 🎊</i>';
+      celebration.classList.add('show','pulse-once');
+      launchLightCelebration();
+      setTimeout(() => celebration.classList.remove('show','pulse-once'), 5200);
+    };
+
+    const update = (allowCelebration=false) => {
       noFurtherButtons.forEach(button => {
         const key = keyForElement(button);
         const explicitlyNoFurther = key && noFurtherRecorded.has(key);
@@ -430,35 +489,59 @@
         if (textNode) textNode.textContent = explicitlyNoFurther ? 'Recorded: no further feedback' : 'No further feedback';
         else button.textContent = explicitlyNoFurther ? 'Recorded: no further feedback' : 'No further feedback';
       });
+
+      discussionButtons.forEach(button => {
+        const key = keyForElement(button);
+        const recorded = key && completed.has(key);
+        button.classList.toggle('progress-recorded', !!recorded);
+        button.dataset.progressRecorded = recorded ? 'true' : 'false';
+      });
+
       const count = uniqueKeys.filter(k => completed.has(k)).length;
       const pct = Math.round((count / uniqueKeys.length) * 100);
       if (percentEl) percentEl.textContent = pct + '%';
       if (fillEl) fillEl.style.width = pct + '%';
       if (progressBox) {
-        progressBox.setAttribute('aria-valuemin','0'); progressBox.setAttribute('aria-valuemax','100');
-        progressBox.setAttribute('aria-valuenow',String(pct)); progressBox.classList.toggle('complete', pct >= 100);
+        progressBox.setAttribute('aria-valuemin','0');
+        progressBox.setAttribute('aria-valuemax','100');
+        progressBox.setAttribute('aria-valuenow',String(pct));
+        progressBox.classList.toggle('complete', pct >= 100);
       }
-      safeSave();
-      if (pct === 100 && uniqueKeys.length === 5 && flash) {
-        celebration.innerHTML = '<strong>100% — review completed!</strong><span>Thank you sincerely for your time, expertise, and contribution. Your feedback helps us build a clearer common language for European flexibility-market design.</span><i>🎉 🍫 🎊</i>';
-        celebration.classList.add('show','pulse-once'); launchLightCelebration();
-        setTimeout(() => celebration.classList.remove('show','pulse-once'), 5200);
-      }
+      if (allowCelebration && pct === 100 && uniqueKeys.length === 5) showCelebration();
+    };
+
+    const recordPillar = (action) => {
+      const key = keyForElement(action);
+      if (!key || !uniqueKeys.includes(key)) return;
+      syncFromStorage();
+      const wasComplete = uniqueKeys.every(k => completed.has(k));
+      completed.add(key);
+      if (action.classList.contains('looks-fine-button')) noFurtherRecorded.add(key);
+      saveState();
+      const nowComplete = uniqueKeys.every(k => completed.has(k));
+      update(nowComplete && !wasComplete);
     };
 
     progressActions.forEach(action => {
-      action.addEventListener('click', () => {
-        const key = keyForElement(action); if (!key || !uniqueKeys.includes(key)) return;
-        const wasComplete = uniqueKeys.every(k => completed.has(k));
-        completed.add(key);
-        if (action.classList.contains('looks-fine-button')) noFurtherRecorded.add(key);
-        const nowComplete = uniqueKeys.every(k => completed.has(k));
-        update(nowComplete && !wasComplete);
-      });
+      action.addEventListener('click', () => recordPillar(action));
     });
+
+    // Re-read shared progress whenever this page returns from browser back/forward cache
+    // or regains focus after the reviewer used another pillar page. This prevents the
+    // main progress bar from appearing to reset or stay stale after navigation.
+    const refreshFromSharedState = () => {
+      syncFromStorage();
+      update(false);
+    };
+    window.addEventListener('pageshow', refreshFromSharedState);
+    window.addEventListener('focus', refreshFromSharedState);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') refreshFromSharedState();
+    });
+    window.addEventListener('storage', refreshFromSharedState);
+
     update(false);
   }
-
   function setupActiveNavigation() {
     const anchors = [...document.querySelectorAll(".primary-submenu a[href^='#']")];
     if (!anchors.length) return;
