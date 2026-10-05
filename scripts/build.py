@@ -431,11 +431,10 @@ def patch_pillars():
         for prompt in fi.get('qna_prompts',[]): li=s.new_tag('li'); li.string=prompt; ul.append(li)
         fsec.append(ul)
         actions=s.new_tag('div',attrs={'class':'feedback-actions'})
-        poll=s.new_tag('a',attrs={'class':'button primary structured-poll-link','data-feedback-action':'poll','href':'#','target':'_blank','rel':'noopener'}); poll.string='Submit structured feedback'; actions.append(poll)
         qna=s.new_tag('button',attrs={'class':'button ghost load-comments','data-feedback-action':'qna','type':'button','aria-expanded':'false'}); qna.string='Open discussion'; actions.append(qna)
         nf=s.new_tag('button',attrs={'class':'button feedback-action-button looks-fine-button','data-pillar':'tmf-'+d.get('slug',''),'data-progress-key':key or d.get('slug',''),'type':'button'}); nf.string='No further feedback'; actions.append(nf)
         fsec.append(actions)
-        helper=s.new_tag('p',attrs={'class':'giscus-helper'}); helper.string='Open the discussion to comment here through the project GitHub Q&A thread. Any one of the three feedback actions completes this pillar in the review progress.'; fsec.append(helper)
+        helper=s.new_tag('p',attrs={'class':'giscus-helper'}); helper.string='Open the discussion to comment through the project GitHub Q&A thread. Opening the discussion or selecting “No further feedback” records this pillar once in the review progress.'; fsec.append(helper)
         comments=s.new_tag('div',attrs={'class':'comments-box','aria-live':'polite','id':'comments-tmf-'+d.get('slug','')}); fsec.append(comments)
         s.select_one('main').append(fsec)
 

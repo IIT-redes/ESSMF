@@ -341,11 +341,11 @@
 
   function setupProgressButtons() {
     // v15: one shared review state across the main TMF page and all five pillar sub-pages.
-    // Any of the three feedback actions completes that pillar once; repeat clicks never add more than 20%.
+    // Either remaining feedback action completes that pillar once; repeat clicks never add more than 20%.
     const canonicalKeys = ['marketArchitecture','subMarketCoordination','marketOptimization','marketOperation','networkRepresentation'];
     const configuredKeys = Object.keys(cfg.sections || {});
     const noFurtherButtons = [...document.querySelectorAll('.looks-fine-button')];
-    const progressActions = [...document.querySelectorAll('.structured-poll-link, .load-comments, .looks-fine-button')]
+    const progressActions = [...document.querySelectorAll('.load-comments, .looks-fine-button')]
       .filter(el => el.closest('.pillar-section'));
 
     const keyForElement = (el) => {

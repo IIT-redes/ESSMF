@@ -65,6 +65,5 @@ The four-question section includes an image sequence handled by `assets/interact
 ## Final background/navigation revision
 
 The site uses:
-- `assets/comillas-transparent.png` for the transparent Comillas logo.
 - `assets/global-background-1.jpeg`, `assets/global-background-2.webp`, and `assets/global-background-3.webp` as faded background imagery.
 - A stable clickable left-side TOC with robust active-section highlighting.
