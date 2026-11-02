@@ -340,13 +340,20 @@
   }
 
   function setupProgressButtons() {
-    // One shared review state across the main framework page and all five pillar sub-pages.
-    // A pillar is completed by either feedback action: opening its embedded discussion or
-    // selecting "No further feedback". Multiple actions for the same pillar still count once.
-    // Session storage keeps progress while reviewers navigate/refresh within the same visit,
-    // but a genuinely new browsing session starts again at 0%.
-    const canonicalKeys = ['marketArchitecture','subMarketCoordination','marketOptimization','marketOperation','networkRepresentation'];
-    const configuredKeys = Object.keys(cfg.sections || {});
+    // Shared progress logic for pillar-based expert reviews.
+    // Each review scope has its own keys and session state:
+    //   - tmf: five Electricity System Services Market pillars (20% each)
+    //   - fca: four Flexible Connection Agreement pillars (25% each)
+    // Opening the embedded discussion OR selecting "No further feedback" records a pillar once.
+    const body = document.body;
+    const scope = body?.dataset?.reviewScope ||
+      ((body?.classList?.contains('connection-page') || body?.classList?.contains('connection-pillar-page')) ? 'fca' : 'tmf');
+
+    const scopeSections = scope === 'fca' ? (cfg.fcaSections || {}) : (cfg.sections || {});
+    const canonicalKeys = scope === 'fca'
+      ? ['fcaRationaleEligibility','fcaContractualConditions','fcaCurtailmentOperation','fcaEconomicArrangements']
+      : ['marketArchitecture','subMarketCoordination','marketOptimization','marketOperation','networkRepresentation'];
+    const configuredKeys = Object.keys(scopeSections);
     const uniqueKeys = configuredKeys.length ? configuredKeys : canonicalKeys;
     if (!uniqueKeys.length) return;
 
@@ -354,19 +361,20 @@
     const discussionButtons = [...document.querySelectorAll('.load-comments')];
     const progressActions = [...discussionButtons, ...noFurtherButtons]
       .filter(el => el.closest('.pillar-section'));
+    const percentEl = document.getElementById('progress-percent');
+    const fillEl = document.getElementById('progress-fill');
+    const progressBox = document.querySelector('.feedback-progress');
+    if (!progressBox && !progressActions.length) return;
 
     const keyForElement = (el) => {
       const sec = el?.closest('.pillar-section');
       return el?.dataset?.progressKey || sec?.dataset?.sectionKey || el?.dataset?.pillar || sec?.id || '';
     };
 
-    const storageKey = 'theoretical-market-framework-feedback-progress:session-v21';
+    const storageKey = `${scope}-feedback-progress:session-v23`;
     const noFurtherStorageKey = storageKey + ':no-further';
     const celebrationStorageKey = storageKey + ':celebrated';
 
-    const percentEl = document.getElementById('progress-percent');
-    const fillEl = document.getElementById('progress-fill');
-    const progressBox = document.querySelector('.feedback-progress');
     let celebration = document.getElementById('celebration');
     if (!celebration) {
       celebration = document.createElement('div');
@@ -377,16 +385,14 @@
     }
 
     const getStorage = () => {
-      // sessionStorage is intentional: it survives internal navigation and refreshes in
-      // the same review visit, but starts clean when the reviewer begins a new session.
       try {
-        const test = '__tmf_feedback_test__';
+        const test = `__${scope}_feedback_test__`;
         sessionStorage.setItem(test, '1');
         sessionStorage.removeItem(test);
         return sessionStorage;
       } catch (_) {
         try {
-          const test = '__tmf_feedback_test__';
+          const test = `__${scope}_feedback_test__`;
           localStorage.setItem(test, '1');
           localStorage.removeItem(test);
           return localStorage;
@@ -473,7 +479,8 @@
     const showCelebration = () => {
       if (hasCelebrated()) return;
       markCelebrated();
-      celebration.innerHTML = '<strong>100% — review completed!</strong><span>Thank you sincerely for your time, expertise, and contribution. Your feedback helps us build a clearer common language for European flexibility-market design.</span><i>🎉 🍫 🎊</i>';
+      const subject = scope === 'fca' ? 'Flexible Connection Agreement review' : 'framework review';
+      celebration.innerHTML = `<strong>100% — ${subject} completed!</strong><span>Thank you sincerely for your time, expertise, and contribution. Your feedback helps us build clearer and more practical European flexibility-acquisition guidance.</span><i>🎉 🍫 🎊</i>`;
       celebration.classList.add('show','pulse-once');
       launchLightCelebration();
       setTimeout(() => celebration.classList.remove('show','pulse-once'), 5200);
@@ -507,7 +514,7 @@
         progressBox.setAttribute('aria-valuenow',String(pct));
         progressBox.classList.toggle('complete', pct >= 100);
       }
-      if (allowCelebration && pct === 100 && uniqueKeys.length === 5) showCelebration();
+      if (allowCelebration && pct === 100) showCelebration();
     };
 
     const recordPillar = (action) => {
@@ -526,9 +533,6 @@
       action.addEventListener('click', () => recordPillar(action));
     });
 
-    // Re-read shared progress whenever this page returns from browser back/forward cache
-    // or regains focus after the reviewer used another pillar page. This prevents the
-    // main progress bar from appearing to reset or stay stale after navigation.
     const refreshFromSharedState = () => {
       syncFromStorage();
       update(false);

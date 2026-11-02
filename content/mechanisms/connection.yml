@@ -2,134 +2,95 @@ editorial_status: approved
 key: connection
 file: flexibility-connection-agreement.html
 hero:
-  eyebrow: Conditional access under constrained network capacity
+  eyebrow: Flexible access under constrained network capacity
   title: Flexible connection agreement
-  philosophy: A flexible connection defines how scarce capacity, operational limits, risk, and responsibility are
-    shared.
-  lead: Flexible connections can accelerate access when firm capacity is unavailable. The agreement must make access
-    rights, curtailment, compensation, control, review, and the path to firm access clear.
-  primary_button: Understand the agreement
-  secondary_button: Challenge the proposal
+  philosophy: A flexible connection turns scarce network capacity into explicit, reviewable
+    conditions for access, curtailment and responsibility.
+  lead: Use the four pillars to describe why flexible access is offered, what the
+    contract contains, how curtailment operates, and how risks and value are allocated.
+  primary_button: Explore the four pillars
+  secondary_button: How to review
 sections:
   overview:
     eyebrow: Overview and orientation
-    title: Connection flexibility changes the definition of network access
-    text: A flexible connection uses controllable access conditions to connect demand, generation, or storage within
-      a constrained network envelope.
+    title: Flexible access is a connection right with conditions
+    text: A flexible connection allows electrical capacity to connect while injection
+      or withdrawal can be limited or controlled under agreed conditions. The arrangement
+      therefore combines a firm part of the connection with clearly defined flexible
+      access conditions, so the user can understand what capacity is guaranteed and
+      what capacity may be restricted.
   idea:
-    eyebrow: Our proposal
-    title: Review the agreement as a complete allocation of rights, control, and risk
-    text: ''
+    eyebrow: What is the proposal?
+    title: Describe every flexible connection through the same four design pillars
+    text: The four-pillar structure turns a broad non-firm connection concept into
+      comparable design choices. It separates the reason and eligibility for the offer,
+      the contractual envelope, the operational curtailment process, and the economic
+      consequences so that different schemes can be described with the same language.
   why:
-    eyebrow: Why it matters
-    title: The mechanism can unlock capacity quickly, but its hidden costs may emerge later
-    text: Poor design can create unbankable curtailment, unequal treatment, market conflicts, or indefinite delay
-      of reinforcement.
+    eyebrow: Why does it matter?
+    title: Faster connection is valuable only when the conditions are transparent
+      and workable
+    text: Flexible connections can accelerate grid access, make better use of scarce
+      hosting capacity, and avoid or defer reinforcement when that is efficient. Their
+      value depends on transparent curtailment rules, predictable limits, a clear
+      pathway to firm access where relevant, and coordination with tariffs and flexibility
+      markets so that risks and incentives are not shifted unfairly.
   who:
     eyebrow: Who is affected?
-    title: A contract with system-wide consequences
-    text: ''
-    where_title: Queues, reinforcement delays, and constrained hosting capacity
-    where_text: Most relevant where useful access can be offered before reinforcement and the constraint can be
-      monitored and managed transparently.
+    title: The agreement links system operation, regulation and the connected user
+    text: The connected system user and the system operator are the core parties,
+      but the design also affects regulators or competent authorities, balance-responsible
+      parties, aggregators and other market actors. Their responsibilities become
+      especially important when curtailment changes schedules, market positions, network
+      charges or imbalance exposure.
+    where_title: Areas with limited or unavailable network capacity
+    where_text: Flexible connections are most relevant where requested firm capacity
+      cannot be offered immediately because network capacity is limited or unavailable.
+      They may be temporary while reinforcement is delivered, or remain permanent
+      where network development is not the most efficient solution. Depending on the
+      framework, generation, demand and storage can all be eligible.
   framework:
     eyebrow: Shared review structure
-    title: Review dimensions
-    text: Open a dimension to review its design choices and leave focused feedback.
+    title: Four pillars for describing flexible connection agreements
+    text: Each pillar captures a different design layer. Review the definitions first,
+      then answer the pillar questionnaire and open the GitHub discussion.
 dimensions:
-- id: connection-access-rights
+- id: fca-rationale-eligibility
   href: connection-access-right-design.html
   number: '01'
-  title: Access-right design
-  summary: What capacity right is granted, and under which network conditions?
-  link_label: Open detailed review page →
-- id: connection-curtailment
-  href: connection-curtailment-compensation.html
+  title: Rationale and eligibility
+  summary: Why is a flexible connection granted, and to whom?
+  link_label: Open pillar tutorial →
+- id: fca-contractual-conditions
+  href: connection-contract-evolution.html
   number: '02'
-  title: Curtailment and compensation
-  summary: When may access be restricted, how much, and with what compensation or protection?
-  link_label: Open detailed review page →
-- id: connection-operational
+  title: Contractual conditions
+  summary: For how long, and at what cost, does the customer connect?
+  link_label: Open pillar tutorial →
+- id: fca-curtailment-operation
   href: connection-operational-interface.html
   number: '03'
-  title: Operational interface
-  summary: How will limits be forecast, communicated, controlled, verified, and made fail-safe?
-  link_label: Open detailed review page →
-- id: connection-protection
-  href: connection-user-protection.html
+  title: Curtailment activation and operation
+  summary: When and how is curtailment triggered?
+  link_label: Open pillar tutorial →
+- id: fca-economic-arrangements
+  href: connection-curtailment-compensation.html
   number: '04'
-  title: User protection and regulatory safeguards
-  summary: How will voluntariness, transparency, equal treatment, remedy, and accountability be guaranteed?
-  link_label: Open detailed review page →
-- id: connection-evolution
-  href: connection-contract-evolution.html
-  number: '05'
-  title: Contract evolution and reinforcement pathway
-  summary: How will the agreement change as the network, project, and reinforcement plan evolve?
-  link_label: Open detailed review page →
-- id: connection-market
-  href: connection-market-participation.html
-  number: '06'
-  title: Market participation and mechanism interaction
-  summary: Can the connected resource participate in markets without double obligation or conflicting control?
-  link_label: Open detailed review page →
-visual_cards:
-- title: A negotiated access boundary
-  text: Match user investment with a clear, secure access envelope.
-  image: ../assets/connection-f1.webp
-- title: The constrained network
-  text: Feeders and substations define the physical capacity available.
-  image: ../assets/connection-f2.webp
-- title: Connection-point implementation
-  text: Metering, protection, control, and communication make limits operational.
-  image: ../assets/connection-f3.webp
-- title: The wider network envelope
-  text: Access must remain consistent with upstream network constraints.
-  image: ../assets/connection-f4.webp
-- title: Dynamic operating conditions
-  text: Capacity can change over time, so control logic must be predictable.
-  image: ../assets/connection-f5.webp
-- title: Monitoring and accountability
-  text: Operational data and oversight support fair implementation.
-  image: ../assets/connection-f6.webp
+  title: Economic arrangements
+  summary: How is curtailed energy valued and compensated?
+  link_label: Open pillar tutorial →
+visual_cards: []
 feedback:
-  eyebrow: Feedback environment
-  title: What makes flexible access efficient, bankable, and fair?
+  eyebrow: Expert review
+  title: Review the four pillars after reading their definitions
   text: ''
 challenge_intro:
-  eyebrow: Interactive stakeholder challenge
-  title: Test the agreement from four perspectives
-  text: Open a stakeholder card to test the agreement from that perspective.
-challenges:
-- id: challenge-dso
-  title: DSO lens
-  question: When does non-firm access create more system value than reinforcement or explicit procurement?
-  prompts:
-  - How is the constrained capacity calculated?
-  - Can the DSO forecast and control curtailment reliably?
-  - What triggers conversion to firm access?
-- id: challenge-regulator
-  title: Regulatory lens
-  question: How can alternative access remain voluntary, transparent, and non-discriminatory?
-  prompts:
-  - Should standard contract templates be mandatory?
-  - How are curtailment limits audited?
-  - Which risks may legally be transferred to the user?
-- id: challenge-developer
-  title: Developer and aggregator lens
-  question: Can developers finance and operate projects under uncertain access?
-  prompts:
-  - Is curtailment predictable enough for investment?
-  - Can flexibility obligations be aggregated or traded?
-  - Does the contract prevent participation in local markets?
-- id: challenge-customer
-  title: Customer and FSP lens
-  question: Does the agreement offer a genuine choice and understandable risk?
-  prompts:
-  - Is compensation proportionate to access limitations?
-  - Are notification and control arrangements practical?
-  - What remedy exists if curtailment exceeds the agreed envelope?
+  eyebrow: Cross-pillar review
+  title: Check whether the framework is complete and usable
+  text: ''
+challenges: []
 final_feedback:
-  eyebrow: Final contribution
-  title: General comments and supporting material
-  text: Share contract examples, regulatory decisions, operational data, or case evidence.
+  eyebrow: General comments
+  title: Comment on the framework as a whole
+  text: Use the general discussion for cross-pillar observations, missing dimensions,
+    implementation concerns, and interaction with other flexibility mechanisms.

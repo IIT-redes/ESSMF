@@ -307,6 +307,10 @@ def patch_tmf():
 
 def patch_dimensions():
     for y in sorted((CONTENT/'dimensions').glob('*.yml')):
+        # FCA review was reorganised into four source-grounded pillars in v22.
+        # Legacy six-dimension FCA files remain only as redirects and must not be patched.
+        if y.name.startswith('connection-'):
+            continue
         d=yaml.safe_load(y.read_text(encoding='utf-8')); p=SRC/'pages'/d['file']; s=BeautifulSoup(p.read_text(encoding='utf-8'),'html.parser'); h=s.select_one('.dimension-detail-hero'); h['style']=f"--dimension-hero:url('{asset_path(d['hero_image'],1)}')"; set_text(h.select_one('.eyebrow'),d['eyebrow']); set_text(h.find('h1'),d['title']); set_text(h.select_one('.lead'),d['subtitle'])
         intro=s.select_one('#meaning'); set_text(intro.find('h2'),d['definition_title']); ps=intro.select('.dimension-explainer')
         for el,val in zip(ps,d['definition_paragraphs']): set_text(el,val)
@@ -448,17 +452,113 @@ def patch_pillars():
             else: s.body.append(cfg_script)
         save(s,DIST/'pages'/d['file'])
 
+
+
+def patch_fca_pillars():
+    """Build the four FCA pillar tutorials from content/connection_pillars/*.yml."""
+    pages=[]
+    for y in sorted((CONTENT/'connection_pillars').glob('*.yml')):
+        d=yaml.safe_load(y.read_text(encoding='utf-8'))
+        pages.append(d)
+        p=SRC/'pages'/d['file']
+        if not p.exists():
+            continue
+        s=BeautifulSoup(p.read_text(encoding='utf-8'),'html.parser')
+        h=s.select_one('.detail-hero')
+        if h:
+            h['style']=f"--topic-color:{d.get('color','#0B5FA5')};"
+            set_text(h.select_one('.eyebrow'),d.get('eyebrow'))
+            set_text(h.find('h1'),d.get('title'))
+            ps=[x for x in h.find_all('p') if 'eyebrow' not in (x.get('class') or [])]
+            if ps: set_text(ps[0],d.get('subtitle'))
+        set_text(s.select_one('.pillar-philosophy-text'),d.get('philosophy'))
+        set_text(s.select_one('.fca-main-question p'),d.get('subtitle'))
+        tree=s.select_one('.fca-pillar-tree')
+        if tree:
+            for old in tree.find_all('span'): old.decompose()
+            for row in d.get('rows',[]):
+                sp=s.new_tag('span'); sp.string=row.get('dim',''); tree.append(sp)
+        set_text(s.select_one('.tutorial-intro'),d.get('tutorial_intro'))
+        grid=s.select_one('.tutorial-grid')
+        if grid:
+            grid.clear()
+            for item in d.get('tutorial_sections',[]):
+                card=s.new_tag('article',attrs={'class':'tutorial-step-card reveal'})
+                h3=s.new_tag('h3'); h3.string=item.get('title',''); card.append(h3)
+                pt=s.new_tag('p'); pt.string=item.get('text',''); card.append(pt); grid.append(card)
+        set_text(s.select_one('.feature-matrix-intro'),d.get('table_intro'))
+        keygrid=s.select_one('.fca-key-language-grid')
+        if keygrid:
+            keygrid.clear()
+            for item in d.get('key_terms',[]):
+                card=s.new_tag('article',attrs={'class':'fca-key-language-card reveal'})
+                strong=s.new_tag('strong'); strong.string=item.get('term',''); card.append(strong)
+                pterm=s.new_tag('p'); pterm.string=item.get('definition',''); card.append(pterm)
+                keygrid.append(card)
+        body=s.select_one('.feature-matrix-body')
+        if body:
+            body.clear()
+            for row in d.get('rows',[]):
+                tr=s.new_tag('tr')
+                for key in ('dim','dtype','definition','options','read'):
+                    td=s.new_tag('td'); td.string=row.get(key,''); tr.append(td)
+                td=s.new_tag('td',attrs={'class':'definition-source-cell'})
+                for ref in row.get('sources',[]):
+                    box=s.new_tag('div',attrs={'class':'definition-reference'})
+                    lab=s.new_tag('span',attrs={'class':'definition-reference-label'}); lab.string=ref.get('label',''); box.append(lab)
+                    acts=s.new_tag('span',attrs={'class':'definition-reference-actions'})
+                    a=s.new_tag('a',attrs={'href':ref.get('open',''),'target':'_blank','rel':'noopener'}); a.string='Open'; acts.append(a)
+                    dl=s.new_tag('a',attrs={'href':ref.get('download',''),'download':''}); dl.string='Download'; acts.append(dl)
+                    box.append(acts); td.append(box)
+                tr.append(td); body.append(tr)
+        fb=s.select_one('#pillar-feedback')
+        if fb:
+            fb['data-section-key']=d.get('key','')
+            fb['data-giscus-term']=d.get('giscus','')
+            set_text(fb.select_one('.section-heading p:not(.eyebrow)'),d.get('question'))
+            ol=fb.select_one('.pillar-review-prompts')
+            if ol:
+                ol.clear()
+                for q in d.get('prompts',[]):
+                    li=s.new_tag('li'); li.string=q; ol.append(li)
+            disc=fb.select_one('.load-comments')
+            if disc:
+                disc['data-giscus-term']=d.get('giscus',''); disc['data-progress-key']=d.get('key','')
+            nf=fb.select_one('.looks-fine-button')
+            if nf: nf['data-progress-key']=d.get('key','')
+        save(s,DIST/'pages'/d['file'])
+
+    # Keep the main FCA page's pillar summaries in sync with the four pillar YAML files.
+    main_path=DIST/'pages/flexibility-connection-agreement.html'
+    if main_path.exists():
+        s=BeautifulSoup(main_path.read_text(encoding='utf-8'),'html.parser')
+        for d in pages:
+            sec=s.select_one('#'+d.get('anchor','')+'-section')
+            if not sec: continue
+            set_text(sec.select_one('.eyebrow'),f"Pillar {d.get('num','')}")
+            h2=sec.find('h2'); set_text(h2.find('a') if h2 and h2.find('a') else h2,d.get('title'))
+            ps=[x for x in sec.find_all('p') if 'eyebrow' not in (x.get('class') or [])]
+            if ps: set_text(ps[0],d.get('philosophy'))
+            set_text(sec.select_one('.pillar-review-question p'),d.get('subtitle'))
+            m=sec.select_one('.fca-pillar-mini-map')
+            if m:
+                for old in m.find_all('span'): old.decompose()
+                for row in d.get('rows',[]):
+                    sp=s.new_tag('span'); sp.string=row.get('dim',''); m.append(sp)
+        save(s,main_path)
+
 def build_feedback_config():
     d=load('feedback.yml'); obj={'githubHubUrl':d['general']['github_hub_url'],'pollUrl':d['general']['poll_url'],'uploadUrl':d['general']['upload_url'],'generalFeedbackUrl':d['general']['general_feedback_url'],'generalGiscusTerm':d['general'].get('general_giscus_term','Theoretical Market Framework — General comments')}
     obj['feedbackPages']={x['key']:{'label':x['label'],'googleFormUrl':x['form_url'],'giscusTerm':x['giscus_term'],'giscusCategory':x.get('giscus_category',''),'giscusCategoryId':x.get('giscus_category_id','')} for x in d['dimension_pages']}
     obj['mechanisms']={x['key']:{'label':x['label'],'googleFormUrl':x['form_url'],'giscusTerm':x['giscus_term'],'giscusCategory':x.get('giscus_category',''),'giscusCategoryId':x.get('giscus_category_id','')} for x in d['mechanisms']}
     obj['sections']={x['key']:{'label':x['label'],'googleFormUrl':x.get('form_url','#'),'pollUrl':x.get('poll_url','#'),'pollTitle':x.get('poll_title',''),'giscusTerm':x.get('qna_term') or x.get('giscus_term') or x['key'],'qnaTitle':x.get('qna_title',''),'qnaPrompt':x.get('qna_prompt','')} for x in d['tmf_sections']}
+    obj['fcaSections']={x['key']:{'label':x['label'],'giscusTerm':x.get('qna_term') or x.get('giscus_term') or x['key'],'qnaTitle':x.get('qna_title',''),'qnaPrompt':x.get('qna_prompt','')} for x in d.get('fca_sections',[])}
     g=d['giscus']; obj['giscus']={'enabled':bool(g['enabled']),'repo':g['repo'],'repoId':g['repo_id'],'category':g['category'],'categoryId':g['category_id'],'theme':g['theme'],'lang':g['lang'],'mapping':g.get('mapping','specific'),'strict':str(g.get('strict','1')),'reactionsEnabled':str(g.get('reactions_enabled','1')),'emitMetadata':str(g.get('emit_metadata','0')),'inputPosition':g.get('input_position','top'),'loading':g.get('loading','lazy')}
     (DIST/'assets/feedback-config.js').write_text('window.TMF_FEEDBACK_CONFIG = '+json.dumps(obj,ensure_ascii=False,indent=2)+';\n',encoding='utf-8')
 
 def main():
     if DIST.exists(): shutil.rmtree(DIST)
     shutil.copytree(SRC,DIST)
-    patch_home(); patch_team(); patch_work(); patch_mechanism('tariff'); patch_mechanism('connection'); patch_tmf(); patch_dimensions(); patch_pillars(); build_feedback_config()
+    patch_home(); patch_team(); patch_work(); patch_mechanism('tariff'); patch_mechanism('connection'); patch_tmf(); patch_dimensions(); patch_pillars(); patch_fca_pillars(); build_feedback_config()
     print(f'Built site at {DIST}')
 if __name__=='__main__': main()

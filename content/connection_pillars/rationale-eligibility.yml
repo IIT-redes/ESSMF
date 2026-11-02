@@ -1,0 +1,116 @@
+slug: rationale-eligibility
+file: connection-access-right-design.html
+anchor: fca-rationale-eligibility
+key: fcaRationaleEligibility
+num: '01'
+eyebrow: Flexible connection agreement · Pillar 1
+title: Rationale and eligibility
+subtitle: Why is a flexible connection granted, and to whom?
+color: '#0B5FA5'
+image: ../assets/connection-f1.webp
+philosophy: This pillar separates the reason for offering non-firm access from the
+  technical condition that makes firm access unavailable, and identifies which customers
+  may use the arrangement.
+tutorial_intro: Start with the network need, then distinguish the system benefit,
+  wider social value, eligible users and the technical connection criteria.
+tutorial_sections:
+- title: 1. Identify the system-operator rationale
+  text: State whether the agreement avoids reinforcement, defers it, or provides an
+    interim connection while committed reinforcement is delivered.
+- title: 2. Separate benefits from technical causes
+  text: Do not confuse the objective of the agreement with the physical constraint
+    that prevents firm access.
+- title: 3. Define who is eligible
+  text: Record whether generation, demand, storage, new connections or capacity increases
+    can receive the flexible offer.
+table_intro: Use the table as a terminology and data-entry guide. The source column
+  opens the supporting document at the relevant page and also provides the full PDF
+  for download.
+rows:
+- dim: SO’s benefits
+  dtype: Categorical / multi-select
+  definition: Objective pursued by the system operator when offering flexible rather
+    than firm access.
+  options: Avoid reinforcement · Defer reinforcement · Preliminary connection · Other
+  read: Select every applicable system-operator benefit; keep the technical constraint
+    separate.
+  sources:
+  - label: ISGAN WG9, §3.2.1
+    open: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf#page=13
+    download: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf
+  - label: Ormeño-Mejía et al., Table 2 / dimension 4
+    open: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf#page=10
+    download: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf
+- dim: Social welfare
+  dtype: Categorical / multi-select
+  definition: Wider benefit to other network users or society resulting from use of
+    the flexible connection.
+  options: Shared saving · RES integration · Emission reduction · Load electrification
+    · Other
+  read: Record the wider public or system benefit separately from the DSO’s own operational
+    benefit.
+  sources:
+  - label: CEER 2023, Executive summary
+    open: ../docs/materials/fca/ceer-alternative-connection-agreements-2023.pdf#page=9
+    download: ../docs/materials/fca/ceer-alternative-connection-agreements-2023.pdf
+  - label: CEER 2023, design principles
+    open: ../docs/materials/fca/ceer-alternative-connection-agreements-2023.pdf#page=24
+    download: ../docs/materials/fca/ceer-alternative-connection-agreements-2023.pdf
+- dim: Eligible customers
+  dtype: Categorical / multi-select
+  definition: Customer or asset categories that may enter a flexible connection agreement.
+  options: 'New connection: generation / demand / storage · Capacity increase: generation
+    / demand / storage · Other'
+  read: Select the eligible asset types and distinguish new connections from capacity
+    increases.
+  sources:
+  - label: ISGAN WG9, §3.2.1
+    open: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf#page=14
+    download: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf
+  - label: Ormeño-Mejía et al., dimension 12
+    open: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf#page=11
+    download: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf
+- dim: Network connection criteria
+  dtype: Categorical / multi-select
+  definition: Network conditions that justify use of a flexible rather than firm connection.
+  options: Capacity limitation · Voltage-level limitation · Short-circuit power rate
+    · Thermal limits · Security criteria (N, N-1) · Other
+  read: Select each physical or security criterion that prevents the requested firm
+    connection.
+  sources:
+  - label: ISGAN WG9, §3.2.1
+    open: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf#page=13
+    download: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf
+  - label: Ormeño-Mejía et al., dimension 5
+    open: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf#page=10
+    download: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf
+question: Does this pillar clearly distinguish why flexible access is offered, the
+  grid condition that makes it necessary, and who is eligible to use it?
+prompts:
+- Does the pillar clearly separate the SO's reason for offering a flexible connection
+  (the benefit) from the technical cause that makes it necessary (the connection criteria)?
+- After reviewing this pillar, is it clear why an SO would choose a Flexible Connection
+  Agreement instead of reinforcement, local markets or other flexibility mechanisms
+  and under what conditions?
+- Are the network connection criteria (capacity, voltage level, short-circuit power,
+  thermal limits, security criteria) clearly distinct from each other, or do some
+  of them overlap?
+- Is the distinction between new connections and capacity increases for existing users
+  clear and useful in this pillar?
+giscus: FCA Pillar 1 — Rationale and eligibility
+key_terms:
+- term: Firm connection / firm capacity
+  definition: The part of network access that the user can rely on without the flexible
+    restriction being activated.
+- term: Flexible / non-firm access
+  definition: Additional or alternative access that is subject to agreed limits or
+    control of injection and/or withdrawal.
+- term: Hosting capacity
+  definition: The network capability available to accommodate new or increased injection
+    or withdrawal without breaching operational limits.
+- term: Eligible customer
+  definition: A user or asset category that the framework allows to enter a flexible
+    connection agreement, such as generation, demand or storage.
+- term: Network connection criterion
+  definition: The technical condition that prevents the requested firm connection,
+    such as capacity, voltage, thermal, short-circuit or security limits.

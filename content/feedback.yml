@@ -46,8 +46,7 @@ tmf_sections:
   poll_url: '#'
   poll_title: TMF Pillar 1 — Structured assessment
   qna_title: TMF Pillar 1 — Entire Market Architecture
-  qna_prompt: Can this pillar describe an existing flexibility market unambiguously and guide a new distribution-level
-    market?
+  qna_prompt: Can this pillar describe an existing flexibility market unambiguously and guide a new distribution-level market?
   qna_prompts:
   - Are sub-market number, GOT, GCT, MTU and market type sufficient?
   - Are service, product and technical requirements clearly separated?
@@ -61,8 +60,8 @@ tmf_sections:
   poll_url: '#'
   poll_title: TMF Pillar 2 — Structured assessment
   qna_title: TMF Pillar 2 — Sub-market Coordination
-  qna_prompt: Does this pillar capture how shared flexibility is allocated across interacting markets without double
-    use or conflicting activation?
+  qna_prompt: Does this pillar capture how shared flexibility is allocated across interacting markets without double use or
+    conflicting activation?
   qna_prompts:
   - Are priority/exclusivity and TSO access to DERs explicit enough?
   - Are formal/conditional commitment rules sufficient?
@@ -76,8 +75,7 @@ tmf_sections:
   poll_url: '#'
   poll_title: TMF Pillar 3 — Structured assessment
   qna_title: TMF Pillar 3 — Market Optimisation
-  qna_prompt: Do these optimisation fields distinguish existing designs and guide a new coordinated distribution-level
-    market?
+  qna_prompt: Do these optimisation fields distinguish existing designs and guide a new coordinated distribution-level market?
   qna_prompts:
   - Is centralised/decentralised/distributed organisation clear enough?
   - Do simultaneous/sequential/independent choices capture the clearing relationship?
@@ -105,50 +103,14 @@ tmf_sections:
   poll_url: '#'
   poll_title: TMF Pillar 5 — Structured assessment
   qna_title: TMF Pillar 5 — Network Representation
-  qna_prompt: Does this pillar capture how and when network constraints enter the market so that results remain
-    physically feasible?
+  qna_prompt: Does this pillar capture how and when network constraints enter the market so that results remain physically
+    feasible?
   qna_prompts:
   - Are comprehensive grid data, partial grid data and empirical rules sufficient?
   - At which phases should network constraints enter?
   - What validation is needed when simplified representations are used?
   - What additional option is needed for practical DSO implementation?
 dimension_pages:
-- key: connection-access-rights
-  label: Access-right design
-  form_url: '#'
-  giscus_term: connection-access-rights
-  giscus_category: ''
-  giscus_category_id: ''
-- key: connection-evolution
-  label: Contract evolution and reinforcement pathway
-  form_url: '#'
-  giscus_term: connection-evolution
-  giscus_category: ''
-  giscus_category_id: ''
-- key: connection-curtailment
-  label: Curtailment and compensation
-  form_url: '#'
-  giscus_term: connection-curtailment
-  giscus_category: ''
-  giscus_category_id: ''
-- key: connection-market
-  label: Market participation and mechanism interaction
-  form_url: '#'
-  giscus_term: connection-market
-  giscus_category: ''
-  giscus_category_id: ''
-- key: connection-operational
-  label: Operational interface
-  form_url: '#'
-  giscus_term: connection-operational
-  giscus_category: ''
-  giscus_category_id: ''
-- key: connection-protection
-  label: User protection and regulatory safeguards
-  form_url: '#'
-  giscus_term: connection-protection
-  giscus_category: ''
-  giscus_category_id: ''
 - key: tariff-coordination
   label: Coordination with other signals
   form_url: '#'
@@ -185,3 +147,60 @@ dimension_pages:
   giscus_term: tariff-resolution
   giscus_category: ''
   giscus_category_id: ''
+fca_sections:
+- key: fcaRationaleEligibility
+  label: Rationale and eligibility
+  giscus_term: FCA Pillar 1 — Rationale and eligibility
+  qna_term: FCA Pillar 1 — Rationale and eligibility
+  qna_title: FCA Pillar 1 — Rationale and eligibility
+  qna_prompt: Does this pillar clearly distinguish why flexible access is offered, the grid condition that makes it necessary,
+    and who is eligible to use it?
+  qna_prompts:
+  - Does the pillar clearly separate the SO's reason for offering a flexible connection (the benefit) from the technical cause
+    that makes it necessary (the connection criteria)?
+  - After reviewing this pillar, is it clear why an SO would choose a Flexible Connection Agreement instead of reinforcement,
+    local markets or other flexibility mechanisms and under what conditions?
+  - Are the network connection criteria (capacity, voltage level, short-circuit power, thermal limits, security criteria)
+    clearly distinct from each other, or do some of them overlap?
+  - Is the distinction between new connections and capacity increases for existing users clear and useful in this pillar?
+- key: fcaContractualConditions
+  label: Contractual conditions
+  giscus_term: FCA Pillar 2 — Contractual conditions
+  qna_term: FCA Pillar 2 — Contractual conditions
+  qna_title: FCA Pillar 2 — Contractual conditions
+  qna_prompt: Do these contractual dimensions make the duration, curtailment exposure and cost allocation of a flexible connection
+    sufficiently clear for users and system operators?
+  qna_prompts:
+  - Do the options for pre-definition of curtailment (peak/off-peak, seasonality, none) cover how curtailment can be pre-defined?
+  - Should maximum curtailment be considered a contractual condition or an operational characteristic of the connection?
+  - Does the pillar make the difference between “Connection costs” and “Network charges” clear enough?
+  - Do the curtailment allocation options (pro-rata, LIFO, auction, proportional to congestion created) reflect how curtailment
+    is shared among users in practice?
+- key: fcaCurtailmentOperation
+  label: Curtailment activation and operation
+  giscus_term: FCA Pillar 3 — Curtailment activation and operation
+  qna_term: FCA Pillar 3 — Curtailment activation and operation
+  qna_title: FCA Pillar 3 — Curtailment activation and operation
+  qna_prompt: Do the trigger, notice and activation dimensions together describe the full operational sequence of a flexible
+    connection curtailment?
+  qna_prompts:
+  - Do event type triggering activation, curtailment notification and activation mode together describe the full sequence
+    of a curtailment event (trigger, notice, execution) or is a step missing?
+  - Do the event types (emergency, maintenance, congestion) cover all the situations in which curtailment can be triggered?
+  - Is activation mode truly independent of notification time, given that automated schemes generally allow shorter notice
+    periods?
+  - Do you think the pillar can capture how curtailment is performed, either as a partial power limitation or as a full disconnection?
+- key: fcaEconomicArrangements
+  label: Economic arrangements
+  giscus_term: FCA Pillar 4 — Economic arrangements
+  qna_term: FCA Pillar 4 — Economic arrangements
+  qna_title: FCA Pillar 4 — Economic arrangements
+  qna_prompt: Does this pillar make the allocation of curtailment value, market opportunity and financial responsibility sufficiently
+    clear to prevent conflicting incentives?
+  qna_prompts:
+  - Are compensation mechanisms, value stacking opportunities and imbalance responsibility independent dimensions or should
+    some of them be merged?
+  - Does the pillar adequately capture how risks and rewards are distributed between the customer and the SO?
+  - Does this pillar make it possible to identify situations where double charging or double compensation may occur?
+  - Do the compensation options (fixed, set by the local flexibility market, local-market indexed, none) cover all possible
+    ways of compensating curtailed users?

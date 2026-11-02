@@ -1,0 +1,115 @@
+slug: economic-arrangements
+file: connection-curtailment-compensation.html
+anchor: fca-economic-arrangements
+key: fcaEconomicArrangements
+num: '04'
+eyebrow: Flexible connection agreement · Pillar 4
+title: Economic arrangements
+subtitle: How is curtailed energy valued and compensated?
+color: '#18865B'
+image: ../assets/connection-f6.webp
+philosophy: 'This pillar allocates the economic consequences of curtailment: compensation,
+  alternative value streams, consequences of non-compliance and responsibility for
+  imbalances.'
+tutorial_intro: Review the economic layer together with tariffs and local markets
+  so that the same flexibility is not unintentionally charged or rewarded twice.
+tutorial_sections:
+- title: 1. Define curtailment compensation
+  text: State whether compensation exists and how its value is determined.
+- title: 2. Define permitted value stacking
+  text: Record whether energy affected by curtailment may be traded through bilateral
+    contracts, local flexibility markets or other channels.
+- title: 3. Allocate non-compliance and imbalance risk
+  text: State consequences for exceeding limits and identify who carries imbalance
+    responsibility when curtailment changes schedules.
+table_intro: Use this pillar to make the financial risk allocation explicit and to
+  expose potential double charging, double compensation or conflicting market obligations.
+rows:
+- dim: Compensation
+  dtype: Categorical
+  definition: Whether and how customers are compensated when curtailment occurs.
+  options: Fixed · Set by local flexibility market · Local-market indexed · None ·
+    Other
+  read: Select the compensation rule and state the applicable price reference.
+  sources:
+  - label: ISGAN WG9, §3.2.1
+    open: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf#page=14
+    download: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf
+  - label: Ormeño-Mejía et al., dimension 9
+    open: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf#page=10
+    download: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf
+- dim: Value stacking
+  dtype: Categorical / multi-select
+  definition: Whether energy or flexibility affected by curtailment may be commercialised
+    through other arrangements.
+  options: Bilateral contracts · Local markets · Ancillary markets · Not allowed ·
+    Other
+  read: Select every permitted alternative channel and note restrictions or priority
+    rules.
+  sources:
+  - label: ISGAN WG9, §3.2.1
+    open: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf#page=14
+    download: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf
+  - label: Ormeño-Mejía et al., dimension 10
+    open: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf#page=10
+    download: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf
+- dim: Non-compliance penalty
+  dtype: Boolean / categorical
+  definition: Consequence when the connected user exceeds an agreed flexible-connection
+    limit or fails to follow required control conditions.
+  options: Economic penalty · Loss of benefits · No penalty · Temporary disconnection
+    · Other
+  read: Record every contractual or regulatory consequence that can apply.
+  sources:
+  - label: CEER 2023, varying connection attributes
+    open: ../docs/materials/fca/ceer-alternative-connection-agreements-2023.pdf#page=31
+    download: ../docs/materials/fca/ceer-alternative-connection-agreements-2023.pdf
+  - label: CEER 2023, country arrangements and contract consequences
+    open: ../docs/materials/fca/ceer-alternative-connection-agreements-2023.pdf#page=33
+    download: ../docs/materials/fca/ceer-alternative-connection-agreements-2023.pdf
+- dim: Imbalance responsibility
+  dtype: Categorical
+  definition: Party responsible for imbalances resulting from curtailment or modified
+    schedules.
+  options: Customer · System operator · Third party (BRP / aggregator) · Shared ·
+    Other
+  read: Identify the responsible imbalance party and any settlement transfer rule.
+  sources:
+  - label: CEER 2020, §6.3 Imbalance settlement
+    open: ../docs/materials/fca/ceer-dso-procurement-flexibility-2020.pdf#page=32
+    download: ../docs/materials/fca/ceer-dso-procurement-flexibility-2020.pdf
+  - label: Harmonised Role Model, Balance Responsible Party
+    open: ../docs/materials/fca/harmonised-electricity-market-role-model-2022-01.pdf#page=11
+    download: ../docs/materials/fca/harmonised-electricity-market-role-model-2022-01.pdf
+question: Does this pillar make the allocation of curtailment value, market opportunity
+  and financial responsibility sufficiently clear to prevent conflicting incentives?
+prompts:
+- Are compensation mechanisms, value stacking opportunities and imbalance responsibility
+  independent dimensions or should some of them be merged?
+- Does the pillar adequately capture how risks and rewards are distributed between
+  the customer and the SO?
+- Does this pillar make it possible to identify situations where double charging or
+  double compensation may occur?
+- Do the compensation options (fixed, set by the local flexibility market, local-market
+  indexed, none) cover all possible ways of compensating curtailed users?
+giscus: FCA Pillar 4 — Economic arrangements
+key_terms:
+- term: Compensation
+  definition: The payment rule, if any, that applies when the user is curtailed under
+    the flexible connection.
+- term: Value stacking
+  definition: The ability to combine the flexible connection with other commercial
+    arrangements, such as bilateral contracts or local flexibility markets, subject
+    to compatibility rules.
+- term: Non-compliance
+  definition: A breach of the agreed flexible-connection limits or required control
+    conditions.
+- term: Balance Responsible Party (BRP)
+  definition: The party financially responsible for the difference between physical
+    energy and nominated energy within the imbalance settlement period.
+- term: Imbalance responsibility
+  definition: The rule assigning financial responsibility for imbalances created when
+    curtailment changes the scheduled injection or withdrawal.
+- term: Double compensation / double charging
+  definition: A coordination risk where the same flexibility or curtailment effect
+    is rewarded or charged more than once through overlapping mechanisms.

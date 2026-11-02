@@ -1,0 +1,94 @@
+slug: curtailment-operation
+file: connection-operational-interface.html
+anchor: fca-curtailment-operation
+key: fcaCurtailmentOperation
+num: '03'
+eyebrow: Flexible connection agreement · Pillar 3
+title: Curtailment activation and operation
+subtitle: When and how is curtailment triggered?
+color: '#C25A00'
+image: ../assets/connection-f4.webp
+philosophy: 'This pillar governs the operational sequence of a curtailment event:
+  what triggers it, who or what activates it, and how much notice the customer receives.'
+tutorial_intro: 'Treat curtailment as an auditable sequence: trigger → notice → execution.
+  The design should make each step observable and implementable.'
+tutorial_sections:
+- title: 1. Define triggering events
+  text: State whether emergency, maintenance, congestion or another condition can
+    activate the flexible limit.
+- title: 2. Define activation mode
+  text: Clarify whether the system operator controls the action, local automation
+    executes it, or the customer self-dispatches.
+- title: 3. Define notification timing
+  text: Record the notice period and distinguish scheduled events from near-real-time
+    or ex-post actions.
+table_intro: Use these rows to reconstruct the full operating sequence and identify
+  any missing step between detection of a network need and the actual limitation of
+  access.
+rows:
+- dim: Event type triggering activation
+  dtype: Categorical / multi-select
+  definition: Circumstances under which the system operator activates curtailment.
+  options: Emergency · Maintenance · Congestion · Other
+  read: Select every event that can trigger curtailment.
+  sources:
+  - label: ISGAN WG9, §3.2.1
+    open: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf#page=14
+    download: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf
+  - label: Ormeño-Mejía et al., dimension 6
+    open: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf#page=10
+    download: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf
+- dim: Activation mode
+  dtype: Categorical
+  definition: How curtailment is physically or operationally implemented.
+  options: SO-controlled · Local automation · Customer self-dispatch · Other
+  read: Record the control mode and responsible actor.
+  sources:
+  - label: CEER 2023, forms of alternative connections
+    open: ../docs/materials/fca/ceer-alternative-connection-agreements-2023.pdf#page=28
+    download: ../docs/materials/fca/ceer-alternative-connection-agreements-2023.pdf
+  - label: CEER 2020, connection agreements
+    open: ../docs/materials/fca/ceer-dso-procurement-flexibility-2020.pdf#page=18
+    download: ../docs/materials/fca/ceer-dso-procurement-flexibility-2020.pdf
+- dim: Curtailment notification
+  dtype: Categorical / timeframe
+  definition: How far in advance customers are informed that curtailment will occur.
+  options: Scheduled · Day-ahead · Intraday · Real-time · Ex-post · Other
+  read: Select the applicable notice period; if it depends on event type, describe
+    the rule.
+  sources:
+  - label: ISGAN WG9, §3.2.1
+    open: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf#page=13
+    download: ../docs/materials/fca/isgan-flexibility-acquisition-mechanism-designs.pdf
+  - label: Ormeño-Mejía et al., dimension 2
+    open: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf#page=10
+    download: ../docs/materials/fca/ormeno-mejia-2024-flexibility-mechanism-interactions.pdf
+question: Do the trigger, notice and activation dimensions together describe the full
+  operational sequence of a flexible connection curtailment?
+prompts:
+- Do event type triggering activation, curtailment notification and activation mode
+  together describe the full sequence of a curtailment event (trigger, notice, execution)
+  or is a step missing?
+- Do the event types (emergency, maintenance, congestion) cover all the situations
+  in which curtailment can be triggered?
+- Is activation mode truly independent of notification time, given that automated
+  schemes generally allow shorter notice periods?
+- Do you think the pillar can capture how curtailment is performed, either as a partial
+  power limitation or as a full disconnection?
+giscus: FCA Pillar 3 — Curtailment activation and operation
+key_terms:
+- term: Curtailment trigger
+  definition: The event or network condition that authorises activation of the flexible
+    restriction, such as emergency, maintenance or congestion.
+- term: Activation mode
+  definition: How the curtailment instruction is physically implemented, for example
+    by system-operator control, local automation or customer self-dispatch.
+- term: Curtailment notification
+  definition: How far in advance the user is informed that a curtailment event will
+    occur.
+- term: Real-time / near-real-time activation
+  definition: Operational activation close to delivery, where notice and response
+    occur within a short interval.
+- term: Partial limitation vs. disconnection
+  definition: Curtailment can reduce available power to an agreed level or, where
+    the framework allows, remove access completely for the event.

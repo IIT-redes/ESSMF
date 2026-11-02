@@ -5,48 +5,6 @@ window.TMF_FEEDBACK_CONFIG = {
   "generalFeedbackUrl": "#",
   "generalGiscusTerm": "Theoretical Market Framework — General comments",
   "feedbackPages": {
-    "connection-access-rights": {
-      "label": "Access-right design",
-      "googleFormUrl": "#",
-      "giscusTerm": "connection-access-rights",
-      "giscusCategory": "",
-      "giscusCategoryId": ""
-    },
-    "connection-evolution": {
-      "label": "Contract evolution and reinforcement pathway",
-      "googleFormUrl": "#",
-      "giscusTerm": "connection-evolution",
-      "giscusCategory": "",
-      "giscusCategoryId": ""
-    },
-    "connection-curtailment": {
-      "label": "Curtailment and compensation",
-      "googleFormUrl": "#",
-      "giscusTerm": "connection-curtailment",
-      "giscusCategory": "",
-      "giscusCategoryId": ""
-    },
-    "connection-market": {
-      "label": "Market participation and mechanism interaction",
-      "googleFormUrl": "#",
-      "giscusTerm": "connection-market",
-      "giscusCategory": "",
-      "giscusCategoryId": ""
-    },
-    "connection-operational": {
-      "label": "Operational interface",
-      "googleFormUrl": "#",
-      "giscusTerm": "connection-operational",
-      "giscusCategory": "",
-      "giscusCategoryId": ""
-    },
-    "connection-protection": {
-      "label": "User protection and regulatory safeguards",
-      "googleFormUrl": "#",
-      "giscusTerm": "connection-protection",
-      "giscusCategory": "",
-      "giscusCategoryId": ""
-    },
     "tariff-coordination": {
       "label": "Coordination with other signals",
       "googleFormUrl": "#",
@@ -158,6 +116,32 @@ window.TMF_FEEDBACK_CONFIG = {
       "giscusTerm": "TMF Pillar 5 — Network Representation",
       "qnaTitle": "TMF Pillar 5 — Network Representation",
       "qnaPrompt": "Does this pillar capture how and when network constraints enter the market so that results remain physically feasible?"
+    }
+  },
+  "fcaSections": {
+    "fcaRationaleEligibility": {
+      "label": "Rationale and eligibility",
+      "giscusTerm": "FCA Pillar 1 — Rationale and eligibility",
+      "qnaTitle": "FCA Pillar 1 — Rationale and eligibility",
+      "qnaPrompt": "Does this pillar clearly distinguish why flexible access is offered, the grid condition that makes it necessary, and who is eligible to use it?"
+    },
+    "fcaContractualConditions": {
+      "label": "Contractual conditions",
+      "giscusTerm": "FCA Pillar 2 — Contractual conditions",
+      "qnaTitle": "FCA Pillar 2 — Contractual conditions",
+      "qnaPrompt": "Do these contractual dimensions make the duration, curtailment exposure and cost allocation of a flexible connection sufficiently clear for users and system operators?"
+    },
+    "fcaCurtailmentOperation": {
+      "label": "Curtailment activation and operation",
+      "giscusTerm": "FCA Pillar 3 — Curtailment activation and operation",
+      "qnaTitle": "FCA Pillar 3 — Curtailment activation and operation",
+      "qnaPrompt": "Do the trigger, notice and activation dimensions together describe the full operational sequence of a flexible connection curtailment?"
+    },
+    "fcaEconomicArrangements": {
+      "label": "Economic arrangements",
+      "giscusTerm": "FCA Pillar 4 — Economic arrangements",
+      "qnaTitle": "FCA Pillar 4 — Economic arrangements",
+      "qnaPrompt": "Does this pillar make the allocation of curtailment value, market opportunity and financial responsibility sufficiently clear to prevent conflicting incentives?"
     }
   },
   "giscus": {

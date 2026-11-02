@@ -239,15 +239,62 @@ content:
             format: yaml
             fields: *mechanism_fields
           - name: connection_dimensions
-            label: Review-dimension pages
+            label: Four FCA pillar pages
             type: group
             items:
-              - { name: connection_access, label: "01 — Access-right design", type: file, path: content/dimensions/connection-access-right-design.yml, format: yaml, fields: *dimension_fields }
-              - { name: connection_curtailment, label: "02 — Curtailment and compensation", type: file, path: content/dimensions/connection-curtailment-compensation.yml, format: yaml, fields: *dimension_fields }
-              - { name: connection_operation, label: "03 — Operational interface", type: file, path: content/dimensions/connection-operational-interface.yml, format: yaml, fields: *dimension_fields }
-              - { name: connection_protection, label: "04 — User protection and safeguards", type: file, path: content/dimensions/connection-user-protection.yml, format: yaml, fields: *dimension_fields }
-              - { name: connection_evolution, label: "05 — Contract evolution", type: file, path: content/dimensions/connection-contract-evolution.yml, format: yaml, fields: *dimension_fields }
-              - { name: connection_market, label: "06 — Market participation and interaction", type: file, path: content/dimensions/connection-market-participation.yml, format: yaml, fields: *dimension_fields }
+              - name: fca_pillar_rationale
+                label: "01 — Rationale and eligibility"
+                type: file
+                path: content/connection_pillars/rationale-eligibility.yml
+                format: yaml
+                fields: &fca_pillar_fields
+                  - { name: slug, type: string, readonly: true }
+                  - { name: file, type: string, readonly: true }
+                  - { name: anchor, type: string, readonly: true }
+                  - { name: key, type: string, readonly: true }
+                  - { name: num, type: string, readonly: true }
+                  - { name: eyebrow, type: string }
+                  - { name: title, type: string }
+                  - { name: subtitle, type: text }
+                  - { name: philosophy, type: text }
+                  - { name: tutorial_intro, type: text }
+                  - name: tutorial_sections
+                    type: object
+                    list: true
+                    fields:
+                      - { name: title, type: string }
+                      - { name: text, type: text }
+                  - { name: table_intro, type: text }
+                  - name: key_terms
+                    label: Key language
+                    type: object
+                    list: true
+                    fields:
+                      - { name: term, type: string }
+                      - { name: definition, type: text }
+                  - name: rows
+                    label: Definition and data-entry rows
+                    type: object
+                    list: true
+                    fields:
+                      - { name: dim, label: Dimension, type: string }
+                      - { name: dtype, label: Data type, type: string }
+                      - { name: definition, type: text }
+                      - { name: options, type: text }
+                      - { name: read, label: How to read the choice, type: text }
+                      - name: sources
+                        type: object
+                        list: true
+                        fields:
+                          - { name: label, type: string }
+                          - { name: open, type: string }
+                          - { name: download, type: string }
+                  - { name: question, label: Main expert question, type: text }
+                  - { name: prompts, label: Questionnaire prompts, type: text, list: true }
+                  - { name: giscus, label: Exact GitHub Q&A title / Giscus term, type: string }
+              - { name: fca_pillar_contract, label: "02 — Contractual conditions", type: file, path: content/connection_pillars/contractual-conditions.yml, format: yaml, fields: *fca_pillar_fields }
+              - { name: fca_pillar_operation, label: "03 — Curtailment activation and operation", type: file, path: content/connection_pillars/curtailment-operation.yml, format: yaml, fields: *fca_pillar_fields }
+              - { name: fca_pillar_economics, label: "04 — Economic arrangements", type: file, path: content/connection_pillars/economic-arrangements.yml, format: yaml, fields: *fca_pillar_fields }
 
       - name: tmf_workspace
         label: Electricity System Services Market

@@ -106,14 +106,13 @@ mechanism_cards:
   image: assets/connection-f1.webp
   badge: Access signal
   title: Flexible connection agreement
-  summary: Review access rights, curtailment, compensation, operational control, and market interaction.
+  summary: Review why flexible access is offered, the contractual conditions, curtailment operation, and economic
+    arrangements.
   dimensions:
-  - Access-right design
-  - Curtailment and compensation
-  - Operational interface
-  - Regulatory protection
-  - Contract evolution
-  - Market participation
+  - Rationale and eligibility
+  - Contractual conditions
+  - Curtailment activation and operation
+  - Economic arrangements
   link_label: Open mechanism page →
 - href: pages/theoretical-market-framework.html
   image: assets/tmf-screenshot.png
